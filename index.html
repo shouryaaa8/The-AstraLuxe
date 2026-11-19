@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#334155" />
+  <meta name="description" content="The AstraLuxe Advisory delivers strategic hospitality consulting, hotel brand partnerships, development advisory, asset management, and real estate solutions." />
+  <link rel="icon" type="image/x-icon" href="/images/logo.png" />
+  <title>The AstraLuxe | Luxury Hospitality Consulting & Real Estate Solutions.</title>
+
+  <!-- TYPOGRAPHY: Replace or adjust these Google Fonts if your brand typography changes. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- GSAP LIBRARIES: Loaded once for the full page. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <style>
+    /* =========================================================
+       THE ASTRALUXE ADVISORY — GLOBAL DESIGN SYSTEM
+       Single-file starter: HTML + CSS + JavaScript.
+    ========================================================= */
+    :root {
+      --al-navy: #334155;
+      --al-charcoal: #1E293B;
+      --al-gold: #D4AF37;
+      --al-champagne: #C5A880;
+      --al-paper: #F8FAFC;
+      --al-white: #FFFFFF;
+      --al-ink: #0F172A;
+      --al-muted: #64748B;
+      --al-line: rgba(51, 65, 85, .16);
+      --al-serif: "Cormorant Garamond", Georgia, serif;
+      --al-sans: "Montserrat", Arial, sans-serif;
+      --al-body: "Lora", Georgia, serif;
+      --al-container: 1220px;
+      --al-gutter: clamp(20px, 5vw, 72px);
+      --al-section-space: clamp(76px, 10vw, 142px);
+      --al-radius: 3px;
+      --al-shadow: 0 24px 70px rgba(15, 23, 42, .10);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+    body {
+      margin: 0;
+      background: var(--al-paper);
+      color: var(--al-ink);
+      font-family: var(--al-body);
+      font-size: 16px;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+    body.al-menu-open { overflow: hidden; }
+    img, video { display: block; max-width: 100%; }
+    img { width: 100%; height: auto; object-fit: contain; }
+    video { width: 100%; height: auto; object-fit: contain; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { cursor: pointer; }
+    ::selection { background: var(--al-gold); color: var(--al-charcoal); }
+
+    .al-container { width: min(var(--al-container), calc(100% - var(--al-gutter) * 2)); margin-inline: auto; }
+    .al-section { padding-block: var(--al-section-space); }
+    .al-section--paper { background: var(--al-paper); }
+    .al-section--white { background: var(--al-white); }
+    .al-section--navy { background: var(--al-charcoal); color: var(--al-white); }
+    .al-section--charcoal { background: var(--al-charcoal); color: var(--al-white); }
+    .al-section--ink { background: var(--al-ink); color: var(--al-white);}
+    .al-overline {
+      display: inline-flex; align-items: center; gap: 12px;
+      margin: 0 0 18px; color: var(--al-champagne);
+      font: 500 10px/1.5 var(--al-sans); letter-spacing: .2em; text-transform: uppercase;
+    }
+    .al-overline::before { content: ""; display: inline-block; width: 30px; height: 1px; background: currentColor; }
+    .al-heading {
+      margin: 0; font: 400 clamp(2.6rem, 5.2vw, 5rem)/.98 var(--al-serif);
+      letter-spacing: -.025em;
+    }
+    .al-heading em { color: var(--al-champagne); font-weight: 400; }
+    .al-lede { max-width: 720px; margin: 22px 0 0; color: var(--al-muted); font-size: clamp(1rem, 1.25vw, 1.12rem); line-height: 1.9; }
+    .al-section--navy .al-lede, .al-section--charcoal .al-lede { color: #D7DEE8; }
+    .al-section-head { display: flex; align-items: center; justify-content: space-between; gap: 32px; margin-bottom: clamp(38px, 5vw, 64px); }
+    .al-section-head__copy { max-width: 760px; }
+    .al-label { font: 500 10px/1.6 var(--al-sans); text-transform: uppercase; letter-spacing: .17em; }
+    .al-button {
+      display: inline-flex; justify-content: center; align-items: center; gap: 14px;
+      min-height: 52px; padding: 14px 22px; border: 1px solid var(--al-gold);
+      background: var(--al-gold); color: var(--al-charcoal);
+      font: 600 10px/1.4 var(--al-sans); letter-spacing: .14em; text-transform: uppercase;
+      transition: color .25s ease, background .25s ease, border-color .25s ease, transform .25s ease;
+    }
+    .al-button:hover { background: transparent; color: var(--al-gold); transform: translateY(-2px); }
+    .al-button--outline { background: transparent; color: var(--al-white); border-color: rgba(255,255,255,.48); }
+    .al-button--outline:hover { border-color: var(--al-gold); background: var(--al-gold); color: var(--al-charcoal); }
+    .al-button--dark { background: var(--al-navy); color: var(--al-white); border-color: var(--al-navy); }
+    .al-button--dark:hover { background: var(--al-charcoal); color: var(--al-white); border-color: var(--al-charcoal); }
+    .al-arrow { display: inline-block; font-size: 17px; line-height: 1; transition: transform .25s ease; }
+    a:hover .al-arrow, button:hover .al-arrow { transform: translateX(4px); }
+    .al-rule { width: 100%; height: 1px; background: var(--al-line); }
+    .al-skip-link { position: absolute; left: 12px; top: -60px; z-index: 1000; background: var(--al-gold); padding: 10px 16px; color: var(--al-charcoal); }
+    .al-skip-link:focus { top: 12px; }
+
+    /* =========================================================
+       01 — NAVBAR
+    ========================================================= */
+    .al-header { position: sticky; top: 0; z-index: 100; background: var(--al-ink); color: var(--al-white); border-bottom: 1px solid rgba(255,255,255,.09); backdrop-filter: blur(14px); }
+    .al-header__inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; min-height: 88px; }
+    .al-brand { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .al-brand__mark { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--al-champagne); color: var(--al-champagne); font: 500 25px/1 var(--al-serif); }
+    .al-brand__wordmark { display: flex; flex-direction: column; line-height: 1; }
+    .al-brand__name { font: 500 20px/1 var(--al-serif); letter-spacing: .08em; }
+    .al-brand__descriptor { margin-top: 7px; color: #D6DCE5; font: 500 8px/1.2 var(--al-sans); letter-spacing: .2em; text-transform: uppercase; }
+    .al-nav { display: flex; align-items: center; justify-content: center; gap: clamp(16px, 2.1vw, 31px); }
+    .al-nav__link { position: relative; padding-block: 10px; color: #E7EBF0; font: 500 11px/1.4 var(--al-sans); letter-spacing: .11em; text-transform: uppercase; white-space: nowrap; }
+    .al-nav__link::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 2px; height: 1px; background: var(--al-gold); transition: right .25s ease; }
+    .al-nav__link:hover::after, .al-nav__link:focus-visible::after { right: 0; }
+    .al-nav-logo { width: 150px; max-width: 100%; height: auto; }
+    .al-header__cta { min-height: 43px; padding: 12px 15px; white-space: nowrap; font-size: 9px; }
+    .al-menu-toggle { display: none; width: 44px; height: 44px; padding: 10px; border: 1px solid rgba(255,255,255,.3); background: transparent; color: var(--al-white); }
+    .al-menu-toggle span { display: block; width: 20px; height: 1px; margin: 5px auto; background: currentColor; transition: transform .25s ease; }
+    
+    /* =========================================================
+      REGISTRATION DROPDOWN — ASTRALUXE THEME
+    ========================================================= */
+
+    .al-nav-dropdown {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Make the trigger visually consistent with the other nav links. */
+    .al-nav-dropdown__trigger {
+      appearance: none;
+      -webkit-appearance: none;
+      border: 0;
+      background: transparent;
+      font: inherit;
+      color: inherit;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      white-space: nowrap;
+    }
+
+    .al-nav-dropdown__chevron {
+      display: inline-block;
+      color: #D4AF37;
+      font-size: 16px;
+      line-height: 1;
+      transform: translateY(-2px);
+      transition: transform 0.3s ease;
+    }
+
+    /* Dropdown panel: hidden until opened. */
+    .al-nav-dropdown__menu {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 50%;
+      z-index: 1100;
+
+      width: 270px;
+      padding: 8px;
+
+      background: #1E293B;
+      border: 1px solid rgba(212, 175, 55, 0.32);
+      border-radius: 12px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.24);
+
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translate(-50%, 10px) scale(0.98);
+      transform-origin: top center;
+
+      transition:
+        opacity 0.28s ease,
+        transform 0.32s cubic-bezier(0.2, 0.75, 0.25, 1),
+        visibility 0.28s ease;
+    }
+
+    /* Small gold accent along the top edge. */
+    .al-nav-dropdown__menu::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 22px;
+      right: 22px;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #D4AF37,
+        transparent
+      );
+    }
+
+    /* Open state is controlled by JavaScript. */
+    .al-nav-dropdown.is-open .al-nav-dropdown__menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translate(-50%, 0) scale(1);
+    }
+
+    .al-nav-dropdown.is-open .al-nav-dropdown__chevron {
+      transform: translateY(2px) rotate(180deg);
+    }
+
+    /* Both dropdown options are real anchor links. */
+    .al-nav-dropdown__option {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 14px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #F8FAFC;
+      transition:
+        background 0.25s ease,
+        padding-left 0.25s ease;
+    }
+
+    .al-nav-dropdown__option + .al-nav-dropdown__option {
+      border-top: 1px solid rgba(248, 250, 252, 0.09);
+    }
+
+    .al-nav-dropdown__option:hover,
+    .al-nav-dropdown__option:focus-visible {
+      background: rgba(212, 175, 55, 0.09);
+      padding-left: 20px;
+      outline: none;
+    }
+
+    .al-nav-dropdown__option-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.045em;
+      text-transform: uppercase;
+      color: #F8FAFC;
+    }
+
+    .al-nav-dropdown__option-description {
+      font-family: "Lora", serif;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #CBD5E1;
+    }
+
+    /* Keyboard focus for the Registration trigger. */
+    .al-nav-dropdown__trigger:focus-visible {
+      outline: 1px solid #D4AF37;
+      outline-offset: 5px;
+      border-radius: 2px;
+    }
+
+    /* Prevent the dropdown from exceeding the viewport on small screens. */
+    @media (max-width: 768px) {
+      .al-nav-dropdown {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .al-nav-dropdown__trigger {
+        justify-content: flex-start;
+      }
+
+      .al-nav-dropdown__menu {
+        position: static;
+        width: 100%;
+        margin-top: 8px;
+        transform: translateY(8px);
+        transform-origin: top center;
+      }
+
+      .al-nav-dropdown.is-open .al-nav-dropdown__menu {
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .al-nav-dropdown__menu,
+      .al-nav-dropdown__chevron,
+      .al-nav-dropdown__option {
+        transition: none;
+      }
+    }
+
+
+    /* =========================================================
+       02 — HERO
+    ========================================================= */
+    .al-hero {
+        display: flex;
+        align-items: center;
+
+        min-height: min(760px, calc(100svh - 88px));
+
+        /* BACKGROUND IMAGE: Change this URL to your own image. */
+        background-image:
+            linear-gradient(
+            90deg,
+            rgba(59, 54, 30, 0.767) 0%,
+            rgba(59, 50, 30, 0.313) 45%,
+            rgba(30, 41, 59, 0.58) 100%
+            ),
+            url("images/hero-al.avif");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        color: var(--al-white);
+        overflow: hidden;
+    }
+    .al-hero__grid { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); align-items: center; gap: clamp(40px, 7vw, 100px); padding-block: clamp(72px, 9vw, 126px); }
+    .al-hero__copy { max-width: 590px; }
+    .al-hero__eyebrow { color: var(--al-champagne); }
+    .al-hero__title { margin: 0; font: 400 clamp(3.7rem, 7vw, 7.4rem)/.83 var(--al-serif); letter-spacing: -.045em; }
+    .al-hero__title span { display: block; }
+    .al-hero__title span:nth-child(2) { color: var(--al-champagne); font-style: italic; }
+    .al-hero__description { max-width: 480px; margin: 30px 0 0; color: #D5DCE6; font-size: 15px; line-height: 1.9; }
+    .al-hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .al-hero__meta { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 44px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.17); }
+    .al-hero__meta-item { display: flex; flex-direction: column; gap: 4px; }
+    .al-hero__meta-value { color: var(--al-champagne); font: 400 25px/1 var(--al-serif); }
+    .al-hero__meta-label { color: #D5DCE6; font: 500 10px/1.5 var(--al-sans); letter-spacing: .12em; text-transform: uppercase; }
+    .al-hero__visual { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+    .al-hero__image-frame { display: flex; align-items: center; justify-content: center; min-height: 360px; max-height: 570px; padding: 14px; border: 1px solid rgba(197,168,128,.42); background: #273344; }
+    /* MEDIA PLACEHOLDER — Replace this hero image URL with your own image.
+       object-fit: contain ensures the entire image remains visible. */
+    .al-hero__image { width: 100%; height: clamp(340px, 43vw, 540px); object-fit: contain; }
+    .al-hero__caption { display: flex; justify-content: space-between; gap: 18px; color: #C6CFDA; font: 500 9px/1.5 var(--al-sans); letter-spacing: .13em; text-transform: uppercase; }
+    .al-hero__caption span:last-child { color: var(--al-champagne); text-align: right; }
+
+    /* =========================================================
+       03 — CORE SERVICES
+    ========================================================= */
+    .al-core-container { display: flex; flex-direction: column; justify-content: center; align-items: center; }
+    /* .al-core-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .82fr); gap: clamp(36px, 7vw, 100px); align-items: center; } */
+    .al-core-intro { display: flex; justify-content: center; align-items: center; text-align: center;}
+    .al-core-intro__statement { margin: 0; color: var(--al-navy); font: 400 clamp(1.8rem, 3vw, 3rem)/1.14 var(--al-serif); }
+    .al-core-intro__statement span { color: #9D8350; font-style: italic; }
+    .al-core-intro__body { margin: 0; color: var(--al-muted); font-size: 16px; line-height: 1.95; }
+    .al-core-promise { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px 30px; margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--al-line); }
+    .al-core-promise span { color: var(--al-navy); font: 500 9px/1.6 var(--al-sans); letter-spacing: .12em; text-transform: uppercase;}
+    .al-core-promise span::before { content: "✦"; margin-right: 9px; color: #B29452; }
+    .al-core-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin-top: clamp(48px, 6vw, 76px); background: var(--al-line); border: 1px solid var(--al-line); }
+    .al-core-card { display: flex; flex-direction: column; align-items: flex-start; min-height: 310px; padding: clamp(24px, 3.4vw, 46px); background: var(--al-white); transition: background .3s ease, color .3s ease; }
+    .al-core-card:hover { background: var(--al-ink); color: var(--al-white); }
+    .al-core-card__number { margin-bottom: 28px; color: #9D8350; font: 400 29px/1 var(--al-serif); }
+    .al-core-card__title { max-width: 390px; margin: 0; font: 500 clamp(1.25rem, 2vw, 1.8rem)/1.1 var(--al-serif); text-transform: uppercase; }
+    .al-core-card__list { display: grid; gap: 9px; margin: 19px 0 0; padding-left: 17px; color: var(--al-muted); font-size: 13px; line-height: 1.8; }
+    .al-core-card:hover .al-core-card__list { color: #D5DCE6; }
+    .al-core-why { display: grid; grid-template-columns: .8fr 1.2fr; gap: 36px; align-items: start; margin-top: 1px; padding: clamp(28px, 4vw, 52px); background: var(--al-ink); color: var(--al-white); }
+    .al-core-why__title { margin: 0; font: 400 clamp(2rem, 3vw, 3.3rem)/.98 var(--al-serif); color: var(--al-gold); padding: 1.25rem 0px;}
+    .al-core-why__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px 28px; margin: 0; padding: 0; list-style: none; }
+    .al-core-why__list li { display: flex; gap: 11px; color: #E4E9EF; font-size: 14px; line-height: 1.7; }
+    .al-core-why__list li::before { content: "✦"; color: var(--al-champagne); }
+
+    /* =========================================================
+       04 — BRAND MARQUEE
+    ========================================================= */
+    .al-brands { padding-block: 55px; background: #EEF1F4; overflow: hidden; }
+    
+    /* BRAND LOGO MARQUEE — Adjust logo size and spacing here. */
+
+    .al-brand-logo {
+    flex: 0 0 auto;
+    width: 160px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    }
+
+    /* Local logo images: preserve original aspect ratio and show the full logo. */
+    .al-brand-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+    }
+
+    /* Subtle premium hover effect. */
+    .al-brand-logo:hover img {
+    transform: scale(1.08);
+    }
+
+    /* Responsive logo sizing. */
+    @media (max-width: 768px) {
+    .al-brand-logo {
+        width: 125px;
+        height: 76px;
+        padding: 12px;
+    }
+
+    .al-hero {
+        display: flex;
+        align-items: center;
+
+        min-height: min(760px, calc(100svh - 88px));
+
+        /* BACKGROUND IMAGE: Change this URL to your own image. */
+        background-image:
+            linear-gradient(
+            90deg,
+            rgba(59, 54, 30, 0.767) 0%,
+            rgba(59, 50, 30, 0.313) 45%,
+            rgba(30, 41, 59, 0.58) 100%
+            ),
+            url("images/hero-banner.jpg");
+
+        background-size: fill;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        color: var(--al-white);
+        overflow: hidden;
+    }
+    }
+
+    @media (max-width: 480px) {
+    .al-brand-logo {
+        width: 110px;
+        height: 68px;
+        padding: 10px;
+    }
+    }
+
+    .al-brands__top { display: flex; align-items: end; justify-content: center; gap: 24px; margin-bottom: 38px;}
+    .al-brands__title { margin: 0; color: var(--al-navy); font: 400 clamp(2rem, 3.5vw, 3.2rem)/1 var(--al-serif); font-weight: bolder;}
+    .al-brands__note { max-width: 360px; margin: 0; color: var(--al-muted); font-size: 11px; line-height: 1.7; text-align: right; }
+    .al-marquee { display: flex; width: 100%; overflow: hidden; border-block: 1px solid rgba(51,65,85,.15); }
+    .al-marquee__track { display: flex; align-items: center; flex: 0 0 auto; width: max-content; animation: al-marquee-scroll 36s linear infinite; }
+    .al-marquee:hover .al-marquee__track { animation-play-state: paused; }
+    .al-marquee__group { display: flex; align-items: center; flex: 0 0 auto; gap: 6rem;}
+    .al-marquee__group_mar { margin-left: 6rem;}
+    .al-brand-name { display: flex; align-items: center; gap: 18px; padding: 24px 32px; color: #435066; font: 500 17px/1 var(--al-serif); letter-spacing: .04em; white-space: nowrap; }
+    .al-brand-name::after { content: "✦"; color: #B49A63; font-size: 10px; }
+    @keyframes al-marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* =========================================================
+       05 — BUSINESS VERTICALS
+    ========================================================= */
+    .al-verticals { background: var(--al-white); }
+    .al-verticals__tabs { display: flex; gap: 8px; padding: 6px; background: #EEF1F4; width: fit-content; margin-bottom: 36px; }
+    .al-verticals__tab { min-width: 170px; padding: 14px 22px; border: 1px solid transparent; background: transparent; color: var(--al-navy); font: 500 10px/1.5 var(--al-sans); letter-spacing: .15em; text-transform: uppercase; transition: background .25s ease, color .25s ease; }
+    .al-verticals__tab[aria-selected="true"] { background: var(--al-ink); color: var(--al-white); border-color: var(--al-navy); }
+    .al-verticals__panel[hidden] { display: none; }
+    .al-verticals__panel-head { display: flex; align-items: end; justify-content: space-between; gap: 25px; margin-bottom: 30px; }
+    .al-verticals__panel-title { margin: 0; color: var(--al-navy); font: 400 clamp(2rem, 3vw, 3.3rem)/1 var(--al-serif); }
+    .al-verticals__panel-subtitle { max-width: 440px; margin: 0; color: var(--al-muted); font-size: 12px; line-height: 1.8; }
+    .al-service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    .al-service-card { display: flex; flex-direction: column; min-width: 0; border: 1px solid var(--al-line); background: var(--al-paper); transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; border-radius: 10px; overflow: hidden;}
+    .al-service-card:hover { transform: translateY(-5px); box-shadow: var(--al-shadow); border-color: rgba(197,168,128,.75); }
+    .al-service-card__media { display: flex; align-items: center; justify-content: center; min-height: 180px; background: #E7EBEF; overflow: hidden;}
+    /* MEDIA PLACEHOLDER — Replace each service-card image URL with a matching project image.
+       Images use contain so the entire source image remains visible. */
+    .al-service-card__image { width: 100%; height: 220px; object-fit: fill; transition: transform .5s ease; }
+    .al-service-card:hover .al-service-card__image { transform: scale(1.025); }
+    .al-service-card__body { display: flex; flex-direction: column; align-items: flex-start; flex: 1; padding: 23px; }
+    .al-service-card__index { color: #9D8350; font: 400 21px/1 var(--al-serif); }
+    .al-service-card__title { margin: 13px 0 10px; color: var(--al-navy); font: 500 1.75rem/1.05 var(--al-serif); }
+    .al-service-card__description { margin: 0; color: var(--al-muted); font-size: 14px; line-height: 1.85; }
+    .al-service-card__link { display: inline-flex; align-items: center; gap: 9px; margin-top: auto; padding-top: 22px; color: #80682F; font: 600 9px/1.5 var(--al-sans); letter-spacing: .12em; text-transform: uppercase; }
+    .al-service-card__link:hover { color: var(--al-navy); }
+    .al-verticals__disclaimer { margin: 22px 0 0; color: var(--al-muted); font-size: 10px; line-height: 1.7; }
+
+    /* =========================================================
+       06 — OUR MISSION
+    ========================================================= */
+    .al-mission__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(38px, 7vw, 92px); align-items: center; }
+    .al-mission__media-wrap { display: flex; align-items: center; justify-content: center; min-height: 350px; padding: 12px; border: 1px solid rgba(197,168,128,.5); background: #273344; }
+    /* MEDIA PLACEHOLDER — Replace the video source below with your own MP4/WebM.
+       controls are enabled; object-fit: contain keeps the complete video visible. */
+    .al-mission__video { width: 100%; max-height: 620px; aspect-ratio: 4 / 5; object-fit: fill; background: #1E293B; }
+    .al-mission__copy { max-width: 600px; }
+    .al-mission__copy p { margin: 18px 0 0; color: #D7DEE8; font-size: 16px; line-height: 2; }
+    .al-mission__copy strong { color: var(--al-white); font-weight: 600; }
+    .al-mission__quote { margin-top: 30px; padding-left: 22px; border-left: 2px solid var(--al-champagne); color: var(--al-champagne); font: italic 400 clamp(1.55rem, 2.6vw, 2.35rem)/1.15 var(--al-serif); }
+
+    /* =========================================================
+       07 — WHAT MAKES US DIFFERENT
+    ========================================================= */
+    .al-different__intro { max-width: 760px; margin-bottom: 45px; }
+    .al-different__intro .al-lede { margin-top: 18px; }
+    .al-different-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .al-different-card { display: flex; flex-direction: column; min-width: 0; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.035); overflow: hidden; }
+    .al-different-card__media { display: flex; align-items: center; justify-content: center; min-height: 180px; padding: 12px; background: #263345; padding: 0px;}
+    /* MEDIA PLACEHOLDER — Replace each differentiator image with a relevant AstraLuxe visual. */
+    .al-different-card__image { width: 100%; height: 180px; object-fit: contain; }
+    .diff-image { width: 100%; object-fit: contain; }
+    .al-different-card__body { display: flex; flex-direction: column; flex: 1; padding: 22px; }
+    .al-different-card__number { color: var(--al-champagne); font: 400 23px/1 var(--al-serif); }
+    .al-different-card__title { margin: 12px 0 0; font: 400 1.55rem/1.08 var(--al-serif); }
+    .al-different-card__reveal { display: grid; grid-template-columns: 0fr; opacity: 0; transform: translateX(-12px); transition: opacity .35s ease, transform .35s ease; }
+    .al-different-card__reveal-inner { min-width: 0; overflow: hidden; }
+    .al-different-card__description { margin: 13px 0 0; color: #D0D8E2; font-size: 12px; line-height: 1.8; }
+    .al-different-card:hover .al-different-card__reveal,
+    .al-different-card:focus-within .al-different-card__reveal,
+    .al-different-card.is-active .al-different-card__reveal { grid-template-columns: 1fr; opacity: 1; transform: translateX(0); }
+    .al-different-card__hint { margin: 15px 0 0; color: var(--al-champagne); font: 500 8px/1.5 var(--al-sans); letter-spacing: .12em; text-transform: uppercase; }
+    .al-different-card:hover .al-different-card__hint,
+    .al-different-card:focus-within .al-different-card__hint,
+    .al-different-card.is-active .al-different-card__hint { display: none; }
+
+    /* =========================================================
+       08 — FAQ
+    ========================================================= */
+    .al-faq__grid { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); gap: clamp(38px, 8vw, 110px); align-items: start; }
+    .al-faq__aside { position: sticky; top: 125px; }
+    .al-faq__aside-copy { max-width: 380px; margin: 22px 0 28px; color: var(--al-muted); font-size: 13px; line-height: 1.9; }
+    .al-faq-list { border-top: 1px solid var(--al-line); }
+    .al-faq-item { border-bottom: 1px solid var(--al-line); }
+    .al-faq-item__question { display: flex; justify-content: space-between; align-items: center; gap: 24px; width: 100%; padding: 23px 0; border: 0; background: transparent; color: var(--al-navy); text-align: left; font: 600 clamp(1.5rem, 1.8vw, 1.95rem)/1.2 var(--al-serif); }
+    .al-faq-item__icon { display: grid; place-items: center; flex: 0 0 28px; width: 28px; height: 28px; border: 1px solid var(--al-line); border-radius: 50%; color: #94783B; font: 400 19px/1 var(--al-sans); transition: transform .3s ease, background .3s ease, color .3s ease; }
+    .al-faq-item.is-open .al-faq-item__icon { transform: rotate(45deg); background: var(--al-navy); color: var(--al-white); }
+    .al-faq-item__answer { height: 0; overflow: hidden; }
+    .al-faq-item__answer-inner { padding: 0 42px 22px 0; color: var(--al-muted); font-size: 15px; line-height: 1.9; }
+
+    /* =========================================================
+       09 — FOOTER
+    ========================================================= */
+    .al-footer { padding-top: 75px; background: var(--al-ink); color: var(--al-white); }
+    .al-footer__main { display: grid; grid-template-columns: 1.35fr .8fr 1fr 1fr; gap: clamp(28px, 4vw, 58px); padding-bottom: 60px; }
+    .al-footer__brand-copy { max-width: 300px; margin: 20px 0 0; color: #D0D8E2; font-size: 14px; line-height: 1.9; }
+    .al-footer__heading { margin: 0 0 22px; color: var(--al-champagne); font: 500 13px/1.5 var(--al-sans); letter-spacing: .18em; text-transform: uppercase; }
+    .al-footer__links { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+    .al-footer__links a, .al-footer__contact a { color: #E3E8EE; font-size: 15px; line-height: 1.7; transition: color .2s ease; overflow-wrap: anywhere; }
+    .al-footer__links a:hover, .al-footer__contact a:hover { color: var(--al-champagne); }
+    .al-footer__contact { display: grid; gap: 13px; margin: 0; padding: 0; list-style: none; }
+    .al-footer__contact-label { display: block; margin-bottom: 3px; color: #AEB9C7; font: 500 12px/1.5 var(--al-sans); letter-spacing: .14em; text-transform: uppercase; }
+    .al-footer__socials { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 23px; }
+    .al-footer__social { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid rgba(255,255,255,.28); color: var(--al-white); font: 500 10px/1 var(--al-sans); transition: background .2s ease, color .2s ease, border-color .2s ease; }
+    .al-footer__social:hover { background: var(--al-gold); border-color: var(--al-gold); color: var(--al-charcoal); }
+    .al-footer__bottom { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-block: 20px; border-top: 1px solid rgba(255,255,255,.16); color: #B9C3CF; font: 500 9px/1.7 var(--al-sans); letter-spacing: .09em; text-transform: uppercase; }
+    .al-footer__bottom-links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .al-footer__bottom a:hover { color: var(--al-champagne); }
+
+    /* =========================================================
+       RESPONSIVE BREAKPOINTS
+    ========================================================= */
+    @media (max-width: 1100px) {
+      .al-header__inner { gap: 18px; }
+      .al-nav { gap: 14px; }
+      .al-nav__link { font-size: 8px; letter-spacing: .08em; }
+      .al-header__cta { padding-inline: 12px; }
+      .al-service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .al-footer__main { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 820px) {
+      :root { --al-section-space: 82px; }
+      .al-header__inner { min-height: 76px; }
+      .al-menu-toggle { display: block; flex-shrink: 0; }
+      .al-header__cta { display: none; }
+      .al-nav {
+        position: fixed; inset: 76px 0 auto 0; display: flex; flex-direction: column; align-items: stretch; gap: 0;
+        max-height: calc(100svh - 76px); overflow-y: auto; padding: 12px var(--al-gutter) 26px;
+        background: var(--al-navy); border-top: 1px solid rgba(255,255,255,.12);
+        visibility: hidden; opacity: 0; transform: translateY(-10px); pointer-events: none;
+      }
+      .al-nav.is-open { visibility: visible; pointer-events: auto; }
+      .al-nav__link { padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,.1); font-size: 10px; }
+      .al-nav__link::after { display: none; }
+      .al-nav__mobile-cta { display: block; margin-top: 18px; }
+      .al-hero { min-height: auto; }
+      .al-hero__grid { grid-template-columns: 1fr; gap: 44px; padding-block: 75px; }
+      .al-hero__copy { max-width: 720px; }
+      .al-hero__visual { max-width: 700px; width: 100%; }
+      .al-hero__image { height: clamp(300px, 65vw, 480px); }
+      .al-core-intro { grid-template-columns: 1fr; gap: 25px; }
+      .al-core-why { grid-template-columns: 1fr; }
+      .al-mission__grid { grid-template-columns: 1fr; }
+      .al-mission__media-wrap { max-width: 640px; width: 100%; }
+      .al-mission__video { max-height: 480px; aspect-ratio: 16 / 10; }
+      .al-different-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .al-faq__grid { grid-template-columns: 1fr; }
+      .al-faq__aside { position: static; }
+      .al-faq__aside-copy { max-width: 620px; }
+    }
+    @media (max-width: 560px) {
+      :root { --al-gutter: 20px; --al-section-space: 70px; }
+      body { font-size: 15px; }
+      .al-brand__mark { width: 37px; height: 37px; font-size: 22px; }
+      .al-brand__name { font-size: 18px; }
+      .al-brand__descriptor { font-size: 7px; }
+      .al-nav-logo { width: clamp(130px, 46vw, 180px); }
+      .al-hero__grid { padding-block: 62px; }
+      .al-hero__title { font-size: clamp(3.35rem, 16vw, 5.2rem); }
+      .al-hero__description { font-size: 13px; }
+      .al-hero__actions { flex-direction: column; align-items: stretch; }
+      .al-hero__actions .al-button { width: 100%; }
+      .al-hero__meta { gap: 20px; }
+      .al-hero__image-frame { min-height: 250px; padding: 8px; }
+      .al-hero__image { height: 290px; }
+      .al-section-head, .al-brands__top, .al-verticals__panel-head { align-items: center; flex-direction: column; }
+      .al-brands__note { text-align: left; }
+      .al-core-grid { grid-template-columns: 1fr; }
+      .al-core-card { min-height: auto; }
+      .al-core-why__list { grid-template-columns: 1fr; }
+      .al-verticals__tabs { width: 100%; }
+      .al-verticals__tab { flex: 1; min-width: 0; padding-inline: 12px; }
+      .al-service-grid { grid-template-columns: 1fr; }
+      .al-service-card__media { min-height: 210px; }
+      .al-service-card__image { height: 220px; }
+      .al-mission__media-wrap { min-height: 240px; padding: 8px; }
+      .al-mission__video { aspect-ratio: 4 / 3; }
+      .al-different-grid { grid-template-columns: 1fr; }
+      .al-different-card__media { height: 240px; padding: 0px;}
+      .diff-image { width: 100%; object-fit: fill; height: 100%;}
+      .al-footer__main { grid-template-columns: 1fr; gap: 36px; }
+      .al-footer__bottom { align-items: flex-start; flex-direction: column; }
+      .al-footer__bottom-links { gap: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main id="al-main">
+    <!-- =======================================================
+         02 — HERO
+    ======================================================== -->
+    <section class="al-hero" id="al-home" aria-labelledby="al-hero-title">
+      <div class="al-container al-hero__grid">
+        <div class="al-hero__copy">
+          <h1 class="al-hero__title" id="al-hero-title">
+            <span>Building</span>
+            <span>Excellence.</span>
+            <span>Delivering</span>
+            <span>Iconic Destinations.</span>
+          </h1>
+          <p class="al-hero__description">Strategic insight. Thoughtful development. Lasting asset value. We help hospitality visionaries turn ambitious concepts into enduring destinations.</p>
+          <div class="al-hero__actions">
+            <a class="al-button" href="#al-core-services">Explore Our Services <span class="al-arrow" aria-hidden="true">↗</span></a>
+            <a class="al-button al-button--outline" href="contact.html">Schedule a Consultation <span class="al-arrow" aria-hidden="true">↗</span></a>
+          </div>
+          <div class="al-hero__meta" aria-label="Company highlights">
+            <div class="al-hero__meta-item"><span class="al-hero__meta-value">20+</span><span class="al-hero__meta-label">Years of leadership</span></div>
+            <div class="al-hero__meta-item"><span class="al-hero__meta-value">360°</span><span class="al-hero__meta-label">Project perspective</span></div>
+            <div class="al-hero__meta-item"><span class="al-hero__meta-value">End-to-end</span><span class="al-hero__meta-label">Advisory support</span></div>
+          </div>
+        </div>
+        <!-- <div class="al-hero__visual">
+          <div class="al-hero__image-frame">
+            <!-- MEDIA PLACEHOLDER — Replace with a premium hotel/resort image or your approved hero artwork. -->
+            <!-- <img class="al-hero__image" src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=85" alt="Elegant luxury hospitality suite with warm, refined finishes" fetchpriority="high" />
+          </div>
+          <div class="al-hero__caption"><span>Vision, structured with purpose</span><span>From concept to completion</span></div> -->
+        <!-- </div> -->
+      </div>
+    </section>
+
+    <!-- =======================================================
+         03 — OUR CORE SERVICES
+    ======================================================== -->
+    <section class="al-section al-section--paper" id="al-core-services" aria-labelledby="al-core-title">
+      <div class="al-container">
+
+        <div class="al-core-intro al-core-container">
+          <div class="al-core-container al-section-head ">
+            <div class="al-section-head__copy">
+              <!-- <p class="al-overline">Our Core Services</p> -->
+              <h2 class="al-heading" id="al-core-title">Our Core <em>Services</em></h2>
+            </div>
+            <!-- <p class="al-lede">From concept to completion. From vision to value.</p> -->
+          </div>
+          <div>
+            <!-- <p class="al-core-intro__statement">Designing Hospitality.<br><span>Structuring Value.</span><br>Creating Impact.</p> -->
+             <p class="al-core-intro__body">The AstraLuxe<sup>®</sup> is a specialized hospitality consulting and project solutions platform offering end-to-end support for hotels, resorts, and mixed-use hospitality developments. Our services are delivered by seasoned, well-reputed industry experts, ensuring bankable project structuring, design excellence, strong brand alignment, and market-ready execution.</p>
+            <div class="al-core-promise">
+              <span>From concept to completion</span>
+              <span>From vision to value</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="al-core-grid">
+          <article class="al-core-card">
+            <span class="al-core-card__number">01</span>
+            <h3 class="al-core-card__title">Luxury Hotel &amp; Resort Brand Operator Search &amp; Associations</h3>
+            <ul class="al-core-card__list">
+              <li>Brand operator identification based on project profile and positioning</li>
+              <li>Shortlisting and evaluation of potential hospitality partners</li>
+              <li>Coordination support through the brand association process</li>
+            </ul>
+          </article>
+          <article class="al-core-card">
+            <span class="al-core-card__number">02</span>
+            <h3 class="al-core-card__title">Hotel Management, Revenue-Share &amp; Franchise Agreements</h3>
+            <ul class="al-core-card__list">
+              <li>Review and comparison of management, revenue-share and franchise models</li>
+              <li>Coordination on key responsibilities, deliverables and reporting expectations</li>
+              <li>Advisory on agreement-related commercial considerations</li>
+            </ul>
+          </article>
+          <article class="al-core-card">
+            <span class="al-core-card__number">03</span>
+            <h3 class="al-core-card__title">Feasibility Studies &amp; Detailed Project Reports (DPR)</h3>
+            <ul class="al-core-card__list">
+              <li>Market assessment and hospitality demand review</li>
+              <li>Project strategy and development planning</li>
+              <li>Preparation and coordination of Detailed Project Reports (DPRs)</li>
+            </ul>
+          </article>
+          <article class="al-core-card">
+            <span class="al-core-card__number">04</span>
+            <h3 class="al-core-card__title">Third Party Management Services (Operations)</h3>
+            <ul class="al-core-card__list">
+              <li>Pre-opening, transition and operational readiness support</li>
+              <li>Sales, marketing and distribution strategy coordination</li>
+              <li>Financial and operational performance monitoring</li>
+            </ul>
+          </article>
+          <article class="al-core-card">
+            <span class="al-core-card__number">05</span>
+            <h3 class="al-core-card__title">Luxury Destination Development</h3>
+            <ul class="al-core-card__list">
+              <li>Destination concept and positioning strategy</li>
+              <li>Architect, civil, landscape and interior design professional identification and coordination</li>
+              <li>Pre-opening planning and operational-readiness inputs</li>
+            </ul>
+          </article>
+          <article class="al-core-card">
+            <span class="al-core-card__number">06</span>
+            <h3 class="al-core-card__title">Asset Monetisation, Management &amp; Owner Representation</h3>
+            <ul class="al-core-card__list">
+              <li>Hospitality asset performance review and benchmarking</li>
+              <li>Asset utilisation and monetisation opportunity assessment</li>
+              <li>Owner representation and coordination with operators, consultants and other stakeholders</li>
+            </ul>
+          </article>
+          <article class="al-core-card">
+            <span class="al-core-card__number">07</span>
+            <h3 class="al-core-card__title">Architect (Civil&amp; Landscape), Interior Designer Identification</h3>
+            <ul class="al-core-card__list">
+              <li>Identification and shortlisting of relevant design professionals</li>
+              <li>Alignment of design scope with hospitality requirements</li>
+              <li>Support in maintaining consistency between concept, functionality and guest experience</li>
+            </ul>
+          </article>
+          <article class="al-core-card">
+            <span class="al-core-card__number">08</span>
+            <h3 class="al-core-card__title">Back of House (BOH) Consultancy</h3>
+            <ul class="al-core-card__list">
+              <li>Review of BOH requirements in relation to the proposed hotel concept</li>
+              <li>Review of functional adjacencies and space utilisation</li>
+              <li>Inputs on housekeeping, receiving, waste and other support functions</li>
+            </ul>
+          </article>
+          <article class="al-core-card">
+            <span class="al-core-card__number">09</span>
+            <h3 class="al-core-card__title">Destination Weddings</h3>
+            <ul class="al-core-card__list">
+              <li>Wedding concept and guest-experience planning</li>
+              <li>Venue, event and supporting infrastructure planning</li>
+              <li>On-ground hospitality coordination support</li>
+            </ul>
+          </article>
+          <article class="al-core-card">
+            <span class="al-core-card__number">10</span>
+            <h3 class="al-core-card__title">Hotel Operational Consultancy</h3>
+            <ul class="al-core-card__list">
+              <li>SOP development and process optimisation</li>
+              <li>Revenue and cost optimisation support</li>
+              <li>Performance monitoring and continuous improvement</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="al-core-why">
+          <div>
+            <!-- <p class="al-overline">Why The AstraLuxe™</p> -->
+            <h3 class="al-core-why__title">Why AstraLuxe ?</h3>
+          </div>
+          <ul class="al-core-why__list">
+            <li>Hospitality-focused domain expertise</li>
+            <li>Bankable, brand-aligned, execution-driven solutions</li>
+            <li>Strong network with national &amp; international hospitality brands</li>
+            <li>Highly competitive and attractive commercial terms</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         04 — BRAND WE WORK WITH: INFINITE MARQUEE
+         Use brand names as text until approved logo assets are supplied.
+    ======================================================== -->
+    
+    <section class="al-brands" id="al-brands" aria-labelledby="al-brands-title">
+        <div class="al-container">
+            <div class="al-brands__top">
+                <div>
+                    <!-- <p class="al-overline">A Connected Hospitality Network</p> -->
+                    <h2 class="al-brands__title" id="al-brands-title">
+                    Brands We Work With
+                    </h2>
+                </div>
+
+                <!-- <p class="al-brands__note">
+                    Brand association and availability depend on project fit, location,
+                    commercial terms, and the relevant brand's approval.
+                </p> -->
+            </div>
+        </div>
+
+        <div class="al-marquee" aria-label="Hospitality brands">
+            <div class="al-marquee__track">
+
+            <!-- BRAND LOGOS — Replace each src with the path to your local logo image. -->
+            <div class="al-marquee__group al-marquee__group_mar">
+                <div class="al-brand-logo">
+                <img src="images/marriot-logo.png" alt="Marriott" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/ihcl-logo.png" alt="Taj and IHCL" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/hilton-logo.png" alt="Hilton" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/ihg-logo.png" alt="IHG" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/radisson-logo.png" alt="Radisson" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/wyndham-logo.png" alt="Wyndham" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/taj-logo.png" alt="Taj" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/hyatt-logo.png" alt="Hyatt" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/holidayinn-logo.png" alt="holiday inn" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/lemontree-logo.png" alt="Lemon Tree Hotels" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/sarovar-logo.png" alt="Sarovar Hotels" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/cygnett-logo.png" alt="Cygnett Hotels" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/clarks-logo.png" alt="The Clarks" />
+                </div>
+            </div>
+
+            <!-- Duplicate group for the seamless infinite marquee. Keep aria-hidden. -->
+            <div class="al-marquee__group al-marquee__group_mar">
+                <div class="al-brand-logo">
+                <img src="images/marriot-logo.png" alt="Marriott" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/ihcl-logo.png" alt="Taj and IHCL" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/hilton-logo.png" alt="Hilton" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/ihg-logo.png" alt="IHG" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/radisson-logo.png" alt="Radisson" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/wyndham-logo.png" alt="Wyndham" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/taj-logo.png" alt="Taj" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/hyatt-logo.png" alt="Hyatt" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/holidayinn-logo.png" alt="holiday inn" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/lemontree-logo.png" alt="Lemon Tree Hotels" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/sarovar-logo.png" alt="Sarovar Hotels" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/cygnett-logo.png" alt="Cygnett Hotels" />
+                </div>
+                <div class="al-brand-logo">
+                <img src="images/clarks-logo.png" alt="The Clarks" />
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =======================================================
+         05 — OUR BUSINESS VERTICALS
+    ======================================================== -->
+    <section class="al-section al-section--white al-verticals" id="al-verticals" aria-labelledby="al-verticals-title">
+      <div class="al-container">
+        <div class="al-section-head">
+          <div class="al-section-head__copy">
+            <!-- <p class="al-overline">Our Business Verticals</p> -->
+            <h2 class="al-heading" id="al-verticals-title">Our Business<em>Verticals</em></h2>
+            <p class="al-lede">Explore our hospitality and real estate capabilities, designed to strengthen performance, elevate experiences, and create long-term value.</p>
+          </div>
+        </div>
+
+        <div class="al-verticals__tabs" role="tablist" aria-label="Business vertical categories">
+          <button class="al-verticals__tab" id="al-tab-hospitality" role="tab" aria-selected="true" aria-controls="al-panel-hospitality" type="button">Hospitality</button>
+          <button class="al-verticals__tab" id="al-tab-realestate" role="tab" aria-selected="false" aria-controls="al-panel-realestate" type="button" tabindex="-1">Real Estate</button>
+        </div>
+
+        <div class="al-verticals__panel" id="al-panel-hospitality" role="tabpanel" aria-labelledby="al-tab-hospitality">
+          <div class="al-verticals__panel-head">
+            <h3 class="al-verticals__panel-title">Hospitality Solutions</h3>
+            <!-- <p class="al-verticals__panel-subtitle">Practical expertise across distribution, operations, brand relationships, guest experience, and commercial performance.</p> -->
+          </div>
+          <div class="al-service-grid">
+            <!-- =========================================
+                01. LUXURY HOTEL & RESORT BRAND OPERATOR SEARCH
+            ========================================= -->
+
+            <a
+              class="al-service-card"
+              href="hosp-service-1.html"
+              aria-label="Explore Luxury Hotel and Resort Brand Operator Search and Associations"
+            >
+              <div class="al-service-card__media">
+                <img
+                  class="al-service-card__image"
+                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85"
+                  alt="Luxury hotel and resort property"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="al-service-card__body">
+                <span class="al-service-card__index">01</span>
+
+                <h4 class="al-service-card__title">
+                  Luxury Hotel &amp; Resort Brand Operator Search &amp; Associations
+                </h4>
+
+                <p class="al-service-card__description">
+                  Identifying, evaluating and shortlisting hospitality brands and
+                  operators aligned with your project's positioning, profile and
+                  long-term vision, while facilitating the brand association process.
+                </p>
+
+                <span class="al-service-card__link">
+                  Explore service <span class="al-arrow">↗</span>
+                </span>
+              </div>
+            </a>
+
+
+            <!-- =========================================
+                02. HOTEL MANAGEMENT, REVENUE-SHARE & FRANCHISE AGREEMENTS
+            ========================================= -->
+
+            <a
+              class="al-service-card"
+              href="hosp-service-2.html"
+              aria-label="Explore Hotel Management, Revenue Share and Franchise Agreements"
+            >
+              <div class="al-service-card__media">
+                <img
+                  class="al-service-card__image"
+                  src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=85"
+                  alt="Business agreements and hospitality management documentation"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="al-service-card__body">
+                <span class="al-service-card__index">02</span>
+
+                <h4 class="al-service-card__title">
+                  Hotel Management, Revenue-Share &amp; Franchise Agreements
+                </h4>
+
+                <p class="al-service-card__description">
+                  Evaluating management, revenue-sharing and franchise models,
+                  coordinating key responsibilities and deliverables, and providing
+                  advisory on commercial terms and agreement structures.
+                </p>
+
+                <span class="al-service-card__link">
+                  Explore service <span class="al-arrow">↗</span>
+                </span>
+              </div>
+            </a>
+
+
+            <!-- =========================================
+                03. FEASIBILITY STUDIES & DPRs
+            ========================================= -->
+
+            <a
+              class="al-service-card"
+              href="hosp-service-3.html"
+              aria-label="Explore Feasibility Studies and Detailed Project Reports"
+            >
+              <div class="al-service-card__media">
+                <img
+                  class="al-service-card__image"
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=85"
+                  alt="Project feasibility analysis and financial planning"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="al-service-card__body">
+                <span class="al-service-card__index">03</span>
+
+                <h4 class="al-service-card__title">
+                  Feasibility Studies &amp; Detailed Project Reports (DPRs)
+                </h4>
+
+                <p class="al-service-card__description">
+                  Assessing market demand, evaluating project viability, defining
+                  development strategies and coordinating comprehensive Detailed
+                  Project Reports for informed investment and development decisions.
+                </p>
+
+                <span class="al-service-card__link">
+                  Explore service <span class="al-arrow">↗</span>
+                </span>
+              </div>
+            </a>
+
+
+            <!-- =========================================
+                04. THIRD-PARTY MANAGEMENT SERVICES
+            ========================================= -->
+
+            <a
+              class="al-service-card"
+              href="hosp-service-4.html"
+              aria-label="Explore Third Party Management Services"
+            >
+              <div class="al-service-card__media">
+                <img
+                  class="al-service-card__image"
+                  src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=900&q=85"
+                  alt="Professionally managed luxury hotel operations"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="al-service-card__body">
+                <span class="al-service-card__index">04</span>
+
+                <h4 class="al-service-card__title">
+                  Third-Party Management Services
+                </h4>
+
+                <p class="al-service-card__description">
+                  Supporting pre-opening and operational transitions, coordinating
+                  sales, marketing and distribution strategies, and monitoring
+                  financial and operational performance.
+                </p>
+
+                <span class="al-service-card__link">
+                  Explore service <span class="al-arrow">↗</span>
+                </span>
+              </div>
+            </a>
+
+
+            <!-- =========================================
+                05. LUXURY DESTINATION DEVELOPMENT
+            ========================================= -->
+
+            <a
+              class="al-service-card"
+              href="hosp-service-5.html"
+              aria-label="Explore Luxury Destination Development"
+            >
+              <div class="al-service-card__media">
+                <img
+                  class="al-service-card__image"
+                  src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=900&q=85"
+                  alt="Luxury destination surrounded by natural landscapes"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="al-service-card__body">
+                <span class="al-service-card__index">05</span>
+
+                <h4 class="al-service-card__title">
+                  Luxury Destination Development
+                </h4>
+
+                <p class="al-service-card__description">
+                  Creating distinctive destination concepts and positioning strategies,
+                  coordinating architects, civil and landscape specialists, and
+                  aligning design development with pre-opening and operational needs.
+                </p>
+
+                <span class="al-service-card__link">
+                  Explore service <span class="al-arrow">↗</span>
+                </span>
+              </div>
+            </a>
+
+
+            <!-- =========================================
+                06. ASSET MONETISATION & OWNER REPRESENTATION
+            ========================================= -->
+
+            <a
+              class="al-service-card"
+              href="hosp-service-6.html"
+              aria-label="Explore Asset Monetisation, Management and Owner Representation"
+            >
+              <div class="al-service-card__media">
+                <img
+                  class="al-service-card__image"
+                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=85"
+                  alt="Premium commercial real estate and property assets"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="al-service-card__body">
+                <span class="al-service-card__index">06</span>
+
+                <h4 class="al-service-card__title">
+                  Asset Monetisation, Management &amp; Owner Representation
+                </h4>
+
+                <p class="al-service-card__description">
+                  Reviewing hospitality asset performance, identifying utilisation
+                  and monetisation opportunities, and representing owners while
+                  coordinating with operators, consultants and stakeholders.
+                </p>
+
+                <span class="al-service-card__link">
+                  Explore service <span class="al-arrow">↗</span>
+                </span>
+              </div>
+            </a>
+
+
+            <!-- =========================================
+                07. ARCHITECT & INTERIOR DESIGNER IDENTIFICATION
+            ========================================= -->
+
+            <a
+              class="al-service-card"
+              href="hosp-service-7.html"
+              aria-label="Explore Architect and Interior Designer Identification"
+            >
+              <div class="al-service-card__media">
+                <img
+                  class="al-service-card__image"
+                  src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=85"
+                  alt="Architectural design planning and technical drawings"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="al-service-card__body">
+                <span class="al-service-card__index">07</span>
+
+                <h4 class="al-service-card__title">
+                  Architect (Civil &amp; Landscape) &amp; Interior Designer Identification
+                </h4>
+
+                <p class="al-service-card__description">
+                  Identifying and shortlisting specialised design professionals,
+                  aligning architectural and interior design scopes with hospitality
+                  requirements, and maintaining consistency across functionality,
+                  aesthetics and guest experience.
+                </p>
+
+                <span class="al-service-card__link">
+                  Explore service <span class="al-arrow">↗</span>
+                </span>
+              </div>
+            </a>
+
+
+            <!-- =========================================
+                08. BACK OF HOUSE CONSULTANCY
+            ========================================= -->
+
+            <a
+              class="al-service-card"
+              href="hosp-service-8.html"
+              aria-label="Explore Back of House Consultancy"
+            >
+              <div class="al-service-card__media">
+                <img
+                  class="al-service-card__image"
+                  src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=900&q=85"
+                  alt="Professional kitchen and hospitality support operations"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="al-service-card__body">
+                <span class="al-service-card__index">08</span>
+
+                <h4 class="al-service-card__title">
+                  Back of House (BOH) Consultancy
+                </h4>
+
+                <p class="al-service-card__description">
+                  Planning efficient back-of-house facilities through functional
+                  space reviews, workflow and adjacency assessments, and operational
+                  inputs covering housekeeping, receiving, waste management and
+                  essential support functions.
+                </p>
+
+                <span class="al-service-card__link">
+                  Explore service <span class="al-arrow">↗</span>
+                </span>
+              </div>
+            </a>
+
+
+            <!-- =========================================
+                09. DESTINATION WEDDINGS
+            ========================================= -->
+
+            <a
+              class="al-service-card"
+              href="hosp-service-9.html"
+              aria-label="Explore Destination Weddings"
+            >
+              <div class="al-service-card__media">
+                <img
+                  class="al-service-card__image"
+                  src="https://images.pexels.com/photos/169211/pexels-photo-169211.jpeg?cs=srgb&dl=pexels-asadphoto-169211.jpg&fm=jpg"
+                  alt="Elegant luxury destination wedding celebration"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="al-service-card__body">
+                <span class="al-service-card__index">09</span>
+
+                <h4 class="al-service-card__title">
+                  Destination Weddings
+                </h4>
+
+                <p class="al-service-card__description">
+                  Curating distinctive wedding concepts and guest experiences,
+                  planning venues, events and supporting infrastructure, and
+                  coordinating on-ground hospitality requirements for memorable
+                  destination celebrations.
+                </p>
+
+                <span class="al-service-card__link">
+                  Explore service <span class="al-arrow">↗</span>
+                </span>
+              </div>
+            </a>
+
+
+            <!-- =========================================
+                10. HOTEL OPERATIONAL CONSULTANCY
+            ========================================= -->
+
+            <a
+              class="al-service-card"
+              href="hosp-service-10.html"
+              aria-label="Explore Hotel Operational Consultancy"
+            >
+              <div class="al-service-card__media">
+                <img
+                  class="al-service-card__image"
+                  src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=85"
+                  alt="Luxury hotel restaurant and hospitality operations"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="al-service-card__body">
+                <span class="al-service-card__index">10</span>
+
+                <h4 class="al-service-card__title">
+                  Hotel Operational Consultancy
+                </h4>
+
+                <p class="al-service-card__description">
+                  Enhancing hotel performance through standard operating procedure
+                  development, process optimisation, revenue and cost management,
+                  performance monitoring and continuous operational improvement.
+                </p>
+
+                <span class="al-service-card__link">
+                  Explore service <span class="al-arrow">↗</span>
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="al-verticals__panel" id="al-panel-realestate" role="tabpanel" aria-labelledby="al-tab-realestate" hidden>
+          <div class="al-verticals__panel-head">
+            <h3 class="al-verticals__panel-title">Real Estate Solutions</h3>
+            <!-- <p class="al-verticals__panel-subtitle">Advisory and transaction support for land, managed stays, residential investment, and commercial assets.</p> -->
+          </div>
+          <div class="al-service-grid">
+            <!-- =========================================
+                01. PLOTS
+            ========================================= -->
+
+            <a
+              class="al-service-card"
+              href="real-service-1.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Explore Plots"
+            >
+              <div class="al-service-card__media">
+                <!-- MEDIA PLACEHOLDER: Land plots / property landscape image. -->
+                <img
+                  class="al-service-card__image"
+                  src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80"
+                  alt="Open land suitable for property development"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="al-service-card__body">
+                <span class="al-service-card__index">01</span>
+                <h4 class="al-service-card__title">Plots</h4>
+                <p class="al-service-card__description">
+                  Buy, sell, or invest in plots with full legal guidance, site evaluation,
+                  secure transactions, and expert development support.
+                </p>
+                <span class="al-service-card__link">
+                  Explore Service <span class="al-arrow">↗</span>
+                </span>
+              </div>
+            </a>
+
+
+            <!-- =========================================
+                02. FARM HOUSES
+            ========================================= -->
+
+            <a
+              class="al-service-card"
+              href="real-service-2.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Explore Farm Houses"
+            >
+              <div class="al-service-card__media">
+                <!-- MEDIA PLACEHOLDER: Luxury farmhouse image. -->
+                <img
+                  class="al-service-card__image"
+                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"
+                  alt="Contemporary luxury farmhouse residence"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="al-service-card__body">
+                <span class="al-service-card__index">02</span>
+                <h4 class="al-service-card__title">Farm Houses</h4>
+                <p class="al-service-card__description">
+                  Purchase or sell premium farmhouses, with professional investment
+                  advice and complete assistance for luxury rural property acquisition
+                  and development.
+                </p>
+                <span class="al-service-card__link">
+                  Explore Service <span class="al-arrow">↗</span>
+                </span>
+              </div>
+            </a>
+
+
+            <!-- =========================================
+                03. MANAGED FARM HOUSES
+            ========================================= -->
+
+            <a
+              class="al-service-card"
+              href="real-service-3.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Explore Managed Farm Houses"
+            >
+              <div class="al-service-card__media">
+                <!-- MEDIA PLACEHOLDER: Managed farmhouse / estate grounds image. -->
+                <img
+                  class="al-service-card__image"
+                  src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80"
+                  alt="Well-appointed residence and landscaped estate"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="al-service-card__body">
+                <span class="al-service-card__index">03</span>
+                <h4 class="al-service-card__title">Managed Farm Houses</h4>
+                <p class="al-service-card__description">
+                  Invest in managed farmhouses, benefit from ongoing professional
+                  maintenance, reliable asset growth, and seamless, hands-off ownership
+                  transfer support.
+                </p>
+                <span class="al-service-card__link">
+                  Explore Service <span class="al-arrow">↗</span>
+                </span>
+              </div>
+            </a>
+
+
+            <!-- =========================================
+                04. STUDIO & SERVICE APARTMENTS
+            ========================================= -->
+
+            <a
+              class="al-service-card"
+              href="real-service-4.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Explore Studio and Service Apartments"
+            >
+              <div class="al-service-card__media">
+                <!-- MEDIA PLACEHOLDER: Studio / serviced apartment interior image. -->
+                <img
+                  class="al-service-card__image"
+                  src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80"
+                  alt="Modern apartment interior with refined furnishings"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="al-service-card__body">
+                <span class="al-service-card__index">04</span>
+                <h4 class="al-service-card__title">
+                  Studio &amp; Service Apartments
+                </h4>
+                <p class="al-service-card__description">
+                  Acquire or invest in studios and serviced apartments, featuring modern
+                  amenities and comprehensive management for optimal capital appreciation.
+                </p>
+                <span class="al-service-card__link">
+                  Explore Service <span class="al-arrow">↗</span>
+                </span>
+              </div>
+            </a>
+
+
+            <!-- =========================================
+                05. COMMERCIAL ASSETS — OFFICE SPACES
+            ========================================= -->
+
+            <a
+              class="al-service-card"
+              href="real-service-5.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Explore Commercial Office Spaces"
+            >
+              <div class="al-service-card__media">
+                <!-- MEDIA PLACEHOLDER: Commercial office space image. -->
+                <img
+                  class="al-service-card__image"
+                  src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
+                  alt="Contemporary commercial office space"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="al-service-card__body">
+                <span class="al-service-card__index">05</span>
+                <h4 class="al-service-card__title">
+                  Commercial Assets — Office Spaces
+                </h4>
+                <p class="al-service-card__description">
+                  Buy, sell, or invest in commercial office spaces, with end-to-end
+                  transaction support, advisory, and development solutions.
+                </p>
+                <span class="al-service-card__link">
+                  Explore Service <span class="al-arrow">↗</span>
+                </span>
+              </div>
+            </a>
+
+
+            <!-- =========================================
+                06. COMMERCIAL ASSETS — RETAIL SPACES
+            ========================================= -->
+
+            <a
+              class="al-service-card"
+              href="real-service-5.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Explore Commercial Retail Spaces"
+            >
+              <div class="al-service-card__media">
+                <!-- MEDIA PLACEHOLDER: Retail / commercial property image. -->
+                <img
+                  class="al-service-card__image"
+                  src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?auto=format&fit=crop&w=900&q=80"
+                  alt="Modern retail and commercial property interior"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="al-service-card__body">
+                <span class="al-service-card__index">06</span>
+                <h4 class="al-service-card__title">
+                  Commercial Assets — Retail Spaces
+                </h4>
+                <p class="al-service-card__description">
+                  Buy, sell, or invest in commercial retail spaces, with end-to-end
+                  transaction support, advisory, and development solutions.
+                </p>
+                <span class="al-service-card__link">
+                  Explore Service <span class="al-arrow">↗</span>
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         06 — OUR MISSION
+    ======================================================== -->
+    <section class="al-section al-section--ink" id="al-mission" aria-labelledby="al-mission-title">
+      <div class="al-container al-mission__grid">
+        <div class="al-mission__media-wrap">
+          <!-- MEDIA PLACEHOLDER — Replace the source with your approved mission / project video.
+               For an autoplay background video, use muted playsinline and add a poster image;
+               keep controls enabled if the video contains meaningful information. -->
+          <video class="al-mission__video" controls playsinline preload="metadata" poster="">
+            <source src="media/our-mission.mp4" type="video/mp4" />
+            Your browser does not support HTML video. Please replace this source with a compatible video.
+          </video>
+        </div>
+        <div class="al-mission__copy">
+          <!-- <p class="al-overline">Our Mission</p> -->
+          <h2 class="al-heading" id="al-mission-title">Our <em>Mission</em></h2>
+          <p>In today’s highly competitive and rapidly evolving hospitality and real estate landscape, success is no longer defined only by owning a property. True success is defined by <strong>how strategically an asset is planned, how professionally it is managed, and how consistently it performs over time</strong>. This is where <strong>The AstraLuxe Advisory</strong> creates lasting impact.</p>
+          <p>The AstraLuxe Advisory is a <strong>premium consulting, advisory, and asset management firm</strong> dedicated to transforming hospitality and real estate assets into <strong>high-performing, future-ready, and value-driven ventures</strong>. We work closely with <strong>hotel owners, developers, investors, landowners, and commercial asset holders</strong> to unlock hidden potential, enhance asset value, optimize operations, and build sustainable long-term growth.</p>
+          <blockquote class="al-mission__quote">Every asset has untapped potential. Our role is to unlock it, structure it, and elevate it.</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         07 — WHAT MAKES US DIFFERENT
+    ======================================================== -->
+    <section class="al-section al-section--ink" id="al-different" aria-labelledby="al-different-title">
+      <div class="al-container">
+        <div class="al-different__intro ">
+          <!-- <p class="al-overline">The AstraLuxe Difference</p> -->
+          <h2 class="al-heading" id="al-different-title">What Makes Us <em>Different</em></h2>
+          <p class="al-lede">The AstraLuxe Advisory brings every essential hospitality service under one roof - from strategic consultancy and luxury brand partnerships to operations, development, design, and asset monetisation, delivering integrated solutions that simplify complexity and maximise long-term asset value.</p>
+        </div>
+        <div class="al-different-card__media">
+          <img class="diff-image" src="images/different.png" alt="diff">
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         08 — FAQ
+    ======================================================== -->
+    <section class="al-section al-section--paper" id="al-faq" aria-labelledby="al-faq-title">
+      <div class="al-container al-faq__grid">
+        <div class="al-faq__aside">
+          <!-- <p class="al-overline">Frequently Asked Questions</p> -->
+          <h2 class="al-heading" id="al-faq-title"><em>Frequently Asked Questions</em></h2>
+          <!-- <p class="al-faq__aside-copy">Learn how The AstraLuxe Advisory can support your hospitality or real estate project, from early-stage feasibility to operational performance.</p> -->
+          <!-- <a class="al-button al-button--dark" href="#al-contact">Discuss Your Project <span class="al-arrow">↗</span></a> -->
+        </div>
+        <div class="al-faq-list">
+          <article class="al-faq-item is-open">
+            <h3><button class="al-faq-item__question" type="button" aria-expanded="true" aria-controls="al-faq-answer-1" id="al-faq-question-1"><span>What services does The AstraLuxe Advisory provide?</span><span class="al-faq-item__icon" aria-hidden="true">+</span></button></h3>
+            <div class="al-faq-item__answer" id="al-faq-answer-1" role="region" aria-labelledby="al-faq-question-1"><div class="al-faq-item__answer-inner">We provide luxury hospitality and real estate advisory across project feasibility and DPRs, financial structuring, hotel brand association, architecture and technical consultancy, Third party management, Branded land development, asset management, Destination wedding-led Hospitality project and property-related solutions.</div></div>
+          </article>
+          <article class="al-faq-item">
+            <h3><button class="al-faq-item__question" type="button" aria-expanded="false" aria-controls="al-faq-answer-2" id="al-faq-question-2"><span>Can you help us select and approach a hotel brand?</span><span class="al-faq-item__icon" aria-hidden="true">+</span></button></h3>
+            <div class="al-faq-item__answer" id="al-faq-answer-2" role="region" aria-labelledby="al-faq-question-2" hidden><div class="al-faq-item__answer-inner">Yes. We can support brand shortlisting, compatibility analysis, positioning, commercial discussions, agreement considerations, and onboarding coordination. Final brand selection and approval remain subject to the operator's criteria and project-specific terms.</div></div>
+          </article>
+          <article class="al-faq-item">
+            <h3><button class="al-faq-item__question" type="button" aria-expanded="false" aria-controls="al-faq-answer-3" id="al-faq-question-3"><span>Can you prepare a DPR for a new hotel or resort?</span><span class="al-faq-item__icon" aria-hidden="true">+</span></button></h3>
+            <div class="al-faq-item__answer" id="al-faq-answer-3" role="region" aria-labelledby="al-faq-question-3" hidden><div class="al-faq-item__answer-inner">We support hospitality project feasibility and Detailed Project Report preparation, including market and commercial analysis, financial modelling, and documentation aligned with lender or investor requirements. Scope depends on the project stage and the information available.</div></div>
+          </article>
+          <article class="al-faq-item">
+            <h3><button class="al-faq-item__question" type="button" aria-expanded="false" aria-controls="al-faq-answer-4" id="al-faq-question-4"><span>Do you work with existing hotels as well as new developments?</span><span class="al-faq-item__icon" aria-hidden="true">+</span></button></h3>
+            <div class="al-faq-item__answer" id="al-faq-answer-4" role="region" aria-labelledby="al-faq-question-4" hidden><div class="al-faq-item__answer-inner">Yes. Support can be tailored to new developments, pre-opening and transition phases, or operating properties that need stronger systems, cost control, revenue performance, distribution, guest experience, or asset oversight.</div></div>
+          </article>
+          <article class="al-faq-item">
+            <h3><button class="al-faq-item__question" type="button" aria-expanded="false" aria-controls="al-faq-answer-5" id="al-faq-question-5"><span>What types of real estate assets do you support?</span><span class="al-faq-item__icon" aria-hidden="true">+</span></button></h3>
+            <div class="al-faq-item__answer" id="al-faq-answer-5" role="region" aria-labelledby="al-faq-question-5" hidden><div class="al-faq-item__answer-inner">Our stated real estate verticals include plots, farmhouses and managed farmhouses, studio and serviced apartments, and commercial office and retail spaces. The support available depends on the asset, location, and engagement scope.</div></div>
+          </article>
+          <article class="al-faq-item">
+            <h3><button class="al-faq-item__question" type="button" aria-expanded="false" aria-controls="al-faq-answer-6" id="al-faq-question-6"><span>How do we start working with The AstraLuxe Advisory?</span><span class="al-faq-item__icon" aria-hidden="true">+</span></button></h3>
+            <div class="al-faq-item__answer" id="al-faq-answer-6" role="region" aria-labelledby="al-faq-question-6" hidden><div class="al-faq-item__answer-inner">Contact us with a brief overview of your asset or project, location, current stage, and objectives. We can discuss the relevant requirements and determine a suitable engagement model, such as project consulting, retainer advisory, owner representation, or revenue sharing where appropriate.</div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <div id="whatsapp-placeholder"></div>
+    
+  </main>
+
+  <script>
+    /* =========================================================
+       THE ASTRALUXE ADVISORY — INTERACTIONS & GSAP
+       All page JavaScript lives in this file.
+    ========================================================= */
+    document.addEventListener("DOMContentLoaded", function () {
+      const alBody = document.body;
+      const alMenuToggle = document.getElementById("al-menu-toggle");
+      const alPrimaryNav = document.getElementById("al-primary-nav");
+      const alNavLinks = alPrimaryNav ? alPrimaryNav.querySelectorAll("a") : [];
+      const alReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      /* Footer year */
+      const alYear = document.getElementById("al-current-year");
+      if (alYear) alYear.textContent = new Date().getFullYear();
+
+      /* Mobile navigation: GSAP open/close, outside-click and Escape support. */
+      function alSetMenuOpen(shouldOpen) {
+        if (!alMenuToggle || !alPrimaryNav) return;
+        alMenuToggle.setAttribute("aria-expanded", String(shouldOpen));
+        alMenuToggle.setAttribute("aria-label", shouldOpen ? "Close navigation menu" : "Open navigation menu");
+        alBody.classList.toggle("al-menu-open", shouldOpen);
+        if (window.gsap && !alReducedMotion) {
+          if (shouldOpen) {
+            alPrimaryNav.classList.add("is-open");
+            gsap.to(alPrimaryNav, { autoAlpha: 1, y: 0, duration: .32, ease: "power2.out", pointerEvents: "auto" });
+            gsap.fromTo(alNavLinks, { opacity: 0, x: -8 }, { opacity: 1, x: 0, duration: .24, stagger: .035, delay: .06, ease: "power2.out" });
+          } else {
+            gsap.to(alPrimaryNav, { autoAlpha: 0, y: -10, duration: .22, ease: "power2.in", onComplete: function () { alPrimaryNav.classList.remove("is-open"); } });
+          }
+        } else {
+          alPrimaryNav.classList.toggle("is-open", shouldOpen);
+          alPrimaryNav.style.opacity = shouldOpen ? "1" : "0";
+          alPrimaryNav.style.visibility = shouldOpen ? "visible" : "hidden";
+          alPrimaryNav.style.transform = shouldOpen ? "translateY(0)" : "translateY(-10px)";
+          alPrimaryNav.style.pointerEvents = shouldOpen ? "auto" : "none";
+        }
+      }
+
+      if (alMenuToggle && alPrimaryNav) {
+        alMenuToggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          alSetMenuOpen(alMenuToggle.getAttribute("aria-expanded") !== "true");
+        });
+        alNavLinks.forEach(function (link) {
+          link.addEventListener("click", function () {
+            if (window.matchMedia("(max-width: 820px)").matches) alSetMenuOpen(false);
+          });
+        });
+        document.addEventListener("click", function (event) {
+          if (alMenuToggle.getAttribute("aria-expanded") === "true" && !alPrimaryNav.contains(event.target) && !alMenuToggle.contains(event.target)) alSetMenuOpen(false);
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && alMenuToggle.getAttribute("aria-expanded") === "true") {
+            alSetMenuOpen(false);
+            alMenuToggle.focus();
+          }
+        });
+        window.addEventListener("resize", function () {
+          if (window.innerWidth > 820) {
+            alBody.classList.remove("al-menu-open");
+            alMenuToggle.setAttribute("aria-expanded", "false");
+            alPrimaryNav.classList.remove("is-open");
+            alPrimaryNav.removeAttribute("style");
+          }
+        });
+      }
+
+      /* Business vertical tabs */
+      const alVerticalTabs = document.querySelectorAll(".al-verticals__tab");
+      const alVerticalPanels = document.querySelectorAll(".al-verticals__panel");
+      alVerticalTabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          const targetId = tab.getAttribute("aria-controls");
+          alVerticalTabs.forEach(function (otherTab) {
+            const isSelected = otherTab === tab;
+            otherTab.setAttribute("aria-selected", String(isSelected));
+            otherTab.tabIndex = isSelected ? 0 : -1;
+          });
+          alVerticalPanels.forEach(function (panel) {
+            const isTarget = panel.id === targetId;
+            if (isTarget) {
+              panel.hidden = false;
+              if (window.gsap && !alReducedMotion) {
+                gsap.fromTo(panel.querySelectorAll(".al-service-card"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: .38, stagger: .045, ease: "power2.out", clearProps: "transform" });
+              }
+            } else {
+              panel.hidden = true;
+            }
+          });
+        });
+        tab.addEventListener("keydown", function (event) {
+          if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+            event.preventDefault();
+            const nextIndex = (Array.from(alVerticalTabs).indexOf(tab) + (event.key === "ArrowRight" ? 1 : -1) + alVerticalTabs.length) % alVerticalTabs.length;
+            alVerticalTabs[nextIndex].focus();
+            alVerticalTabs[nextIndex].click();
+          }
+        });
+      });
+
+      /* FAQ accordion: one item open at a time, animated with GSAP. */
+      const alFaqItems = document.querySelectorAll(".al-faq-item");
+      alFaqItems.forEach(function (item) {
+        const button = item.querySelector(".al-faq-item__question");
+        const answer = item.querySelector(".al-faq-item__answer");
+        const inner = item.querySelector(".al-faq-item__answer-inner");
+        if (item.classList.contains("is-open") && answer && inner) {
+          answer.hidden = false;
+          answer.style.height = "auto";
+        }
+        button.addEventListener("click", function () {
+          const shouldOpen = button.getAttribute("aria-expanded") !== "true";
+          alFaqItems.forEach(function (otherItem) {
+            const otherButton = otherItem.querySelector(".al-faq-item__question");
+            const otherAnswer = otherItem.querySelector(".al-faq-item__answer");
+            const otherInner = otherItem.querySelector(".al-faq-item__answer-inner");
+            const isThis = otherItem === item;
+            otherItem.classList.toggle("is-open", isThis && shouldOpen);
+            otherButton.setAttribute("aria-expanded", String(isThis && shouldOpen));
+            if (!isThis || !shouldOpen) {
+              if (window.gsap && !alReducedMotion && !otherAnswer.hidden) {
+                gsap.to(otherAnswer, { height: 0, duration: .28, ease: "power2.inOut", onComplete: function () { otherAnswer.hidden = true; } });
+              } else {
+                otherAnswer.hidden = true;
+                otherAnswer.style.height = "0px";
+              }
+            }
+          });
+          if (shouldOpen) {
+            answer.hidden = false;
+            answer.style.height = "0px";
+            if (window.gsap && !alReducedMotion) {
+              gsap.to(answer, { height: inner.offsetHeight, duration: .36, ease: "power2.out", onComplete: function () { answer.style.height = "auto"; } });
+            } else {
+              answer.style.height = "auto";
+            }
+          }
+        });
+      });
+
+      /* Touch-friendly differentiator cards: tap to reveal on touch devices. */
+      const alDifferentCards = document.querySelectorAll(".al-different-card");
+      alDifferentCards.forEach(function (card) {
+        card.addEventListener("click", function (event) {
+          if (window.matchMedia("(hover: none)").matches) {
+            const wasActive = card.classList.contains("is-active");
+            alDifferentCards.forEach(function (otherCard) { otherCard.classList.remove("is-active"); });
+            if (!wasActive) card.classList.add("is-active");
+          }
+        });
+        card.addEventListener("keydown", function (event) {
+          if ((event.key === "Enter" || event.key === " ") && window.matchMedia("(hover: none)").matches) {
+            event.preventDefault();
+            card.classList.toggle("is-active");
+          }
+        });
+      });
+
+      /* GSAP scroll reveals and hero entrance. */
+      function alInitAnimations() {
+        if (!window.gsap || alReducedMotion) return;
+        if (window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+
+        const alHeroTimeline = gsap.timeline({ defaults: { ease: "power3.out" } });
+        alHeroTimeline
+          .from(".al-hero__eyebrow", { opacity: 0, y: 16, duration: .55 })
+          .from(".al-hero__title span", { opacity: 0, y: 34, stagger: .1, duration: .72 }, "-=.25")
+          .from(".al-hero__description", { opacity: 0, y: 16, duration: .5 }, "-=.35")
+          .from(".al-hero__actions .al-button", { opacity: 0, y: 12, stagger: .1, duration: .45 }, "-=.25")
+          .from(".al-hero__image-frame", { opacity: 0, x: 22, duration: .8 }, "-=.7")
+          .from(".al-hero__meta-item", { opacity: 0, y: 10, stagger: .08, duration: .35 }, "-=.25");
+
+        if (window.ScrollTrigger) {
+          gsap.utils.toArray(".al-section-head, .al-core-intro, .al-core-card, .al-core-why, .al-brands__top, .al-verticals__panel-head, .al-service-card, .al-mission__media-wrap, .al-mission__copy, .al-different__intro, .al-different-card, .al-faq__aside, .al-faq-item, .al-footer__main > *").forEach(function (element) {
+            gsap.from(element, {
+              opacity: 0, y: 24, duration: .7, ease: "power2.out",
+              scrollTrigger: { trigger: element, start: "top 88%", once: true }
+            });
+          });
+        }
+      }
+
+      /* Defer GSAP setup until CDN scripts are available. */
+      if (window.gsap) {
+        alInitAnimations();
+      } else {
+        window.addEventListener("load", alInitAnimations, { once: true });
+      }
+
+      
+      /* =========================================================
+        REGISTRATION DROPDOWN INTERACTIONS
+      ========================================================= */
+
+      (() => {
+        const dropdown = document.querySelector(".al-nav-dropdown");
+
+        if (!dropdown) return;
+
+        const trigger = dropdown.querySelector(".al-nav-dropdown__trigger");
+        const menu = dropdown.querySelector(".al-nav-dropdown__menu");
+
+        if (!trigger || !menu) return;
+
+        const openDropdown = () => {
+          dropdown.classList.add("is-open");
+          trigger.setAttribute("aria-expanded", "true");
+        };
+
+        const closeDropdown = () => {
+          dropdown.classList.remove("is-open");
+          trigger.setAttribute("aria-expanded", "false");
+        };
+
+        trigger.addEventListener("click", (event) => {
+          event.stopPropagation();
+
+          if (dropdown.classList.contains("is-open")) {
+            closeDropdown();
+          } else {
+            openDropdown();
+          }
+        });
+
+        // Close when the user clicks anywhere outside the dropdown.
+        document.addEventListener("click", (event) => {
+          if (!dropdown.contains(event.target)) {
+            closeDropdown();
+          }
+        });
+
+        // Close with Escape and return keyboard focus to the trigger.
+        document.addEventListener("keydown", (event) => {
+          if (
+            event.key === "Escape" &&
+            dropdown.classList.contains("is-open")
+          ) {
+            closeDropdown();
+            trigger.focus();
+          }
+        });
+
+        // Close after selecting a destination.
+        menu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", closeDropdown);
+        });
+      })();
+
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/images/logo.png" />
+  <title>Builder Form</title>
+  <meta
+    name="description"
+    content="Register your land and development projects with The AstraLuxe Advisory to connect with investors and explore project distribution opportunities."
+  >
+
+  <!-- PREMIUM AST RALUXE TYPOGRAPHY -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    /* =====================================================
+       AST RALUXE — BUILDER & DEVELOPER REGISTRATION
+       All styles are scoped to bd- classes.
+    ===================================================== */
+
+    .bd-page,
+    .bd-page * {
+      box-sizing: border-box;
+    }
+
+    .bd-page {
+      --bd-navy: #334155;
+      --bd-dark: #1E293B;
+      --bd-gold: #D4AF37;
+      --bd-champagne: #C5A880;
+      --bd-paper: #F8FAFC;
+      --bd-ink: #0F172A;
+      --bd-muted: #64748B;
+      --bd-border: #DCE2E9;
+
+      position: relative;
+      isolation: isolate;
+      min-height: 100vh;
+      padding: clamp(36px, 6vw, 82px) 20px;
+      background: #1E293B;
+      color: var(--bd-ink);
+      font-family: "Lora", Georgia, serif;
+    }
+
+    /* BACKGROUND IMAGE
+       Replace this URL with your own image, for example:
+       images/builder-developer-background.jpg
+       Cover is intentional so the image fills the entire page.
+    */
+    .bd-page::before {
+      content: "";
+      position: fixed;
+      z-index: -2;
+      inset: 0;
+      background-image: url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=90");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      pointer-events: none;
+    }
+
+    /* Dark overlay for contrast and a premium appearance. */
+    .bd-page::after {
+      content: "";
+      position: fixed;
+      z-index: -1;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.86),
+        rgba(30, 41, 59, 0.70) 52%,
+        rgba(15, 23, 42, 0.86)
+      );
+      pointer-events: none;
+    }
+
+    .bd-container {
+      width: min(100%, 1000px);
+      margin-inline: auto;
+    }
+
+    /* MAIN FLOATING CARD */
+
+    .bd-card {
+      position: relative;
+      z-index: 1;
+      padding: clamp(26px, 5vw, 58px);
+      border: 1px solid rgba(197, 168, 128, 0.75);
+      border-radius: 4px;
+      background: rgba(248, 250, 252, 0.985);
+      box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.32),
+        0 0 0 6px rgba(255, 255, 255, 0.035);
+    }
+
+    .bd-card::before {
+      content: "";
+      display: block;
+      width: 72px;
+      height: 3px;
+      margin: 0 auto 25px;
+      background: linear-gradient(
+        90deg,
+        var(--bd-champagne),
+        var(--bd-gold)
+      );
+    }
+
+    /* INTRODUCTION */
+
+    .bd-intro {
+      max-width: 830px;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .bd-eyebrow {
+      margin: 0 0 15px;
+      color: #927749;
+      font-family: "Montserrat", sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      line-height: 1.7;
+      text-transform: uppercase;
+    }
+
+    .bd-title {
+      margin: 0;
+      color: var(--bd-dark);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(40px, 6vw, 65px);
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+    }
+
+    .bd-title em {
+      color: #A88B60;
+      font-weight: 400;
+    }
+
+    .bd-intro-description {
+      margin: 23px auto 0;
+      color: #475569;
+      font-family: "Lora", serif;
+      font-size: 15px;
+      line-height: 2;
+      text-align: left;
+    }
+
+    .bd-intro-description p {
+      margin: 0;
+    }
+
+    /* BENEFITS */
+
+    .bd-benefits {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+      text-align: left;
+    }
+
+    .bd-benefit {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 15px 12px;
+      border: 1px solid rgba(197, 168, 128, 0.38);
+      background: rgba(197, 168, 128, 0.075);
+    }
+
+    .bd-benefit-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 23px;
+      width: 23px;
+      height: 23px;
+      border: 1px solid var(--bd-champagne);
+      border-radius: 50%;
+      color: #927749;
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .bd-benefit-text {
+      color: #334155;
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.8;
+    }
+
+    .bd-divider {
+      height: 1px;
+      margin: 34px 0;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(197, 168, 128, 0.8),
+        transparent
+      );
+    }
+
+    /* FORM INTRO */
+
+    .bd-form-heading {
+      margin: 0;
+      color: var(--bd-dark);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 35px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .bd-form-subtitle {
+      margin: 9px 0 28px;
+      color: var(--bd-muted);
+      font-family: "Lora", serif;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .bd-form {
+      display: flex;
+      flex-direction: column;
+      gap: 23px;
+    }
+
+    .bd-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px 20px;
+    }
+
+    .bd-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .bd-field--full {
+      grid-column: 1 / -1;
+    }
+
+    .bd-label {
+      color: #334155;
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.075em;
+      line-height: 1.7;
+      text-transform: uppercase;
+    }
+
+    .bd-required {
+      color: #A88B60;
+    }
+
+    .bd-input,
+    .bd-select,
+    .bd-textarea {
+      display: block;
+      width: 100%;
+      min-width: 0;
+      min-height: 49px;
+      padding: 13px 14px;
+      border: 1px solid var(--bd-border);
+      border-radius: 2px;
+      outline: none;
+      background: #FFFFFF;
+      color: var(--bd-ink);
+      font-family: "Lora", serif;
+      font-size: 12px;
+      line-height: 1.6;
+      transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .bd-input::placeholder,
+    .bd-textarea::placeholder {
+      color: #94A3B8;
+      opacity: 1;
+    }
+
+    .bd-input:hover,
+    .bd-select:hover,
+    .bd-textarea:hover {
+      border-color: var(--bd-champagne);
+    }
+
+    .bd-input:focus,
+    .bd-select:focus,
+    .bd-textarea:focus {
+      border-color: #A88B60;
+      background: #FFFEFC;
+      box-shadow: 0 0 0 3px rgba(197, 168, 128, 0.15);
+    }
+
+    .bd-select {
+      cursor: pointer;
+    }
+
+    .bd-textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    /* LAND LOCATION */
+
+    .bd-location-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .bd-location-part {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      min-width: 0;
+    }
+
+    .bd-sublabel {
+      color: var(--bd-muted);
+      font-family: "Montserrat", sans-serif;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* TERMS */
+
+    .bd-terms {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 19px;
+      border: 1px solid rgba(197, 168, 128, 0.42);
+      background: rgba(197, 168, 128, 0.08);
+    }
+
+    .bd-terms-checkbox {
+      flex: 0 0 16px;
+      width: 16px;
+      height: 16px;
+      margin: 3px 0 0;
+      accent-color: var(--bd-dark);
+      cursor: pointer;
+    }
+
+    .bd-terms-text {
+      color: #475569;
+      font-family: "Lora", serif;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .bd-terms-text a {
+      color: #8A6D3B;
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: rgba(168, 139, 96, 0.65);
+      text-underline-offset: 3px;
+    }
+
+    .bd-terms-text a:hover {
+      color: var(--bd-dark);
+    }
+
+    /* SUBMIT */
+
+    .bd-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      align-self: flex-start;
+      gap: 22px;
+      min-height: 53px;
+      padding: 15px 25px;
+      border: 1px solid var(--bd-dark);
+      border-radius: 2px;
+      background: var(--bd-dark);
+      color: #FFFFFF;
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+    }
+
+    .bd-submit:hover {
+      transform: translateY(-2px);
+      border-color: #A88B60;
+      background: #A88B60;
+    }
+
+    .bd-submit-arrow {
+      font-size: 17px;
+      transition: transform 0.3s ease;
+    }
+
+    .bd-submit:hover .bd-submit-arrow {
+      transform: translate(3px, -2px);
+    }
+
+    .bd-submit:focus-visible {
+      outline: 2px solid var(--bd-gold);
+      outline-offset: 4px;
+    }
+
+    .bd-footnote {
+      margin: -5px 0 0;
+      color: var(--bd-muted);
+      font-family: "Lora", serif;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 760px) {
+      .bd-benefits {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .bd-benefit {
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .bd-page {
+        padding: 28px 12px;
+      }
+
+      .bd-card {
+        padding: 27px 19px;
+      }
+
+      .bd-card::before {
+        margin-bottom: 22px;
+      }
+
+      .bd-title {
+        font-size: 42px;
+      }
+
+      .bd-intro-description {
+        font-size: 12px;
+        line-height: 1.9;
+      }
+
+      .bd-divider {
+        margin: 27px 0;
+      }
+
+      .bd-form-heading {
+        font-size: 31px;
+      }
+
+      .bd-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 19px;
+      }
+
+      .bd-field--full {
+        grid-column: auto;
+      }
+
+      .bd-location-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .bd-submit {
+        width: 100%;
+      }
+
+      .bd-terms {
+        padding: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .bd-input,
+      .bd-select,
+      .bd-textarea,
+      .bd-submit,
+      .bd-submit-arrow {
+        transition: none;
+      }
+    }
+
+    /* =========================================
+      BUILDER & DEVELOPER SUCCESS TOAST
+    ========================================= */
+
+    .bd-toast {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      width: fit-content;
+      max-width: 100%;
+
+      margin-top: 20px;
+      padding: 14px 20px;
+
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-radius: 8px;
+
+      color: #065f46;
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+    }
+
+    .bd-toast.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .bd-toast-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 22px;
+      height: 22px;
+
+      background: #059669;
+      color: #fff;
+
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: 700;
+
+      flex-shrink: 0;
+    }
+
+    /* ERROR STATE */
+
+    .bd-toast.error {
+      background: #fef2f2;
+      border-color: #fecaca;
+      color: #991b1b;
+    }
+
+    .bd-toast.error .bd-toast-icon {
+      background: #dc2626;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- EXISTING HEADER PLACEHOLDER — UNCHANGED -->
+  <div id="header-placeholder"></div>
+
+  <!-- =====================================================
+       BUILDER & DEVELOPER CONTENT
+       All new page content is contained inside bd-page.
+  ====================================================== -->
+  <main class="bd-page">
+    <div class="bd-container">
+
+      <section class="bd-card" aria-labelledby="bd-title">
+
+        <!-- INTRODUCTION -->
+        <header class="bd-intro">
+          <p class="bd-eyebrow">The AstraLuxe Advisory</p>
+
+          <h1 class="bd-title" id="bd-title">
+            Builder &amp; <em>Developers</em>
+          </h1>
+
+          <div class="bd-intro-description">
+            <p>
+              Unlock seamless project registration and distribution with our
+              dedicated portal. Developers can register new and ongoing
+              plotting projects, gaining visibility among a targeted
+              investment community and wider audience. Our streamlined
+              registration process supports project compliance and enables
+              direct outreach, enhancing distribution and maximizing reach
+              for every listed development.
+            </p>
+          </div>
+        </header>
+
+        <!-- BENEFITS -->
+        <div class="bd-benefits" aria-label="Registration benefits">
+
+          <div class="bd-benefit">
+            <span class="bd-benefit-mark" aria-hidden="true">✓</span>
+            <span class="bd-benefit-text">
+              Easy project submission and approval workflow
+            </span>
+          </div>
+
+          <div class="bd-benefit">
+            <span class="bd-benefit-mark" aria-hidden="true">✓</span>
+            <span class="bd-benefit-text">
+              Access to a broad investor base
+            </span>
+          </div>
+
+          <div class="bd-benefit">
+            <span class="bd-benefit-mark" aria-hidden="true">✓</span>
+            <span class="bd-benefit-text">
+              Dedicated support for compliance and documentation
+            </span>
+          </div>
+
+        </div>
+
+        <div class="bd-divider"></div>
+
+        <!-- FORM -->
+        <div class="bd-form-section">
+          <h2 class="bd-form-heading">Register Your Project</h2>
+
+          <p class="bd-form-subtitle">
+            Provide your project and land details so our team can review your
+            submission and get in touch. Fields marked with * are required.
+          </p>
+
+          <form
+            id="bd-form"
+            class="bd-form"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+          >
+            <!-- WEB3FORMS CONFIGURATION -->
+            <input
+              type="hidden"
+              name="access_key"
+              value="f2ac3367-949d-4c43-996a-5a7bc2c2502a"
+            >
+
+            <input
+              type="hidden"
+              name="subject"
+              value="New Builder & Developer Registration - The AstraLuxe Advisory"
+            >
+
+            <!-- OPTIONAL SPAM HONEYPOT -->
+            <input
+              type="checkbox"
+              name="botcheck"
+              style="display:none"
+              tabindex="-1"
+              autocomplete="off"
+            >
+
+            <div class="bd-grid">
+
+              <!-- FULL NAME -->
+              <div class="bd-field">
+                <label class="bd-label" for="bd-full-name">
+                  Full Name <span class="bd-required">*</span>
+                </label>
+                <input
+                  class="bd-input"
+                  type="text"
+                  id="bd-full-name"
+                  name="full_name"
+                  placeholder="Enter your full name"
+                  autocomplete="name"
+                  required
+                >
+              </div>
+
+              <!-- CITY -->
+              <div class="bd-field">
+                <label class="bd-label" for="bd-city">
+                  City <span class="bd-required">*</span>
+                </label>
+                <input
+                  class="bd-input"
+                  type="text"
+                  id="bd-city"
+                  name="city"
+                  placeholder="Enter your city"
+                  autocomplete="address-level2"
+                  required
+                >
+              </div>
+
+              <!-- CONTACT NUMBERS -->
+              <div class="bd-field">
+                <label class="bd-label" for="bd-contact-numbers">
+                  Contact Numbers <span class="bd-required">*</span>
+                </label>
+                <input
+                  class="bd-input"
+                  type="tel"
+                  id="bd-contact-numbers"
+                  name="contact_numbers"
+                  placeholder="Primary contact number"
+                  autocomplete="tel"
+                  required
+                >
+              </div>
+
+              <!-- EMAIL -->
+              <div class="bd-field">
+                <label class="bd-label" for="bd-email">
+                  Email <span class="bd-required">*</span>
+                </label>
+                <input
+                  class="bd-input"
+                  type="email"
+                  id="bd-email"
+                  name="email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  required
+                >
+              </div>
+
+              <!-- LAND LOCATION -->
+              <div class="bd-field bd-field--full">
+                <label class="bd-label">
+                  Land Location <span class="bd-required">*</span>
+                </label>
+
+                <div class="bd-location-grid">
+                  <div class="bd-location-part">
+                    <label class="bd-sublabel" for="bd-village">
+                      Village
+                    </label>
+                    <input
+                      class="bd-input"
+                      type="text"
+                      id="bd-village"
+                      name="village"
+                      placeholder="Village"
+                      required
+                    >
+                  </div>
+
+                  <div class="bd-location-part">
+                    <label class="bd-sublabel" for="bd-tehsil">
+                      Tehsil
+                    </label>
+                    <input
+                      class="bd-input"
+                      type="text"
+                      id="bd-tehsil"
+                      name="tehsil"
+                      placeholder="Tehsil"
+                      required
+                    >
+                  </div>
+
+                  <div class="bd-location-part">
+                    <label class="bd-sublabel" for="bd-district">
+                      District
+                    </label>
+                    <input
+                      class="bd-input"
+                      type="text"
+                      id="bd-district"
+                      name="district"
+                      placeholder="District"
+                      required
+                    >
+                  </div>
+
+                  <div class="bd-location-part">
+                    <label class="bd-sublabel" for="bd-state">
+                      State
+                    </label>
+                    <input
+                      class="bd-input"
+                      type="text"
+                      id="bd-state"
+                      name="state"
+                      placeholder="State"
+                      required
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- TOTAL LAND AREA -->
+              <div class="bd-field">
+                <label class="bd-label" for="bd-land-area">
+                  Total Land Area <span class="bd-required">*</span>
+                </label>
+                <input
+                  class="bd-input"
+                  type="text"
+                  id="bd-land-area"
+                  name="total_land_area"
+                  placeholder="e.g. 10 acres / 5 hectares"
+                  required
+                >
+              </div>
+
+              <!-- LAND TYPE -->
+              <div class="bd-field">
+                <label class="bd-label" for="bd-land-type">
+                  Land Type <span class="bd-required">*</span>
+                </label>
+                <select
+                  class="bd-select"
+                  id="bd-land-type"
+                  name="land_type"
+                  required
+                >
+                  <option value="" selected disabled>Select land type</option>
+                  <option value="Agricultural">Agricultural</option>
+                  <option value="NA">NA</option>
+                  <option value="Industrial">Industrial</option>
+                  <option value="Mixed">Mixed</option>
+                </select>
+              </div>
+
+              <!-- OWNERSHIP STATUS -->
+              <div class="bd-field">
+                <label class="bd-label" for="bd-ownership">
+                  Ownership Status <span class="bd-required">*</span>
+                </label>
+                <select
+                  class="bd-select"
+                  id="bd-ownership"
+                  name="ownership_status"
+                  required
+                >
+                  <option value="" selected disabled>
+                    Select ownership status
+                  </option>
+                  <option value="Single">Single</option>
+                  <option value="Joint">Joint</option>
+                  <option value="Company">Company</option>
+                </select>
+              </div>
+
+              <!-- TITLE STATUS -->
+              <div class="bd-field">
+                <label class="bd-label" for="bd-title-status">
+                  Title Status <span class="bd-required">*</span>
+                </label>
+                <select
+                  class="bd-select"
+                  id="bd-title-status"
+                  name="title_status"
+                  required
+                >
+                  <option value="" selected disabled>
+                    Select title status
+                  </option>
+                  <option value="Clear">Clear</option>
+                  <option value="Under Process">Under Process</option>
+                  <option value="Disputed">Disputed</option>
+                </select>
+              </div>
+
+              <!-- ROAD ACCESS -->
+              <div class="bd-field bd-field--full">
+                <label class="bd-label" for="bd-road-access">
+                  Road Access &amp; Connectivity
+                  <span class="bd-required">*</span>
+                </label>
+                <select
+                  class="bd-select"
+                  id="bd-road-access"
+                  name="road_access_connectivity"
+                  required
+                >
+                  <option value="" selected disabled>
+                    Select road access
+                  </option>
+                  <option value="On Main Highway Connectivity">
+                    On Main Highway Connectivity
+                  </option>
+                  <option value="Inside Road with Highway Connectivity">
+                    Inside Road with Highway Connectivity
+                  </option>
+                  <option value="Within City Area">
+                    Within City Area
+                  </option>
+                  <option value="Outside City Area">
+                    Outside City Area
+                  </option>
+                </select>
+              </div>
+
+              <!-- CURRENT LAND USE -->
+              <div class="bd-field bd-field--full">
+                <label class="bd-label" for="bd-land-use">
+                  Current Land Use <span class="bd-required">*</span>
+                </label>
+                <select
+                  class="bd-select"
+                  id="bd-land-use"
+                  name="current_land_use"
+                  required
+                >
+                  <option value="" selected disabled>
+                    Select current land use
+                  </option>
+                  <option value="Agriculture">Agriculture</option>
+                  <option value="Commercial">Commercial</option>
+                  <option value="Residential">Residential</option>
+                  <option value="Mixed">Mixed</option>
+                  <option value="Hotel & Resort">Hotel &amp; Resort</option>
+                  <option value="Industrial">Industrial</option>
+                  <option value="Others">Others</option>
+                </select>
+              </div>
+
+              <!-- APPROVALS / ZONING -->
+              <div class="bd-field bd-field--full">
+                <label class="bd-label" for="bd-approvals">
+                  Any Existing Approvals / Zoning Information?
+                  <span class="bd-required">*</span>
+                </label>
+                <select
+                  class="bd-select"
+                  id="bd-approvals"
+                  name="existing_approvals_zoning"
+                  required
+                >
+                  <option value="" selected disabled>
+                    Select an option
+                  </option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+
+              <!-- ADDITIONAL INFORMATION -->
+              <div class="bd-field bd-field--full">
+                <label class="bd-label" for="bd-additional-details">
+                  Additional Project Details
+                </label>
+                <textarea
+                  class="bd-textarea"
+                  id="bd-additional-details"
+                  name="additional_project_details"
+                  placeholder="Share any additional details about the project, approvals, development plans, or documentation."
+                ></textarea>
+              </div>
+
+            </div>
+
+            <!-- TERMS & CONDITIONS -->
+            <div class="bd-terms">
+              <input
+                class="bd-terms-checkbox"
+                type="checkbox"
+                id="bd-terms"
+                name="terms_accepted"
+                value="Yes"
+                required
+              >
+
+              <label class="bd-terms-text" for="bd-terms">
+                I/we acknowledge that I/we have read, understood, and agreed
+                to all the
+                <a
+                  href="privacy.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Terms &amp; Conditions as mentioned here</a>.
+                <span class="bd-required">*</span>
+              </label>
+            </div>
+
+            <!-- SUBMIT -->
+            <button class="bd-submit" type="submit">
+              Submit Registration
+              <span class="bd-submit-arrow" aria-hidden="true">↗</span>
+            </button>
+
+            <p class="bd-footnote">
+              Your information will be used to review your submission and
+              respond to your project enquiry. Submission does not guarantee
+              approval or listing of a project.
+            </p>
+
+          </form>
+
+          <!-- BUILDER & DEVELOPER REGISTRATION TOAST -->
+          <div
+            id="bd-toast"
+            class="bd-toast"
+            role="status"
+            aria-live="polite"
+          >
+            <span class="bd-toast-icon">✓</span>
+            <span id="bd-toast-message">
+              Registration submitted successfully!
+            </span>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- EXISTING FOOTER PLACEHOLDER — UNCHANGED -->
+  <!-- <div id="footer-placeholder"></div> -->
+
+  <!-- EXISTING WHATSAPP PLACEHOLDER — UNCHANGED -->
+  <div id="whatsapp-placeholder"></div>
+
+  <!-- EXISTING SHARED LOADER — UNCHANGED -->
+  <script src="js/main.js"></script>
+
+  <script>
+    /* =========================================
+      BUILDER & DEVELOPER - WEB3FORMS AJAX
+    ========================================= */
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const builderForm = document.getElementById("bd-form");
+      const toast = document.getElementById("bd-toast");
+      const toastMessage = document.getElementById("bd-toast-message");
+
+      if (!builderForm || !toast) return;
+
+      builderForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const submitButton = builderForm.querySelector(".bd-submit");
+        const originalButtonHTML = submitButton.innerHTML;
+
+        // Hide previous messages
+        toast.classList.remove("show", "error");
+
+        // Disable button while submitting
+        submitButton.disabled = true;
+        submitButton.textContent = "Submitting Registration...";
+
+        try {
+          const formData = new FormData(builderForm);
+
+          const response = await fetch(
+            "https://api.web3forms.com/submit",
+            {
+              method: "POST",
+              body: formData
+            }
+          );
+
+          const result = await response.json();
+
+          if (response.ok && result.success) {
+
+            // SUCCESS
+            toast.classList.remove("error");
+
+            toastMessage.textContent =
+              "Registration submitted successfully! Our team will review your project details and contact you soon.";
+
+            toast.classList.add("show");
+
+            // Reset form fields
+            builderForm.reset();
+
+          } else {
+            throw new Error(
+              result.message || "Submission failed."
+            );
+          }
+
+        } catch (error) {
+
+          // ERROR
+          toast.classList.add("error");
+
+          toastMessage.textContent =
+            "Unable to submit your registration. Please try again.";
+
+          toast.classList.add("show");
+
+          console.error("Builder Registration Error:", error);
+
+        } finally {
+
+          // Restore submit button
+          submitButton.disabled = false;
+          submitButton.innerHTML = originalButtonHTML;
+
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The AstraLuxe Advisory provides hospitality feasibility studies and Detailed Project Report (DPR) advisory for hotel and resort developments.">
+    <title>Feasibility Studies & DPRs | The AstraLuxe Advisory</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/feasibility-studies-dpr.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+    <style>
+        /* =========================================
+   ASTRA LUXE - FEASIBILITY & DPR PAGE
+   Standalone page stylesheet
+========================================= */
+
+.al-dpr-page {
+    --dpr-navy: #1e293b;
+    --dpr-slate: #334155;
+    --dpr-gold: #c5a880;
+    --dpr-yellow: #D4AF37;
+    --dpr-gold-dark: #a9895d;
+    --dpr-ivory: #f8f7f4;
+    --dpr-white: #ffffff;
+    --dpr-text: #263244;
+    --dpr-muted: #687386;
+    --dpr-border: rgba(30, 41, 59, 0.12);
+
+    margin: 0;
+    color: var(--dpr-text);
+    background: var(--dpr-white);
+    font-family: "Lora", serif;
+    overflow-x: hidden;
+}
+
+.al-dpr-page *,
+.al-dpr-page *::before,
+.al-dpr-page *::after {
+    box-sizing: border-box;
+}
+
+.al-dpr-page img {
+    display: block;
+    max-width: 100%;
+}
+
+.al-dpr-page a {
+    text-decoration: none;
+}
+
+.al-dpr-container {
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.al-dpr-section {
+    padding: 110px 0;
+}
+
+.al-dpr-section-label,
+.al-dpr-eyebrow {
+    display: inline-block;
+    color: var(--dpr-gold-dark);
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    line-height: 1.7;
+    text-transform: uppercase;
+}
+
+.al-dpr-section-heading {
+    max-width: 720px;
+    margin-bottom: 54px;
+}
+
+.al-dpr-section-heading--center {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.al-dpr-section-heading h2,
+.al-dpr-overview h2,
+.al-dpr-approach h2,
+.al-dpr-why h2,
+.al-dpr-faq h2 {
+    margin: 14px 0 18px;
+    color: var(--dpr-navy);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(38px, 5vw, 58px);
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+.al-dpr-section-heading h2 span,
+.al-dpr-overview h2 span,
+.al-dpr-approach h2 span,
+.al-dpr-why h2 span,
+.al-dpr-faq h2 span {
+    color: var(--dpr-gold-dark);
+}
+
+.al-dpr-section-heading > p,
+.al-dpr-approach__intro > p,
+.al-dpr-faq__intro > p {
+    max-width: 620px;
+    margin: 0;
+    color: var(--dpr-muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.al-dpr-section-heading--center > p {
+    margin: 0 auto;
+}
+
+.al-dpr-heading-line {
+    width: 66px;
+    height: 2px;
+    margin-top: 26px;
+    background: var(--dpr-gold);
+}
+
+/* BUTTONS */
+
+.al-dpr-button {
+    display: inline-flex;
+    min-height: 54px;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 0 25px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.al-dpr-button:hover {
+    transform: translateY(-3px);
+}
+
+.al-dpr-button--gold {
+    color: var(--dpr-navy);
+    background: var(--dpr-yellow);
+}
+
+.al-dpr-button--gold:hover {
+    background: #d6bc98;
+}
+
+.al-dpr-button i,
+.al-dpr-text-link i {
+    transition: transform 0.3s ease;
+}
+
+.al-dpr-button:hover i,
+.al-dpr-text-link:hover i {
+    transform: translateX(5px);
+}
+
+.al-dpr-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
+    color: var(--dpr-gold-dark);
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+/* HERO */
+
+.al-dpr-hero {
+    position: relative;
+    display: flex;
+    min-height: 690px;
+    align-items: center;
+    overflow: hidden;
+    color: var(--dpr-white);
+    background: var(--dpr-navy);
+}
+
+.al-dpr-hero__image,
+.al-dpr-hero__overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.al-dpr-hero__image {
+    background-image: url("https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=2000&q=90");
+    background-position: center 48%;
+    background-size: cover;
+    transform: scale(1.04);
+}
+
+.al-dpr-hero__overlay {
+    background:
+        linear-gradient(90deg, rgba(13, 23, 38, 0.91) 0%, rgba(13, 23, 38, 0.72) 48%, rgba(13, 23, 38, 0.22) 100%),
+        linear-gradient(0deg, rgba(13, 23, 38, 0.45), transparent 45%);
+}
+
+.al-dpr-hero__content {
+    position: relative;
+    z-index: 2;
+    padding-top: 55px;
+    padding-bottom: 80px;
+}
+
+.al-dpr-hero .al-dpr-eyebrow {
+    color: #e2c9a5;
+}
+
+.al-dpr-hero h1 {
+    max-width: 780px;
+    margin: 24px 0;
+    color: var(--dpr-white);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(56px, 8vw, 96px);
+    font-weight: 500;
+    line-height: 0.94;
+}
+
+.al-dpr-hero h1 span {
+    display: block;
+    color: #dfc39b;
+    font-style: italic;
+}
+
+.al-dpr-hero__description {
+    max-width: 560px;
+    margin: 0 0 32px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.al-dpr-hero__bottom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 22px max(24px, calc((100vw - 1180px) / 2));
+    color: rgba(255, 255, 255, 0.75);
+    background: rgba(14, 25, 40, 0.48);
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+}
+
+.al-dpr-hero__line {
+    width: 70px;
+    height: 1px;
+    background: var(--dpr-gold);
+}
+
+/* BREADCRUMB */
+
+.al-dpr-breadcrumb {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--dpr-border);
+    background: #fff;
+}
+
+.al-dpr-breadcrumb .al-dpr-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    color: var(--dpr-muted);
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+}
+
+.al-dpr-breadcrumb a {
+    color: var(--dpr-slate);
+    transition: color 0.25s ease;
+}
+
+.al-dpr-breadcrumb a:hover {
+    color: var(--dpr-gold-dark);
+}
+
+.al-dpr-breadcrumb i {
+    color: var(--dpr-gold);
+    font-size: 8px;
+}
+
+.al-dpr-breadcrumb span {
+    color: var(--dpr-gold-dark);
+}
+
+/* OVERVIEW */
+
+.al-dpr-overview {
+    background: var(--dpr-white);
+}
+
+.al-dpr-overview__grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 100px;
+    align-items: start;
+}
+
+.al-dpr-overview__heading {
+    position: sticky;
+    top: 110px;
+}
+
+.al-dpr-overview h2 {
+    max-width: 470px;
+    font-size: clamp(42px, 5vw, 61px);
+}
+
+.al-dpr-overview__content {
+    padding-top: 30px;
+}
+
+.al-dpr-overview__content p {
+    margin: 0 0 20px;
+    color: var(--dpr-muted);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.al-dpr-overview__content .al-dpr-lead {
+    color: var(--dpr-slate);
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+/* PILLARS */
+
+.al-dpr-pillars {
+    background: var(--dpr-ivory);
+}
+
+.al-dpr-pillars__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.al-dpr-pillar {
+    position: relative;
+    min-height: 290px;
+    padding: 32px 25px;
+    border: 1px solid rgba(30, 41, 59, 0.09);
+    background: #fff;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.al-dpr-pillar:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 45px rgba(30, 41, 59, 0.08);
+}
+
+.al-dpr-pillar__number {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    color: rgba(197, 168, 128, 0.7);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+}
+
+.al-dpr-pillar__icon,
+.al-dpr-scope-card__icon {
+    display: grid;
+    width: 54px;
+    height: 54px;
+    place-items: center;
+    color: var(--dpr-gold-dark);
+    background: rgba(197, 168, 128, 0.13);
+    font-size: 20px;
+}
+
+.al-dpr-pillar h3 {
+    margin: 28px 0 12px;
+    color: var(--dpr-navy);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.al-dpr-pillar p {
+    margin: 0;
+    color: var(--dpr-muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* SCOPE */
+
+.al-dpr-scope {
+    background: #fff;
+}
+
+.al-dpr-scope__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.al-dpr-scope-card {
+    position: relative;
+    min-height: 285px;
+    padding: 34px 30px;
+    border: 1px solid var(--dpr-border);
+    background: #fff;
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.al-dpr-scope-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(197, 168, 128, 0.65);
+    box-shadow: 0 20px 50px rgba(30, 41, 59, 0.07);
+}
+
+.al-dpr-scope-card__number {
+    position: absolute;
+    top: 25px;
+    right: 26px;
+    color: #c8cbd0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+}
+
+.al-dpr-scope-card__icon {
+    width: 58px;
+    height: 58px;
+    font-size: 21px;
+}
+
+.al-dpr-scope-card h3 {
+    max-width: 290px;
+    margin: 24px 0 12px;
+    color: var(--dpr-navy);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+.al-dpr-scope-card p {
+    margin: 0;
+    color: var(--dpr-muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* APPROACH */
+
+.al-dpr-approach {
+    background: var(--dpr-navy);
+}
+
+.al-dpr-approach__intro {
+    max-width: 690px;
+    margin-bottom: 65px;
+}
+
+.al-dpr-approach .al-dpr-section-label {
+    color: #dfc39b;
+}
+
+.al-dpr-approach h2 {
+    color: #fff;
+}
+
+.al-dpr-approach__intro > p {
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.al-dpr-timeline {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+}
+
+.al-dpr-timeline::before {
+    position: absolute;
+    top: 27px;
+    right: 10%;
+    left: 10%;
+    height: 1px;
+    background: rgba(197, 168, 128, 0.45);
+    content: "";
+}
+
+.al-dpr-timeline__item {
+    position: relative;
+    padding: 0 18px;
+}
+
+.al-dpr-timeline__marker {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: 55px;
+    height: 55px;
+    place-items: center;
+    border: 1px solid var(--dpr-gold);
+    border-radius: 50%;
+    color: var(--dpr-gold);
+    background: var(--dpr-navy);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 21px;
+}
+
+.al-dpr-timeline__content {
+    padding-top: 28px;
+}
+
+.al-dpr-timeline__content > span {
+    color: var(--dpr-gold);
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.al-dpr-timeline__content h3 {
+    margin: 13px 0 10px;
+    color: #fff;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.15;
+}
+
+.al-dpr-timeline__content p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.63);
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+/* WHY ASTRA LUXE */
+
+.al-dpr-why {
+    background: var(--dpr-ivory);
+}
+
+.al-dpr-why__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    align-items: center;
+}
+
+.al-dpr-why__visual {
+    position: relative;
+    min-height: 550px;
+}
+
+.al-dpr-why__visual img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+}
+
+.al-dpr-why__visual-caption {
+    position: absolute;
+    right: -30px;
+    bottom: 30px;
+    width: min(310px, 85%);
+    padding: 24px 28px;
+    color: #fff;
+    background: var(--dpr-navy);
+}
+
+.al-dpr-why__visual-caption span {
+    color: var(--dpr-gold);
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.al-dpr-why__visual-caption p {
+    margin: 9px 0 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+}
+
+.al-dpr-why__content > p {
+    margin: 20px 0 26px;
+    color: var(--dpr-muted);
+    font-size: 14px;
+    line-height: 2;
+}
+
+.al-dpr-check-list {
+    display: grid;
+    gap: 17px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.al-dpr-check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    color: var(--dpr-slate);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.al-dpr-check-list i {
+    margin-top: 3px;
+    color: var(--dpr-gold-dark);
+    font-size: 12px;
+}
+
+/* FOCUS */
+
+.al-dpr-focus {
+    padding: 75px 0;
+    background: #fff;
+}
+
+.al-dpr-focus__inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 48px 55px;
+    border-left: 3px solid var(--dpr-gold);
+    background: var(--dpr-ivory);
+}
+
+.al-dpr-focus__icon {
+    display: grid;
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
+    place-items: center;
+    color: var(--dpr-gold-dark);
+    background: #fff;
+    font-size: 23px;
+}
+
+.al-dpr-focus__content h2 {
+    margin: 8px 0 12px;
+    color: var(--dpr-navy);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 500;
+}
+
+.al-dpr-focus__content h2 span {
+    color: var(--dpr-gold-dark);
+}
+
+.al-dpr-focus__content p {
+    max-width: 850px;
+    margin: 0;
+    color: var(--dpr-muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* FAQ */
+
+.al-dpr-faq {
+    background: var(--dpr-ivory);
+}
+
+.al-dpr-faq__grid {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 90px;
+    align-items: start;
+}
+
+.al-dpr-faq__intro {
+    position: sticky;
+    top: 100px;
+}
+
+.al-dpr-faq__list {
+    border-top: 1px solid var(--dpr-border);
+}
+
+.al-dpr-faq-item {
+    border-bottom: 1px solid var(--dpr-border);
+}
+
+.al-dpr-faq-item__question {
+    display: flex;
+    width: 100%;
+    min-height: 78px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0;
+    border: 0;
+    color: var(--dpr-navy);
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+}
+
+.al-dpr-faq-item__question span {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.al-dpr-faq-item__question i {
+    color: var(--dpr-gold-dark);
+    font-size: 13px;
+    transition: transform 0.3s ease;
+}
+
+.al-dpr-faq-item.is-active .al-dpr-faq-item__question i {
+    transform: rotate(45deg);
+}
+
+.al-dpr-faq-item__answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+}
+
+.al-dpr-faq-item.is-active .al-dpr-faq-item__answer {
+    grid-template-rows: 1fr;
+}
+
+.al-dpr-faq-item__answer > div {
+    overflow: hidden;
+}
+
+.al-dpr-faq-item__answer p {
+    margin: 0;
+    padding: 0 35px 24px 0;
+    color: var(--dpr-muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* CTA */
+
+.al-dpr-cta {
+    position: relative;
+    padding: 105px 0;
+    overflow: hidden;
+    color: #fff;
+    background: var(--dpr-navy);
+    text-align: center;
+}
+
+.al-dpr-cta__background {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(rgba(20, 32, 48, 0.9), rgba(20, 32, 48, 0.93)),
+        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85")
+        center / cover;
+}
+
+.al-dpr-cta__content {
+    position: relative;
+    z-index: 1;
+}
+
+.al-dpr-cta .al-dpr-section-label {
+    color: #dfc39b;
+}
+
+.al-dpr-cta h2 {
+    max-width: 850px;
+    margin: 20px auto;
+    color: #fff;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(40px, 6vw, 66px);
+    font-weight: 500;
+    line-height: 1.04;
+}
+
+.al-dpr-cta h2 span {
+    display: block;
+    color: #dfc39b;
+    font-style: italic;
+}
+
+.al-dpr-cta p {
+    max-width: 570px;
+    margin: 0 auto 30px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* REVEAL FALLBACK */
+
+.al-dpr-reveal {
+    opacity: 1;
+    transform: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1050px) {
+    .al-dpr-overview__grid {
+        gap: 55px;
+    }
+
+    .al-dpr-pillars__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .al-dpr-timeline {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 45px;
+    }
+
+    .al-dpr-timeline::before {
+        display: none;
+    }
+
+    .al-dpr-why__grid {
+        gap: 55px;
+    }
+
+    .al-dpr-faq__grid {
+        gap: 55px;
+    }
+}
+
+@media (max-width: 760px) {
+    .al-dpr-container {
+        width: min(100% - 36px, 560px);
+    }
+
+    .al-dpr-section {
+        padding: 78px 0;
+    }
+
+    .al-dpr-hero {
+        min-height: 620px;
+    }
+
+    .al-dpr-hero__overlay {
+        background: linear-gradient(
+            90deg,
+            rgba(13, 23, 38, 0.91),
+            rgba(13, 23, 38, 0.65)
+        );
+    }
+
+    .al-dpr-hero h1 {
+        font-size: clamp(53px, 12vw, 76px);
+    }
+
+    .al-dpr-hero__description {
+        max-width: 460px;
+        font-size: 14px;
+    }
+
+    .al-dpr-hero__bottom {
+        gap: 10px;
+        padding: 18px;
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .al-dpr-hero__line {
+        width: 30px;
+    }
+
+    .al-dpr-overview__grid,
+    .al-dpr-why__grid,
+    .al-dpr-faq__grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .al-dpr-overview__heading,
+    .al-dpr-faq__intro {
+        position: static;
+    }
+
+    .al-dpr-overview__content {
+        padding-top: 0;
+    }
+
+    .al-dpr-overview h2,
+    .al-dpr-section-heading h2,
+    .al-dpr-approach h2,
+    .al-dpr-why h2,
+    .al-dpr-faq h2 {
+        font-size: 45px;
+    }
+
+    .al-dpr-section-heading {
+        margin-bottom: 35px;
+    }
+
+    .al-dpr-pillars__grid,
+    .al-dpr-scope__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .al-dpr-pillar {
+        min-height: 245px;
+    }
+
+    .al-dpr-scope-card {
+        min-height: 250px;
+    }
+
+    .al-dpr-timeline {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .al-dpr-timeline__item {
+        display: grid;
+        grid-template-columns: 55px 1fr;
+        gap: 20px;
+        padding: 0;
+    }
+
+    .al-dpr-timeline__content {
+        padding-top: 3px;
+    }
+
+    .al-dpr-timeline__content h3 {
+        margin-top: 8px;
+    }
+
+    .al-dpr-why__visual,
+    .al-dpr-why__visual img {
+        min-height: 390px;
+        height: 390px;
+    }
+
+    .al-dpr-why__visual-caption {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .al-dpr-focus {
+        padding: 55px 0;
+    }
+
+    .al-dpr-focus__inner {
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 25px;
+    }
+
+    .al-dpr-faq-item__question span {
+        font-size: 20px;
+    }
+
+    .al-dpr-cta {
+        padding: 80px 0;
+    }
+
+    .al-dpr-cta h2 {
+        font-size: 46px;
+    }
+}
+
+@media (max-width: 420px) {
+    .al-dpr-container {
+        width: calc(100% - 30px);
+    }
+
+    .al-dpr-hero {
+        min-height: 590px;
+    }
+
+    .al-dpr-hero h1 {
+        font-size: 49px;
+    }
+
+    .al-dpr-hero__bottom {
+        font-size: 7px;
+    }
+
+    .al-dpr-breadcrumb .al-dpr-container {
+        gap: 8px;
+        font-size: 9px;
+    }
+
+    .al-dpr-overview h2,
+    .al-dpr-section-heading h2,
+    .al-dpr-approach h2,
+    .al-dpr-why h2,
+    .al-dpr-faq h2 {
+        font-size: 40px;
+    }
+
+    .al-dpr-scope-card {
+        padding: 28px 23px;
+    }
+
+    .al-dpr-faq-item__question span {
+        font-size: 18px;
+    }
+
+    .al-dpr-cta h2 {
+        font-size: 39px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .al-dpr-page *,
+    .al-dpr-page *::before,
+    .al-dpr-page *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+    </style>
+</head>
+
+<body class="al-dpr-page">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- HERO -->
+        <section class="al-dpr-hero">
+            <div class="al-dpr-hero__image"></div>
+            <div class="al-dpr-hero__overlay"></div>
+
+            <div class="al-dpr-container al-dpr-hero__content">
+                <span class="al-dpr-eyebrow al-dpr-reveal">
+                    HOSPITALITY ADVISORY
+                </span>
+
+                <h1 class="al-dpr-reveal">
+                    Clarity Before
+                    <span>Commitment.</span>
+                </h1>
+
+                <p class="al-dpr-hero__description al-dpr-reveal">
+                    Feasibility studies and project reports that bring
+                    market understanding, development strategy and
+                    financial perspective together.
+                </p>
+
+                <a href="../contact.html" class="al-dpr-button al-dpr-button--gold al-dpr-reveal">
+                    Discuss Your Project
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </section>
+
+        <!-- OVERVIEW -->
+        <section class="al-dpr-section al-dpr-overview">
+            <div class="al-dpr-container al-dpr-overview__grid">
+                <div class="al-dpr-overview__heading al-dpr-reveal">
+                    <span class="al-dpr-section-label">01 / PROJECT FOUNDATION</span>
+                    <h2>
+                        Every Successful
+                        <span>Development Begins</span>
+                        With Clarity.
+                    </h2>
+                    <div class="al-dpr-heading-line"></div>
+                </div>
+
+                <div class="al-dpr-overview__content al-dpr-reveal">
+                    <p class="al-dpr-lead">
+                        A sound hospitality project begins with a clear
+                        understanding of its market, site, development
+                        potential and financial requirements.
+                    </p>
+
+                    <p>
+                        The AstraLuxe Advisory supports investors and
+                        developers in evaluating proposed hotel and resort
+                        opportunities before major development decisions
+                        are made.
+                    </p>
+
+                    <p>
+                        Our feasibility and DPR-oriented advisory brings
+                        together market considerations, project planning
+                        and financial analysis to support informed
+                        decision-making.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- KEY CONSIDERATIONS -->
+        <section class="al-dpr-section al-dpr-pillars">
+            <div class="al-dpr-container">
+                <div class="al-dpr-section-heading al-dpr-reveal">
+                    <span class="al-dpr-section-label">02 / THE EVALUATION FRAMEWORK</span>
+                    <h2>Understanding the <span>Opportunity</span></h2>
+                    <p>
+                        A structured assessment of the factors that shape
+                        a hospitality development decision.
+                    </p>
+                </div>
+
+                <div class="al-dpr-pillars__grid">
+                    <article class="al-dpr-pillar al-dpr-reveal">
+                        <span class="al-dpr-pillar__number">01</span>
+                        <div class="al-dpr-pillar__icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3>Market Perspective</h3>
+                        <p>
+                            Understanding market conditions, hospitality
+                            demand and the opportunity within the
+                            proposed destination.
+                        </p>
+                    </article>
+
+                    <article class="al-dpr-pillar al-dpr-reveal">
+                        <span class="al-dpr-pillar__number">02</span>
+                        <div class="al-dpr-pillar__icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <h3>Site Potential</h3>
+                        <p>
+                            Evaluating the site, its characteristics and
+                            its suitability for the proposed project
+                            concept.
+                        </p>
+                    </article>
+
+                    <article class="al-dpr-pillar al-dpr-reveal">
+                        <span class="al-dpr-pillar__number">03</span>
+                        <div class="al-dpr-pillar__icon">
+                            <i class="fa-solid fa-hotel"></i>
+                        </div>
+                        <h3>Development Strategy</h3>
+                        <p>
+                            Considering project positioning, concept,
+                            accommodation mix and development direction.
+                        </p>
+                    </article>
+
+                    <article class="al-dpr-pillar al-dpr-reveal">
+                        <span class="al-dpr-pillar__number">04</span>
+                        <div class="al-dpr-pillar__icon">
+                            <i class="fa-solid fa-coins"></i>
+                        </div>
+                        <h3>Financial Perspective</h3>
+                        <p>
+                            Reviewing project assumptions, commercial
+                            considerations, investment requirements
+                            and potential returns.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCOPE OF SERVICES -->
+        <section class="al-dpr-section al-dpr-scope">
+            <div class="al-dpr-container">
+                <div class="al-dpr-section-heading al-dpr-section-heading--center al-dpr-reveal">
+                    <span class="al-dpr-section-label">03 / OUR SCOPE</span>
+                    <h2>Scope of <span>Services</span></h2>
+                    <p>
+                        Advisory support across the key considerations
+                        involved in evaluating and planning a hospitality
+                        development.
+                    </p>
+                </div>
+
+                <div class="al-dpr-scope__grid">
+                    <article class="al-dpr-scope-card al-dpr-reveal">
+                        <span class="al-dpr-scope-card__number">01</span>
+                        <div class="al-dpr-scope-card__icon">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        </div>
+                        <h3>Market Assessment & Demand Review</h3>
+                        <p>
+                            Review of the hospitality market, demand
+                            drivers, destination context and relevant
+                            competitive considerations.
+                        </p>
+                    </article>
+
+                    <article class="al-dpr-scope-card al-dpr-reveal">
+                        <span class="al-dpr-scope-card__number">02</span>
+                        <div class="al-dpr-scope-card__icon">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <h3>Site & Opportunity Evaluation</h3>
+                        <p>
+                            Assessment of site characteristics,
+                            development potential and considerations
+                            relevant to the proposed project.
+                        </p>
+                    </article>
+
+                    <article class="al-dpr-scope-card al-dpr-reveal">
+                        <span class="al-dpr-scope-card__number">03</span>
+                        <div class="al-dpr-scope-card__icon">
+                            <i class="fa-solid fa-bed"></i>
+                        </div>
+                        <h3>Concept & Accommodation Mix</h3>
+                        <p>
+                            Advisory on project concept, positioning
+                            and accommodation mix in relation to
+                            the opportunity being evaluated.
+                        </p>
+                    </article>
+
+                    <article class="al-dpr-scope-card al-dpr-reveal">
+                        <span class="al-dpr-scope-card__number">04</span>
+                        <div class="al-dpr-scope-card__icon">
+                            <i class="fa-solid fa-compass-drafting"></i>
+                        </div>
+                        <h3>Project Strategy & Development Planning</h3>
+                        <p>
+                            Structuring the development approach and
+                            identifying key planning considerations
+                            for the proposed hospitality asset.
+                        </p>
+                    </article>
+
+                    <article class="al-dpr-scope-card al-dpr-reveal">
+                        <span class="al-dpr-scope-card__number">05</span>
+                        <div class="al-dpr-scope-card__icon">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h3>Financial Modelling & Commercial Analysis</h3>
+                        <p>
+                            Financial modelling and review of relevant
+                            commercial assumptions to support
+                            project evaluation.
+                        </p>
+                    </article>
+
+                    <article class="al-dpr-scope-card al-dpr-reveal">
+                        <span class="al-dpr-scope-card__number">06</span>
+                        <div class="al-dpr-scope-card__icon">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <h3>Investment, Revenue & Return Assessment</h3>
+                        <p>
+                            Assessment of investment considerations,
+                            revenue assumptions and potential project
+                            returns based on available information.
+                        </p>
+                    </article>
+
+                    <article class="al-dpr-scope-card al-dpr-reveal">
+                        <span class="al-dpr-scope-card__number">07</span>
+                        <div class="al-dpr-scope-card__icon">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <h3>Detailed Project Reports (DPRs)</h3>
+                        <p>
+                            Preparation and coordination of DPRs,
+                            bringing together relevant project,
+                            planning and financial inputs.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    
+
+        <!-- WHY ASTRA LUXE -->
+        <section class="al-dpr-section al-dpr-why">
+            <div class="al-dpr-container al-dpr-why__grid">
+                <div class="al-dpr-why__visual al-dpr-reveal">
+                    <img
+                        src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1100&q=85"
+                        alt="Architectural planning and hospitality development"
+                        loading="lazy"
+                    >
+                    <div class="al-dpr-why__visual-caption">
+                        <span>THE ASTRALUXE ADVISORY</span>
+                        <p>Perspective. Planning. Project Clarity.</p>
+                    </div>
+                </div>
+
+                <div class="al-dpr-why__content al-dpr-reveal">
+                    <span class="al-dpr-section-label">04 / WHY ASTRA LUXE</span>
+                    <h2>
+                        Advisory Grounded in
+                        <span>Project Perspective.</span>
+                    </h2>
+
+                    <p>
+                        Hospitality development involves interconnected
+                        market, site, concept and financial considerations.
+                        Our advisory approach brings these perspectives
+                        together to help clients assess opportunities
+                        with greater clarity.
+                    </p>
+
+                    <ul class="al-dpr-check-list">
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            A structured approach to project evaluation
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Market and destination-oriented perspective
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Alignment between concept and development strategy
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Financial and commercial considerations
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Coordinated inputs for DPR preparation
+                        </li>
+                    </ul>
+
+                    <a href="../contact.html" class="al-dpr-text-link">
+                        Explore an Advisory Engagement
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR FOCUS -->
+        <section class="al-dpr-focus">
+            <div class="al-dpr-container al-dpr-focus__inner al-dpr-reveal">
+                <div class="al-dpr-focus__icon">
+                    <i class="fa-solid fa-compass"></i>
+                </div>
+
+                <div class="al-dpr-focus__content">
+                    <span class="al-dpr-section-label">OUR FOCUS</span>
+                    <h2>Better Understanding. <span>Informed Decisions.</span></h2>
+                    <p>
+                        This process helps clients understand the
+                        opportunity, key assumptions, development
+                        considerations and potential risks. Projections
+                        and outcomes remain subject to project-specific
+                        data, approvals, costs and market conditions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CTA -->
+        <section class="al-dpr-cta">
+            <div class="al-dpr-cta__background"></div>
+            <div class="al-dpr-container al-dpr-cta__content al-dpr-reveal">
+                <span class="al-dpr-section-label">LET'S EVALUATE THE OPPORTUNITY</span>
+                <h2>
+                    Make Your Next Development Decision
+                    <span>With Greater Clarity.</span>
+                </h2>
+                <p>
+                    Speak with The AstraLuxe Advisory about your
+                    proposed hotel or resort project.
+                </p>
+                <a href="../contact.html" class="al-dpr-button al-dpr-button--gold">
+                    Start a Conversation
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <div id="whatsapp-placeholder"></div>
+
+    <script src="/js/main.js"></script>
+
+    <script>
+    (() => {
+    // FAQ ACCORDION
+    const faqItems = document.querySelectorAll(".al-dpr-faq-item");
+
+    faqItems.forEach((item) => {
+        const question = item.querySelector(".al-dpr-faq-item__question");
+
+        question.addEventListener("click", () => {
+            const isActive = item.classList.contains("is-active");
+
+            faqItems.forEach((faqItem) => {
+                faqItem.classList.remove("is-active");
+
+                const button = faqItem.querySelector(
+                    ".al-dpr-faq-item__question"
+                );
+
+                button.setAttribute("aria-expanded", "false");
+            });
+
+            if (!isActive) {
+                item.classList.add("is-active");
+                question.setAttribute("aria-expanded", "true");
+            }
+        });
+    });
+
+    // GSAP ANIMATIONS
+    if (
+        typeof gsap === "undefined" ||
+        typeof ScrollTrigger === "undefined"
+    ) {
+        return;
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reduceMotion) return;
+
+    // HERO ENTRANCE
+    const heroTimeline = gsap.timeline({
+        defaults: {
+            ease: "power3.out"
+        }
+    });
+
+    heroTimeline
+        .from(".al-dpr-hero__image", {
+            scale: 1.15,
+            duration: 1.8
+        })
+        .from(
+            ".al-dpr-hero .al-dpr-eyebrow",
+            {
+                y: 25,
+                opacity: 0,
+                duration: 0.7
+            },
+            "-=1.1"
+        )
+        .from(
+            ".al-dpr-hero h1",
+            {
+                y: 55,
+                opacity: 0,
+                duration: 1
+            },
+            "-=0.45"
+        )
+        .from(
+            ".al-dpr-hero__description",
+            {
+                y: 25,
+                opacity: 0,
+                duration: 0.7
+            },
+            "-=0.55"
+        )
+        .from(
+            ".al-dpr-hero .al-dpr-button",
+            {
+                y: 20,
+                opacity: 0,
+                duration: 0.65
+            },
+            "-=0.4"
+        );
+
+    // GENERAL SCROLL REVEALS
+    gsap.utils.toArray(".al-dpr-reveal").forEach((element) => {
+        if (element.closest(".al-dpr-hero")) return;
+
+        gsap.fromTo(
+            element,
+            {
+                y: 38,
+                opacity: 0
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.85,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 88%",
+                    once: true
+                }
+            }
+        );
+    });
+
+    // PILLAR CARDS
+    gsap.from(".al-dpr-pillar", {
+        y: 55,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.14,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".al-dpr-pillars__grid",
+            start: "top 82%",
+            once: true
+        }
+    });
+
+    // SCOPE CARDS
+    gsap.from(".al-dpr-scope-card", {
+        y: 60,
+        opacity: 0,
+        scale: 0.97,
+        duration: 0.75,
+        stagger: 0.12,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".al-dpr-scope__grid",
+            start: "top 82%",
+            once: true
+        }
+    });
+
+    // TIMELINE ITEMS
+    gsap.from(".al-dpr-timeline__item", {
+        y: 45,
+        opacity: 0,
+        duration: 0.75,
+        stagger: 0.16,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".al-dpr-timeline",
+            start: "top 82%",
+            once: true
+        }
+    });
+
+    // WHY ASTRA LUXE IMAGE
+    gsap.from(".al-dpr-why__visual img", {
+        scale: 1.12,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: ".al-dpr-why",
+            start: "top 78%",
+            once: true
+        }
+    });
+
+    // FOCUS SECTION
+    gsap.from(".al-dpr-focus__inner", {
+        x: -55,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".al-dpr-focus",
+            start: "top 85%",
+            once: true
+        }
+    });
+
+    // CTA ENTRANCE
+    gsap.from(".al-dpr-cta__content > *", {
+        y: 35,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".al-dpr-cta",
+            start: "top 80%",
+            once: true
+        }
+    });
+
+    // REFRESH SCROLL TRIGGER AFTER IMAGES LOAD
+    window.addEventListener("load", () => {
+        ScrollTrigger.refresh();
+    });
+});
+    </script>
+
+</body>
+</html>

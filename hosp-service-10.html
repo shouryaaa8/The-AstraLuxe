@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Hotel Operational Consultancy by The AstraLuxe Advisory. Improve hotel operations, guest experience, financial management and business performance.">
+    <title>Hotel Operational Consultancy | The AstraLuxe Advisory</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+    <style>
+        /* ==========================================
+   THE ASTRALUXE ADVISORY
+   HOTEL OPERATIONAL CONSULTANCY
+   Standalone Page Styles
+========================================== */
+
+        .al-hoc-page {
+            --hoc-navy: #1e293b;
+            --hoc-slate: #334155;
+            --hoc-gold: #D4AF37;
+            --hoc-gold-light: #dfc8a6;
+            --hoc-ivory: #f8f6f1;
+            --hoc-white: #ffffff;
+            --hoc-text: #263244;
+            --hoc-muted: #64748b;
+
+            width: 100%;
+            overflow: clip;
+            background: var(--hoc-white);
+            color: var(--hoc-text);
+            font-family: "Lora", serif;
+        }
+
+        .al-hoc-page *,
+        .al-hoc-page *::before,
+        .al-hoc-page *::after {
+            box-sizing: border-box;
+        }
+
+        .al-hoc-page img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .al-hoc-page a {
+            text-decoration: none;
+        }
+
+        .al-hoc-page button {
+            font: inherit;
+        }
+
+        .al-hoc-section {
+            padding: 120px 8%;
+        }
+
+        .al-hoc-section-label {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--hoc-gold);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .al-hoc-page h1,
+        .al-hoc-page h2,
+        .al-hoc-page h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 500;
+        }
+
+        .al-hoc-page h2 {
+            margin: 0;
+            color: var(--hoc-navy);
+            font-size: clamp(42px, 5vw, 66px);
+            line-height: 1.05;
+        }
+
+        .al-hoc-page h2 em,
+        .al-hoc-page h3 em {
+            color: var(--hoc-gold);
+            font-weight: 400;
+        }
+
+        .al-hoc-page p {
+            font-size: 14px;
+            line-height: 1.95;
+        }
+
+
+        /* ==========================================
+   HERO
+========================================== */
+
+        .al-hoc-hero {
+            position: relative;
+            display: flex;
+            min-height: 690px;
+            height: 92svh;
+            max-height: 950px;
+            align-items: center;
+            padding: 100px 9%;
+            overflow: hidden;
+            background: var(--hoc-navy);
+        }
+
+        .al-hoc-hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                url("https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2200&q=90") center 48% / cover no-repeat;
+            transform: scale(1.05);
+        }
+
+        .al-hoc-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg,
+                    rgba(15, 23, 42, 0.91) 0%,
+                    rgba(15, 23, 42, 0.75) 48%,
+                    rgba(15, 23, 42, 0.2) 100%);
+        }
+
+        .al-hoc-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            color: white;
+        }
+
+        .al-hoc-eyebrow {
+            display: block;
+            margin-bottom: 30px;
+            color: var(--hoc-gold-light);
+            font-family: "Montserrat", sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 4px;
+        }
+
+        .al-hoc-hero h1 {
+            margin: 0;
+            color: white;
+            font-size: clamp(58px, 8vw, 110px);
+            line-height: 0.94;
+        }
+
+        .al-hoc-hero h1 span {
+            display: block;
+            margin-top: 12px;
+            color: var(--hoc-gold-light);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .al-hoc-hero-content>p {
+            max-width: 570px;
+            margin: 30px 0 35px;
+            color: rgba(255, 255, 255, 0.83);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .al-hoc-primary-btn {
+            display: inline-flex;
+            min-height: 54px;
+            align-items: center;
+            justify-content: center;
+            gap: 22px;
+            padding: 0 27px;
+            border: 1px solid var(--hoc-gold);
+            background: var(--hoc-gold);
+            color: var(--hoc-navy);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .al-hoc-primary-btn:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .al-hoc-primary-btn i {
+            font-size: 13px;
+            transition: transform 0.3s ease;
+        }
+
+        .al-hoc-primary-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        .al-hoc-hero-bottom {
+            position: absolute;
+            right: 9%;
+            bottom: 38px;
+            left: 9%;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            color: rgba(255, 255, 255, 0.75);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+
+        .al-hoc-hero-line {
+            width: 65px;
+            height: 1px;
+            background: var(--hoc-gold);
+        }
+
+
+        /* ==========================================
+   BREADCRUMB
+========================================== */
+
+        .al-hoc-breadcrumb {
+            display: flex;
+            min-height: 64px;
+            align-items: center;
+            gap: 13px;
+            padding: 15px 8%;
+            background: var(--hoc-ivory);
+            color: var(--hoc-muted);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+        }
+
+        .al-hoc-breadcrumb a {
+            color: var(--hoc-slate);
+            transition: color 0.3s ease;
+        }
+
+        .al-hoc-breadcrumb a:hover {
+            color: var(--hoc-gold);
+        }
+
+        .al-hoc-breadcrumb i {
+            color: var(--hoc-gold);
+            font-size: 8px;
+        }
+
+        .al-hoc-breadcrumb span {
+            color: var(--hoc-muted);
+        }
+
+
+        /* ==========================================
+   OVERVIEW
+========================================== */
+
+        .al-hoc-overview {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            align-items: center;
+            gap: 9%;
+            background: white;
+        }
+
+        .al-hoc-overview-image {
+            position: relative;
+            height: 560px;
+            overflow: hidden;
+        }
+
+        .al-hoc-overview-image img {
+            transition: transform 1s ease;
+        }
+
+        .al-hoc-overview-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .al-hoc-image-caption {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 28px;
+            background: linear-gradient(transparent, rgba(15, 23, 42, 0.9));
+            color: white;
+        }
+
+        .al-hoc-image-caption span {
+            color: var(--hoc-gold-light);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+
+        .al-hoc-image-caption p {
+            margin: 10px 0 0;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 26px;
+        }
+
+        .al-hoc-overview-content h2 {
+            margin-bottom: 27px;
+        }
+
+        .al-hoc-overview-content>p {
+            margin: 0 0 17px;
+            color: var(--hoc-muted);
+        }
+
+        .al-hoc-overview-highlight {
+            display: flex;
+            align-items: center;
+            gap: 17px;
+            margin-top: 30px;
+            padding: 20px;
+            border-left: 2px solid var(--hoc-gold);
+            background: var(--hoc-ivory);
+            color: var(--hoc-slate);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .al-hoc-overview-highlight i {
+            color: var(--hoc-gold);
+            font-size: 23px;
+        }
+
+
+        /* ==========================================
+   SERVICES INTRO + CARD SLIDER
+========================================== */
+
+        .al-hoc-services-section {
+            position: relative;
+            background: var(--hoc-navy);
+            color: white;
+        }
+
+        .al-hoc-services-intro {
+            position: relative;
+            padding: 100px 9% 45px;
+            background:
+                radial-gradient(circle at 80% 30%, rgba(197, 168, 128, 0.12), transparent 35%),
+                var(--hoc-navy);
+        }
+
+        .al-hoc-services-heading {
+            max-width: 920px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .al-hoc-services-heading h2 {
+            color: white;
+        }
+
+        .al-hoc-services-heading h2 em {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .al-hoc-services-heading>p {
+            /* max-width: 580px; */
+            margin-top: 27px;
+            color: rgba(255, 255, 255, 0.68);
+        }
+
+        .al-hoc-services-slider {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 8% 100px;
+        }
+
+        .al-hoc-slider-heading {
+            display: flex;
+            max-width: 920px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin: 0 auto 18px;
+            color: var(--hoc-gold-light);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+
+        .al-hoc-slider-count {
+            flex-shrink: 0;
+            color: rgba(255, 255, 255, 0.62);
+            letter-spacing: 1.5px;
+        }
+
+        .al-hoc-card-container {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            overflow-x: auto;
+            overscroll-behavior-x: contain;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+            touch-action: pan-x pan-y;
+        }
+
+        .al-hoc-card-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .al-hoc-card-container:focus-visible {
+            outline: 2px solid var(--hoc-gold);
+            outline-offset: 5px;
+        }
+
+        .al-hoc-card-track {
+            display: flex;
+            align-items: stretch;
+            gap: 18px;
+        }
+
+        .al-hoc-card-wrapper {
+            position: relative;
+            display: flex;
+            flex: 0 0 100%;
+            min-width: 0;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        .al-hoc-service-card {
+            position: relative;
+            display: flex;
+            width: 100%;
+            min-height: 360px;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 35px 48px 25px;
+            overflow: hidden;
+            border: 1px solid rgba(197, 168, 128, 0.38);
+            border-radius: 5px;
+            background:
+                linear-gradient(120deg, rgba(255, 255, 255, 0.98), rgba(248, 246, 241, 0.96));
+            box-shadow: 0 24px 65px rgba(0, 0, 0, 0.2);
+            color: var(--hoc-navy);
+        }
+
+        .al-hoc-service-card::after {
+            position: absolute;
+            top: -100px;
+            right: -80px;
+            width: 280px;
+            height: 280px;
+            border: 1px solid rgba(197, 168, 128, 0.18);
+            border-radius: 50%;
+            content: "";
+            pointer-events: none;
+        }
+
+        .al-hoc-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .al-hoc-card-number {
+            color: var(--hoc-gold);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 42px;
+            line-height: 1;
+        }
+
+        .al-hoc-card-top>i {
+            display: grid;
+            width: 52px;
+            height: 52px;
+            place-items: center;
+            border: 1px solid rgba(197, 168, 128, 0.5);
+            border-radius: 50%;
+            color: var(--hoc-gold);
+            font-size: 20px;
+        }
+
+        .al-hoc-card-content {
+            position: relative;
+            z-index: 1;
+            max-width: 690px;
+            padding: 10px 0;
+        }
+
+        .al-hoc-card-category {
+            color: var(--hoc-muted);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .al-hoc-card-content h3 {
+            margin: 12px 0;
+            color: var(--hoc-navy);
+            font-size: clamp(30px, 4vw, 48px);
+            line-height: 1.05;
+        }
+
+        .al-hoc-card-content p {
+            max-width: 650px;
+            margin: 0;
+            color: var(--hoc-muted);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .al-hoc-card-bottom {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding-top: 17px;
+            border-top: 1px solid rgba(51, 65, 85, 0.13);
+            color: var(--hoc-muted);
+            font-family: "Montserrat", sans-serif;
+            font-size: 8px;
+            letter-spacing: 1.5px;
+        }
+
+        .al-hoc-slider-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            max-width: 920px;
+            margin: 20px auto 0;
+        }
+
+        .al-hoc-slider-dots {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 9px;
+        }
+
+        .al-hoc-slider-dot,
+        .al-hoc-slider-arrow {
+            display: grid;
+            flex: 0 0 auto;
+            place-items: center;
+            border: 1px solid rgba(197, 168, 128, 0.5);
+            color: var(--hoc-gold-light);
+            background: transparent;
+            cursor: pointer;
+            transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .al-hoc-slider-dot {
+            width: 8px;
+            height: 8px;
+            padding: 0;
+            border-radius: 50%;
+        }
+
+        .al-hoc-slider-dot[aria-current="true"] {
+            border-color: var(--hoc-gold);
+            background: var(--hoc-gold);
+            transform: scale(1.25);
+        }
+
+        .al-hoc-slider-arrow {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+        }
+
+        .al-hoc-slider-arrow:hover:not(:disabled) {
+            border-color: var(--hoc-gold);
+            color: var(--hoc-navy);
+            background: var(--hoc-gold);
+        }
+
+        .al-hoc-slider-arrow:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .al-hoc-slider-dot:focus-visible,
+        .al-hoc-slider-arrow:focus-visible {
+            outline: 2px solid var(--hoc-gold);
+            outline-offset: 4px;
+        }
+
+
+        /* ==========================================
+   APPROACH
+========================================== */
+
+        .al-hoc-approach {
+            background: var(--hoc-ivory);
+        }
+
+        .al-hoc-approach-header {
+            max-width: 750px;
+            margin-bottom: 65px;
+        }
+
+        .al-hoc-approach-header h2 {
+            margin-bottom: 20px;
+        }
+
+        .al-hoc-approach-header>p {
+            max-width: 620px;
+            color: var(--hoc-muted);
+        }
+
+        .al-hoc-approach-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid rgba(51, 65, 85, 0.2);
+            border-bottom: 1px solid rgba(51, 65, 85, 0.2);
+        }
+
+        .al-hoc-approach-item {
+            position: relative;
+            min-height: 260px;
+            padding: 35px 27px;
+            border-right: 1px solid rgba(51, 65, 85, 0.15);
+        }
+
+        .al-hoc-approach-item:last-child {
+            border-right: 0;
+        }
+
+        .al-hoc-approach-item>span {
+            display: block;
+            margin-bottom: 30px;
+            color: var(--hoc-gold);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 32px;
+        }
+
+        .al-hoc-approach-item>i {
+            color: var(--hoc-slate);
+            font-size: 22px;
+        }
+
+        .al-hoc-approach-item h3 {
+            margin: 20px 0 10px;
+            color: var(--hoc-navy);
+            font-size: 25px;
+        }
+
+        .al-hoc-approach-item p {
+            margin: 0;
+            color: var(--hoc-muted);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+
+        /* ==========================================
+   WHY ASTRALUXE
+========================================== */
+
+        .al-hoc-why {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 9%;
+            background: white;
+        }
+
+        .al-hoc-why-image {
+            height: 550px;
+            overflow: hidden;
+        }
+
+        .al-hoc-why-image img {
+            transition: transform 1s ease;
+        }
+
+        .al-hoc-why-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .al-hoc-why-content h2 {
+            margin-bottom: 25px;
+        }
+
+        .al-hoc-why-content>p {
+            color: var(--hoc-muted);
+        }
+
+        .al-hoc-why-points {
+            display: grid;
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .al-hoc-why-points>div {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: var(--hoc-slate);
+            font-size: 13px;
+        }
+
+        .al-hoc-why-points i {
+            display: grid;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            place-items: center;
+            border-radius: 50%;
+            background: rgba(197, 168, 128, 0.17);
+            color: #a88b61;
+            font-size: 10px;
+        }
+
+
+        /* ==========================================
+   OUR FOCUS
+========================================== */
+
+        .al-hoc-focus {
+            padding: 100px 8%;
+            background:
+                linear-gradient(rgba(30, 41, 59, 0.94), rgba(30, 41, 59, 0.96)),
+                url("https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1800&q=85") center / cover;
+            text-align: center;
+        }
+
+        .al-hoc-focus-inner {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .al-hoc-focus h2 {
+            color: white;
+        }
+
+        .al-hoc-focus h2 em {
+            display: block;
+        }
+
+        .al-hoc-focus p {
+            max-width: 710px;
+            margin: 25px auto 0;
+            color: rgba(255, 255, 255, 0.76);
+        }
+
+
+        /* ==========================================
+   FAQ
+========================================== */
+
+        .al-hoc-faq {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 10%;
+            background: var(--hoc-ivory);
+        }
+
+        .al-hoc-faq-heading h2 {
+            margin-bottom: 20px;
+        }
+
+        .al-hoc-faq-heading>p {
+            max-width: 360px;
+            color: var(--hoc-muted);
+        }
+
+        .al-hoc-faq-list {
+            border-top: 1px solid rgba(51, 65, 85, 0.2);
+        }
+
+        .al-hoc-faq-item {
+            border-bottom: 1px solid rgba(51, 65, 85, 0.2);
+        }
+
+        .al-hoc-faq-question {
+            display: flex;
+            width: 100%;
+            min-height: 75px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 18px 0;
+            border: 0;
+            background: transparent;
+            color: var(--hoc-navy);
+            cursor: pointer;
+            text-align: left;
+            font-family: "Cormorant Garamond", serif !important;
+            font-size: 23px;
+        }
+
+        .al-hoc-faq-question i {
+            color: var(--hoc-gold);
+            font-size: 13px;
+            transition: transform 0.3s ease;
+        }
+
+        .al-hoc-faq-item.active .al-hoc-faq-question i {
+            transform: rotate(45deg);
+        }
+
+        .al-hoc-faq-answer {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.35s ease;
+        }
+
+        .al-hoc-faq-answer p {
+            min-height: 0;
+            margin: 0;
+            overflow: hidden;
+            color: var(--hoc-muted);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .al-hoc-faq-item.active .al-hoc-faq-answer {
+            grid-template-rows: 1fr;
+        }
+
+        .al-hoc-faq-item.active .al-hoc-faq-answer p {
+            padding-bottom: 22px;
+        }
+
+
+        /* ==========================================
+   CTA
+========================================== */
+
+        .al-hoc-cta {
+            position: relative;
+            display: grid;
+            min-height: 510px;
+            place-items: center;
+            padding: 100px 8%;
+            overflow: hidden;
+            background: var(--hoc-navy);
+            text-align: center;
+        }
+
+        .al-hoc-cta-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2000&q=85") center 55% / cover;
+            opacity: 0.2;
+        }
+
+        .al-hoc-cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+        }
+
+        .al-hoc-cta h2 {
+            color: white;
+        }
+
+        .al-hoc-cta h2 em {
+            display: block;
+        }
+
+        .al-hoc-cta-content>p {
+            max-width: 620px;
+            margin: 25px auto 30px;
+            color: rgba(255, 255, 255, 0.76);
+        }
+
+
+        /* ==========================================
+   ANIMATION INITIAL STATES
+========================================== */
+
+        .al-hoc-page .al-hoc-overview-image,
+        .al-hoc-page .al-hoc-overview-content,
+        .al-hoc-page .al-hoc-approach-item,
+        .al-hoc-page .al-hoc-why-image,
+        .al-hoc-page .al-hoc-why-content,
+        .al-hoc-page .al-hoc-focus-inner,
+        .al-hoc-page .al-hoc-faq-heading,
+        .al-hoc-page .al-hoc-faq-item {
+            will-change: transform, opacity;
+        }
+
+
+        /* ==========================================
+   RESPONSIVE
+========================================== */
+
+        @media (max-width: 1050px) {
+            .al-hoc-section {
+                padding: 95px 6%;
+            }
+
+            .al-hoc-overview,
+            .al-hoc-why {
+                gap: 6%;
+            }
+
+            .al-hoc-approach-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .al-hoc-approach-item:nth-child(2) {
+                border-right: 0;
+            }
+
+            .al-hoc-approach-item:nth-child(-n+2) {
+                border-bottom: 1px solid rgba(51, 65, 85, 0.15);
+            }
+
+        }
+
+        @media (max-width: 760px) {
+            .al-hoc-section {
+                padding: 75px 6%;
+            }
+
+            .al-hoc-hero {
+                min-height: 650px;
+                height: 85svh;
+                padding: 100px 7%;
+            }
+
+            .al-hoc-hero-overlay {
+                background: linear-gradient(90deg,
+                        rgba(15, 23, 42, 0.91),
+                        rgba(15, 23, 42, 0.62));
+            }
+
+            .al-hoc-hero h1 {
+                font-size: clamp(54px, 12vw, 78px);
+            }
+
+            .al-hoc-hero-bottom {
+                right: 7%;
+                left: 7%;
+                font-size: 7px;
+            }
+
+            .al-hoc-breadcrumb {
+                flex-wrap: wrap;
+                gap: 8px;
+                padding: 15px 6%;
+                font-size: 9px;
+            }
+
+            .al-hoc-overview,
+            .al-hoc-why,
+            .al-hoc-faq {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .al-hoc-overview-image,
+            .al-hoc-why-image {
+                height: 400px;
+            }
+
+            .al-hoc-services-intro {
+                padding: 75px 7% 32px;
+            }
+
+            .al-hoc-services-slider {
+                padding: 0 5% 70px;
+            }
+
+            .al-hoc-service-card {
+                min-height: 350px;
+                padding: 25px 24px 20px;
+            }
+
+            .al-hoc-card-content h3 {
+                font-size: 35px;
+            }
+
+            .al-hoc-card-content p {
+                font-size: 11px;
+            }
+
+            .al-hoc-card-bottom {
+                font-size: 7px;
+            }
+
+            .al-hoc-approach-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .al-hoc-approach-item {
+                min-height: 245px;
+                padding: 25px 18px;
+            }
+
+            .al-hoc-faq-heading {
+                max-width: 600px;
+            }
+
+            .al-hoc-focus {
+                padding: 80px 7%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .al-hoc-hero {
+                min-height: 600px;
+            }
+
+            .al-hoc-hero h1 {
+                font-size: 52px;
+            }
+
+            .al-hoc-hero-content>p {
+                font-size: 13px;
+            }
+
+            .al-hoc-page h2 {
+                font-size: 43px;
+            }
+
+            .al-hoc-overview-image,
+            .al-hoc-why-image {
+                height: 330px;
+            }
+
+            .al-hoc-services-heading h2 {
+                font-size: 44px;
+            }
+
+            .al-hoc-services-intro {
+                padding-right: 6%;
+                padding-left: 6%;
+            }
+
+            .al-hoc-services-slider {
+                padding-right: 4%;
+                padding-left: 4%;
+            }
+
+            .al-hoc-slider-controls {
+                gap: 12px;
+            }
+
+            .al-hoc-slider-arrow {
+                width: 38px;
+                height: 38px;
+            }
+
+            .al-hoc-service-card {
+                padding: 23px 20px 18px;
+            }
+
+            .al-hoc-card-number {
+                font-size: 34px;
+            }
+
+            .al-hoc-card-top>i {
+                width: 43px;
+                height: 43px;
+                font-size: 17px;
+            }
+
+            .al-hoc-card-content h3 {
+                font-size: 31px;
+            }
+
+            .al-hoc-card-content p {
+                font-size: 10px;
+            }
+
+            .al-hoc-card-bottom {
+                font-size: 6px;
+                letter-spacing: 0.8px;
+            }
+
+            .al-hoc-approach-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .al-hoc-approach-item {
+                min-height: auto;
+                padding: 28px 10px;
+                border-right: 0;
+                border-bottom: 1px solid rgba(51, 65, 85, 0.15);
+            }
+
+            .al-hoc-approach-item:nth-child(2) {
+                border-bottom: 1px solid rgba(51, 65, 85, 0.15);
+            }
+
+            .al-hoc-approach-item:last-child {
+                border-bottom: 0;
+            }
+
+            .al-hoc-faq-question {
+                font-size: 20px;
+            }
+
+            .al-hoc-cta {
+                min-height: 450px;
+            }
+        }
+
+
+        /* ==========================================
+   REDUCED MOTION
+========================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .al-hoc-page *,
+            .al-hoc-page *::before,
+            .al-hoc-page *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="al-hoc-page">
+
+        <!-- HERO -->
+        <section class="al-hoc-hero">
+            <div class="al-hoc-hero-bg"></div>
+            <div class="al-hoc-hero-overlay"></div>
+
+            <div class="al-hoc-hero-content">
+                <span class="al-hoc-eyebrow">THE ASTRALUXE ADVISORY</span>
+
+                <h1>
+                    Hotel Operational
+                    <span>Consultancy</span>
+                </h1>
+
+                <p>
+                    Strengthening hospitality operations through practical
+                    strategies, service excellence and performance-led guidance.
+                </p>
+
+                <a href="../contact.html" class="al-hoc-primary-btn">
+                    Discuss Your Project
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- OVERVIEW -->
+        <section class="al-hoc-overview al-hoc-section">
+            <div class="al-hoc-overview-image">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85"
+                    alt="Luxury hotel property and hospitality environment">
+                <div class="al-hoc-image-caption">
+                    <p>Better operations. Stronger experiences.</p>
+                </div>
+            </div>
+
+            <div class="al-hoc-overview-content">
+
+                <h2>
+                    Creating stronger
+                    <em>hospitality operations</em>
+                </h2>
+
+                <p>
+                    The AstraLuxe Advisory provides operational consultancy to
+                    hotels, resorts and hospitality businesses seeking to improve
+                    operating standards and overall performance.
+                </p>
+
+                <p>
+                    We review existing practices, identify areas for improvement
+                    and advise on processes that can strengthen service consistency,
+                    team effectiveness, cost awareness and guest satisfaction.
+                </p>
+
+                <p>
+                    Our Expert Advisors with more than 15 years of experience with Brands like Taj, Radisson, Marriott, Ramada, Accor, ITC Hotels, Holiday Inn, Hilton, etc. can support both operating properties and
+                    projects preparing to open, with recommendations aligned to
+                    the property's requirements and operating objectives.
+                </p>
+
+                <div class="al-hoc-overview-highlight">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>
+                        Practical operational recommendations designed around
+                        the needs of each hospitality property.
+                    </span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SERVICES: TOUCH-FRIENDLY CARD SLIDER -->
+        <section class="al-hoc-services-section">
+
+            <div class="al-hoc-services-intro">
+                <div class="al-hoc-services-heading">
+                    <span class="al-hoc-section-label">OUR SCOPE OF SERVICES</span>
+
+                    <h2>
+                        Every detail matters.
+                        <em>Every operation counts.</em>
+                    </h2>
+
+                    <p>
+                        A coordinated approach to the operational areas that
+                        influence hotel performance, guest satisfaction and
+                        long-term business sustainability.
+                    </p>
+                </div>
+            </div>
+
+            <div class="al-hoc-services-slider">
+                <div class="al-hoc-slider-heading">
+                    <span>AREAS OF OPERATIONAL SUPPORT</span>
+                    <span class="al-hoc-slider-count" aria-live="polite">01 / 07</span>
+                </div>
+
+                <div class="al-hoc-card-container" id="al-hoc-service-slider" tabindex="0" role="region" aria-label="Operational consultancy service cards">
+                    <div class="al-hoc-card-track">
+
+                        <!-- CARD 01 -->
+                        <div class="al-hoc-card-wrapper" role="group" aria-roledescription="slide" aria-label="1 of 7">
+                            <article class="al-hoc-service-card">
+                                <div class="al-hoc-card-top">
+                                    <span class="al-hoc-card-number">01</span>
+                                    <i class="fa-solid fa-coins"></i>
+                                </div>
+
+                                <div class="al-hoc-card-content">
+                                    <span class="al-hoc-card-category">FINANCIAL PERFORMANCE</span>
+                                    <h3>Financial Management <em>& Cost Control</em></h3>
+                                    <p>
+                                        Review financial processes, operating expenses and
+                                        cost structures to identify opportunities for
+                                        improved financial discipline and resource utilisation.
+                                    </p>
+                                </div>
+
+                                <div class="al-hoc-card-bottom">
+                                    <span>01 / FINANCIAL DISCIPLINE</span>
+                                    <span>ASTRALUXE ADVISORY</span>
+                                </div>
+                            </article>
+                        </div>
+
+
+                        <!-- CARD 02 -->
+                        <div class="al-hoc-card-wrapper" role="group" aria-roledescription="slide" aria-label="2 of 7">
+                            <article class="al-hoc-service-card">
+                                <div class="al-hoc-card-top">
+                                    <span class="al-hoc-card-number">02</span>
+                                    <i class="fa-solid fa-concierge-bell"></i>
+                                </div>
+
+                                <div class="al-hoc-card-content">
+                                    <span class="al-hoc-card-category">GUEST-CENTRIC STRATEGY</span>
+                                    <h3>Guest Experience <em>Enhancement</em></h3>
+                                    <p>
+                                        Evaluate guest touchpoints and service practices to
+                                        recommend improvements that support consistency,
+                                        satisfaction and a memorable hospitality experience.
+                                    </p>
+                                </div>
+
+                                <div class="al-hoc-card-bottom">
+                                    <span>02 / GUEST EXPERIENCE</span>
+                                    <span>ASTRALUXE ADVISORY</span>
+                                </div>
+                            </article>
+                        </div>
+
+
+                        <!-- CARD 03 -->
+                        <div class="al-hoc-card-wrapper" role="group" aria-roledescription="slide" aria-label="3 of 7">
+                            <article class="al-hoc-service-card">
+                                <div class="al-hoc-card-top">
+                                    <span class="al-hoc-card-number">03</span>
+                                    <i class="fa-solid fa-gears"></i>
+                                </div>
+
+                                <div class="al-hoc-card-content">
+                                    <span class="al-hoc-card-category">PROCESS & PEOPLE</span>
+                                    <h3>Operational <em>Excellence</em></h3>
+                                    <p>
+                                        Review operating procedures, departmental coordination
+                                        and team effectiveness to identify ways to improve
+                                        day-to-day operational standards.
+                                    </p>
+                                </div>
+
+                                <div class="al-hoc-card-bottom">
+                                    <span>03 / OPERATIONAL STANDARDS</span>
+                                    <span>ASTRALUXE ADVISORY</span>
+                                </div>
+                            </article>
+                        </div>
+
+
+                        <!-- CARD 04 -->
+                        <div class="al-hoc-card-wrapper" role="group" aria-roledescription="slide" aria-label="4 of 7">
+                            <article class="al-hoc-service-card">
+                                <div class="al-hoc-card-top">
+                                    <span class="al-hoc-card-number">04</span>
+                                    <i class="fa-solid fa-hotel"></i>
+                                </div>
+
+                                <div class="al-hoc-card-content">
+                                    <span class="al-hoc-card-category">PROPERTY STEWARDSHIP</span>
+                                    <h3>Property Management <em>& Maintenance</em></h3>
+                                    <p>
+                                        Advise on property upkeep, maintenance planning,
+                                        asset condition monitoring and coordination of
+                                        essential property management processes.
+                                    </p>
+                                </div>
+
+                                <div class="al-hoc-card-bottom">
+                                    <span>04 / PROPERTY MANAGEMENT</span>
+                                    <span>ASTRALUXE ADVISORY</span>
+                                </div>
+                            </article>
+                        </div>
+
+
+                        <!-- CARD 05 -->
+                        <div class="al-hoc-card-wrapper" role="group" aria-roledescription="slide" aria-label="5 of 7">
+                            <article class="al-hoc-service-card">
+                                <div class="al-hoc-card-top">
+                                    <span class="al-hoc-card-number">05</span>
+                                    <i class="fa-solid fa-chart-pie"></i>
+                                </div>
+
+                                <div class="al-hoc-card-content">
+                                    <span class="al-hoc-card-category">BUSINESS PERFORMANCE</span>
+                                    <h3>Revenue & Cost <em>Optimisation</em></h3>
+                                    <p>
+                                        Assess revenue opportunities and cost structures,
+                                        supporting informed business decisions and a more
+                                        balanced approach to operating performance.
+                                    </p>
+                                </div>
+
+                                <div class="al-hoc-card-bottom">
+                                    <span>05 / PERFORMANCE OPTIMISATION</span>
+                                    <span>ASTRALUXE ADVISORY</span>
+                                </div>
+                            </article>
+                        </div>
+
+
+                        <!-- CARD 06 -->
+                        <div class="al-hoc-card-wrapper" role="group" aria-roledescription="slide" aria-label="6 of 7">
+                            <article class="al-hoc-service-card">
+                                <div class="al-hoc-card-top">
+                                    <span class="al-hoc-card-number">06</span>
+                                    <i class="fa-solid fa-handshake"></i>
+                                </div>
+
+                                <div class="al-hoc-card-content">
+                                    <span class="al-hoc-card-category">BRAND STRATEGY</span>
+                                    <h3>Strategic Brand <em>Partnerships</em></h3>
+                                    <p>
+                                        Provide strategic inputs on suitable hospitality
+                                        brand associations, operator alignment and
+                                        partnership opportunities based on property objectives.
+                                    </p>
+                                </div>
+
+                                <div class="al-hoc-card-bottom">
+                                    <span>06 / BRAND ALIGNMENT</span>
+                                    <span>ASTRALUXE ADVISORY</span>
+                                </div>
+                            </article>
+                        </div>
+
+
+                        <!-- CARD 07 -->
+                        <div class="al-hoc-card-wrapper" role="group" aria-roledescription="slide" aria-label="7 of 7">
+                            <article class="al-hoc-service-card">
+                                <div class="al-hoc-card-top">
+                                    <span class="al-hoc-card-number">07</span>
+                                    <i class="fa-solid fa-globe"></i>
+                                </div>
+
+                                <div class="al-hoc-card-content">
+                                    <span class="al-hoc-card-category">DIGITAL DISTRIBUTION</span>
+                                    <h3>Digital Distribution <em>& OTA Management</em></h3>
+                                    <p>
+                                        Advise on online distribution channels, OTA presence,
+                                        listing quality and channel coordination to support
+                                        the property's digital visibility and booking strategy.
+                                    </p>
+                                </div>
+
+                                <div class="al-hoc-card-bottom">
+                                    <span>07 / DIGITAL PRESENCE</span>
+                                    <span>ASTRALUXE ADVISORY</span>
+                                </div>
+                            </article>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="al-hoc-slider-controls" role="group" aria-label="Service slider controls">
+                    <button class="al-hoc-slider-arrow al-hoc-slider-previous" type="button" aria-label="Previous service" disabled>
+                        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                    </button>
+                    <div class="al-hoc-slider-dots" role="group" aria-label="Choose a service"></div>
+                    <button class="al-hoc-slider-arrow al-hoc-slider-next" type="button" aria-label="Next service">
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- APPROACH -->
+        <section class="al-hoc-approach al-hoc-section">
+            <div class="al-hoc-approach-header">
+                <span class="al-hoc-section-label">HOW WE WORK</span>
+                <h2>A considered approach to <em>better operations.</em></h2>
+                <p>
+                    Our engagement is shaped around the property's existing
+                    operating environment, priorities and improvement requirements.
+                </p>
+            </div>
+
+            <div class="al-hoc-approach-grid">
+
+                <div class="al-hoc-approach-item">
+                    <span>01</span>
+                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    <h3>Operational Review</h3>
+                    <p>
+                        Understand the property's current practices, challenges
+                        and operational priorities.
+                    </p>
+                </div>
+
+                <div class="al-hoc-approach-item">
+                    <span>02</span>
+                    <i class="fa-solid fa-list-check"></i>
+                    <h3>Opportunity Identification</h3>
+                    <p>
+                        Identify areas where processes, service standards and
+                        resource utilisation may be improved.
+                    </p>
+                </div>
+
+                <div class="al-hoc-approach-item">
+                    <span>03</span>
+                    <i class="fa-solid fa-compass-drafting"></i>
+                    <h3>Strategic Recommendations</h3>
+                    <p>
+                        Develop practical recommendations aligned with the
+                        property's business and operating objectives.
+                    </p>
+                </div>
+
+                <div class="al-hoc-approach-item">
+                    <span>04</span>
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Review & Monitoring</h3>
+                    <p>
+                        Support the review of agreed actions and monitor
+                        progress with the hotel team over time.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- WHY ASTRALUXE -->
+        <section class="al-hoc-why al-hoc-section">
+            <div class="al-hoc-why-image">
+                <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=85"
+                    alt="Luxury resort hospitality environment" loading="lazy">
+            </div>
+
+            <div class="al-hoc-why-content">
+
+                <h2>
+                    Strategy shaped by
+                    <em>hospitality understanding.</em>
+                </h2>
+
+                <p>
+                    Operational consultancy requires an understanding of how
+                    different departments, people, systems and guest expectations
+                    come together within a hospitality business.
+                </p>
+
+                <p>
+                    The AstraLuxe Advisory brings a structured and property-focused
+                    perspective to operational reviews, helping owners and hotel
+                    teams evaluate priorities and identify practical opportunities
+                    for improvement.
+                </p>
+
+                <div class="al-hoc-why-points">
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        <span>Property-specific recommendations</span>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        <span>Focus on service and operational consistency</span>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        <span>Commercial and cost awareness</span>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        <span>Coordination with ownership and hotel teams</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- CTA -->
+        <section class="al-hoc-cta">
+            <div class="al-hoc-cta-bg"></div>
+
+            <div class="al-hoc-cta-content">
+                <span class="al-hoc-section-label">LET'S DISCUSS YOUR PROPERTY</span>
+
+                <h2>
+                    Build stronger operations.
+                    <em>Deliver better experiences.</em>
+                </h2>
+
+                <p>
+                    Connect with The AstraLuxe Advisory to discuss your
+                    hotel's operational priorities and consultancy requirements.
+                </p>
+
+                <a href="../contact.html" class="al-hoc-primary-btn">
+                    Start a Conversation
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <div id="whatsapp-placeholder"></div>
+
+    <script src="js/main.js"></script>
+
+    <script>
+/* ==========================================
+     THE ASTRALUXE ADVISORY
+     HOTEL OPERATIONAL CONSULTANCY
+========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* ======================================
+       FAQ ACCORDION
+    ====================================== */
+
+    const faqItems = document.querySelectorAll(
+      ".al-hoc-faq-item"
+    );
+
+    faqItems.forEach((item) => {
+      const button = item.querySelector(
+        ".al-hoc-faq-question"
+      );
+
+      button.addEventListener("click", () => {
+
+        const isActive = item.classList.contains("active");
+
+        faqItems.forEach((faq) => {
+          faq.classList.remove("active");
+
+          faq.querySelector(
+            ".al-hoc-faq-question"
+          ).setAttribute("aria-expanded", "false");
+        });
+
+        if (!isActive) {
+          item.classList.add("active");
+          button.setAttribute("aria-expanded", "true");
+        }
+
+      });
+    });
+
+    const slider = document.querySelector(".al-hoc-card-container");
+
+    if (slider) {
+      const slides = Array.from(
+        slider.querySelectorAll(".al-hoc-card-wrapper")
+      );
+      const controls = slider.parentElement.querySelector(
+        ".al-hoc-slider-controls"
+      );
+      const dotsContainer = controls.querySelector(".al-hoc-slider-dots");
+      const previousButton = controls.querySelector(".al-hoc-slider-previous");
+      const nextButton = controls.querySelector(".al-hoc-slider-next");
+      const count = slider.parentElement.querySelector(".al-hoc-slider-count");
+
+      if (!slides.length) {
+        console.error("The service slider needs at least one card.");
+        return;
+      }
+
+      const dots = slides.map((slide, index) => {
+        const dot = document.createElement("button");
+        dot.className = "al-hoc-slider-dot";
+        dot.type = "button";
+        dot.setAttribute("aria-label", `Show service ${index + 1} of ${slides.length}`);
+        dot.setAttribute("aria-current", index === 0 ? "true" : "false");
+        dot.addEventListener("click", () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+        return dot;
+      });
+
+      let activeIndex = 0;
+      let scrollFrame = 0;
+
+      const updateControls = (index) => {
+        activeIndex = index;
+        dots.forEach((dot, dotIndex) => {
+          dot.setAttribute("aria-current", String(dotIndex === index));
+        });
+        count.textContent =
+          `${String(index + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
+        previousButton.disabled = index === 0;
+        nextButton.disabled = index === slides.length - 1;
+      };
+
+      const goToSlide = (index) => {
+        const targetIndex = Math.max(0, Math.min(index, slides.length - 1));
+        const reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+        const targetLeft = slides[targetIndex].offsetLeft - slides[0].offsetLeft;
+
+        updateControls(targetIndex);
+        slider.scrollTo({
+          left: targetLeft,
+          behavior: reduceMotion ? "auto" : "smooth"
+        });
+      };
+
+      previousButton.addEventListener("click", () => {
+        goToSlide(activeIndex - 1);
+      });
+      nextButton.addEventListener("click", () => {
+        goToSlide(activeIndex + 1);
+      });
+
+      slider.addEventListener("scroll", () => {
+        if (scrollFrame) return;
+
+        scrollFrame = window.requestAnimationFrame(() => {
+          scrollFrame = 0;
+          const viewportCenter = slider.scrollLeft + slider.clientWidth / 2;
+          const nearestIndex = slides.reduce((nearest, slide, index) => {
+            const slideCenter =
+              slide.offsetLeft - slides[0].offsetLeft + slide.offsetWidth / 2;
+            const nearestCenter =
+              slides[nearest].offsetLeft - slides[0].offsetLeft + slides[nearest].offsetWidth / 2;
+
+            return Math.abs(slideCenter - viewportCenter) <
+              Math.abs(nearestCenter - viewportCenter) ? index : nearest;
+          }, 0);
+
+          if (nearestIndex !== activeIndex) updateControls(nearestIndex);
+        });
+      }, { passive: true });
+
+      slider.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+          goToSlide(activeIndex + 1);
+        } else if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          goToSlide(activeIndex - 1);
+        } else if (event.key === "Home") {
+          event.preventDefault();
+          goToSlide(0);
+        } else if (event.key === "End") {
+          event.preventDefault();
+          goToSlide(slides.length - 1);
+        }
+      });
+    }
+
+
+    /* ======================================
+       GSAP ANIMATIONS
+    ====================================== */
+
+    if (typeof gsap === "undefined" ||
+        typeof ScrollTrigger === "undefined") {
+      return;
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const page = document.querySelector(".al-hoc-page");
+
+    if (!page) return;
+
+
+    /* ======================================
+       HERO ANIMATION
+    ====================================== */
+
+    const heroTimeline = gsap.timeline({
+      defaults: {
+        ease: "power3.out"
+      }
+    });
+
+    heroTimeline
+      .from(".al-hoc-hero-bg", {
+        scale: 1.15,
+        duration: 1.8
+      })
+      .from(".al-hoc-eyebrow", {
+        y: 25,
+        opacity: 0,
+        duration: 0.7
+      }, "-=1.1")
+      .from(".al-hoc-hero h1", {
+        y: 60,
+        opacity: 0,
+        duration: 1
+      }, "-=0.5")
+      .from(".al-hoc-hero-content > p", {
+        y: 25,
+        opacity: 0,
+        duration: 0.7
+      }, "-=0.6")
+      .from(".al-hoc-hero-content .al-hoc-primary-btn", {
+        y: 20,
+        opacity: 0,
+        duration: 0.6
+      }, "-=0.4");
+
+
+    /* ======================================
+       GENERAL SCROLL REVEALS
+    ====================================== */
+
+    const revealElements = [
+      ".al-hoc-overview-image",
+      ".al-hoc-overview-content",
+      ".al-hoc-approach-header",
+      ".al-hoc-why-image",
+      ".al-hoc-why-content",
+      ".al-hoc-focus-inner",
+      ".al-hoc-faq-heading"
+    ];
+
+    revealElements.forEach((selector) => {
+      gsap.from(selector, {
+        y: 55,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: selector,
+          start: "top 82%",
+          once: true
+        }
+      });
+    });
+
+
+    /* ======================================
+       APPROACH CARDS
+    ====================================== */
+
+    gsap.from(".al-hoc-approach-item", {
+      y: 45,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".al-hoc-approach-grid",
+        start: "top 80%",
+        once: true
+      }
+    });
+
+
+    /* ======================================
+       FAQ REVEAL
+    ====================================== */
+
+    gsap.from(".al-hoc-faq-item", {
+      x: 35,
+      opacity: 0,
+      duration: 0.7,
+      stagger: 0.12,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".al-hoc-faq-list",
+        start: "top 80%",
+        once: true
+      }
+    });
+
+
+    /* ======================================
+       CTA REVEAL
+    ====================================== */
+
+    gsap.from(".al-hoc-cta-content > *", {
+      y: 35,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".al-hoc-cta",
+        start: "top 80%",
+        once: true
+      }
+    });
+
+
+    /* ======================================
+       REFRESH AFTER IMAGES LOAD
+    ====================================== */
+
+    window.addEventListener("load", () => {
+      ScrollTrigger.refresh();
+    });
+
+});
+    </script>
+
+</body>
+</html>

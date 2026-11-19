@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The AstraLuxe Advisory supports luxury destination development through concept strategy, land assessment, master planning coordination, design professional identification and hospitality experience planning.">
+    <title>Luxury Destination Development | The AstraLuxe Advisory</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+    <style>
+        /* =========================================
+        ASTRA LUXE - LUXURY DESTINATION DEVELOPMENT
+        Standalone page stylesheet
+        ========================================= */
+
+        .al-ldd-page {
+            --ldd-navy: #1e293b;
+            --ldd-slate: #334155;
+            --ldd-gold: #D4AF37;
+            --ldd-gold-dark: #a9895d;
+            --ldd-ivory: #f8f7f4;
+            --ldd-white: #ffffff;
+            --ldd-text: #263244;
+            --ldd-muted: #687386;
+            --ldd-border: rgba(30, 41, 59, 0.12);
+
+            margin: 0;
+            color: var(--ldd-text);
+            background: var(--ldd-white);
+            font-family: "Lora", serif;
+            overflow-x: hidden;
+        }
+
+        .al-ldd-page *,
+        .al-ldd-page *::before,
+        .al-ldd-page *::after {
+            box-sizing: border-box;
+        }
+
+        .al-ldd-page img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .al-ldd-page a {
+            text-decoration: none;
+        }
+
+        .al-ldd-container {
+            width: min(1180px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        .al-ldd-section {
+            padding: 110px 0;
+        }
+
+        .al-ldd-section-label,
+        .al-ldd-eyebrow {
+            display: inline-block;
+            color: var(--ldd-gold-dark);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            line-height: 1.7;
+            text-transform: uppercase;
+        }
+
+        .al-ldd-section-heading {
+            max-width: 740px;
+            margin-bottom: 54px;
+        }
+
+        .al-ldd-section-heading--center {
+            margin-right: auto;
+            margin-left: auto;
+            text-align: center;
+        }
+
+        .al-ldd-section-heading h2,
+        .al-ldd-overview h2,
+        .al-ldd-journey h2,
+        .al-ldd-why h2,
+        .al-ldd-faq h2 {
+            margin: 14px 0 18px;
+            color: var(--ldd-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(38px, 5vw, 58px);
+            font-weight: 500;
+            line-height: 1.05;
+        }
+
+        .al-ldd-section-heading h2 span,
+        .al-ldd-overview h2 span,
+        .al-ldd-journey h2 span,
+        .al-ldd-why h2 span,
+        .al-ldd-faq h2 span {
+            color: var(--ldd-gold-dark);
+        }
+
+        .al-ldd-section-heading > p,
+        .al-ldd-journey__intro > p,
+        .al-ldd-faq__intro > p {
+            max-width: 620px;
+            margin: 0;
+            color: var(--ldd-muted);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .al-ldd-section-heading--center > p {
+            margin: 0 auto;
+        }
+
+        .al-ldd-heading-line {
+            width: 66px;
+            height: 2px;
+            margin-top: 26px;
+            background: var(--ldd-gold);
+        }
+
+        /* BUTTONS */
+
+        .al-ldd-button {
+            display: inline-flex;
+            min-height: 54px;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            padding: 0 25px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .al-ldd-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .al-ldd-button--gold {
+            color: var(--ldd-navy);
+            background: var(--ldd-gold);
+        }
+
+        .al-ldd-button--gold:hover {
+            background: #d6bc98;
+        }
+
+        .al-ldd-button i,
+        .al-ldd-text-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .al-ldd-button:hover i,
+        .al-ldd-text-link:hover i {
+            transform: translateX(5px);
+        }
+
+        .al-ldd-text-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 25px;
+            color: var(--ldd-gold-dark);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        /* HERO */
+
+        .al-ldd-hero {
+            position: relative;
+            display: flex;
+            min-height: 690px;
+            align-items: center;
+            overflow: hidden;
+            color: var(--ldd-white);
+            background: var(--ldd-navy);
+        }
+
+        .al-ldd-hero__image,
+        .al-ldd-hero__overlay {
+            position: absolute;
+            inset: 0;
+        }
+
+        .al-ldd-hero__image {
+            background-image: url("https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=2000&q=90");
+            background-position: center 52%;
+            background-size: cover;
+            transform: scale(1.04);
+        }
+
+        .al-ldd-hero__overlay {
+            background:
+                linear-gradient(90deg, rgba(13, 23, 38, 0.91) 0%, rgba(13, 23, 38, 0.68) 50%, rgba(13, 23, 38, 0.2) 100%),
+                linear-gradient(0deg, rgba(13, 23, 38, 0.45), transparent 45%);
+        }
+
+        .al-ldd-hero__content {
+            position: relative;
+            z-index: 2;
+            padding-top: 55px;
+            padding-bottom: 80px;
+        }
+
+        .al-ldd-hero .al-ldd-eyebrow {
+            color: #e2c9a5;
+        }
+
+        .al-ldd-hero h1 {
+            max-width: 850px;
+            margin: 24px 0;
+            color: var(--ldd-white);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(55px, 7.7vw, 91px);
+            font-weight: 500;
+            line-height: 0.96;
+        }
+
+        .al-ldd-hero h1 span {
+            display: block;
+            color: #dfc39b;
+            font-style: italic;
+        }
+
+        .al-ldd-hero__description {
+            max-width: 560px;
+            margin: 0 0 32px;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .al-ldd-hero__bottom {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 22px max(24px, calc((100vw - 1180px) / 2));
+            color: rgba(255, 255, 255, 0.75);
+            background: rgba(14, 25, 40, 0.48);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 1.8px;
+        }
+
+        .al-ldd-hero__line {
+            width: 70px;
+            height: 1px;
+            background: var(--ldd-gold);
+        }
+
+        /* BREADCRUMB */
+
+        .al-ldd-breadcrumb {
+            padding: 18px 0;
+            border-bottom: 1px solid var(--ldd-border);
+            background: #fff;
+        }
+
+        .al-ldd-breadcrumb .al-ldd-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            color: var(--ldd-muted);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+        }
+
+        .al-ldd-breadcrumb a {
+            color: var(--ldd-slate);
+            transition: color 0.25s ease;
+        }
+
+        .al-ldd-breadcrumb a:hover {
+            color: var(--ldd-gold-dark);
+        }
+
+        .al-ldd-breadcrumb i {
+            color: var(--ldd-gold);
+            font-size: 8px;
+        }
+
+        .al-ldd-breadcrumb span {
+            color: var(--ldd-gold-dark);
+        }
+
+        /* OVERVIEW */
+
+        .al-ldd-overview {
+            background: var(--ldd-white);
+        }
+
+        .al-ldd-overview__grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 100px;
+            align-items: start;
+        }
+
+        .al-ldd-overview__heading {
+            position: sticky;
+            top: 110px;
+        }
+
+        .al-ldd-overview h2 {
+            max-width: 480px;
+            font-size: clamp(42px, 5vw, 61px);
+        }
+
+        .al-ldd-overview__content {
+            padding-top: 30px;
+        }
+
+        .al-ldd-overview__content p {
+            margin: 0 0 20px;
+            color: var(--ldd-muted);
+            font-size: 15px;
+            line-height: 2;
+        }
+
+        .al-ldd-overview__content .al-ldd-lead {
+            color: var(--ldd-slate);
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        /* PILLARS */
+
+        .al-ldd-pillars {
+            background: var(--ldd-ivory);
+        }
+
+        .al-ldd-pillars__grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .al-ldd-pillar {
+            position: relative;
+            min-height: 300px;
+            padding: 32px 25px;
+            border: 1px solid rgba(30, 41, 59, 0.09);
+            background: #fff;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .al-ldd-pillar:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 45px rgba(30, 41, 59, 0.08);
+        }
+
+        .al-ldd-pillar__number {
+            position: absolute;
+            top: 22px;
+            right: 22px;
+            color: rgba(197, 168, 128, 0.7);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 24px;
+        }
+
+        .al-ldd-pillar__icon,
+        .al-ldd-scope-card__icon {
+            display: grid;
+            width: 54px;
+            height: 54px;
+            place-items: center;
+            color: var(--ldd-gold-dark);
+            background: rgba(197, 168, 128, 0.13);
+            font-size: 20px;
+        }
+
+        .al-ldd-pillar h3 {
+            margin: 28px 0 12px;
+            color: var(--ldd-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .al-ldd-pillar p {
+            margin: 0;
+            color: var(--ldd-muted);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        /* SCOPE */
+
+        .al-ldd-scope {
+            background: #fff;
+        }
+
+        .al-ldd-scope__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .al-ldd-scope-card {
+            position: relative;
+            min-height: 285px;
+            padding: 34px 30px;
+            border: 1px solid var(--ldd-border);
+            background: #fff;
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .al-ldd-scope-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(197, 168, 128, 0.65);
+            box-shadow: 0 20px 50px rgba(30, 41, 59, 0.07);
+        }
+
+        .al-ldd-scope-card__number {
+            position: absolute;
+            top: 25px;
+            right: 26px;
+            color: #c8cbd0;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 25px;
+        }
+
+        .al-ldd-scope-card__icon {
+            width: 58px;
+            height: 58px;
+            font-size: 21px;
+        }
+
+        .al-ldd-scope-card h3 {
+            max-width: 300px;
+            margin: 24px 0 12px;
+            color: var(--ldd-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 25px;
+            font-weight: 600;
+            line-height: 1.15;
+        }
+
+        .al-ldd-scope-card p {
+            margin: 0;
+            color: var(--ldd-muted);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        /* DEVELOPMENT JOURNEY */
+
+        .al-ldd-journey {
+            background: var(--ldd-navy);
+        }
+
+        .al-ldd-journey__intro {
+            max-width: 700px;
+            margin-bottom: 65px;
+        }
+
+        .al-ldd-journey .al-ldd-section-label {
+            color: #dfc39b;
+        }
+
+        .al-ldd-journey h2 {
+            color: #fff;
+        }
+
+        .al-ldd-journey__intro > p {
+            color: rgba(255, 255, 255, 0.68);
+        }
+
+        .al-ldd-timeline {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+        }
+
+        .al-ldd-timeline::before {
+            position: absolute;
+            top: 27px;
+            right: 10%;
+            left: 10%;
+            height: 1px;
+            background: rgba(197, 168, 128, 0.45);
+            content: "";
+        }
+
+        .al-ldd-timeline__item {
+            position: relative;
+            padding: 0 18px;
+        }
+
+        .al-ldd-timeline__marker {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            width: 55px;
+            height: 55px;
+            place-items: center;
+            border: 1px solid var(--ldd-gold);
+            border-radius: 50%;
+            color: var(--ldd-gold);
+            background: var(--ldd-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 21px;
+        }
+
+        .al-ldd-timeline__content {
+            padding-top: 28px;
+        }
+
+        .al-ldd-timeline__content > span {
+            color: var(--ldd-gold);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+        }
+
+        .al-ldd-timeline__content h3 {
+            margin: 13px 0 10px;
+            color: #fff;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        .al-ldd-timeline__content p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.63);
+            font-size: 11px;
+            line-height: 1.9;
+        }
+
+        /* WHY ASTRA LUXE */
+
+        .al-ldd-why {
+            background: var(--ldd-ivory);
+        }
+
+        .al-ldd-why__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .al-ldd-why__visual {
+            position: relative;
+            min-height: 550px;
+        }
+
+        .al-ldd-why__visual img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+        }
+
+        .al-ldd-why__visual-caption {
+            position: absolute;
+            right: -30px;
+            bottom: 30px;
+            width: min(310px, 85%);
+            padding: 24px 28px;
+            color: #fff;
+            background: var(--ldd-navy);
+        }
+
+        .al-ldd-why__visual-caption span {
+            color: var(--ldd-gold);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+        }
+
+        .al-ldd-why__visual-caption p {
+            margin: 9px 0 0;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 24px;
+        }
+
+        .al-ldd-why__content > p {
+            margin: 20px 0 26px;
+            color: var(--ldd-muted);
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .al-ldd-check-list {
+            display: grid;
+            gap: 17px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .al-ldd-check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+            color: var(--ldd-slate);
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .al-ldd-check-list i {
+            margin-top: 3px;
+            color: var(--ldd-gold-dark);
+            font-size: 12px;
+        }
+
+        /* FOCUS */
+
+        .al-ldd-focus {
+            padding: 75px 0;
+            background: #fff;
+        }
+
+        .al-ldd-focus__inner {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            padding: 48px 55px;
+            border-left: 3px solid var(--ldd-gold);
+            background: var(--ldd-ivory);
+        }
+
+        .al-ldd-focus__icon {
+            display: grid;
+            width: 58px;
+            height: 58px;
+            flex: 0 0 58px;
+            place-items: center;
+            color: var(--ldd-gold-dark);
+            background: #fff;
+            font-size: 23px;
+        }
+
+        .al-ldd-focus__content h2 {
+            margin: 8px 0 12px;
+            color: var(--ldd-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(30px, 4vw, 42px);
+            font-weight: 500;
+        }
+
+        .al-ldd-focus__content h2 span {
+            color: var(--ldd-gold-dark);
+        }
+
+        .al-ldd-focus__content p {
+            max-width: 850px;
+            margin: 0;
+            color: var(--ldd-muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        /* FAQ */
+
+        .al-ldd-faq {
+            background: var(--ldd-ivory);
+        }
+
+        .al-ldd-faq__grid {
+            display: grid;
+            grid-template-columns: 0.75fr 1.25fr;
+            gap: 90px;
+            align-items: start;
+        }
+
+        .al-ldd-faq__intro {
+            position: sticky;
+            top: 100px;
+        }
+
+        .al-ldd-faq__list {
+            border-top: 1px solid var(--ldd-border);
+        }
+
+        .al-ldd-faq-item {
+            border-bottom: 1px solid var(--ldd-border);
+        }
+
+        .al-ldd-faq-item__question {
+            display: flex;
+            width: 100%;
+            min-height: 78px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px 0;
+            border: 0;
+            color: var(--ldd-navy);
+            background: transparent;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .al-ldd-faq-item__question span {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .al-ldd-faq-item__question i {
+            color: var(--ldd-gold-dark);
+            font-size: 13px;
+            transition: transform 0.3s ease;
+        }
+
+        .al-ldd-faq-item.is-active .al-ldd-faq-item__question i {
+            transform: rotate(45deg);
+        }
+
+        .al-ldd-faq-item__answer {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.35s ease;
+        }
+
+        .al-ldd-faq-item.is-active .al-ldd-faq-item__answer {
+            grid-template-rows: 1fr;
+        }
+
+        .al-ldd-faq-item__answer > div {
+            overflow: hidden;
+        }
+
+        .al-ldd-faq-item__answer p {
+            margin: 0;
+            padding: 0 35px 24px 0;
+            color: var(--ldd-muted);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        /* CTA */
+
+        .al-ldd-cta {
+            position: relative;
+            padding: 105px 0;
+            overflow: hidden;
+            color: #fff;
+            background: var(--ldd-navy);
+            text-align: center;
+        }
+
+        .al-ldd-cta__background {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(rgba(20, 32, 48, 0.9), rgba(20, 32, 48, 0.93)),
+                url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85")
+                center / cover;
+        }
+
+        .al-ldd-cta__content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .al-ldd-cta .al-ldd-section-label {
+            color: #dfc39b;
+        }
+
+        .al-ldd-cta h2 {
+            max-width: 850px;
+            margin: 20px auto;
+            color: #fff;
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(40px, 6vw, 66px);
+            font-weight: 500;
+            line-height: 1.04;
+        }
+
+        .al-ldd-cta h2 span {
+            display: block;
+            color: #dfc39b;
+            font-style: italic;
+        }
+
+        .al-ldd-cta p {
+            max-width: 570px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        /* REVEAL FALLBACK */
+
+        .al-ldd-reveal {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1050px) {
+            .al-ldd-overview__grid {
+                gap: 55px;
+            }
+
+            .al-ldd-pillars__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .al-ldd-timeline {
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 45px;
+            }
+
+            .al-ldd-timeline::before {
+                display: none;
+            }
+
+            .al-ldd-why__grid {
+                gap: 55px;
+            }
+
+            .al-ldd-faq__grid {
+                gap: 55px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .al-ldd-container {
+                width: min(100% - 36px, 560px);
+            }
+
+            .al-ldd-section {
+                padding: 78px 0;
+            }
+
+            .al-ldd-hero {
+                min-height: 620px;
+            }
+
+            .al-ldd-hero__overlay {
+                background: linear-gradient(
+                    90deg,
+                    rgba(13, 23, 38, 0.91),
+                    rgba(13, 23, 38, 0.65)
+                );
+            }
+
+            .al-ldd-hero h1 {
+                font-size: clamp(50px, 11vw, 74px);
+            }
+
+            .al-ldd-hero__description {
+                max-width: 460px;
+                font-size: 14px;
+            }
+
+            .al-ldd-hero__bottom {
+                gap: 10px;
+                padding: 18px;
+                font-size: 8px;
+                letter-spacing: 1px;
+            }
+
+            .al-ldd-hero__line {
+                width: 30px;
+            }
+
+            .al-ldd-overview__grid,
+            .al-ldd-why__grid,
+            .al-ldd-faq__grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .al-ldd-overview__heading,
+            .al-ldd-faq__intro {
+                position: static;
+            }
+
+            .al-ldd-overview__content {
+                padding-top: 0;
+            }
+
+            .al-ldd-overview h2,
+            .al-ldd-section-heading h2,
+            .al-ldd-journey h2,
+            .al-ldd-why h2,
+            .al-ldd-faq h2 {
+                font-size: 45px;
+            }
+
+            .al-ldd-section-heading {
+                margin-bottom: 35px;
+            }
+
+            .al-ldd-pillars__grid,
+            .al-ldd-scope__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .al-ldd-pillar {
+                min-height: 245px;
+            }
+
+            .al-ldd-scope-card {
+                min-height: 250px;
+            }
+
+            .al-ldd-timeline {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .al-ldd-timeline__item {
+                display: grid;
+                grid-template-columns: 55px 1fr;
+                gap: 20px;
+                padding: 0;
+            }
+
+            .al-ldd-timeline__content {
+                padding-top: 3px;
+            }
+
+            .al-ldd-timeline__content h3 {
+                margin-top: 8px;
+            }
+
+            .al-ldd-why__visual,
+            .al-ldd-why__visual img {
+                min-height: 390px;
+                height: 390px;
+            }
+
+            .al-ldd-why__visual-caption {
+                right: 12px;
+                bottom: 12px;
+            }
+
+            .al-ldd-focus {
+                padding: 55px 0;
+            }
+
+            .al-ldd-focus__inner {
+                flex-direction: column;
+                gap: 20px;
+                padding: 30px 25px;
+            }
+
+            .al-ldd-faq-item__question span {
+                font-size: 20px;
+            }
+
+            .al-ldd-cta {
+                padding: 80px 0;
+            }
+
+            .al-ldd-cta h2 {
+                font-size: 46px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .al-ldd-container {
+                width: calc(100% - 30px);
+            }
+
+            .al-ldd-hero {
+                min-height: 590px;
+            }
+
+            .al-ldd-hero h1 {
+                font-size: 47px;
+            }
+
+            .al-ldd-hero__bottom {
+                font-size: 7px;
+            }
+
+            .al-ldd-breadcrumb .al-ldd-container {
+                gap: 8px;
+                font-size: 9px;
+            }
+
+            .al-ldd-overview h2,
+            .al-ldd-section-heading h2,
+            .al-ldd-journey h2,
+            .al-ldd-why h2,
+            .al-ldd-faq h2 {
+                font-size: 40px;
+            }
+
+            .al-ldd-scope-card {
+                padding: 28px 23px;
+            }
+
+            .al-ldd-faq-item__question span {
+                font-size: 18px;
+            }
+
+            .al-ldd-cta h2 {
+                font-size: 39px;
+            }
+        }
+
+        /* ACCESSIBILITY */
+
+        @media (prefers-reduced-motion: reduce) {
+            .al-ldd-page *,
+            .al-ldd-page *::before,
+            .al-ldd-page *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="al-ldd-page">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- HERO -->
+        <section class="al-ldd-hero">
+            <div class="al-ldd-hero__image"></div>
+            <div class="al-ldd-hero__overlay"></div>
+
+            <div class="al-ldd-container al-ldd-hero__content">
+                <span class="al-ldd-eyebrow al-ldd-reveal">
+                    LUXURY DESTINATION DEVELOPMENT
+                </span>
+
+                <h1 class="al-ldd-reveal">
+                    Shaping Places.
+                    <span>Creating Destinations.</span>
+                </h1>
+
+                <p class="al-ldd-hero__description al-ldd-reveal">
+                    Thoughtful destination strategy that brings together
+                    location, design, hospitality experiences and
+                    long-term commercial vision.
+                </p>
+
+                <a href="../contact.html" class="al-ldd-button al-ldd-button--gold al-ldd-reveal">
+                    Discuss Your Vision
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- OVERVIEW -->
+        <section class="al-ldd-section al-ldd-overview">
+            <div class="al-ldd-container al-ldd-overview__grid">
+                <div class="al-ldd-overview__heading al-ldd-reveal">
+                    <span class="al-ldd-section-label">01 / THE VISION</span>
+
+                    <h2>
+                        More Than a Place.
+                        <span>A Distinctive Destination.</span>
+                    </h2>
+
+                    <div class="al-ldd-heading-line"></div>
+                </div>
+
+                <div class="al-ldd-overview__content al-ldd-reveal">
+                    <p class="al-ldd-lead">
+                        The AstraLuxe Advisory works with landowners,
+                        investors and developers to shape distinctive
+                        hospitality destinations.
+                    </p>
+
+                    <p>
+                        From early concept development to planning and
+                        execution coordination, we help align the
+                        destination's identity, guest proposition,
+                        physical planning and commercial intent.
+                    </p>
+
+                    <p>
+                        Our approach considers the character of the
+                        location and the experience the destination
+                        is intended to deliver.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DESTINATION PILLARS -->
+        <section class="al-ldd-section al-ldd-pillars">
+            <div class="al-ldd-container">
+                <div class="al-ldd-section-heading al-ldd-section-heading--center al-ldd-reveal">
+                    <span class="al-ldd-section-label">02 / THE DEVELOPMENT PERSPECTIVE</span>
+                    <h2>Four Dimensions of <span>Destination Thinking</span></h2>
+                    <p>
+                        A destination takes shape when its setting,
+                        identity, experiences and development direction
+                        work together.
+                    </p>
+                </div>
+
+                <div class="al-ldd-pillars__grid">
+                    <article class="al-ldd-pillar al-ldd-reveal">
+                        <span class="al-ldd-pillar__number">01</span>
+                        <div class="al-ldd-pillar__icon">
+                            <i class="fa-solid fa-mountain-sun"></i>
+                        </div>
+                        <h3>Sense of Place</h3>
+                        <p>
+                            Understanding the location's character,
+                            natural setting and development opportunity
+                            to inform a distinctive destination identity.
+                        </p>
+                    </article>
+
+                    <article class="al-ldd-pillar al-ldd-reveal">
+                        <span class="al-ldd-pillar__number">02</span>
+                        <div class="al-ldd-pillar__icon">
+                            <i class="fa-solid fa-compass"></i>
+                        </div>
+                        <h3>Concept & Positioning</h3>
+                        <p>
+                            Defining the destination concept, intended
+                            audience and guest proposition in line
+                            with the project's vision.
+                        </p>
+                    </article>
+
+                    <article class="al-ldd-pillar al-ldd-reveal">
+                        <span class="al-ldd-pillar__number">03</span>
+                        <div class="al-ldd-pillar__icon">
+                            <i class="fa-solid fa-drafting-compass"></i>
+                        </div>
+                        <h3>Physical Planning</h3>
+                        <p>
+                            Coordinating planning and design inputs
+                            to support a coherent relationship between
+                            the built environment and the destination.
+                        </p>
+                    </article>
+
+                    <article class="al-ldd-pillar al-ldd-reveal">
+                        <span class="al-ldd-pillar__number">04</span>
+                        <div class="al-ldd-pillar__icon">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <h3>Guest Experience</h3>
+                        <p>
+                            Considering hospitality products,
+                            experiences and operational readiness
+                            that shape the destination proposition.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCOPE OF SERVICES -->
+        <section class="al-ldd-section al-ldd-scope">
+            <div class="al-ldd-container">
+                <div class="al-ldd-section-heading al-ldd-section-heading--center al-ldd-reveal">
+                    <span class="al-ldd-section-label">03 / OUR SCOPE</span>
+                    <h2>Scope of <span>Services</span></h2>
+                    <p>
+                        Advisory and coordination support across the
+                        key stages of shaping a luxury hospitality
+                        destination.
+                    </p>
+                </div>
+
+                <div class="al-ldd-scope__grid">
+                    <article class="al-ldd-scope-card al-ldd-reveal">
+                        <span class="al-ldd-scope-card__number">01</span>
+                        <div class="al-ldd-scope-card__icon">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <h3>Destination Concept & Positioning Strategy</h3>
+                        <p>
+                            Developing the initial destination direction,
+                            concept identity and positioning in relation
+                            to its location and intended guest proposition.
+                        </p>
+                    </article>
+
+                    <article class="al-ldd-scope-card al-ldd-reveal">
+                        <span class="al-ldd-scope-card__number">02</span>
+                        <div class="al-ldd-scope-card__icon">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <h3>Land & Opportunity Assessment</h3>
+                        <p>
+                            Reviewing land characteristics, location
+                            context and development opportunities
+                            relevant to the proposed destination.
+                        </p>
+                    </article>
+
+                    <article class="al-ldd-scope-card al-ldd-reveal">
+                        <span class="al-ldd-scope-card__number">03</span>
+                        <div class="al-ldd-scope-card__icon">
+                            <i class="fa-solid fa-city"></i>
+                        </div>
+                        <h3>Master Planning & Development Strategy</h3>
+                        <p>
+                            Coordinating master-planning inputs and
+                            development strategy to help establish
+                            a coherent overall project direction.
+                        </p>
+                    </article>
+
+                    <article class="al-ldd-scope-card al-ldd-reveal">
+                        <span class="al-ldd-scope-card__number">04</span>
+                        <div class="al-ldd-scope-card__icon">
+                            <i class="fa-solid fa-hotel"></i>
+                        </div>
+                        <h3>Hospitality Product & Experience Planning</h3>
+                        <p>
+                            Considering hospitality components,
+                            accommodation concepts and guest
+                            experiences that support the destination vision.
+                        </p>
+                    </article>
+
+                    <article class="al-ldd-scope-card al-ldd-reveal">
+                        <span class="al-ldd-scope-card__number">05</span>
+                        <div class="al-ldd-scope-card__icon">
+                            <i class="fa-solid fa-people-group"></i>
+                        </div>
+                        <h3>Design Professional Identification & Coordination</h3>
+                        <p>
+                            Identifying and coordinating with suitable
+                            architects, civil, landscape and interior
+                            design professionals for project requirements.
+                        </p>
+                    </article>
+
+                    <article class="al-ldd-scope-card al-ldd-reveal">
+                        <span class="al-ldd-scope-card__number">06</span>
+                        <div class="al-ldd-scope-card__icon">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+                        <h3>Technical & Project Coordination</h3>
+                        <p>
+                            Supporting coordination across relevant
+                            technical disciplines and project
+                            stakeholders during development planning.
+                        </p>
+                    </article>
+
+                    <article class="al-ldd-scope-card al-ldd-reveal">
+                        <span class="al-ldd-scope-card__number">07</span>
+                        <div class="al-ldd-scope-card__icon">
+                            <i class="fa-solid fa-key"></i>
+                        </div>
+                        <h3>Pre-Opening & Operational Readiness</h3>
+                        <p>
+                            Providing planning inputs around
+                            pre-opening requirements and operational
+                            readiness for the intended hospitality offering.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEVELOPMENT JOURNEY -->
+        <section class="al-ldd-section al-ldd-journey">
+            <div class="al-ldd-container">
+                <div class="al-ldd-journey__intro al-ldd-reveal">
+                    <span class="al-ldd-section-label">04 / THE DEVELOPMENT JOURNEY</span>
+                    <h2>From Vision to <span>Destination Direction.</span></h2>
+                    <p>
+                        A coordinated approach that connects the
+                        destination idea with the planning, design
+                        and operational considerations needed to
+                        move the project forward.
+                    </p>
+                </div>
+
+                <div class="al-ldd-timeline">
+                    <article class="al-ldd-timeline__item al-ldd-reveal">
+                        <div class="al-ldd-timeline__marker">01</div>
+                        <div class="al-ldd-timeline__content">
+                            <span>STEP ONE</span>
+                            <h3>Vision & Opportunity</h3>
+                            <p>
+                                Understand the client's vision,
+                                land context, project objectives
+                                and intended destination experience.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="al-ldd-timeline__item al-ldd-reveal">
+                        <div class="al-ldd-timeline__marker">02</div>
+                        <div class="al-ldd-timeline__content">
+                            <span>STEP TWO</span>
+                            <h3>Concept & Positioning</h3>
+                            <p>
+                                Establish the proposed destination
+                                identity, positioning and broad
+                                hospitality proposition.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="al-ldd-timeline__item al-ldd-reveal">
+                        <div class="al-ldd-timeline__marker">03</div>
+                        <div class="al-ldd-timeline__content">
+                            <span>STEP THREE</span>
+                            <h3>Planning & Design Coordination</h3>
+                            <p>
+                                Coordinate relevant master-planning,
+                                architectural, civil, landscape and
+                                interior design inputs.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="al-ldd-timeline__item al-ldd-reveal">
+                        <div class="al-ldd-timeline__marker">04</div>
+                        <div class="al-ldd-timeline__content">
+                            <span>STEP FOUR</span>
+                            <h3>Technical & Project Alignment</h3>
+                            <p>
+                                Support coordination between
+                                project stakeholders and relevant
+                                technical disciplines.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="al-ldd-timeline__item al-ldd-reveal">
+                        <div class="al-ldd-timeline__marker">05</div>
+                        <div class="al-ldd-timeline__content">
+                            <span>STEP FIVE</span>
+                            <h3>Pre-Opening Readiness</h3>
+                            <p>
+                                Bring operational and pre-opening
+                                considerations into the development
+                                direction as the project progresses.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY ASTRA LUXE -->
+        <section class="al-ldd-section al-ldd-why">
+            <div class="al-ldd-container al-ldd-why__grid">
+                <div class="al-ldd-why__visual al-ldd-reveal">
+                    <img
+                        src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1100&q=85"
+                        alt="Luxury destination surrounded by natural landscape"
+                        loading="lazy"
+                    >
+
+                    <div class="al-ldd-why__visual-caption">
+                        <span>THE ASTRALUXE ADVISORY</span>
+                        <p>Distinctive Places. Considered Experiences.</p>
+                    </div>
+                </div>
+
+                <div class="al-ldd-why__content al-ldd-reveal">
+                    <span class="al-ldd-section-label">05 / WHY ASTRA LUXE</span>
+
+                    <h2>
+                        A Connected View of
+                        <span>Destination Development.</span>
+                    </h2>
+
+                    <p>
+                        A successful destination requires more than
+                        individual design or development decisions.
+                        Its identity, physical planning, hospitality
+                        experience and business intent need to support
+                        one another.
+                    </p>
+
+                    <ul class="al-ldd-check-list">
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Destination-led concept and positioning
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Consideration of location and land potential
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Coordinated planning and design inputs
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Alignment of hospitality product and guest experience
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Attention to technical and operational requirements
+                        </li>
+                    </ul>
+
+                    <a href="../contact.html" class="al-ldd-text-link">
+                        Discuss Your Development Vision
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR FOCUS -->
+        <section class="al-ldd-focus">
+            <div class="al-ldd-container al-ldd-focus__inner al-ldd-reveal">
+                <div class="al-ldd-focus__icon">
+                    <i class="fa-solid fa-compass-drafting"></i>
+                </div>
+
+                <div class="al-ldd-focus__content">
+                    <span class="al-ldd-section-label">OUR FOCUS</span>
+                    <h2>
+                        One Vision.
+                        <span>A Coherent Development Direction.</span>
+                    </h2>
+                    <p>
+                        Our objective is to create a coherent development
+                        direction in which the destination concept,
+                        design decisions, guest experience and business
+                        strategy work together.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CTA -->
+        <section class="al-ldd-cta">
+            <div class="al-ldd-cta__background"></div>
+
+            <div class="al-ldd-container al-ldd-cta__content al-ldd-reveal">
+                <span class="al-ldd-section-label">YOUR VISION. OUR ADVISORY.</span>
+
+                <h2>
+                    Have a Place in Mind?
+                    <span>Let's Shape Its Potential.</span>
+                </h2>
+
+                <p>
+                    Connect with The AstraLuxe Advisory to explore
+                    the possibilities for your next luxury
+                    hospitality destination.
+                </p>
+
+                <a href="../contact.html" class="al-ldd-button al-ldd-button--gold">
+                    Start a Conversation
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <div id="whatsapp-placeholder"></div>
+
+    <script src="/js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const faqItems = document.querySelectorAll(".al-ldd-faq-item");
+
+            faqItems.forEach((item) => {
+                const question = item.querySelector(
+                    ".al-ldd-faq-item__question"
+                );
+
+                if (!question) return;
+
+                question.addEventListener("click", () => {
+                    const isActive = item.classList.contains("is-active");
+
+                    faqItems.forEach((faqItem) => {
+                        faqItem.classList.remove("is-active");
+
+                        const button = faqItem.querySelector(
+                            ".al-ldd-faq-item__question"
+                        );
+
+                        if (button) {
+                            button.setAttribute("aria-expanded", "false");
+                        }
+                    });
+
+                    if (!isActive) {
+                        item.classList.add("is-active");
+                        question.setAttribute("aria-expanded", "true");
+                    }
+                });
+            });
+
+            if (
+                typeof gsap === "undefined" ||
+                typeof ScrollTrigger === "undefined"
+            ) {
+                return;
+            }
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            const reduceMotion = window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches;
+
+            if (reduceMotion) return;
+
+            const heroTimeline = gsap.timeline({
+                defaults: {
+                    ease: "power3.out"
+                }
+            });
+
+            heroTimeline
+                .from(".al-ldd-hero__image", {
+                    scale: 1.15,
+                    duration: 1.8
+                })
+                .from(
+                    ".al-ldd-hero .al-ldd-eyebrow",
+                    {
+                        y: 25,
+                        opacity: 0,
+                        duration: 0.7
+                    },
+                    "-=1.1"
+                )
+                .from(
+                    ".al-ldd-hero h1",
+                    {
+                        y: 55,
+                        opacity: 0,
+                        duration: 1
+                    },
+                    "-=0.45"
+                )
+                .from(
+                    ".al-ldd-hero__description",
+                    {
+                        y: 25,
+                        opacity: 0,
+                        duration: 0.7
+                    },
+                    "-=0.55"
+                )
+                .from(
+                    ".al-ldd-hero .al-ldd-button",
+                    {
+                        y: 20,
+                        opacity: 0,
+                        duration: 0.65
+                    },
+                    "-=0.4"
+                );
+
+            const specificallyAnimated = [
+                ".al-ldd-pillar",
+                ".al-ldd-scope-card",
+                ".al-ldd-timeline__item",
+                ".al-ldd-why__visual",
+                ".al-ldd-focus__inner",
+                ".al-ldd-cta__content"
+            ].join(", ");
+
+            gsap.utils.toArray(".al-ldd-reveal").forEach((element) => {
+                if (
+                    element.closest(".al-ldd-hero") ||
+                    element.matches(specificallyAnimated) ||
+                    element.querySelector(specificallyAnimated)
+                ) {
+                    return;
+                }
+
+                gsap.fromTo(
+                    element,
+                    {
+                        y: 38,
+                        opacity: 0
+                    },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.85,
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: element,
+                            start: "top 88%",
+                            once: true
+                        }
+                    }
+                );
+            });
+
+            gsap.from(".al-ldd-pillar", {
+                y: 55,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.14,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-ldd-pillars__grid",
+                    start: "top 82%",
+                    once: true
+                }
+            });
+
+            gsap.from(".al-ldd-scope-card", {
+                y: 60,
+                opacity: 0,
+                scale: 0.97,
+                duration: 0.75,
+                stagger: 0.12,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-ldd-scope__grid",
+                    start: "top 82%",
+                    once: true
+                }
+            });
+
+            gsap.from(".al-ldd-timeline__item", {
+                y: 45,
+                opacity: 0,
+                duration: 0.75,
+                stagger: 0.16,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-ldd-timeline",
+                    start: "top 82%",
+                    once: true
+                }
+            });
+
+            gsap.from(".al-ldd-why__visual img", {
+                scale: 1.12,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".al-ldd-why",
+                    start: "top 78%",
+                    once: true
+                }
+            });
+
+            gsap.from(".al-ldd-focus__inner", {
+                x: -55,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-ldd-focus",
+                    start: "top 85%",
+                    once: true
+                }
+            });
+
+            gsap.from(".al-ldd-cta__content > *", {
+                y: 35,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-ldd-cta",
+                    start: "top 80%",
+                    once: true
+                }
+            });
+
+            window.addEventListener("load", () => {
+                ScrollTrigger.refresh();
+            });
+        });
+    </script>
+
+</body>
+</html>

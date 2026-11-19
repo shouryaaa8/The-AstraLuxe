@@ -1,0 +1,3820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Discover The AstraLuxe Advisory, a premium hospitality and real estate consulting firm delivering strategic advisory, operational excellence and asset development expertise.">
+    <title>About Us | The AstraLuxe Advisory</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+    <style>
+        /* ==========================================
+   THE ASTRALUXE ADVISORY
+   ABOUT US PAGE
+   Standalone stylesheet
+========================================== */
+
+        .al-about-page {
+            --about-navy: #0F172A;
+            --about-slate: #334155;
+            --about-gold: #D4AF37;
+            --about-gold-light: #dfc8a6;
+            --about-ivory: #f8f6f1;
+            --about-white: #ffffff;
+            --about-text: #263244;
+            --about-muted: #64748b;
+
+            width: 100%;
+            overflow: clip;
+            background: var(--about-white);
+            color: var(--about-text);
+            font-family: "Lora", serif;
+        }
+
+        .al-about-page *,
+        .al-about-page *::before,
+        .al-about-page *::after {
+            box-sizing: border-box;
+        }
+
+        .al-about-page img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .al-about-page a {
+            text-decoration: none;
+        }
+
+        .al-about-page h1,
+        .al-about-page h2,
+        .al-about-page h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 500;
+        }
+
+        .al-about-page p {
+            font-size: 14px;
+            line-height: 1.95;
+        }
+
+        .al-about-section {
+            padding: 115px 8%;
+        }
+
+        .al-about-label {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--about-gold);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            line-height: 1.7;
+            text-transform: uppercase;
+        }
+
+        .al-about-page h2 {
+            margin: 0;
+            color: var(--about-navy);
+            font-size: clamp(43px, 5vw, 68px);
+            line-height: 1.04;
+        }
+
+        .al-about-page h2 em {
+            color: var(--about-gold);
+            font-weight: 400;
+        }
+
+
+        /* ==========================================
+   BUTTON
+========================================== */
+
+        .al-about-button {
+            display: inline-flex;
+            min-height: 54px;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 27px;
+            border: 1px solid var(--about-gold);
+            background: var(--about-gold);
+            color: var(--about-navy);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .al-about-button:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .al-about-button i {
+            transition: transform 0.3s ease;
+        }
+
+        .al-about-button:hover i {
+            transform: translateX(5px);
+        }
+
+
+        /* ==========================================
+   HERO
+========================================== */
+
+        .al-about-hero {
+            position: relative;
+            display: flex;
+            min-height: 720px;
+            height: 92svh;
+            max-height: 950px;
+            align-items: center;
+            padding: 100px 9%;
+            overflow: hidden;
+            background: var(--about-navy);
+        }
+
+        .al-about-hero-image {
+            position: absolute;
+            inset: 0;
+            background:
+                url("https://gos3.ibcdn.com/bdc188bc-bc76-4ee8-a91b-3d11c86fdf2c.png") center 50% / cover no-repeat;
+            transform: scale(1.06);
+        }
+
+        .al-about-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg,
+                    rgba(15, 23, 42, 0.93) 0%,
+                    rgba(15, 23, 42, 0.76) 48%,
+                    rgba(15, 23, 42, 0.22) 100%);
+        }
+
+        .al-about-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            color: white;
+        }
+
+        .al-about-eyebrow {
+            display: block;
+            margin-bottom: 28px;
+            color: var(--about-gold-light);
+            font-family: "Montserrat", sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 4px;
+        }
+
+        .al-about-hero h1 {
+            margin: 0;
+            color: white;
+            font-size: clamp(62px, 8.5vw, 116px);
+            line-height: 0.94;
+        }
+
+        .al-about-hero h1 span {
+            display: block;
+            margin-top: 15px;
+            color: var(--about-gold-light);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .al-about-hero-content>p {
+            max-width: 570px;
+            margin: 30px 0 35px;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .al-about-hero-footer {
+            position: absolute;
+            right: 9%;
+            bottom: 38px;
+            left: 9%;
+            display: flex;
+            align-items: center;
+            gap: 17px;
+            color: rgba(255, 255, 255, 0.75);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+
+        .al-about-hero-divider {
+            width: 35px;
+            height: 1px;
+            background: var(--about-gold);
+        }
+
+
+        /* ==========================================
+   INTRODUCTION
+========================================== */
+
+        .al-about-introduction {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            align-items: start;
+            gap: 10%;
+            background: var(--about-ivory);
+        }
+
+        .al-about-intro-heading {
+            position: sticky;
+            top: 110px;
+        }
+
+        .al-about-intro-heading h2 {
+            max-width: 510px;
+        }
+
+        .al-about-intro-body>p {
+            margin: 0 0 22px;
+            color: var(--about-muted);
+        }
+
+        .al-about-intro-body strong {
+            color: var(--about-slate);
+            font-weight: 600;
+        }
+
+        .al-about-quote {
+            position: relative;
+            margin-top: 38px;
+            padding: 27px 30px 27px 35px;
+            border-left: 2px solid var(--about-gold);
+            background: white;
+        }
+
+        .al-about-quote-mark {
+            display: block;
+            height: 36px;
+            color: var(--about-gold);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 65px;
+            line-height: 0.9;
+        }
+
+        .al-about-quote p {
+            margin: 8px 0 0;
+            color: var(--about-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 27px;
+            font-style: italic;
+            line-height: 1.35;
+        }
+
+
+        /* ==========================================
+   WHO WE ARE
+========================================== */
+
+        .al-about-who {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            align-items: center;
+            gap: 9%;
+            background: white;
+        }
+
+        .al-about-who-visual {
+            position: relative;
+            height: 590px;
+            overflow: hidden;
+        }
+
+        .al-about-who-visual img {
+            transition: transform 1s ease;
+        }
+
+        .al-about-who-visual:hover img {
+            transform: scale(1.05);
+        }
+
+        .al-about-who-image-caption {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 35px;
+            background: linear-gradient(transparent,
+                    rgba(15, 23, 42, 0.92));
+            color: white;
+        }
+
+        .al-about-who-image-caption span {
+            color: var(--about-gold-light);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+
+        .al-about-who-image-caption h3 {
+            margin: 12px 0 0;
+            color: white;
+            font-size: 35px;
+            line-height: 1.1;
+        }
+
+        .al-about-who-image-index {
+            position: absolute;
+            top: 22px;
+            left: 22px;
+            padding: 10px 13px;
+            background: rgba(30, 41, 59, 0.82);
+            color: white;
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+
+        .al-about-who-content h2 {
+            margin-bottom: 25px;
+        }
+
+        .al-about-who-content>p {
+            margin: 0 0 17px;
+            color: var(--about-muted);
+        }
+
+        .al-about-who-statement {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 28px;
+            padding: 20px;
+            border-left: 2px solid var(--about-gold);
+            background: var(--about-ivory);
+            color: var(--about-slate);
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .al-about-who-statement i {
+            color: var(--about-gold);
+            font-size: 22px;
+        }
+
+
+        /* ==========================================
+   PHILOSOPHY
+========================================== */
+
+        .al-about-philosophy {
+            padding: 115px 8%;
+            background: var(--about-navy);
+        }
+
+        .al-about-philosophy-heading {
+            max-width: 800px;
+            margin-bottom: 65px;
+        }
+
+        .al-about-philosophy-heading h2 {
+            color: white;
+        }
+
+        .al-about-philosophy-heading>p {
+            max-width: 620px;
+            margin-top: 22px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .al-about-principles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid rgba(197, 168, 128, 0.35);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.35);
+        }
+
+        .al-about-principle {
+            position: relative;
+            min-height: 320px;
+            padding: 35px 35px 40px;
+            border-right: 1px solid rgba(197, 168, 128, 0.25);
+        }
+
+        .al-about-principle:last-child {
+            border-right: 0;
+        }
+
+        .al-about-principle-number {
+            display: block;
+            margin-bottom: 32px;
+            color: var(--about-gold);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 36px;
+        }
+
+        .al-about-principle-icon {
+            display: grid;
+            width: 52px;
+            height: 52px;
+            place-items: center;
+            border: 1px solid rgba(197, 168, 128, 0.45);
+            border-radius: 50%;
+            color: var(--about-gold-light);
+            font-size: 19px;
+        }
+
+        .al-about-principle h3 {
+            margin: 22px 0 12px;
+            color: white;
+            font-size: 30px;
+        }
+
+        .al-about-principle p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.67);
+            font-size: 12px;
+        }
+
+        .al-about-philosophy-footer {
+            max-width: 850px;
+            margin: 35px auto 0;
+            text-align: center;
+        }
+
+        .al-about-philosophy-footer p {
+            color: var(--about-gold-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 25px;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+
+        /* ==========================================
+   EXPERTISE
+========================================== */
+
+        .al-about-expertise {
+            background: var(--about-ivory);
+        }
+
+        .al-about-expertise-header {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .al-about-expertise-header>div {
+            max-width: 680px;
+        }
+
+        .al-about-expertise-header>p {
+            max-width: 380px;
+            margin: 0 0 8px;
+            color: var(--about-muted);
+        }
+
+        .al-about-expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid rgba(51, 65, 85, 0.18);
+            border-left: 1px solid rgba(51, 65, 85, 0.18);
+        }
+
+        .al-about-expertise-card {
+            position: relative;
+            min-height: 285px;
+            padding: 32px;
+            border-right: 1px solid rgba(51, 65, 85, 0.18);
+            border-bottom: 1px solid rgba(51, 65, 85, 0.18);
+            background: transparent;
+            transition: background 0.35s ease, transform 0.35s ease;
+        }
+
+        .al-about-expertise-card:hover {
+            z-index: 1;
+            background: white;
+            transform: translateY(-5px);
+        }
+
+        .al-about-expertise-index {
+            position: absolute;
+            top: 25px;
+            right: 27px;
+            color: var(--about-gold);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 27px;
+        }
+
+        .al-about-expertise-card>i {
+            display: block;
+            margin: 15px 0 28px;
+            color: var(--about-gold);
+            font-size: 25px;
+        }
+
+        .al-about-expertise-card h3 {
+            max-width: 290px;
+            margin: 0 0 12px;
+            color: var(--about-navy);
+            font-size: 27px;
+            line-height: 1.05;
+        }
+
+        .al-about-expertise-card p {
+            margin: 0;
+            color: var(--about-muted);
+            font-size: 12px;
+        }
+
+
+        /* ==========================================
+   KITCHEN & LAUNDRY
+========================================== */
+
+        .al-about-kitchen {
+            padding: 115px 8%;
+            background: white;
+        }
+
+        .al-about-kitchen-top {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            align-items: center;
+            gap: 9%;
+            margin-bottom: 85px;
+        }
+
+        .al-about-kitchen-heading h2 {
+            margin-bottom: 24px;
+        }
+
+        .al-about-kitchen-heading>p {
+            max-width: 620px;
+            color: var(--about-muted);
+        }
+
+        .al-about-kitchen-image {
+            position: relative;
+            height: 420px;
+            overflow: hidden;
+        }
+
+        .al-about-kitchen-image img {
+            transition: transform 1s ease;
+        }
+
+        .al-about-kitchen-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .al-about-kitchen-image>span {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 18px 22px;
+            background: rgba(30, 41, 59, 0.88);
+            color: var(--about-gold-light);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+
+        .al-about-kitchen-services {
+            display: grid;
+            grid-template-columns: 0.7fr 1.3fr;
+            gap: 8%;
+            padding: 42px 0;
+            border-top: 1px solid rgba(51, 65, 85, 0.18);
+        }
+
+        .al-about-kitchen-service-heading {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .al-about-kitchen-service-heading>span {
+            color: var(--about-gold);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 37px;
+        }
+
+        .al-about-kitchen-service-heading h3 {
+            margin: 0;
+            color: var(--about-navy);
+            font-size: 31px;
+            line-height: 1.05;
+        }
+
+        .al-about-kitchen-service-heading p {
+            margin: 12px 0 0;
+            color: var(--about-muted);
+            font-size: 12px;
+        }
+
+        .al-about-kitchen-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 17px 25px;
+        }
+
+        .al-about-kitchen-list>div {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--about-slate);
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .al-about-kitchen-list i {
+            flex-shrink: 0;
+            margin-top: 4px;
+            color: var(--about-gold);
+            font-size: 11px;
+        }
+
+        .al-about-kitchen-execution {
+            border-bottom: 1px solid rgba(51, 65, 85, 0.18);
+        }
+
+
+        /* ==========================================
+   ARCHITECTURE & MEP
+========================================== */
+
+        .al-about-technical {
+            background: var(--about-ivory);
+        }
+
+        .al-about-technical-heading {
+            max-width: 790px;
+            margin-bottom: 55px;
+        }
+
+        .al-about-technical-heading>p {
+            max-width: 670px;
+            color: var(--about-muted);
+        }
+
+        .al-about-technical-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .al-about-technical-card {
+            min-height: 330px;
+            padding: 35px;
+            border: 1px solid rgba(51, 65, 85, 0.13);
+            background: white;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .al-about-technical-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 18px 40px rgba(30, 41, 59, 0.08);
+        }
+
+        .al-about-technical-icon {
+            display: grid;
+            width: 58px;
+            height: 58px;
+            margin-bottom: 30px;
+            place-items: center;
+            border: 1px solid rgba(197, 168, 128, 0.55);
+            border-radius: 50%;
+            color: var(--about-gold);
+            font-size: 21px;
+        }
+
+        .al-about-technical-card>span {
+            color: var(--about-gold);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+        }
+
+        .al-about-technical-card h3 {
+            margin: 15px 0 12px;
+            color: var(--about-navy);
+            font-size: 29px;
+            line-height: 1.05;
+        }
+
+        .al-about-technical-card p {
+            margin: 0;
+            color: var(--about-muted);
+            font-size: 12px;
+        }
+
+        .al-about-technical-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-top: 30px;
+            padding: 22px;
+            border-left: 2px solid var(--about-gold);
+            background: white;
+        }
+
+        .al-about-technical-note i {
+            margin-top: 4px;
+            color: var(--about-gold);
+        }
+
+        .al-about-technical-note p {
+            margin: 0;
+            color: var(--about-muted);
+            font-size: 11px;
+        }
+
+
+        /* ==========================================
+   LANDSCAPE
+========================================== */
+
+        .al-about-landscape {
+            position: relative;
+            min-height: 720px;
+            padding: 110px 8% 60px;
+            overflow: hidden;
+            background: var(--about-navy);
+        }
+
+        .al-about-landscape-image {
+            position: absolute;
+            inset: 0;
+        }
+
+        .al-about-landscape-image img {
+            object-position: center;
+        }
+
+        .al-about-landscape-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg,
+                    rgba(15, 23, 42, 0.95) 0%,
+                    rgba(15, 23, 42, 0.83) 48%,
+                    rgba(15, 23, 42, 0.55) 100%);
+        }
+
+        .al-about-landscape-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .al-about-landscape-content h2 {
+            color: white;
+        }
+
+        .al-about-landscape-content h2 em {
+            display: block;
+        }
+
+        .al-about-landscape-content>p {
+            max-width: 700px;
+            color: rgba(255, 255, 255, 0.77);
+        }
+
+        .al-about-landscape-content>p:first-of-type {
+            margin-top: 25px;
+        }
+
+        .al-about-landscape-typologies {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            margin-top: 85px;
+            border-top: 1px solid rgba(197, 168, 128, 0.45);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.45);
+        }
+
+        .al-about-landscape-typologies>div {
+            min-height: 130px;
+            padding: 25px 20px;
+            border-right: 1px solid rgba(197, 168, 128, 0.3);
+        }
+
+        .al-about-landscape-typologies>div:last-child {
+            border-right: 0;
+        }
+
+        .al-about-landscape-typologies span {
+            color: var(--about-gold-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 25px;
+        }
+
+        .al-about-landscape-typologies p {
+            margin: 15px 0 0;
+            color: white;
+            font-size: 12px;
+        }
+
+
+        /* ==========================================
+   MISSION & VISION
+========================================== */
+
+        .al-about-purpose {
+            background: white;
+        }
+
+        .al-about-purpose-header {
+            max-width: 760px;
+            margin-bottom: 55px;
+        }
+
+        .al-about-purpose-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .al-about-purpose-card {
+            min-height: 490px;
+            padding: 42px;
+            border: 1px solid rgba(197, 168, 128, 0.4);
+            background: var(--about-ivory);
+        }
+
+        .al-about-vision {
+            background: var(--about-navy);
+            border-color: var(--about-navy);
+        }
+
+        .al-about-purpose-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 45px;
+        }
+
+        .al-about-purpose-top>span {
+            color: var(--about-gold);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 38px;
+        }
+
+        .al-about-purpose-top>i {
+            color: var(--about-gold);
+            font-size: 24px;
+        }
+
+        .al-about-purpose-label {
+            color: var(--about-gold);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .al-about-purpose-card h3 {
+            margin: 17px 0 22px;
+            color: var(--about-navy);
+            font-size: 38px;
+            line-height: 1.05;
+        }
+
+        .al-about-vision h3 {
+            color: white;
+        }
+
+        .al-about-purpose-card>p {
+            color: var(--about-muted);
+            font-size: 12px;
+        }
+
+        .al-about-vision>p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+
+        /* ==========================================
+   FOUNDER
+========================================== */
+
+        .al-about-founder {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            align-items: stretch;
+            gap: 0;
+            padding: 100px 8%;
+            background: var(--about-ivory);
+        }
+
+        .al-about-founder-image-wrap {
+            position: relative;
+            min-height: 760px;
+            overflow: hidden;
+            background: #d9d4ca;
+        }
+
+        .al-about-founder-image {
+            position: absolute;
+            inset: 0;
+            object-position: center top;
+        }
+
+        .al-about-founder-image-caption {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 35px;
+            background: linear-gradient(transparent,
+                    rgba(15, 23, 42, 0.92));
+            color: white;
+        }
+
+        .al-about-founder-image-caption span {
+            color: var(--about-gold-light);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+
+        .al-about-founder-image-caption p {
+            margin: 10px 0 0;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 25px;
+        }
+
+        .al-about-founder-content {
+            padding: 45px 0 35px 65px;
+        }
+
+        .al-about-founder-content h2 {
+            margin-bottom: 28px;
+            font-size: clamp(42px, 4.3vw, 57px);
+        }
+
+        .al-about-founder-name {
+            margin-bottom: 28px;
+            padding-bottom: 22px;
+            border-bottom: 1px solid rgba(51, 65, 85, 0.18);
+        }
+
+        .al-about-founder-name h3 {
+            margin: 0 0 7px;
+            color: var(--about-navy);
+            font-size: 34px;
+        }
+
+        .al-about-founder-name span {
+            color: var(--about-gold);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .al-about-founder-content>p {
+            margin: 0 0 17px;
+            color: var(--about-muted);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .al-about-founder-signoff {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+            margin-top: 25px;
+        }
+
+        .al-about-founder-signature {
+            color: var(--about-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 32px;
+            font-style: italic;
+        }
+
+        .al-about-founder-signoff>span:last-child {
+            color: var(--about-gold);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+
+        /* ==========================================
+   CLOSING CTA
+========================================== */
+
+        .al-about-closing {
+            position: relative;
+            display: grid;
+            min-height: 520px;
+            place-items: center;
+            padding: 100px 8%;
+            overflow: hidden;
+            background:
+                linear-gradient(rgba(30, 41, 59, 0.95), rgba(30, 41, 59, 0.95)),
+                url("https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=2000&q=85") center / cover;
+            text-align: center;
+        }
+
+        .al-about-closing-content {
+            max-width: 850px;
+        }
+
+        .al-about-closing h2 {
+            color: white;
+        }
+
+        .al-about-closing h2 em {
+            display: block;
+        }
+
+        .al-about-closing-content>p {
+            max-width: 620px;
+            margin: 25px auto 30px;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        /* ==========================================
+           SUPABASE PROJECT SHOWCASE
+        ========================================== */
+
+        .al-projects-section {
+            padding: 100px 8%;
+            background: var(--about-ivory);
+        }
+
+        .al-projects-heading {
+            max-width: 760px;
+            margin: 0 auto 55px;
+            text-align: center;
+        }
+
+        .al-projects-heading h2 {
+            margin-bottom: 18px;
+        }
+
+        .al-projects-heading > p {
+            margin: 0;
+            color: var(--about-muted);
+        }
+
+        .al-projects-category + .al-projects-category {
+            margin-top: 55px;
+        }
+
+        .al-projects-category-title {
+            margin: 0 0 20px;
+            color: var(--about-navy);
+            font-size: 34px;
+        }
+
+        .al-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
+        .al-projects-card {
+            display: flex;
+            min-width: 0;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid rgba(51, 65, 85, 0.1);
+            background: white;
+            box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .al-projects-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 38px rgba(15, 23, 42, 0.11);
+        }
+
+        .al-about-page .al-projects-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .al-projects-card-gallery {
+            display: flex;
+            gap: 8px;
+            padding: 10px 24px 0;
+            overflow-x: auto;
+        }
+
+        .al-about-page .al-projects-card-gallery img {
+            width: 64px;
+            height: 52px;
+            flex: 0 0 64px;
+            border: 1px solid rgba(51, 65, 85, 0.12);
+        }
+
+        .al-projects-card-content {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 24px;
+        }
+
+        .al-projects-featured {
+            margin-bottom: 10px;
+            color: #947323;
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .al-about-page .al-projects-card h4 {
+            margin: 0 0 12px;
+            color: var(--about-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 29px;
+            font-weight: 600;
+            line-height: 1.15;
+        }
+
+        .al-about-page .al-projects-card p {
+            flex: 1;
+            margin: 0 0 22px;
+            color: var(--about-muted);
+            font-size: 13px;
+            line-height: 1.75;
+        }
+
+        .al-about-page .al-projects-card .al-projects-location {
+            display: flex;
+            flex: 0 0 auto;
+            align-items: center;
+            gap: 8px;
+            margin: 0 0 14px;
+            color: var(--about-slate);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .al-projects-location i {
+            color: #947323;
+        }
+
+        .al-projects-link {
+            display: inline-flex;
+            min-height: 42px;
+            align-items: center;
+            justify-content: center;
+            padding: 0 17px;
+            background: var(--about-gold);
+            color: var(--about-navy);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: background 0.2s ease;
+        }
+
+        .al-projects-link:hover {
+            background: var(--about-gold-light);
+        }
+
+        .al-projects-message {
+            grid-column: 1 / -1;
+            margin: 0;
+            color: var(--about-muted);
+            font-size: 13px;
+            font-style: italic;
+        }
+
+        .al-projects-error {
+            color: #b42318;
+            font-style: normal;
+        }
+
+        @media (max-width: 760px) {
+            .al-projects-section {
+                padding: 75px 7%;
+            }
+
+            .al-projects-heading {
+                margin-bottom: 40px;
+                text-align: left;
+            }
+
+            .al-projects-category-title {
+                font-size: 30px;
+            }
+
+            .al-projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            }
+        }
+
+
+        /* ==========================================
+   ANIMATION SUPPORT
+========================================== */
+
+        .al-about-page .al-about-intro-heading,
+        .al-about-page .al-about-intro-body,
+        .al-about-page .al-about-who-visual,
+        .al-about-page .al-about-who-content,
+        .al-about-page .al-about-principle,
+        .al-about-page .al-about-expertise-card,
+        .al-about-page .al-about-kitchen-top,
+        .al-about-page .al-about-kitchen-services,
+        .al-about-page .al-about-technical-card,
+        .al-about-page .al-about-purpose-card,
+        .al-about-page .al-about-founder-image-wrap,
+        .al-about-page .al-about-founder-content {
+            will-change: transform, opacity;
+        }
+
+
+        /* ==========================================
+   RESPONSIVE: TABLETS
+========================================== */
+
+        @media (max-width: 1050px) {
+            .al-about-section {
+                padding: 90px 6%;
+            }
+
+            .al-about-introduction {
+                gap: 6%;
+            }
+
+            .al-about-who {
+                gap: 6%;
+            }
+
+            .al-about-who-visual {
+                height: 520px;
+            }
+
+            .al-about-expertise-card {
+                padding: 25px;
+            }
+
+            .al-about-kitchen {
+                padding: 90px 6%;
+            }
+
+            .al-about-founder {
+                padding: 80px 6%;
+            }
+
+            .al-about-founder-content {
+                padding-left: 40px;
+            }
+
+            .al-about-founder-image-wrap {
+                min-height: 820px;
+            }
+        }
+
+
+        /* ==========================================
+   RESPONSIVE: MOBILE
+========================================== */
+
+        @media (max-width: 760px) {
+            .al-about-section {
+                padding: 75px 6%;
+            }
+
+            .al-about-hero {
+                min-height: 650px;
+                height: 85svh;
+                padding: 100px 7%;
+            }
+
+            .al-about-hero-overlay {
+                background: linear-gradient(90deg,
+                        rgba(15, 23, 42, 0.94),
+                        rgba(15, 23, 42, 0.65));
+            }
+
+            .al-about-hero h1 {
+                font-size: clamp(55px, 12vw, 78px);
+            }
+
+            .al-about-hero-footer {
+                right: 7%;
+                left: 7%;
+                flex-wrap: wrap;
+                font-size: 7px;
+                gap: 10px;
+            }
+
+            .al-about-introduction,
+            .al-about-who {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .al-about-intro-heading {
+                position: static;
+            }
+
+            .al-about-who-visual {
+                height: 440px;
+            }
+
+            .al-about-philosophy {
+                padding: 80px 6%;
+            }
+
+            .al-about-principles {
+                grid-template-columns: 1fr;
+            }
+
+            .al-about-principle {
+                min-height: auto;
+                padding: 30px 15px;
+                border-right: 0;
+                border-bottom: 1px solid rgba(197, 168, 128, 0.25);
+            }
+
+            .al-about-principle:last-child {
+                border-bottom: 0;
+            }
+
+            .al-about-principle-number {
+                margin-bottom: 20px;
+            }
+
+            .al-about-expertise-header {
+                display: block;
+            }
+
+            .al-about-expertise-header>p {
+                margin-top: 22px;
+            }
+
+            .al-about-expertise-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .al-about-expertise-card {
+                min-height: 290px;
+                padding: 23px 19px;
+            }
+
+            .al-about-expertise-card h3 {
+                font-size: 24px;
+            }
+
+            .al-about-kitchen {
+                padding: 75px 6%;
+            }
+
+            .al-about-kitchen-top {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                margin-bottom: 50px;
+            }
+
+            .al-about-kitchen-image {
+                height: 350px;
+            }
+
+            .al-about-kitchen-services {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .al-about-technical-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .al-about-technical-card {
+                min-height: auto;
+            }
+
+            .al-about-landscape {
+                min-height: auto;
+                padding: 85px 6% 50px;
+            }
+
+            .al-about-landscape-typologies {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: 55px;
+            }
+
+            .al-about-landscape-typologies>div {
+                min-height: 110px;
+                border-bottom: 1px solid rgba(197, 168, 128, 0.3);
+            }
+
+            .al-about-landscape-typologies>div:nth-child(2n) {
+                border-right: 0;
+            }
+
+            .al-about-landscape-typologies>div:last-child {
+                border-bottom: 0;
+            }
+
+            .al-about-purpose-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .al-about-purpose-card {
+                min-height: auto;
+                padding: 32px;
+            }
+
+            .al-about-founder {
+                grid-template-columns: 1fr;
+                padding: 75px 6%;
+            }
+
+            .al-about-founder-image-wrap {
+                min-height: 600px;
+            }
+
+            .al-about-founder-content {
+                padding: 45px 0 0;
+            }
+        }
+
+
+        /* ==========================================
+   RESPONSIVE: SMALL MOBILE
+========================================== */
+
+        @media (max-width: 480px) {
+            .al-about-hero {
+                min-height: 600px;
+            }
+
+            .al-about-hero h1 {
+                font-size: 52px;
+            }
+
+            .al-about-page h2 {
+                font-size: 43px;
+            }
+
+            .al-about-quote {
+                padding: 22px;
+            }
+
+            .al-about-quote p {
+                font-size: 24px;
+            }
+
+            .al-about-who-visual {
+                height: 360px;
+            }
+
+            .al-about-expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .al-about-expertise-card {
+                min-height: auto;
+                padding: 27px;
+            }
+
+            .al-about-expertise-card h3 {
+                max-width: 280px;
+            }
+
+            .al-about-kitchen-list {
+                grid-template-columns: 1fr;
+            }
+
+            .al-about-kitchen-image {
+                height: 280px;
+            }
+
+            .al-about-kitchen-service-heading h3 {
+                font-size: 27px;
+            }
+
+            .al-about-landscape-typologies {
+                grid-template-columns: 1fr;
+            }
+
+            .al-about-landscape-typologies>div {
+                min-height: auto;
+                padding: 18px 10px;
+                border-right: 0;
+            }
+
+            .al-about-landscape-typologies>div:last-child {
+                border-bottom: 0;
+            }
+
+            .al-about-purpose-card {
+                padding: 27px;
+            }
+
+            .al-about-purpose-card h3 {
+                font-size: 33px;
+            }
+
+            .al-about-founder-image-wrap {
+                min-height: 480px;
+            }
+
+            .al-about-founder-content {
+                padding-top: 35px;
+            }
+
+            .al-about-founder-content h2 {
+                font-size: 43px;
+            }
+
+            .al-about-founder-content>p {
+                font-size: 12px;
+            }
+
+            .al-about-closing {
+                min-height: 450px;
+            }
+        }
+
+
+        /* ==========================================
+   REDUCED MOTION
+========================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .al-about-page *,
+            .al-about-page *::before,
+            .al-about-page *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+
+        /* ==========================================
+   THE ASTRALUXE ADVISORY
+   IN HOUSE ADVISORY — PREMIUM THEME
+========================================== */
+
+        .al-about-advisory {
+            --ad-navy: #1E293B;
+            --ad-slate: #334155;
+            --ad-gold: #C5A880;
+            --ad-gold-light: #D9C29F;
+            --ad-gold-dark: #A88B61;
+            --ad-ivory: #F8FAFC;
+            --ad-white: #FFFFFF;
+            --ad-text: #263244;
+            --ad-muted: #64748B;
+            --ad-border: rgba(197, 168, 128, 0.35);
+
+            position: relative;
+            padding: 120px 8%;
+            overflow: hidden;
+            background: var(--ad-ivory);
+            color: var(--ad-text);
+            font-family: "Lora", serif;
+        }
+
+        .al-about-advisory *,
+        .al-about-advisory *::before,
+        .al-about-advisory *::after {
+            box-sizing: border-box;
+        }
+
+
+        /* ==========================================
+   SECTION HEADER
+========================================== */
+
+        .al-about-advisory-header {
+            max-width: 850px;
+            margin: 0 auto 75px;
+            text-align: center;
+        }
+
+        .al-about-advisory-header .al-about-label {
+            color: var(--ad-gold-dark);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3.5px;
+        }
+
+        .al-about-advisory-header h2 {
+            margin: 15px 0 0;
+            color: var(--ad-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(52px, 6vw, 76px);
+            font-weight: 500;
+            line-height: 0.98;
+        }
+
+        .al-about-advisory-header h2 em {
+            color: var(--ad-gold-dark);
+            font-weight: 400;
+        }
+
+        .al-about-advisory-header>p {
+            max-width: 660px;
+            margin: 23px auto 0;
+            color: var(--ad-muted);
+            font-family: "Lora", serif;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+
+        /* ==========================================
+   CONSULTANT PROFILE
+========================================== */
+
+        .al-about-profile {
+            position: relative;
+            margin-bottom: 55px;
+            padding: 42px;
+            overflow: hidden;
+            border: 1px solid var(--ad-border);
+            border-radius: 5px;
+            background: var(--ad-white);
+            box-shadow: 0 15px 45px rgba(30, 41, 59, 0.055);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .al-about-profile:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 22px 55px rgba(30, 41, 59, 0.09);
+        }
+
+        .al-about-profile::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--ad-gold);
+            content: "";
+        }
+
+        .al-about-profile-heading {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .al-about-profile-index {
+            display: block;
+            margin-bottom: 13px;
+            color: var(--ad-gold-dark);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+        }
+
+        .al-about-profile-heading h3 {
+            margin: 0;
+            color: var(--ad-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(37px, 4vw, 49px);
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .al-about-profile-subtitle {
+            margin: 13px 0 0;
+            color: var(--ad-muted);
+            font-family: "Lora", serif;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .al-about-profile-marker {
+            position: relative;
+            display: grid;
+            width: 55px;
+            height: 55px;
+            flex-shrink: 0;
+            place-items: center;
+            border: 1px solid var(--ad-border);
+            border-radius: 50%;
+            background: var(--ad-ivory);
+        }
+
+        .al-about-profile-marker::after {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--ad-gold);
+            box-shadow: 0 0 0 7px rgba(197, 168, 128, 0.13);
+            content: "";
+        }
+
+
+        /* ==========================================
+   EXPERIENCE / SUMMARY BAR
+========================================== */
+
+        .al-about-profile-summary {
+            display: grid;
+            grid-template-columns: auto auto 1px 1fr;
+            align-items: center;
+            gap: 28px;
+            min-height: 90px;
+            margin-bottom: 24px;
+            padding: 20px 30px;
+            border: 1px solid rgba(197, 168, 128, 0.28);
+            border-radius: 4px;
+            background: var(--ad-navy);
+            color: white;
+        }
+
+        .al-about-profile-summary>strong {
+            color: var(--ad-gold-light);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 42px;
+            font-weight: 600;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .al-about-profile-summary>span {
+            color: white;
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            line-height: 1.7;
+        }
+
+        .al-about-profile-summary>i {
+            width: 1px;
+            height: 45px;
+            background: var(--ad-gold);
+        }
+
+        .al-about-profile-summary>p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.92);
+            font-family: "Montserrat", sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            line-height: 1.8;
+        }
+
+        .al-about-profile-summary-no-number {
+            grid-template-columns: auto 1px 1fr;
+        }
+
+        .al-about-profile-summary-no-number>strong {
+            color: var(--ad-gold-light);
+            font-family: "Montserrat", sans-serif;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+
+        /* ==========================================
+   THREE EXPERTISE CARDS
+========================================== */
+
+        .al-about-profile-focus-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 22px;
+        }
+
+        .al-about-profile-focus {
+            position: relative;
+            min-height: 155px;
+            padding: 26px 23px;
+            overflow: hidden;
+            border: 1px solid rgba(197, 168, 128, 0.3);
+            border-radius: 3px;
+            background: var(--ad-ivory);
+            transition: background 0.35s ease, border-color 0.35s ease,
+                transform 0.35s ease;
+        }
+
+        .al-about-profile-focus::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--ad-gold);
+            content: "";
+        }
+
+        .al-about-profile-focus:hover {
+            border-color: var(--ad-gold);
+            background: white;
+            transform: translateY(-4px);
+        }
+
+        .al-about-profile-focus h4 {
+            margin: 0 0 15px;
+            color: var(--ad-gold-dark);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            line-height: 1.6;
+        }
+
+        .al-about-profile-focus p {
+            margin: 0;
+            color: var(--ad-slate);
+            font-family: "Lora", serif;
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+
+        /* ==========================================
+   CREDENTIALS / ADDITIONAL EXPERTISE
+========================================== */
+
+        .al-about-profile-bottom-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .al-about-profile-dark-card {
+            position: relative;
+            min-height: 145px;
+            padding: 26px 28px;
+            overflow: hidden;
+            border: 1px solid rgba(197, 168, 128, 0.22);
+            border-radius: 3px;
+            background: var(--ad-slate);
+            color: white;
+            transition: background 0.35s ease;
+        }
+
+        .al-about-profile-dark-card:hover {
+            background: var(--ad-navy);
+        }
+
+        .al-about-profile-dark-card::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--ad-gold);
+            content: "";
+        }
+
+        .al-about-profile-dark-card h4 {
+            margin: 0 0 14px;
+            color: var(--ad-gold-light);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            line-height: 1.6;
+        }
+
+        .al-about-profile-dark-card p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.92);
+            font-family: "Lora", serif;
+            font-size: 11px;
+            line-height: 1.9;
+        }
+
+
+        /* ==========================================
+   SHARED PROJECT REFERENCES
+========================================== */
+
+        .al-about-references {
+            position: relative;
+            margin-top: 90px;
+            padding: 60px;
+            overflow: hidden;
+            border: 1px solid rgba(197, 168, 128, 0.25);
+            border-radius: 4px;
+            background: var(--ad-navy);
+            color: white;
+        }
+
+        .al-about-references::after {
+            position: absolute;
+            top: -170px;
+            right: -120px;
+            width: 380px;
+            height: 380px;
+            border: 1px solid rgba(197, 168, 128, 0.15);
+            border-radius: 50%;
+            box-shadow: 0 0 0 35px rgba(197, 168, 128, 0.025),
+                0 0 0 70px rgba(197, 168, 128, 0.02);
+            content: "";
+            pointer-events: none;
+        }
+
+        .al-about-references-heading {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+            margin-bottom: 40px;
+        }
+
+        .al-about-references-heading .al-about-profile-index {
+            color: var(--ad-gold-light);
+        }
+
+        .al-about-references-heading h3 {
+            margin: 0;
+            color: white;
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(42px, 5vw, 60px);
+            font-weight: 500;
+            line-height: 1.05;
+        }
+
+        .al-about-references-heading h3 em {
+            color: var(--ad-gold-light);
+            font-weight: 400;
+        }
+
+        .al-about-references-heading>p {
+            max-width: 700px;
+            margin: 20px 0 0;
+            color: rgba(255, 255, 255, 0.72);
+            font-family: "Lora", serif;
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .al-about-references-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .al-about-reference-card {
+            position: relative;
+            padding: 32px;
+            border: 1px solid rgba(197, 168, 128, 0.2);
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.055);
+        }
+
+        .al-about-reference-card h4 {
+            margin: 0 0 22px;
+            color: var(--ad-gold-light);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            line-height: 1.7;
+        }
+
+        .al-about-reference-card p,
+        .al-about-reference-card li {
+            color: rgba(255, 255, 255, 0.9);
+            font-family: "Lora", serif;
+            font-size: 11px;
+            line-height: 1.95;
+        }
+
+        .al-about-reference-card p {
+            margin: 0;
+        }
+
+        .al-about-reference-card ul {
+            display: grid;
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .al-about-reference-card li {
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+        }
+
+        .al-about-reference-card li:last-child {
+            padding-bottom: 0;
+            border-bottom: 0;
+        }
+
+        .al-about-reference-card li strong {
+            color: var(--ad-gold-light);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+        }
+
+        .al-about-reference-hotels {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-left: 3px solid var(--ad-gold);
+        }
+
+        .al-about-reference-side {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .al-about-reference-side .al-about-reference-card:first-child {
+            border-left: 3px solid var(--ad-gold);
+        }
+
+        .al-about-reference-side .al-about-reference-card:last-child {
+            border-left: 3px solid rgba(197, 168, 128, 0.55);
+        }
+
+        .al-about-reference-disclaimer {
+            position: relative;
+            z-index: 1;
+            margin: 25px 0 0;
+            color: rgba(255, 255, 255, 0.56);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px !important;
+            line-height: 1.9 !important;
+        }
+
+
+        /* ==========================================
+   RESPONSIVE
+========================================== */
+
+        @media (max-width: 1050px) {
+            .al-about-advisory {
+                padding: 95px 6%;
+            }
+
+            .al-about-profile {
+                padding: 32px;
+            }
+
+            .al-about-profile-focus-grid {
+                gap: 13px;
+            }
+
+            .al-about-profile-focus {
+                padding: 22px 17px;
+            }
+
+            .al-about-references {
+                padding: 42px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .al-about-advisory {
+                padding: 75px 6%;
+            }
+
+            .al-about-advisory-header {
+                margin-bottom: 45px;
+            }
+
+            .al-about-profile {
+                margin-bottom: 38px;
+                padding: 25px;
+            }
+
+            .al-about-profile-heading {
+                gap: 15px;
+            }
+
+            .al-about-profile-marker {
+                width: 43px;
+                height: 43px;
+            }
+
+            .al-about-profile-summary {
+                grid-template-columns: auto 1fr;
+                gap: 12px 18px;
+                padding: 22px;
+            }
+
+            .al-about-profile-summary>i {
+                display: none;
+            }
+
+            .al-about-profile-summary>p {
+                grid-column: 1 / -1;
+                padding-top: 13px;
+                border-top: 1px solid rgba(197, 168, 128, 0.4);
+            }
+
+            .al-about-profile-summary-no-number {
+                grid-template-columns: 1fr;
+            }
+
+            .al-about-profile-focus-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .al-about-profile-focus {
+                min-height: auto;
+            }
+
+            .al-about-profile-bottom-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .al-about-profile-dark-card {
+                min-height: auto;
+            }
+
+            .al-about-references {
+                margin-top: 60px;
+                padding: 30px;
+            }
+
+            .al-about-references-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .al-about-reference-side {
+                grid-template-rows: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .al-about-advisory {
+                padding: 65px 4%;
+            }
+
+            .al-about-profile {
+                padding: 20px;
+            }
+
+            .al-about-profile-heading h3 {
+                font-size: 35px;
+            }
+
+            .al-about-profile-subtitle {
+                font-size: 11px;
+            }
+
+            .al-about-profile-summary {
+                padding: 18px;
+            }
+
+            .al-about-profile-summary>strong {
+                font-size: 31px;
+            }
+
+            .al-about-profile-summary>span {
+                font-size: 9px;
+            }
+
+            .al-about-profile-summary>p {
+                font-size: 10px;
+            }
+
+            .al-about-profile-focus {
+                padding: 21px 18px 21px 23px;
+            }
+
+            .al-about-profile-dark-card {
+                padding: 23px 20px 23px 25px;
+            }
+
+            .al-about-references {
+                padding: 25px 18px;
+            }
+
+            .al-about-reference-card {
+                padding: 24px 19px;
+            }
+
+            .al-about-reference-card p,
+            .al-about-reference-card li {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="al-about-page">
+
+        <!-- =====================================
+         HERO
+    ====================================== -->
+        <section class="al-about-hero">
+            <div class="al-about-hero-image"></div>
+            <div class="al-about-hero-overlay"></div>
+
+            <div class="al-about-hero-content">
+                <span class="al-about-eyebrow">THE ASTRALUXE ADVISORY</span>
+
+                <h1>
+                    Shaping Excellence.
+                    <span>Creating Legacies.</span>
+                </h1>
+
+                <p>
+                    Strategic thinking, hospitality expertise and real estate
+                    advisory — bringing vision, value and lasting impact together.
+                </p>
+
+                <a href="#al-about-introduction" class="al-about-button">
+                    Discover Our Story
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+         INTRODUCTION
+    ====================================== -->
+        <section class="al-about-introduction al-about-section" id="al-about-introduction">
+
+            <div class="al-about-intro-heading">
+                <span class="al-about-label">ABOUT THE ASTRALUXE ADVISORY</span>
+
+                <h2>
+                    Shaping the Future of
+                    <em>Hospitality & Real Estate Excellence</em>
+                </h2>
+            </div>
+
+            <div class="al-about-intro-body">
+                <p>
+                    In today's highly competitive and rapidly evolving hospitality
+                    and real estate landscape, success is no longer defined only
+                    by owning a property. True success is defined by
+                    <strong>how strategically an asset is planned, how professionally
+                        it is managed, and how consistently it performs over time.</strong>
+                    This is where <strong>The AstraLuxe Advisory</strong> creates
+                    lasting impact.
+                </p>
+
+                <p>
+                    The AstraLuxe Advisory is a <strong>premium consulting, advisory,
+                        and asset management firm</strong> dedicated to transforming
+                    hospitality and real estate assets into
+                    <strong>high-performing, future-ready, and value-driven ventures.</strong>
+                    We work closely with hotel owners, developers, investors,
+                    landowners, and commercial asset holders to unlock hidden
+                    potential, enhance asset value, optimise operations, and
+                    build sustainable long-term growth.
+                </p>
+
+                <div class="al-about-quote">
+                    <span class="al-about-quote-mark">“</span>
+                    <p>
+                        Every asset has untapped potential. Our role is to
+                        unlock it, structure it, and elevate it.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+         WHO WE ARE
+    ====================================== -->
+        <section class="al-about-who al-about-section">
+
+            <div class="al-about-who-visual">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
+                    alt="Contemporary luxury architecture" loading="lazy">
+
+                <div class="al-about-who-image-caption">
+                    <span>OUR IDENTITY</span>
+                    <h3>Expertise with a vision.<br>Strategy with purpose.</h3>
+                </div>
+            </div>
+
+            <div class="al-about-who-content">
+
+                <h2>
+                    Who We
+                    <em>are</em>
+                </h2>
+
+                <p>
+                    The AstraLuxe Advisory is built on the foundation of deep
+                    industry expertise, strategic thinking, and hands-on execution.
+                    Our approach brings together perspectives from hospitality
+                    operations, real estate advisory, finance, compliance and
+                    business strategy.
+                </p>
+
+                <p>
+                    We serve a wide range of assets including luxury hotels,
+                    resorts, serviced apartments, commercial offices, retail
+                    spaces, plotted developments, land parcels and managed properties.
+                </p>
+
+                <p>
+                    What sets us apart is not just the diversity of assets we
+                    work with, but the depth of involvement we bring to each project.
+                </p>
+
+                <p>
+                    We do not believe in generic consulting or one-size-fits-all
+                    solutions. Every engagement begins with a deep understanding
+                    of the asset, the market, the owner's vision and the financial
+                    objectives. Based on this, we design custom strategies that
+                    are practical, implementable and focused on measurable results.
+                </p>
+
+                <div class="al-about-who-statement">
+                    <i class="fa-solid fa-compass"></i>
+                    <span>Tailored strategies. Thoughtful execution. Long-term perspective.</span>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+         PHILOSOPHY
+    ====================================== -->
+        <section class="al-about-philosophy">
+
+            <div class="al-about-philosophy-heading">
+                <span class="al-about-label">OUR PHILOSOPHY</span>
+
+                <h2>
+                    Great assets are not just built.
+                    <em>They are strategically shaped.</em>
+                </h2>
+
+                <p>
+                    We believe that enduring value is created when strategic
+                    clarity, operational excellence and sustainable growth
+                    work together.
+                </p>
+            </div>
+
+            <div class="al-about-principles">
+
+                <article class="al-about-principle">
+                    <span class="al-about-principle-number">01</span>
+                    <div class="al-about-principle-icon">
+                        <i class="fa-solid fa-compass"></i>
+                    </div>
+                    <h3>Strategic Clarity</h3>
+                    <p>
+                        Every decision begins with a clear understanding of the
+                        asset, market realities, ownership objectives and
+                        commercial possibilities.
+                    </p>
+                </article>
+
+                <article class="al-about-principle">
+                    <span class="al-about-principle-number">02</span>
+                    <div class="al-about-principle-icon">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h3>Operational Excellence</h3>
+                    <p>
+                        Strong systems, effective processes and consistent
+                        execution form the foundation of professionally
+                        managed hospitality and real estate assets.
+                    </p>
+                </article>
+
+                <article class="al-about-principle">
+                    <span class="al-about-principle-number">03</span>
+                    <div class="al-about-principle-icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3>Sustainable Growth</h3>
+                    <p>
+                        We focus on building strong foundations for long-term
+                        value, responsible development and enduring
+                        stakeholder relationships.
+                    </p>
+                </article>
+
+            </div>
+
+            <div class="al-about-philosophy-footer">
+                <p>
+                    Our involvement can extend beyond recommendations into
+                    implementation support, performance tracking and continuous
+                    optimisation, depending on the agreed engagement scope.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+         EXPERTISE
+    ====================================== -->
+        <section class="al-about-expertise al-about-section">
+
+            <div class="al-about-expertise-header">
+                <div>
+                    <span class="al-about-label">OUR EXPERTISE</span>
+                    <h2>
+                        Integrated expertise.
+                        <em>Comprehensive perspective.</em>
+                    </h2>
+                </div>
+
+                <p>
+                    From the first development decision to ongoing asset
+                    performance, our expertise spans the key disciplines
+                    that shape successful hospitality and real estate ventures.
+                </p>
+            </div>
+
+
+            <div class="al-about-expertise-grid">
+
+                <article class="al-about-expertise-card">
+                    <span class="al-about-expertise-index">01</span>
+                    <i class="fa-solid fa-hotel"></i>
+                    <h3>Hotel Brand Selection & Negotiation</h3>
+                    <p>
+                        Identifying suitable hotel brands and supporting
+                        discussions around brand associations and commercial
+                        agreement considerations.
+                    </p>
+                </article>
+
+                <article class="al-about-expertise-card">
+                    <span class="al-about-expertise-index">02</span>
+                    <i class="fa-solid fa-building"></i>
+                    <h3>Hotel Development & Pre-Opening</h3>
+                    <p>
+                        Supporting project planning, hotel setup, development
+                        coordination and pre-opening operational readiness.
+                    </p>
+                </article>
+
+                <article class="al-about-expertise-card">
+                    <span class="al-about-expertise-index">03</span>
+                    <i class="fa-solid fa-clipboard-check"></i>
+                    <h3>Operations & Management</h3>
+                    <p>
+                        Improving operational efficiency, developing standard
+                        operating procedures and enhancing service standards.
+                    </p>
+                </article>
+
+                <article class="al-about-expertise-card">
+                    <span class="al-about-expertise-index">04</span>
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Revenue Management</h3>
+                    <p>
+                        Developing pricing strategies, sales plans and revenue
+                        optimisation initiatives aligned with business objectives.
+                    </p>
+                </article>
+
+                <article class="al-about-expertise-card">
+                    <span class="al-about-expertise-index">05</span>
+                    <i class="fa-solid fa-utensils"></i>
+                    <h3>Food & Beverage Strategy</h3>
+                    <p>
+                        Supporting concept development, restaurant launches,
+                        food and beverage planning and performance improvement.
+                    </p>
+                </article>
+
+                <article class="al-about-expertise-card">
+                    <span class="al-about-expertise-index">06</span>
+                    <i class="fa-solid fa-handshake"></i>
+                    <h3>Owner Representation</h3>
+                    <p>
+                        Advising hotel owners and investors on strategic decisions,
+                        operator coordination and property performance.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+         KITCHEN & LAUNDRY CONSULTANCY
+    ====================================== -->
+        <section class="al-about-kitchen">
+
+            <div class="al-about-kitchen-top">
+                <div class="al-about-kitchen-heading">
+                    <span class="al-about-label">SPECIALISED TECHNICAL EXPERTISE</span>
+
+                    <h2>
+                        Kitchen & Laundry
+                        <em>Planning Consultancy</em>
+                    </h2>
+
+                    <p>
+                        We design, plan and coordinate world-class food service
+                        facilities alongside our clients. From hotels and
+                        healthcare facilities to schools, airports and corporate
+                        cafeterias, our focus is on kitchens that are efficient,
+                        hygienic and seamlessly operational.
+                    </p>
+                </div>
+
+                <div class="al-about-kitchen-image">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85"
+                        alt="Professional commercial kitchen planning" loading="lazy">
+                    <span>PLANNING / DESIGN / COORDINATION</span>
+                </div>
+            </div>
+
+
+            <div class="al-about-kitchen-services">
+
+                <div class="al-about-kitchen-service-heading">
+                    <span>01</span>
+                    <div>
+                        <h3>Planning & Design Deliverables</h3>
+                        <p>From initial space programming to technical coordination.</p>
+                    </div>
+                </div>
+
+                <div class="al-about-kitchen-list">
+                    <div><i class="fa-solid fa-check"></i> Area programming</div>
+                    <div><i class="fa-solid fa-check"></i> Schematic plan for B.O.H. areas</div>
+                    <div><i class="fa-solid fa-check"></i> Preliminary layout plan</div>
+                    <div><i class="fa-solid fa-check"></i> Final layout plan with equipment technical details</div>
+                    <div><i class="fa-solid fa-check"></i> Services rough-in drawings for kitchen and laundry</div>
+                    <div><i class="fa-solid fa-check"></i> Tender documents for kitchen and laundry equipment</div>
+                    <div><i class="fa-solid fa-check"></i> Technical comparatives</div>
+                    <div><i class="fa-solid fa-check"></i> Coordination of shop drawings</div>
+                </div>
+
+            </div>
+
+
+            <div class="al-about-kitchen-services al-about-kitchen-execution">
+
+                <div class="al-about-kitchen-service-heading">
+                    <span>02</span>
+                    <div>
+                        <h3>Tender, Procurement & Execution Support</h3>
+                        <p>Coordination through equipment selection and installation.</p>
+                    </div>
+                </div>
+
+                <div class="al-about-kitchen-list">
+                    <div><i class="fa-solid fa-check"></i> Assist the client in reviewing kitchen and laundry tenders
+                    </div>
+                    <div><i class="fa-solid fa-check"></i> Assist with kitchen and laundry equipment negotiations</div>
+                    <div><i class="fa-solid fa-check"></i> Assist the selected vendor after order finalisation</div>
+                    <div><i class="fa-solid fa-check"></i> Coordinate layout plans with site requirements, M.E.P.
+                        drawings and shop drawings</div>
+                    <div><i class="fa-solid fa-check"></i> Coordinate architects, service consultants and other
+                        stakeholders before and during execution</div>
+                    <div><i class="fa-solid fa-check"></i> Assist during the execution and equipment installation stages
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+         ARCHITECTURE & MEP TECHNICAL
+    ====================================== -->
+        <section class="al-about-technical al-about-section">
+
+            <div class="al-about-technical-heading">
+                <span class="al-about-label">ARCHITECTURE & INTERIOR TECHNICAL INPUTS</span>
+                <h2>
+                    The details behind
+                    <em>functional spaces.</em>
+                </h2>
+
+                <p>
+                    We provide technical inputs and coordination support
+                    related to architecture, interiors and building services
+                    to help align hospitality spaces with their operational
+                    requirements.
+                </p>
+            </div>
+
+
+            <div class="al-about-technical-grid">
+
+                <article class="al-about-technical-card">
+                    <div class="al-about-technical-icon">
+                        <i class="fa-solid fa-ruler-combined"></i>
+                    </div>
+
+                    <span>01 / ARCHITECTURE</span>
+                    <h3>Architectural Technical Services</h3>
+                    <p>
+                        Technical inputs on architectural provisions such as
+                        ceiling heights, sunken areas, shaft dimensions and
+                        spatial requirements relevant to the intended
+                        hospitality functions.
+                    </p>
+                </article>
+
+                <article class="al-about-technical-card">
+                    <div class="al-about-technical-icon">
+                        <i class="fa-solid fa-couch"></i>
+                    </div>
+
+                    <span>02 / INTERIOR DESIGN</span>
+                    <h3>Interior Technical Services</h3>
+                    <p>
+                        Inputs for live and display kitchens, buffet counters,
+                        bars and other hospitality spaces, including relevant
+                        height, layout and M.E.P. coordination considerations.
+                    </p>
+                </article>
+
+                <article class="al-about-technical-card">
+                    <div class="al-about-technical-icon">
+                        <i class="fa-solid fa-diagram-project"></i>
+                    </div>
+
+                    <span>03 / M.E.P. COORDINATION</span>
+                    <h3>Building Services Coordination</h3>
+                    <p>
+                        Coordination inputs and documentation relating to
+                        electrical loads, plumbing, drainage, HVAC and gas
+                        requirements, supporting equipment-capacity decisions
+                        and service-routing coordination.
+                    </p>
+                </article>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =====================================
+         LANDSCAPE & OUTDOOR SPACES
+    ====================================== -->
+        <section class="al-about-landscape">
+
+            <div class="al-about-landscape-image">
+                <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1800&q=85"
+                    alt="Contemporary landscape and outdoor environment" loading="lazy">
+            </div>
+
+            <div class="al-about-landscape-overlay"></div>
+
+            <div class="al-about-landscape-content">
+                <span class="al-about-label">LANDSCAPE & ENVIRONMENTAL DESIGN</span>
+
+                <h2>
+                    Spaces that connect
+                    <em>people, place and nature.</em>
+                </h2>
+
+                <p>
+                    We are especially passionate about exploring new possibilities
+                    across varied project typologies. Our landscape approach
+                    considers the character of a place, the needs of its users
+                    and the importance of creating meaningful, enduring and
+                    ecologically sensitive outdoor environments.
+                </p>
+
+                <p>
+                    Our aim is to bring clarity to complex environments and
+                    create landscapes that invite people to feel grounded,
+                    inspired and at home.
+                </p>
+            </div>
+
+            <div class="al-about-landscape-typologies">
+
+                <div>
+                    <span>01</span>
+                    <p>Hotel & Resorts</p>
+                </div>
+
+                <div>
+                    <span>02</span>
+                    <p>Residential Projects</p>
+                </div>
+
+                <div>
+                    <span>03</span>
+                    <p>Commercial Landscapes</p>
+                </div>
+
+                <div>
+                    <span>04</span>
+                    <p>Hospitality Environments</p>
+                </div>
+
+                <div>
+                    <span>05</span>
+                    <p>Housing & Townships</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+         MISSION & VISION
+    ====================================== -->
+        <section class="al-about-purpose al-about-section">
+
+            <div class="al-about-purpose-header">
+                <span class="al-about-label">OUR PURPOSE & DIRECTION</span>
+                <h2>
+                    Guided by purpose.
+                    <em>Driven by possibility.</em>
+                </h2>
+            </div>
+
+            <div class="al-about-purpose-grid">
+
+                <article class="al-about-purpose-card al-about-mission">
+                    <div class="al-about-purpose-top">
+                        <span>01</span>
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+
+                    <span class="al-about-purpose-label">OUR MISSION</span>
+
+                    <h3>Empowering potential.<br>Delivering impact.</h3>
+
+                    <p>
+                        Empowering hotels, resorts and real estate ventures to
+                        unlock their full potential by delivering innovative,
+                        results-driven consulting solutions that maximise revenue,
+                        optimise operations and enhance return on investment
+                        for our clients.
+                    </p>
+
+                    <p>
+                        Committed to leveraging over two decades of expertise,
+                        our team addresses challenges and opportunities with
+                        integrity, agility and a passion for delivering
+                        measurable impact in every engagement.
+                    </p>
+                </article>
+
+
+                <article class="al-about-purpose-card al-about-vision">
+                    <div class="al-about-purpose-top">
+                        <span>02</span>
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+
+                    <span class="al-about-purpose-label">OUR VISION</span>
+
+                    <h3>Redefining excellence.<br>Inspiring progress.</h3>
+
+                    <p>
+                        To be the leading force in transforming the hospitality
+                        and real estate consulting landscape — recognised for
+                        pioneering strategies, sustainable growth models and
+                        creating bespoke value for stakeholders.
+                    </p>
+
+                    <p>
+                        We envision a future where our clients set new industry
+                        benchmarks, empowered by our guidance to thrive in a
+                        dynamic market and contribute meaningfully to their
+                        communities and the environment.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+         FOUNDER INTRODUCTION
+    ====================================== -->
+        <section class="al-about-founder">
+
+            <div class="al-about-founder-image-wrap">
+                <!-- Replace this with your founder's actual photograph -->
+                <img src="images/profile-pic.jpeg" alt="Founder of The AstraLuxe Advisory"
+                    class="al-about-founder-image" loading="lazy">
+
+                <div class="al-about-founder-image-caption">
+                    <span>FOUNDER & LEADERSHIP</span>
+                    <p>The vision behind The AstraLuxe Advisory</p>
+                </div>
+            </div>
+
+
+            <div class="al-about-founder-content">
+
+                <span class="al-about-label">FOUNDER'S INTRODUCTION</span>
+
+                <h2>
+                    Leadership shaped by
+                    <em>experience and vision.</em>
+                </h2>
+
+                <div class="al-about-founder-name">
+                    <h3>Devendra Thakur</h3>
+                    <span>FOUNDER — THE ASTRALUXE ADVISORY</span>
+                </div>
+
+                <p>
+                    The Founder is a distinguished leader with over two decades
+                    of experience at the confluence of luxury, strategy and
+                    long-term value creation. With deep expertise spanning
+                    ultra-luxury hospitality, landmark real estate developments
+                    and global enterprises across Telecom, FMCG, Media &
+                    Entertainment, FMCD, start-up incubation and Infrastructure,
+                    he brings a rare capability to envision destinations that
+                    evolve beyond assets into enduring legacies.
+                </p>
+
+                <p>
+                    His professional journey reflects a nuanced mastery in
+                    conceptualising, building and scaling world-class hotels,
+                    resorts and mixed-use developments. Through thoughtful
+                    brand curation, enduring owner–operator relationships and
+                    meticulously structured joint ventures, he has consistently
+                    delivered projects marked by architectural distinction,
+                    operational finesse and elevated guest experiences.
+                </p>
+
+                <p>
+                    Widely trusted by international brands, investors and
+                    landowners, the Founder is known for aligning design
+                    excellence with commercial discipline. Guided by the belief
+                    that true luxury is rooted in authenticity, precision and
+                    people, he excels at building high-performance teams while
+                    harmonising capital, creativity and culture to generate
+                    sustainable, multi-generational value.
+                </p>
+
+                <p>
+                    A proponent of innovation driven by purpose and restraint,
+                    he continues to create and advise hospitality and real
+                    estate platforms that are timeless, distinctive and
+                    quietly exceptional.
+                </p>
+
+                <div class="al-about-founder-signoff">
+                    <span class="al-about-founder-signature">Devendra Thakur</span>
+                    <span>FOUNDER</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+     IN-HOUSE ADVISORY
+====================================== -->
+        <section class="al-about-advisory" id="in-house-advisory">
+
+            <div class="al-about-advisory-header">
+                <span class="al-about-label">OUR PEOPLE & EXPERTISE</span>
+
+                <h2>
+                    In House <em>Advisory</em>
+                </h2>
+
+                <p>
+                    A multidisciplinary team bringing together hospitality
+                    leadership, hotel development, food-service planning,
+                    technical design and operational expertise.
+                </p>
+            </div>
+
+
+            <!-- PROFILE 01 -->
+            <article class="al-about-profile al-about-profile-one">
+
+                <div class="al-about-profile-heading">
+                    <div>
+                        <span class="al-about-profile-index">PROFILE / 01</span>
+                        <h3>Pankaj Giroti, CHA</h3>
+                        <p class="al-about-profile-subtitle">
+                            Hospitality leadership • Hotel & resort advisory •
+                            Operations & development
+                        </p>
+                    </div>
+                    <span class="al-about-profile-marker"></span>
+                </div>
+
+                <div class="al-about-profile-summary">
+                    <strong>30+</strong>
+                    <span>YEARS IN HOSPITALITY</span>
+                    <i></i>
+                    <p>Certified Hotel Administrator (CHA) &nbsp; | &nbsp; Hospitality graduate</p>
+                </div>
+
+                <div class="al-about-profile-focus-grid">
+
+                    <div class="al-about-profile-focus">
+                        <h4>LEADERSHIP & OPERATIONS</h4>
+                        <p>
+                            Hotel administration and operations<br>
+                            Owner relationship management<br>
+                            Business and franchise development
+                        </p>
+                    </div>
+
+                    <div class="al-about-profile-focus">
+                        <h4>DEVELOPMENT ADVISORY</h4>
+                        <p>
+                            Hotel and resort concept development<br>
+                            Facility planning and kitchen design<br>
+                            Project builds and development support
+                        </p>
+                    </div>
+
+                    <div class="al-about-profile-focus">
+                        <h4>F&B & SERVICE CONCEPTS</h4>
+                        <p>
+                            Specialised food and beverage concepts<br>
+                            Operational planning across service formats<br>
+                            Hotels, resorts, cruise lines and catering
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="al-about-profile-bottom-grid">
+
+                </div>
+
+            </article>
+
+
+            <!-- PROFILE 02 -->
+            <article class="al-about-profile al-about-profile-two">
+
+                <div class="al-about-profile-heading">
+                    <div>
+                        <span class="al-about-profile-index">PROFILE / 02</span>
+                        <h3>Madhu Chauhan</h3>
+                        <p class="al-about-profile-subtitle">
+                            Hospitality design specialist • Back-of-house planning •
+                            Commercial kitchens & food-service facilities
+                        </p>
+                    </div>
+                    <span class="al-about-profile-marker"></span>
+                </div>
+
+                <div class="al-about-profile-summary">
+                    <strong>19+</strong>
+                    <span>YEARS' EXPERIENCE</span>
+                    <i></i>
+                    <p>Diploma in Interior Designing &nbsp; | &nbsp; Hospitality design sector</p>
+                </div>
+
+                <div class="al-about-profile-focus-grid">
+
+                    <div class="al-about-profile-focus">
+                        <h4>KITCHEN & BOH DESIGN</h4>
+                        <p>
+                            Hotel kitchen planning<br>
+                            Back-of-house space planning<br>
+                            Functional layouts and workflow
+                        </p>
+                    </div>
+
+                    <div class="al-about-profile-focus">
+                        <h4>FOOD-SERVICE FACILITIES</h4>
+                        <p>
+                            Institutional and corporate dining<br>
+                            Restaurants and food courts<br>
+                            Buffet and service facilities
+                        </p>
+                    </div>
+
+                    <div class="al-about-profile-focus">
+                        <h4>PROJECT COORDINATION</h4>
+                        <p>
+                            Design handling and execution<br>
+                            Coordination with hospitality teams<br>
+                            Operationally aligned design
+                        </p>
+                    </div>
+
+                </div>
+
+
+
+            </article>
+
+
+            <!-- PROFILE 03 -->
+            <article class="al-about-profile al-about-profile-three">
+
+                <div class="al-about-profile-heading">
+                    <div>
+                        <span class="al-about-profile-index">PROFILE / 03</span>
+                        <h3>Pankaj Chadha</h3>
+                        <p class="al-about-profile-subtitle">
+                            Hospitality project planning • Food-service design •
+                            Hotel facilities, laundry & utility solutions
+                        </p>
+                    </div>
+                    <span class="al-about-profile-marker"></span>
+                </div>
+
+                <div class="al-about-profile-summary al-about-profile-summary-no-number">
+                    <strong>PRINCIPAL CONSULTANT</strong>
+                    <i></i>
+                    <p>Design, operations and guest experience-led hospitality consulting</p>
+                </div>
+
+                <div class="al-about-profile-focus-grid">
+
+                    <div class="al-about-profile-focus">
+                        <h4>FOOD-SERVICE DESIGN</h4>
+                        <p>
+                            Area programming and preliminary plans<br>
+                            Final arrangement plans<br>
+                            Equipment specifications and tender documents
+                        </p>
+                    </div>
+
+                    <div class="al-about-profile-focus">
+                        <h4>HOTEL FACILITY PLANNING</h4>
+                        <p>
+                            Back-of-house and support-area planning<br>
+                            Drawing review and coordination<br>
+                            Operationally efficient layouts
+                        </p>
+                    </div>
+
+                    <div class="al-about-profile-focus">
+                        <h4>LAUNDRY & UTILITIES</h4>
+                        <p>
+                            Linen-load calculations<br>
+                            Equipment selection and data sheets<br>
+                            Site coordination and final inspection
+                        </p>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- SHARED PORTFOLIO REFERENCES -->
+             
+
+        </section>
+
+
+
+        <!-- =====================================
+         PROJECT SHOWCASE
+    ====================================== -->
+        <section class="al-projects-section" aria-labelledby="al-projects-title">
+            <div class="al-projects-heading">
+                <span class="al-about-label">OUR PORTFOLIO</span>
+                <h2 id="al-projects-title">Selected Projects</h2>
+                <p>
+                    Explore projects across our ongoing work, completed engagements
+                    and upcoming developments.
+                </p>
+            </div>
+
+            <div class="al-projects-category">
+                <h3 class="al-projects-category-title">Ongoing Projects</h3>
+                <div id="ongoing-container" class="al-projects-grid" aria-live="polite">
+                    <p class="al-projects-message">Loading projects...</p>
+                </div>
+            </div>
+
+            <div class="al-projects-category">
+                <h3 class="al-projects-category-title">Completed Projects</h3>
+                <div id="completed-container" class="al-projects-grid" aria-live="polite">
+                    <p class="al-projects-message">Loading projects...</p>
+                </div>
+            </div>
+
+            <div class="al-projects-category">
+                <h3 class="al-projects-category-title">Coming Soon</h3>
+                <div id="coming-soon-container" class="al-projects-grid" aria-live="polite">
+                    <p class="al-projects-message">Loading projects...</p>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- =====================================
+         CLOSING STATEMENT
+    ====================================== -->
+        <section class="al-about-closing">
+
+            <div class="al-about-closing-content">
+                <span class="al-about-label">THE ASTRALUXE APPROACH</span>
+
+                <h2>
+                    Beyond advisory.
+                    <em>Into enduring value.</em>
+                </h2>
+
+                <p>
+                    We bring together vision, expertise and strategic
+                    collaboration to help shape assets into distinctive,
+                    professionally managed and future-ready ventures.
+                </p>
+
+                <a href="contact.html" class="al-about-button">
+                    Connect With Our Team
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </section>
+
+        
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <div id="whatsapp-placeholder"></div>
+
+    <script src="js/main.js"></script>
+    <script src="config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        (() => {
+            const categoryContainers = new Map([
+                ["ongoing", document.getElementById("ongoing-container")],
+                ["completed", document.getElementById("completed-container")],
+                ["coming_soon", document.getElementById("coming-soon-container")]
+            ]);
+
+            const setMessage = (container, text, isError) => {
+                container.textContent = "";
+                const message = document.createElement("p");
+                message.className = isError
+                    ? "al-projects-message al-projects-error"
+                    : "al-projects-message";
+                message.textContent = text;
+                container.appendChild(message);
+            };
+
+            const containers = Array.from(categoryContainers.values());
+            if (containers.some((container) => !container)) {
+                console.error("Project showcase containers are missing from the page.");
+                return;
+            }
+
+            if (
+                !window.ENV ||
+                !window.ENV.SUPABASE_URL ||
+                !window.ENV.SUPABASE_ANON_KEY ||
+                !window.supabase ||
+                typeof window.supabase.createClient !== "function"
+            ) {
+                console.error("Supabase config or client failed to load.");
+                containers.forEach((container) => {
+                    setMessage(container, "Projects could not be loaded. Please try again later.", true);
+                });
+                return;
+            }
+
+            const supabase = window.supabase.createClient(
+                window.ENV.SUPABASE_URL,
+                window.ENV.SUPABASE_ANON_KEY
+            );
+
+            const getSafeUrl = (value, fieldName) => {
+                try {
+                    const url = new URL(value, window.location.href);
+                    if (url.protocol === "http:" || url.protocol === "https:") {
+                        return url.href;
+                    }
+                } catch (error) {
+                    console.warn(`Skipping project with invalid ${fieldName}:`, error);
+                    return null;
+                }
+
+                console.warn(`Skipping project with unsupported ${fieldName} protocol.`);
+                return null;
+            };
+
+            const createProjectImage = (url, altText) => {
+                const image = document.createElement("img");
+                image.src = url;
+                image.alt = altText;
+                image.loading = "lazy";
+                image.addEventListener("error", () => {
+                    console.warn("Could not load project image:", url);
+                    image.remove();
+                }, { once: true });
+                return image;
+            };
+
+            const createProjectCard = (project) => {
+                const card = document.createElement("article");
+                card.className = "al-projects-card";
+                if (project.id) card.dataset.projectId = project.id;
+                if (project.slug) card.dataset.projectSlug = project.slug;
+
+                const gallery = Array.isArray(project.gallery) ? project.gallery : [];
+                const imageUrls = [project.cover_image, ...gallery]
+                    .filter((url) => typeof url === "string" && url.trim())
+                    .map((url) => getSafeUrl(url.trim(), "project image URL"))
+                    .filter(Boolean);
+                const uniqueImageUrls = Array.from(new Set(imageUrls));
+
+                if (uniqueImageUrls.length > 0) {
+                    card.appendChild(createProjectImage(
+                        uniqueImageUrls[0],
+                        `${project.title || "Project"} cover image`
+                    ));
+
+                    if (uniqueImageUrls.length > 1) {
+                        const galleryElement = document.createElement("div");
+                        galleryElement.className = "al-projects-card-gallery";
+                        galleryElement.setAttribute("aria-label", "Project gallery");
+                        uniqueImageUrls.slice(1).forEach((url, index) => {
+                            galleryElement.appendChild(createProjectImage(
+                                url,
+                                `${project.title || "Project"} gallery image ${index + 1}`
+                            ));
+                        });
+                        card.appendChild(galleryElement);
+                    }
+                }
+
+                const content = document.createElement("div");
+                content.className = "al-projects-card-content";
+
+                if (project.is_featured === true) {
+                    const featured = document.createElement("span");
+                    featured.className = "al-projects-featured";
+                    featured.textContent = "Featured Project";
+                    content.appendChild(featured);
+                }
+
+                const title = document.createElement("h4");
+                title.textContent = project.title || "Untitled project";
+                content.appendChild(title);
+
+                if (project.location) {
+                    const location = document.createElement("p");
+                    location.className = "al-projects-location";
+                    const locationIcon = document.createElement("i");
+                    locationIcon.className = "fa-solid fa-location-dot";
+                    locationIcon.setAttribute("aria-hidden", "true");
+                    const locationText = document.createElement("span");
+                    locationText.textContent = project.location;
+                    location.append(locationIcon, locationText);
+                    content.appendChild(location);
+                }
+
+                const shortDescription = typeof project.short_description === "string"
+                    ? project.short_description.trim()
+                    : "";
+                const description = typeof project.description === "string"
+                    ? project.description.trim()
+                    : "";
+                const summary = document.createElement("p");
+                summary.textContent = shortDescription || description || "Project details coming soon.";
+                content.appendChild(summary);
+
+                card.appendChild(content);
+                return card;
+            };
+
+            const normalizeCategory = (category) => (
+                typeof category === "string"
+                    ? category.trim().toLowerCase().replace(/[\s-]+/g, "_")
+                    : ""
+            );
+
+            const fetchAndRenderProjects = async () => {
+                try {
+                    const { data: projects, error } = await supabase
+                        .from("projects")
+                        .select("id, title, slug, category, location, short_description, description, cover_image, gallery, display_order, is_featured, created_at")
+                        .order("display_order", { ascending: true })
+                        .order("created_at", { ascending: false });
+
+                    if (error) {
+                        throw error;
+                    }
+
+                    if (!Array.isArray(projects)) {
+                        throw new Error("Supabase returned an invalid projects response.");
+                    }
+
+                    categoryContainers.forEach((container) => {
+                        container.textContent = "";
+                    });
+
+                    const projectCounts = new Map([
+                        ["ongoing", 0],
+                        ["completed", 0],
+                        ["coming_soon", 0]
+                    ]);
+
+                    projects.forEach((project) => {
+                        const category = normalizeCategory(project.category);
+                        const container = categoryContainers.get(category);
+                        if (!container) return;
+
+                        container.appendChild(createProjectCard(project));
+                        projectCounts.set(category, projectCounts.get(category) + 1);
+                    });
+
+                    const emptyMessages = new Map([
+                        ["ongoing", "No ongoing projects right now."],
+                        ["completed", "No completed projects yet."],
+                        ["coming_soon", "Nothing coming soon."]
+                    ]);
+
+                    categoryContainers.forEach((container, category) => {
+                        if (projectCounts.get(category) === 0) {
+                            setMessage(container, emptyMessages.get(category), false);
+                        }
+                    });
+                } catch (error) {
+                    console.error("Error fetching data from Supabase:", error);
+                    containers.forEach((container) => {
+                        setMessage(container, "Projects could not be loaded. Please try again later.", true);
+                    });
+                }
+            };
+
+            fetchAndRenderProjects();
+        })();
+    </script>
+
+    <script>
+        /* ==========================================
+           THE ASTRALUXE ADVISORY
+           ABOUT US PAGE ANIMATIONS
+        ========================================== */
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            if (
+                typeof gsap === "undefined" ||
+                typeof ScrollTrigger === "undefined"
+            ) {
+                return;
+            }
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            const page = document.querySelector(".al-about-page");
+
+            if (!page) return;
+
+
+            /* ======================================
+               HERO ENTRANCE
+            ====================================== */
+
+            const heroTimeline = gsap.timeline({
+                defaults: {
+                    ease: "power3.out"
+                }
+            });
+
+            heroTimeline
+                .from(".al-about-hero-image", {
+                    scale: 1.16,
+                    duration: 1.8
+                })
+                .from(".al-about-eyebrow", {
+                    y: 25,
+                    opacity: 0,
+                    duration: 0.7
+                }, "-=1.1")
+                .from(".al-about-hero h1", {
+                    y: 65,
+                    opacity: 0,
+                    duration: 1
+                }, "-=0.5")
+                .from(".al-about-hero-content > p", {
+                    y: 25,
+                    opacity: 0,
+                    duration: 0.7
+                }, "-=0.6")
+                .from(".al-about-hero-content .al-about-button", {
+                    y: 20,
+                    opacity: 0,
+                    duration: 0.6
+                }, "-=0.4")
+                .from(".al-about-hero-footer", {
+                    opacity: 0,
+                    y: 15,
+                    duration: 0.6
+                }, "-=0.3");
+
+
+            /* ======================================
+               REUSABLE REVEAL
+            ====================================== */
+
+            function reveal(selector, options = {}) {
+
+                const elements = gsap.utils.toArray(selector);
+
+                elements.forEach((element) => {
+
+                    gsap.from(element, {
+                        y: options.y ?? 50,
+                        x: options.x ?? 0,
+                        opacity: 0,
+                        duration: options.duration ?? 0.9,
+                        delay: options.delay ?? 0,
+                        ease: options.ease ?? "power3.out",
+
+                        scrollTrigger: {
+                            trigger: element,
+                            start: options.start ?? "top 84%",
+                            once: true
+                        }
+                    });
+
+                });
+            }
+
+
+            /* ======================================
+               INTRODUCTION
+            ====================================== */
+
+            reveal(".al-about-intro-heading", {
+                x: -45,
+                y: 0
+            });
+
+            reveal(".al-about-intro-body", {
+                x: 45,
+                y: 0
+            });
+
+
+            /* ======================================
+               WHO WE ARE
+            ====================================== */
+
+            reveal(".al-about-who-visual", {
+                x: -55,
+                y: 0
+            });
+
+            reveal(".al-about-who-content", {
+                x: 55,
+                y: 0
+            });
+
+
+            /* ======================================
+               PHILOSOPHY
+            ====================================== */
+
+            gsap.from(".al-about-philosophy-heading > *", {
+                y: 40,
+                opacity: 0,
+                duration: 0.85,
+                stagger: 0.15,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-about-philosophy",
+                    start: "top 75%",
+                    once: true
+                }
+            });
+
+            gsap.from(".al-about-principle", {
+                y: 65,
+                opacity: 0,
+                duration: 0.9,
+                stagger: 0.2,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-about-principles",
+                    start: "top 80%",
+                    once: true
+                }
+            });
+
+            reveal(".al-about-philosophy-footer", {
+                y: 30
+            });
+
+
+            /* ======================================
+               EXPERTISE
+            ====================================== */
+
+            gsap.from(".al-about-expertise-header > *", {
+                y: 40,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-about-expertise-header",
+                    start: "top 82%",
+                    once: true
+                }
+            });
+
+            gsap.from(".al-about-expertise-card", {
+                y: 55,
+                opacity: 0,
+                duration: 0.75,
+                stagger: {
+                    each: 0.12,
+                    from: "start"
+                },
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-about-expertise-grid",
+                    start: "top 80%",
+                    once: true
+                }
+            });
+
+
+            /* ======================================
+               KITCHEN & LAUNDRY
+            ====================================== */
+
+            reveal(".al-about-kitchen-heading", {
+                x: -45,
+                y: 0
+            });
+
+            reveal(".al-about-kitchen-image", {
+                x: 45,
+                y: 0
+            });
+
+            gsap.from(".al-about-kitchen-services", {
+                y: 45,
+                opacity: 0,
+                duration: 0.85,
+                stagger: 0.2,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-about-kitchen-services",
+                    start: "top 85%",
+                    once: true
+                }
+            });
+
+
+            /* ======================================
+               ARCHITECTURE & MEP
+            ====================================== */
+
+            gsap.from(".al-about-technical-heading > *", {
+                y: 35,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-about-technical-heading",
+                    start: "top 82%",
+                    once: true
+                }
+            });
+
+            gsap.from(".al-about-technical-card", {
+                y: 55,
+                opacity: 0,
+                duration: 0.85,
+                stagger: 0.18,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-about-technical-grid",
+                    start: "top 82%",
+                    once: true
+                }
+            });
+
+            reveal(".al-about-technical-note", {
+                y: 25
+            });
+
+
+            /* ======================================
+               LANDSCAPE
+            ====================================== */
+
+            gsap.from(".al-about-landscape-content > *", {
+                y: 45,
+                opacity: 0,
+                duration: 0.9,
+                stagger: 0.15,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-about-landscape",
+                    start: "top 75%",
+                    once: true
+                }
+            });
+
+            gsap.from(".al-about-landscape-typologies > div", {
+                y: 35,
+                opacity: 0,
+                duration: 0.7,
+                stagger: 0.12,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-about-landscape-typologies",
+                    start: "top 85%",
+                    once: true
+                }
+            });
+
+
+            /* ======================================
+               MISSION & VISION
+            ====================================== */
+
+            gsap.from(".al-about-purpose-header > *", {
+                y: 35,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-about-purpose-header",
+                    start: "top 82%",
+                    once: true
+                }
+            });
+
+            gsap.from(".al-about-purpose-card", {
+                y: 60,
+                opacity: 0,
+                duration: 0.9,
+                stagger: 0.2,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-about-purpose-grid",
+                    start: "top 80%",
+                    once: true
+                }
+            });
+
+
+            /* ======================================
+               FOUNDER INTRODUCTION
+          
+               Left image reveals first.
+               Text follows from the right.
+            ====================================== */
+
+            const founderTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".al-about-founder",
+                    start: "top 75%",
+                    once: true
+                }
+            });
+
+            founderTimeline
+                .from(".al-about-founder-image-wrap", {
+                    x: -65,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power3.out"
+                })
+                .from(".al-about-founder-content > *", {
+                    x: 45,
+                    opacity: 0,
+                    duration: 0.75,
+                    stagger: 0.12,
+                    ease: "power3.out"
+                }, "-=0.55");
+
+
+            /* ======================================
+               CLOSING CTA
+            ====================================== */
+
+            gsap.from(".al-about-closing-content > *", {
+                y: 40,
+                opacity: 0,
+                duration: 0.85,
+                stagger: 0.15,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-about-closing",
+                    start: "top 80%",
+                    once: true
+                }
+            });
+
+
+            /* ======================================
+               IMAGE PARALLAX
+            ====================================== */
+
+            const parallaxImages = [
+                ".al-about-who-visual img",
+                ".al-about-kitchen-image img",
+                ".al-about-landscape-image img"
+            ];
+
+            parallaxImages.forEach((selector) => {
+
+                const image = document.querySelector(selector);
+
+                if (!image) return;
+
+                gsap.fromTo(
+                    image,
+                    {
+                        yPercent: -4
+                    },
+                    {
+                        yPercent: 4,
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: image.parentElement,
+                            start: "top bottom",
+                            end: "bottom top",
+                            scrub: true
+                        }
+                    }
+                );
+
+            });
+
+
+            /* ======================================
+               FINAL REFRESH
+            ====================================== */
+
+            window.addEventListener("load", () => {
+                ScrollTrigger.refresh();
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

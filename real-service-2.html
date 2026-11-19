@@ -1,0 +1,2548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover premium farmhouses and countryside retreats across India with The AstraLuxe Advisory. Explore farmhouse acquisition, investment advisory, development and property management.">
+  <title>Farm Houses | Luxury Countryside Living | The AstraLuxe Advisory</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <style>
+    /* =========================================================
+   ASTRA LUXE — FARM HOUSES
+   Fully standalone, scoped stylesheet
+========================================================= */
+
+.al-farm-page {
+  --farm-navy: #1e293b;
+  --farm-slate: #334155;
+  --farm-gold: #D4AF37;
+  --farm-gold-dark: #a8895e;
+  --farm-ivory: #f8f6f2;
+  --farm-white: #ffffff;
+  --farm-text: #263244;
+  --farm-muted: #64748b;
+  --farm-border: rgba(30, 41, 59, 0.12);
+
+  color: var(--farm-text);
+  font-family: "Lora", serif;
+  overflow: hidden;
+}
+
+.al-farm-page *,
+.al-farm-page *::before,
+.al-farm-page *::after {
+  box-sizing: border-box;
+}
+
+.al-farm-page img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.al-farm-page a {
+  text-decoration: none;
+}
+
+.al-farm-container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.al-farm-section {
+  padding: 110px 0;
+}
+
+.al-farm-kicker,
+.al-farm-eyebrow {
+  display: inline-block;
+  color: var(--farm-gold-dark);
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.8px;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+
+.al-farm-page h1,
+.al-farm-page h2,
+.al-farm-page h3,
+.al-farm-page h4 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+}
+
+.al-farm-page h2 {
+  color: var(--farm-navy);
+  font-size: clamp(38px, 4.5vw, 58px);
+  line-height: 1.08;
+}
+
+.al-farm-page h1 em,
+.al-farm-page h2 em {
+  color: var(--farm-gold-dark);
+  font-weight: 500;
+}
+
+.al-farm-page p {
+  margin-top: 0;
+  color: var(--farm-muted);
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+.al-farm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 52px;
+  padding: 0 25px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+
+.al-farm-btn i,
+.al-farm-inline-link i {
+  transition: transform 0.3s ease;
+}
+
+.al-farm-btn:hover i,
+.al-farm-inline-link:hover i {
+  transform: translateX(5px);
+}
+
+.al-farm-btn-gold {
+  color: var(--farm-navy);
+  background: var(--farm-gold);
+  border: 1px solid var(--farm-gold);
+}
+
+.al-farm-btn-gold:hover {
+  color: var(--farm-white);
+  background: transparent;
+  border-color: var(--farm-gold);
+}
+
+.al-farm-inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  color: var(--farm-navy);
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+/* HERO */
+
+.al-farm-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 710px;
+  padding: 120px 8%;
+  overflow: hidden;
+  background: var(--farm-navy);
+}
+
+.al-farm-hero-bg,
+.al-farm-hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.al-farm-hero-bg {
+  background:
+    url("https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=2000&q=90")
+    center 48% / cover no-repeat;
+  transform: scale(1.06);
+}
+
+.al-farm-hero-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.93) 0%,
+      rgba(15, 23, 42, 0.74) 48%,
+      rgba(15, 23, 42, 0.22) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(15, 23, 42, 0.35),
+      transparent 45%
+    );
+}
+
+.al-farm-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(850px, 100%);
+  color: var(--farm-white);
+}
+
+.al-farm-hero .al-farm-eyebrow {
+  color: #e1c9a5;
+  margin-bottom: 22px;
+}
+
+.al-farm-hero h1 {
+  max-width: 850px;
+  color: var(--farm-white);
+  font-size: clamp(65px, 8vw, 105px);
+  line-height: 0.94;
+}
+
+.al-farm-hero h1 em {
+  display: block;
+  margin-top: 16px;
+  color: #dfc39b;
+  font-size: 0.67em;
+  line-height: 1.08;
+}
+
+.al-farm-hero-content > p {
+  max-width: 610px;
+  margin: 28px 0 34px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.al-farm-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 28px;
+}
+
+.al-farm-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--farm-white);
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.al-farm-text-link i {
+  color: var(--farm-gold);
+}
+
+.al-farm-hero-caption {
+  position: absolute;
+  right: 8%;
+  bottom: 34px;
+  z-index: 2;
+  display: flex;
+  gap: 22px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  letter-spacing: 1.7px;
+}
+
+/* BREADCRUMB */
+
+.al-farm-breadcrumb {
+  padding: 18px 0;
+  background: var(--farm-ivory);
+  border-bottom: 1px solid var(--farm-border);
+}
+
+.al-farm-breadcrumb .al-farm-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+}
+
+.al-farm-breadcrumb a {
+  color: var(--farm-muted);
+}
+
+.al-farm-breadcrumb a:hover {
+  color: var(--farm-gold-dark);
+}
+
+.al-farm-breadcrumb i {
+  color: var(--farm-gold-dark);
+  font-size: 8px;
+}
+
+.al-farm-breadcrumb span {
+  color: var(--farm-navy);
+  font-weight: 600;
+}
+
+/* OVERVIEW */
+
+.al-farm-overview {
+  background: var(--farm-white);
+}
+
+.al-farm-overview-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.al-farm-section-heading {
+  position: sticky;
+  top: 100px;
+}
+
+.al-farm-section-heading h2 {
+  margin-top: 20px;
+}
+
+.al-farm-heading-line {
+  width: 72px;
+  height: 2px;
+  margin-top: 30px;
+  background: var(--farm-gold);
+}
+
+.al-farm-overview-copy p {
+  margin-bottom: 18px;
+}
+
+.al-farm-overview-copy .al-farm-lead {
+  color: var(--farm-navy);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  line-height: 1.4;
+}
+
+/* CENTERED HEADINGS */
+
+.al-farm-centered-heading {
+  max-width: 760px;
+  margin: 0 auto 58px;
+  text-align: center;
+}
+
+.al-farm-centered-heading h2 {
+  margin-top: 14px;
+}
+
+.al-farm-centered-heading p {
+  max-width: 620px;
+  margin: 18px auto 0;
+}
+
+/* DESTINATIONS */
+
+.al-farm-destinations {
+  background: var(--farm-ivory);
+}
+
+.al-farm-destination-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.al-farm-destination-card {
+  min-width: 0;
+  overflow: hidden;
+  background: var(--farm-white);
+  border: 1px solid rgba(30, 41, 59, 0.07);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.al-farm-destination-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(30, 41, 59, 0.1);
+}
+
+.al-farm-destination-image {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.al-farm-destination-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.al-farm-destination-card:hover .al-farm-destination-image img {
+  transform: scale(1.08);
+}
+
+.al-farm-destination-tag {
+  position: absolute;
+  bottom: 17px;
+  left: 18px;
+  padding: 9px 12px;
+  color: var(--farm-white);
+  background: rgba(30, 41, 59, 0.84);
+  font-family: "Montserrat", sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.al-farm-destination-content {
+  position: relative;
+  min-height: 190px;
+  padding: 27px 25px;
+}
+
+.al-farm-destination-number {
+  position: absolute;
+  top: 20px;
+  right: 23px;
+  color: rgba(30, 41, 59, 0.18);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 29px;
+}
+
+.al-farm-destination-content h3 {
+  margin: 0 35px 12px 0;
+  color: var(--farm-navy);
+  font-size: 28px;
+  line-height: 1.05;
+}
+
+.al-farm-destination-content p {
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+/* CUSTOM DESTINATION CARD */
+
+.al-farm-destination-custom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 430px;
+  padding: 38px;
+  color: var(--farm-white);
+  background: var(--farm-navy);
+}
+
+.al-farm-custom-icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 26px;
+  color: var(--farm-gold);
+  border: 1px solid rgba(197, 168, 128, 0.55);
+  font-size: 23px;
+}
+
+.al-farm-destination-custom .al-farm-kicker {
+  color: #dfc39b;
+}
+
+.al-farm-destination-custom h3 {
+  margin: 12px 0;
+  color: var(--farm-white);
+  font-size: 35px;
+  line-height: 1.05;
+}
+
+.al-farm-destination-custom p {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 12px;
+}
+
+.al-farm-destination-custom .al-farm-inline-link {
+  color: var(--farm-gold);
+}
+
+/* LIFESTYLE */
+
+.al-farm-lifestyle {
+  background: var(--farm-white);
+}
+
+.al-farm-lifestyle-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.al-farm-lifestyle-card {
+  min-height: 290px;
+  padding: 32px 25px;
+  background: var(--farm-ivory);
+  border-bottom: 2px solid transparent;
+  transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+.al-farm-lifestyle-card:hover {
+  transform: translateY(-7px);
+  border-bottom-color: var(--farm-gold);
+}
+
+.al-farm-lifestyle-icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 28px;
+  color: var(--farm-gold-dark);
+  background: var(--farm-white);
+  font-size: 21px;
+}
+
+.al-farm-lifestyle-card > span {
+  color: var(--farm-gold-dark);
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+.al-farm-lifestyle-card h3 {
+  margin: 13px 0 12px;
+  color: var(--farm-navy);
+  font-size: 27px;
+  line-height: 1.05;
+}
+
+.al-farm-lifestyle-card p {
+  margin-bottom: 0;
+  font-size: 12px;
+}
+
+/* FEATURES */
+
+.al-farm-features {
+  background: var(--farm-ivory);
+}
+
+.al-farm-features-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 85px;
+  align-items: center;
+}
+
+.al-farm-features-image {
+  position: relative;
+  min-height: 590px;
+  overflow: hidden;
+}
+
+.al-farm-features-image img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.al-farm-features-image:hover img {
+  transform: scale(1.05);
+}
+
+.al-farm-image-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 30px;
+  color: var(--farm-white);
+  background: linear-gradient(0deg, rgba(15, 23, 42, 0.88), transparent);
+}
+
+.al-farm-image-caption span {
+  color: #e0c39c;
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+}
+
+.al-farm-image-caption strong {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.al-farm-features-content h2 {
+  margin: 15px 0 20px;
+}
+
+.al-farm-feature-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 20px;
+  margin: 28px 0;
+}
+
+.al-farm-feature-list > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--farm-slate);
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.al-farm-feature-list i {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--farm-gold-dark);
+  font-size: 15px;
+}
+
+.al-farm-feature-note {
+  padding-top: 18px;
+  border-top: 1px solid var(--farm-border);
+  font-size: 11px !important;
+}
+
+/* INVESTMENT */
+
+.al-farm-investment {
+  background: var(--farm-white);
+}
+
+.al-farm-investment-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 75px;
+  align-items: start;
+}
+
+.al-farm-investment-copy h3 {
+  margin-bottom: 20px;
+  color: var(--farm-navy);
+  font-size: 34px;
+  line-height: 1.08;
+}
+
+.al-farm-investment-copy p {
+  margin-bottom: 17px;
+}
+
+.al-farm-investment-points {
+  border-top: 1px solid var(--farm-border);
+}
+
+.al-farm-investment-point {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 18px;
+  padding: 23px 0;
+  border-bottom: 1px solid var(--farm-border);
+}
+
+.al-farm-investment-point > span {
+  color: var(--farm-gold-dark);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+}
+
+.al-farm-investment-point h4 {
+  margin-bottom: 7px;
+  color: var(--farm-navy);
+  font-size: 24px;
+}
+
+.al-farm-investment-point p {
+  margin-bottom: 0;
+  font-size: 12px;
+}
+
+.al-farm-investment-disclaimer {
+  max-width: 950px;
+  margin: 35px auto 0;
+  padding: 17px 22px;
+  background: var(--farm-ivory);
+  border-left: 2px solid var(--farm-gold);
+  font-size: 11px !important;
+}
+
+/* SERVICES */
+
+.al-farm-services {
+  background: var(--farm-ivory);
+}
+
+.al-farm-services-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 50px;
+  margin-bottom: 48px;
+}
+
+.al-farm-services-intro h2 {
+  max-width: 650px;
+  margin-top: 14px;
+}
+
+.al-farm-services-intro > p {
+  max-width: 390px;
+  margin-bottom: 5px;
+}
+
+.al-farm-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--farm-border);
+  border-left: 1px solid var(--farm-border);
+}
+
+.al-farm-service-card {
+  position: relative;
+  min-height: 400px;
+  padding: 34px 28px;
+  background: var(--farm-white);
+  border-right: 1px solid var(--farm-border);
+  border-bottom: 1px solid var(--farm-border);
+  transition: background 0.3s ease;
+}
+
+.al-farm-service-card:hover {
+  background: #fcfaf6;
+}
+
+.al-farm-service-index {
+  position: absolute;
+  top: 35px;
+  right: 27px;
+  color: #b6a58e;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.al-farm-service-icon {
+  display: grid;
+  place-items: center;
+  width: 49px;
+  height: 49px;
+  color: var(--farm-gold-dark);
+  background: rgba(197, 168, 128, 0.14);
+  font-size: 18px;
+}
+
+.al-farm-service-card h3 {
+  margin: 23px 0 12px;
+  color: var(--farm-navy);
+  font-size: 27px;
+  line-height: 1.05;
+}
+
+.al-farm-service-card > p {
+  margin-bottom: 19px;
+  font-size: 12px;
+}
+
+.al-farm-service-card ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.al-farm-service-card li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--farm-slate);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.al-farm-service-card li::before {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background: var(--farm-gold);
+  border-radius: 50%;
+  content: "";
+}
+
+/* APPROACH */
+
+.al-farm-approach {
+  color: var(--farm-white);
+  background: var(--farm-navy);
+}
+
+.al-farm-approach .al-farm-centered-heading h2 {
+  color: var(--farm-white);
+}
+
+.al-farm-approach .al-farm-centered-heading h2 em {
+  color: #dfc39b;
+}
+
+.al-farm-approach .al-farm-centered-heading p {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.al-farm-approach .al-farm-kicker {
+  color: #dfc39b;
+}
+
+.al-farm-process {
+  position: relative;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.al-farm-process::before {
+  position: absolute;
+  top: 25px;
+  bottom: 25px;
+  left: 27px;
+  width: 1px;
+  background: rgba(197, 168, 128, 0.4);
+  content: "";
+}
+
+.al-farm-process-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  gap: 30px;
+  align-items: start;
+  padding: 0 0 38px;
+}
+
+.al-farm-process-step:last-child {
+  padding-bottom: 0;
+}
+
+.al-farm-process-number {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 55px;
+  height: 55px;
+  color: var(--farm-gold);
+  background: var(--farm-navy);
+  border: 1px solid var(--farm-gold);
+  border-radius: 50%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+}
+
+.al-farm-process-step h3 {
+  margin: 3px 0 8px;
+  color: var(--farm-white);
+  font-size: 29px;
+}
+
+.al-farm-process-step p {
+  max-width: 600px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 13px;
+}
+
+/* WHY ASTRA LUXE */
+
+.al-farm-why {
+  background: var(--farm-white);
+}
+
+.al-farm-why-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 85px;
+  align-items: center;
+}
+
+.al-farm-why-image {
+  position: relative;
+  min-height: 570px;
+  overflow: hidden;
+}
+
+.al-farm-why-image img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.al-farm-why-image:hover img {
+  transform: scale(1.05);
+}
+
+.al-farm-image-note {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 28px;
+  color: var(--farm-white);
+  background: linear-gradient(0deg, rgba(15, 23, 42, 0.88), transparent);
+}
+
+.al-farm-image-note span {
+  color: #e0c39c;
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.al-farm-image-note strong {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.al-farm-why-content h2 {
+  margin: 15px 0 22px;
+}
+
+.al-farm-check-list {
+  display: grid;
+  gap: 15px;
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.al-farm-check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  color: var(--farm-slate);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.al-farm-check-list i {
+  margin-top: 3px;
+  color: var(--farm-gold-dark);
+}
+
+/* FOCUS */
+
+.al-farm-focus {
+  padding-top: 0;
+  background: var(--farm-white);
+}
+
+.al-farm-focus-box {
+  display: grid;
+  grid-template-columns: 75px 1fr;
+  gap: 30px;
+  align-items: start;
+  padding: 48px 55px;
+  background: var(--farm-ivory);
+  border-left: 3px solid var(--farm-gold);
+}
+
+.al-farm-focus-icon {
+  display: grid;
+  place-items: center;
+  width: 65px;
+  height: 65px;
+  color: var(--farm-gold-dark);
+  background: rgba(197, 168, 128, 0.15);
+  font-size: 24px;
+}
+
+.al-farm-focus-box h2 {
+  margin: 10px 0 15px;
+  font-size: clamp(32px, 4vw, 45px);
+}
+
+.al-farm-focus-box p {
+  max-width: 850px;
+  margin-bottom: 0;
+}
+
+/* FAQ */
+
+.al-farm-faq {
+  background: var(--farm-ivory);
+}
+
+.al-farm-faq-grid {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 90px;
+  align-items: start;
+}
+
+.al-farm-faq-heading h2 {
+  margin: 15px 0 20px;
+}
+
+.al-farm-faq-list {
+  border-top: 1px solid var(--farm-border);
+}
+
+.al-farm-faq-item {
+  border-bottom: 1px solid var(--farm-border);
+}
+
+.al-farm-faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+  padding: 24px 0;
+  color: var(--farm-navy);
+  background: transparent;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.al-farm-faq-question i {
+  flex-shrink: 0;
+  color: var(--farm-gold-dark);
+  font-size: 13px;
+  transition: transform 0.3s ease;
+}
+
+.al-farm-faq-item.is-open .al-farm-faq-question i {
+  transform: rotate(45deg);
+}
+
+.al-farm-faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.al-farm-faq-item.is-open .al-farm-faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.al-farm-faq-answer p {
+  overflow: hidden;
+  margin: 0;
+  padding: 0 35px 0 0;
+  font-size: 12px;
+  line-height: 1.9;
+  transition: padding 0.35s ease;
+}
+
+.al-farm-faq-item.is-open .al-farm-faq-answer p {
+  padding-bottom: 23px;
+}
+
+/* CTA */
+
+.al-farm-cta {
+  position: relative;
+  padding: 115px 24px;
+  overflow: hidden;
+  text-align: center;
+  background: var(--farm-navy);
+}
+
+.al-farm-cta-bg,
+.al-farm-cta-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.al-farm-cta-bg {
+  background:
+    url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1800&q=85")
+    center / cover no-repeat;
+}
+
+.al-farm-cta-overlay {
+  background: rgba(15, 23, 42, 0.87);
+}
+
+.al-farm-cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+}
+
+.al-farm-cta .al-farm-kicker {
+  color: #dfc39b;
+}
+
+.al-farm-cta h2 {
+  margin: 16px 0 18px;
+  color: var(--farm-white);
+}
+
+.al-farm-cta h2 em {
+  color: #dfc39b;
+}
+
+.al-farm-cta p {
+  max-width: 650px;
+  margin: 0 auto 30px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ANIMATION INITIAL STATES */
+
+.al-farm-page .al-farm-reveal {
+  will-change: transform, opacity;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .al-farm-overview-grid,
+  .al-farm-features-grid,
+  .al-farm-why-grid {
+    gap: 50px;
+  }
+
+  .al-farm-destination-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .al-farm-lifestyle-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .al-farm-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .al-farm-investment-grid {
+    gap: 45px;
+  }
+
+  .al-farm-faq-grid {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 760px) {
+  .al-farm-section {
+    padding: 78px 0;
+  }
+
+  .al-farm-container {
+    width: min(100% - 36px, 560px);
+  }
+
+  .al-farm-hero {
+    min-height: 660px;
+    padding: 110px 24px 100px;
+  }
+
+  .al-farm-hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.94),
+      rgba(15, 23, 42, 0.64)
+    );
+  }
+
+  .al-farm-hero h1 {
+    font-size: clamp(58px, 12vw, 80px);
+  }
+
+  .al-farm-hero h1 em {
+    font-size: 0.64em;
+  }
+
+  .al-farm-hero-content > p {
+    font-size: 13px;
+  }
+
+  .al-farm-hero-caption {
+    right: 24px;
+    left: 24px;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    font-size: 8px;
+  }
+
+  .al-farm-overview-grid,
+  .al-farm-features-grid,
+  .al-farm-investment-grid,
+  .al-farm-why-grid,
+  .al-farm-faq-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .al-farm-section-heading {
+    position: static;
+  }
+
+  .al-farm-overview-copy .al-farm-lead {
+    font-size: 24px;
+  }
+
+  .al-farm-centered-heading {
+    margin-bottom: 38px;
+  }
+
+  .al-farm-destination-grid {
+    gap: 14px;
+  }
+
+  .al-farm-destination-image {
+    height: 200px;
+  }
+
+  .al-farm-destination-content {
+    min-height: 210px;
+    padding: 23px 20px;
+  }
+
+  .al-farm-destination-content h3 {
+    font-size: 25px;
+  }
+
+  .al-farm-destination-custom {
+    min-height: 350px;
+    padding: 30px;
+  }
+
+  .al-farm-lifestyle-grid {
+    gap: 13px;
+  }
+
+  .al-farm-lifestyle-card {
+    min-height: 270px;
+    padding: 25px 20px;
+  }
+
+  .al-farm-lifestyle-card h3 {
+    font-size: 24px;
+  }
+
+  .al-farm-features-image {
+    min-height: 450px;
+  }
+
+  .al-farm-services-intro {
+    display: block;
+  }
+
+  .al-farm-services-intro > p {
+    margin-top: 18px;
+  }
+
+  .al-farm-service-card {
+    min-height: 390px;
+    padding: 28px 22px;
+  }
+
+  .al-farm-process-step {
+    gap: 20px;
+  }
+
+  .al-farm-why-image {
+    min-height: 440px;
+  }
+
+  .al-farm-focus-box {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 35px 28px;
+  }
+
+  .al-farm-faq-question {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 480px) {
+  .al-farm-container {
+    width: calc(100% - 32px);
+  }
+
+  .al-farm-section {
+    padding: 65px 0;
+  }
+
+  .al-farm-hero {
+    min-height: 640px;
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .al-farm-hero h1 {
+    font-size: 57px;
+  }
+
+  .al-farm-hero h1 em {
+    font-size: 0.63em;
+  }
+
+  .al-farm-hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .al-farm-btn {
+    min-height: 49px;
+    padding: 0 18px;
+    font-size: 9px;
+  }
+
+  .al-farm-page h2 {
+    font-size: 39px;
+  }
+
+  .al-farm-destination-grid,
+  .al-farm-lifestyle-grid,
+  .al-farm-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .al-farm-destination-image {
+    height: 225px;
+  }
+
+  .al-farm-destination-content {
+    min-height: auto;
+    padding: 26px 23px;
+  }
+
+  .al-farm-destination-custom {
+    min-height: 330px;
+  }
+
+  .al-farm-lifestyle-card {
+    min-height: auto;
+    padding: 28px 23px;
+  }
+
+  .al-farm-feature-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .al-farm-features-image {
+    min-height: 350px;
+  }
+
+  .al-farm-service-card {
+    min-height: auto;
+    padding: 30px 24px;
+  }
+
+  .al-farm-process-step {
+    grid-template-columns: 45px 1fr;
+    gap: 18px;
+    padding-bottom: 32px;
+  }
+
+  .al-farm-process-number {
+    width: 45px;
+    height: 45px;
+    font-size: 10px;
+  }
+
+  .al-farm-process::before {
+    left: 22px;
+  }
+
+  .al-farm-process-step h3 {
+    font-size: 25px;
+  }
+
+  .al-farm-investment-copy h3 {
+    font-size: 30px;
+  }
+
+  .al-farm-investment-point {
+    grid-template-columns: 38px 1fr;
+    gap: 12px;
+  }
+
+  .al-farm-why-image {
+    min-height: 350px;
+  }
+
+  .al-farm-focus-box {
+    padding: 30px 22px;
+  }
+
+  .al-farm-faq-question {
+    gap: 15px;
+    font-size: 21px;
+  }
+
+  .al-farm-faq-answer p {
+    padding-right: 10px;
+  }
+
+  .al-farm-cta {
+    padding: 85px 18px;
+  }
+
+  .al-farm-breadcrumb .al-farm-container {
+    gap: 8px;
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .al-farm-page *,
+  .al-farm-page *::before,
+  .al-farm-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+
+  <main class="al-farm-page">
+
+    <!-- HERO -->
+    <section class="al-farm-hero">
+      <div class="al-farm-hero-bg"></div>
+      <div class="al-farm-hero-overlay"></div>
+
+      <div class="al-farm-hero-content">
+        <span class="al-farm-eyebrow">LUXURY REAL ESTATE & LIFESTYLE ADVISORY</span>
+
+        <h1>
+          Farm Houses
+          <em>Where Nature Meets Luxury.</em>
+        </h1>
+
+        <p>
+          Discover exclusive countryside retreats, expansive landscapes
+          and thoughtfully selected properties that bring together
+          privacy, contemporary comfort and the freedom of open spaces.
+        </p>
+
+        <div class="al-farm-hero-actions">
+          <a href="contact.html" class="al-farm-btn al-farm-btn-gold">
+            Explore Farmhouse Opportunities
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+          <a href="#al-farm-overview" class="al-farm-text-link">
+            Discover the Experience
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="al-farm-hero-caption">
+        <span>SPACE TO BREATHE</span>
+        <span>ROOM TO BELONG</span>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="al-farm-section al-farm-overview" id="al-farm-overview">
+      <div class="al-farm-container al-farm-overview-grid">
+
+        <div class="al-farm-section-heading al-farm-reveal">
+          <span class="al-farm-kicker">A DIFFERENT WAY OF LIVING</span>
+          <h2>Discover the luxury of <em>space, privacy and nature.</em></h2>
+          <div class="al-farm-heading-line"></div>
+        </div>
+
+        <div class="al-farm-overview-copy al-farm-reveal">
+          <p class="al-farm-lead">
+            A farmhouse is more than a property. It is a personal
+            sanctuary where the pace of life changes and everyday
+            experiences become more meaningful.
+          </p>
+
+          <p>
+            Experience the charm, tranquillity and exclusivity of owning
+            a farmhouse in select destinations across India. From lush
+            estates around Delhi NCR and the outskirts of Bengaluru
+            to countryside retreats in Sariska, Udaipur, Jaipur,
+            Goa, Vengurla, Igatpuri, Rudrapur, Ramnagar and Dalhousie,
+            each destination offers a different relationship with nature
+            and its surroundings.
+          </p>
+
+          <p>
+            Our approach focuses on identifying properties that offer
+            desirable locations, spacious landscapes and the potential
+            for a distinctive lifestyle experience. Depending on the
+            property, features may include landscaped gardens,
+            swimming pools, outdoor leisure areas and contemporary amenities.
+          </p>
+
+          <p>
+            Whether envisioned as a private family retreat, a place
+            for celebrations or an investment in a lifestyle asset,
+            the right farmhouse should reflect your personal aspirations
+            while meeting practical ownership and development considerations.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DESTINATION SHOWCASE -->
+    <section class="al-farm-section al-farm-destinations">
+      <div class="al-farm-container">
+
+        <div class="al-farm-centered-heading al-farm-reveal">
+          <span class="al-farm-kicker">CURATED DESTINATIONS</span>
+          <h2>Find your escape <em>across India.</em></h2>
+          <p>
+            From green countryside estates to scenic hill retreats,
+            explore destinations that offer distinctive settings
+            for a more private way of living.
+          </p>
+        </div>
+
+        <div class="al-farm-destination-grid">
+
+          <article class="al-farm-destination-card al-farm-reveal">
+            <div class="al-farm-destination-image">
+              <img
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
+                alt="Luxury countryside farmhouse surrounded by greenery"
+                loading="lazy">
+              <span class="al-farm-destination-tag">METROPOLITAN ESCAPES</span>
+            </div>
+            <div class="al-farm-destination-content">
+              <span class="al-farm-destination-number">01</span>
+              <h3>Delhi NCR & Bengaluru</h3>
+              <p>
+                Countryside living within reach of major urban centres,
+                suited to private retreats, weekend homes and lifestyle-led
+                property ownership.
+              </p>
+            </div>
+          </article>
+
+          <article class="al-farm-destination-card al-farm-reveal">
+            <div class="al-farm-destination-image">
+              <img
+                src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1000&q=85"
+                alt="Scenic countryside retreat in a natural landscape"
+                loading="lazy">
+              <span class="al-farm-destination-tag">ARAVALLI & RAJASTHAN</span>
+            </div>
+            <div class="al-farm-destination-content">
+              <span class="al-farm-destination-number">02</span>
+              <h3>Sariska, Jaipur & Udaipur</h3>
+              <p>
+                Distinctive landscapes, heritage surroundings and
+                countryside settings for properties with a strong
+                sense of place.
+              </p>
+            </div>
+          </article>
+
+          <article class="al-farm-destination-card al-farm-reveal">
+            <div class="al-farm-destination-image">
+              <img
+                src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1000&q=85"
+                alt="Coastal landscape and peaceful beach destination"
+                loading="lazy">
+              <span class="al-farm-destination-tag">COASTAL RETREATS</span>
+            </div>
+            <div class="al-farm-destination-content">
+              <span class="al-farm-destination-number">03</span>
+              <h3>Goa & Vengurla</h3>
+              <p>
+                Coastal surroundings and relaxed destination living
+                for those drawn to open landscapes and a slower pace.
+              </p>
+            </div>
+          </article>
+
+          <article class="al-farm-destination-card al-farm-reveal">
+            <div class="al-farm-destination-image">
+              <img
+                src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=1000&q=85"
+                alt="Mountain countryside landscape and retreat"
+                loading="lazy">
+              <span class="al-farm-destination-tag">HILL & FOREST RETREATS</span>
+            </div>
+            <div class="al-farm-destination-content">
+              <span class="al-farm-destination-number">04</span>
+              <h3>Igatpuri, Ramnagar & Dalhousie</h3>
+              <p>
+                Mountain views, forest surroundings and cooler
+                countryside settings for peaceful private escapes.
+              </p>
+            </div>
+          </article>
+
+          <article class="al-farm-destination-card al-farm-reveal">
+            <div class="al-farm-destination-image">
+              <img
+                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85"
+                alt="Open green countryside and agricultural landscape"
+                loading="lazy">
+              <span class="al-farm-destination-tag">EMERGING COUNTRYSIDE</span>
+            </div>
+            <div class="al-farm-destination-content">
+              <span class="al-farm-destination-number">05</span>
+              <h3>Rudrapur & Beyond</h3>
+              <p>
+                Explore emerging countryside locations with potential
+                for lifestyle-oriented land ownership and future use.
+              </p>
+            </div>
+          </article>
+
+          <article class="al-farm-destination-card al-farm-destination-custom al-farm-reveal">
+            <div class="al-farm-custom-icon">
+              <i class="fa-solid fa-earth-asia"></i>
+            </div>
+            <span class="al-farm-kicker">YOUR PREFERRED LOCATION</span>
+            <h3>Looking somewhere else?</h3>
+            <p>
+              Share your preferred destination and property requirements.
+              We can explore suitable opportunities based on availability
+              and project feasibility.
+            </p>
+            <a href="contact.html" class="al-farm-inline-link">
+              Discuss Your Location
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LIFESTYLE EXPERIENCE -->
+    <section class="al-farm-section al-farm-lifestyle">
+      <div class="al-farm-container">
+
+        <div class="al-farm-centered-heading al-farm-reveal">
+          <span class="al-farm-kicker">THE FARMHOUSE LIFESTYLE</span>
+          <h2>More than a home. <em>A way of experiencing life.</em></h2>
+          <p>
+            A thoughtfully selected farmhouse can create room for
+            family, leisure, personal celebrations and meaningful
+            time away from the city.
+          </p>
+        </div>
+
+        <div class="al-farm-lifestyle-grid">
+
+          <article class="al-farm-lifestyle-card al-farm-reveal">
+            <div class="al-farm-lifestyle-icon">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <span>01 / TRANQUILLITY</span>
+            <h3>A Peaceful Retreat</h3>
+            <p>
+              Step away from busy city routines and enjoy the calm
+              of open spaces, natural surroundings and a more relaxed pace.
+            </p>
+          </article>
+
+          <article class="al-farm-lifestyle-card al-farm-reveal">
+            <div class="al-farm-lifestyle-icon">
+              <i class="fa-solid fa-people-roof"></i>
+            </div>
+            <span>02 / TOGETHERNESS</span>
+            <h3>Family & Celebrations</h3>
+            <p>
+              Create a private setting for family gatherings,
+              intimate celebrations, festive occasions and memorable weekends.
+            </p>
+          </article>
+
+          <article class="al-farm-lifestyle-card al-farm-reveal">
+            <div class="al-farm-lifestyle-icon">
+              <i class="fa-solid fa-person-swimming"></i>
+            </div>
+            <span>03 / LEISURE</span>
+            <h3>Outdoor Living</h3>
+            <p>
+              Enjoy landscaped gardens, swimming pools, outdoor dining
+              and leisure spaces, depending on the property's facilities.
+            </p>
+          </article>
+
+          <article class="al-farm-lifestyle-card al-farm-reveal">
+            <div class="al-farm-lifestyle-icon">
+              <i class="fa-solid fa-house-circle-check"></i>
+            </div>
+            <span>04 / OWNERSHIP</span>
+            <h3>A Personal Sanctuary</h3>
+            <p>
+              Create a property that reflects your lifestyle,
+              personal preferences and long-term family aspirations.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROPERTY FEATURES -->
+    <section class="al-farm-section al-farm-features">
+      <div class="al-farm-container al-farm-features-grid">
+
+        <div class="al-farm-features-image al-farm-reveal">
+          <img
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85"
+            alt="Elegant contemporary farmhouse interior"
+            loading="lazy">
+
+          <div class="al-farm-image-caption">
+            <span>RUSTIC CHARM. CONTEMPORARY COMFORT.</span>
+            <strong>Designed around the way you want to live.</strong>
+          </div>
+        </div>
+
+        <div class="al-farm-features-content al-farm-reveal">
+          <span class="al-farm-kicker">WHAT MAKES A FARMHOUSE DISTINCTIVE</span>
+          <h2>Space, character and <em>thoughtful amenities.</em></h2>
+
+          <p>
+            The appeal of a premium farmhouse lies in the balance
+            between its natural setting, usable outdoor space,
+            architectural character and everyday comforts.
+          </p>
+
+          <p>
+            Depending on the property and its development, the
+            features and amenities may include:
+          </p>
+
+          <div class="al-farm-feature-list">
+            <div>
+              <i class="fa-solid fa-tree"></i>
+              <span>Landscaped gardens and green spaces</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-water-ladder"></i>
+              <span>Private swimming pools and leisure areas</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-house"></i>
+              <span>Spacious residences and contemporary interiors</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-umbrella-beach"></i>
+              <span>Outdoor dining, decks and recreational spaces</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>Security and property-support arrangements</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-car"></i>
+              <span>Access, parking and essential infrastructure</span>
+            </div>
+          </div>
+
+          <p class="al-farm-feature-note">
+            Actual features, facilities and permitted uses vary
+            by property, location and applicable regulations.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INVESTMENT PERSPECTIVE -->
+    <section class="al-farm-section al-farm-investment">
+      <div class="al-farm-container">
+
+        <div class="al-farm-centered-heading al-farm-reveal">
+          <span class="al-farm-kicker">LIFESTYLE & ASSET POTENTIAL</span>
+          <h2>Where personal value meets <em>long-term perspective.</em></h2>
+          <p>
+            Farmhouse ownership can bring together lifestyle benefits
+            and the possibility of holding a distinctive real estate asset.
+          </p>
+        </div>
+
+        <div class="al-farm-investment-grid">
+
+          <div class="al-farm-investment-copy al-farm-reveal">
+            <h3>A property with multiple possibilities.</h3>
+            <p>
+              Choosing a farmhouse can mean investing in a place
+              for family use, recreation and personal experiences.
+              It may also form part of a broader property portfolio.
+            </p>
+            <p>
+              In select locations, land scarcity, improving connectivity,
+              infrastructure development and demand for private retreats
+              may influence property values over time.
+            </p>
+            <p>
+              However, the potential of each property needs to be
+              evaluated individually, considering its location,
+              title, permitted use, development status, market demand
+              and ongoing ownership costs.
+            </p>
+          </div>
+
+          <div class="al-farm-investment-points al-farm-reveal">
+            <div class="al-farm-investment-point">
+              <span>01</span>
+              <div>
+                <h4>Location & Land Value</h4>
+                <p>
+                  Consider the property's location, land characteristics,
+                  surrounding development and accessibility.
+                </p>
+              </div>
+            </div>
+
+            <div class="al-farm-investment-point">
+              <span>02</span>
+              <div>
+                <h4>Demand & Scarcity</h4>
+                <p>
+                  Evaluate the availability of comparable properties
+                  and demand for countryside living in the area.
+                </p>
+              </div>
+            </div>
+
+            <div class="al-farm-investment-point">
+              <span>03</span>
+              <div>
+                <h4>Ownership & Compliance</h4>
+                <p>
+                  Examine title, land classification, permitted use
+                  and applicable restrictions before acquisition.
+                </p>
+              </div>
+            </div>
+
+            <div class="al-farm-investment-point">
+              <span>04</span>
+              <div>
+                <h4>Long-Term Asset Planning</h4>
+                <p>
+                  Consider maintenance, management, future use
+                  and potential exit options as part of ownership planning.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="al-farm-investment-disclaimer">
+          Property appreciation, resale value and investment returns
+          are not guaranteed. All investments are subject to location-specific
+          risks, legal conditions and prevailing market circumstances.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- OUR SERVICES -->
+    <section class="al-farm-section al-farm-services">
+      <div class="al-farm-container">
+
+        <div class="al-farm-services-intro al-farm-reveal">
+          <div>
+            <span class="al-farm-kicker">OUR FARMHOUSE SERVICES</span>
+            <h2>From discovery to ownership <em>and beyond.</em></h2>
+          </div>
+          <p>
+            The AstraLuxe Advisory supports clients through the
+            important stages of farmhouse selection, acquisition,
+            development and ongoing property management.
+          </p>
+        </div>
+
+        <div class="al-farm-services-grid">
+
+          <article class="al-farm-service-card al-farm-reveal">
+            <span class="al-farm-service-index">01</span>
+            <div class="al-farm-service-icon">
+              <i class="fa-solid fa-magnifying-glass-location"></i>
+            </div>
+            <h3>Property Selection & Acquisition</h3>
+            <p>
+              Identify suitable farmhouse opportunities based on
+              location, lifestyle preferences, property characteristics
+              and ownership objectives.
+            </p>
+            <ul>
+              <li>Location and property shortlisting</li>
+              <li>Site visits and property evaluation</li>
+              <li>Price and opportunity assessment</li>
+              <li>Transaction coordination support</li>
+            </ul>
+          </article>
+
+          <article class="al-farm-service-card al-farm-reveal">
+            <span class="al-farm-service-index">02</span>
+            <div class="al-farm-service-icon">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <h3>Investment Advisory</h3>
+            <p>
+              Assess farmhouse opportunities through market research,
+              location analysis and a review of relevant ownership
+              and investment considerations.
+            </p>
+            <ul>
+              <li>Market and location assessment</li>
+              <li>Connectivity and infrastructure review</li>
+              <li>Comparable property evaluation</li>
+              <li>Long-term ownership considerations</li>
+            </ul>
+          </article>
+
+          <article class="al-farm-service-card al-farm-reveal">
+            <span class="al-farm-service-index">03</span>
+            <div class="al-farm-service-icon">
+              <i class="fa-solid fa-file-circle-check"></i>
+            </div>
+            <h3>Legal & Due Diligence Coordination</h3>
+            <p>
+              Coordinate the review of property records and relevant
+              documentation with qualified legal and technical professionals.
+            </p>
+            <ul>
+              <li>Title and ownership documentation review</li>
+              <li>Land-use and zoning verification coordination</li>
+              <li>Applicable approval checks</li>
+              <li>Legal professional coordination</li>
+            </ul>
+          </article>
+
+          <article class="al-farm-service-card al-farm-reveal">
+            <span class="al-farm-service-index">04</span>
+            <div class="al-farm-service-icon">
+              <i class="fa-solid fa-compass-drafting"></i>
+            </div>
+            <h3>Development & Customisation Support</h3>
+            <p>
+              Explore development and enhancement possibilities
+              aligned with the property's character, permitted use
+              and the owner's preferences.
+            </p>
+            <ul>
+              <li>Conceptual planning inputs</li>
+              <li>Architect and consultant coordination</li>
+              <li>Landscape and amenity planning inputs</li>
+              <li>Development feasibility considerations</li>
+            </ul>
+          </article>
+
+          <article class="al-farm-service-card al-farm-reveal">
+            <span class="al-farm-service-index">05</span>
+            <div class="al-farm-service-icon">
+              <i class="fa-solid fa-house-circle-check"></i>
+            </div>
+            <h3>Property Management Support</h3>
+            <p>
+              Explore ongoing support arrangements to help maintain
+              the property and coordinate its operational requirements.
+            </p>
+            <ul>
+              <li>Property upkeep coordination</li>
+              <li>Housekeeping and maintenance arrangements</li>
+              <li>Garden and landscape care coordination</li>
+              <li>Vendor and service-provider coordination</li>
+            </ul>
+          </article>
+
+          <article class="al-farm-service-card al-farm-reveal">
+            <span class="al-farm-service-index">06</span>
+            <div class="al-farm-service-icon">
+              <i class="fa-solid fa-hand-holding-dollar"></i>
+            </div>
+            <h3>Asset Management & Monetisation</h3>
+            <p>
+              Consider options for the future use, management,
+              sale or monetisation of the farmhouse, subject
+              to suitability and applicable permissions.
+            </p>
+            <ul>
+              <li>Asset review and strategic planning</li>
+              <li>Potential usage assessment</li>
+              <li>Sale and transfer coordination</li>
+              <li>Long-term asset planning inputs</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR APPROACH -->
+    <section class="al-farm-section al-farm-approach">
+      <div class="al-farm-container">
+
+        <div class="al-farm-centered-heading al-farm-reveal">
+          <span class="al-farm-kicker">THE ASTRALUXE APPROACH</span>
+          <h2>Your farmhouse journey, <em>thoughtfully guided.</em></h2>
+          <p>
+            A structured approach that brings together your preferences,
+            property evaluation and the practical considerations
+            of ownership.
+          </p>
+        </div>
+
+        <div class="al-farm-process">
+
+          <article class="al-farm-process-step al-farm-reveal">
+            <div class="al-farm-process-number">01</div>
+            <div>
+              <h3>Understand Your Vision</h3>
+              <p>
+                Discuss your preferred destinations, budget,
+                intended use, lifestyle requirements and ownership goals.
+              </p>
+            </div>
+          </article>
+
+          <article class="al-farm-process-step al-farm-reveal">
+            <div class="al-farm-process-number">02</div>
+            <div>
+              <h3>Curate Suitable Opportunities</h3>
+              <p>
+                Identify and shortlist available properties that
+                align with your preferences and the agreed requirements.
+              </p>
+            </div>
+          </article>
+
+          <article class="al-farm-process-step al-farm-reveal">
+            <div class="al-farm-process-number">03</div>
+            <div>
+              <h3>Evaluate the Property</h3>
+              <p>
+                Review the location, physical characteristics,
+                amenities, documentation and relevant ownership considerations.
+              </p>
+            </div>
+          </article>
+
+          <article class="al-farm-process-step al-farm-reveal">
+            <div class="al-farm-process-number">04</div>
+            <div>
+              <h3>Coordinate Acquisition</h3>
+              <p>
+                Support discussions, transaction coordination and
+                due diligence with the relevant appointed professionals.
+              </p>
+            </div>
+          </article>
+
+          <article class="al-farm-process-step al-farm-reveal">
+            <div class="al-farm-process-number">05</div>
+            <div>
+              <h3>Support Ownership & Management</h3>
+              <p>
+                Explore development, upkeep, property management
+                and future asset-planning requirements.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY ASTRA LUXE -->
+    <section class="al-farm-section al-farm-why">
+      <div class="al-farm-container al-farm-why-grid">
+
+        <div class="al-farm-why-image al-farm-reveal">
+          <img
+            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1100&q=85"
+            alt="Premium farmhouse architecture surrounded by natural elements"
+            loading="lazy">
+
+          <div class="al-farm-image-note">
+            <span>THE ASTRALUXE PERSPECTIVE</span>
+            <strong>A lifestyle worth investing in.</strong>
+          </div>
+        </div>
+
+        <div class="al-farm-why-content al-farm-reveal">
+          <span class="al-farm-kicker">WHY THE ASTRALUXE ADVISORY</span>
+
+          <h2>We look beyond the property to <em>the complete ownership experience.</em></h2>
+
+          <p>
+            Choosing a farmhouse involves more than selecting a beautiful
+            location. It requires understanding the land, the property,
+            its permitted use, its surroundings and the responsibilities
+            that come with ownership.
+          </p>
+
+          <p>
+            The AstraLuxe Advisory brings together real estate,
+            development and hospitality perspectives to help clients
+            make considered choices and plan for the complete
+            farmhouse ownership journey.
+          </p>
+
+          <ul class="al-farm-check-list">
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Curated property and destination guidance
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Location and opportunity evaluation
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Due diligence and professional coordination
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Development and property enhancement inputs
+            </li>
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Ongoing management and asset-planning support
+            </li>
+          </ul>
+
+          <a href="contact.html" class="al-farm-inline-link">
+            Connect with our advisory team
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OUR FOCUS -->
+    <section class="al-farm-section al-farm-focus">
+      <div class="al-farm-container">
+
+        <div class="al-farm-focus-box al-farm-reveal">
+          <div class="al-farm-focus-icon">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+
+          <div>
+            <span class="al-farm-kicker">OUR COMMITMENT</span>
+            <h2>Rustic charm. <em>Contemporary comfort. Informed ownership.</em></h2>
+            <p>
+              Our objective is to help clients find properties that
+              complement their lifestyle aspirations while considering
+              location suitability, ownership clarity and long-term
+              property requirements. Property availability, amenities,
+              permitted uses and investment potential are subject to
+              individual property assessment and applicable regulations.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="al-farm-cta">
+      <div class="al-farm-cta-bg"></div>
+      <div class="al-farm-cta-overlay"></div>
+
+      <div class="al-farm-container al-farm-cta-content al-farm-reveal">
+        <span class="al-farm-kicker">YOUR COUNTRYSIDE ESCAPE AWAITS</span>
+
+        <h2>
+          Ready to embrace a
+          <em>greener, calmer future?</em>
+        </h2>
+
+        <p>
+          Explore available farmhouse opportunities and turn your
+          vision of countryside living into reality with considered
+          guidance across property selection, acquisition and ownership.
+        </p>
+
+        <a href="contact.html" class="al-farm-btn al-farm-btn-gold">
+          Request a Personalised Consultation
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <div id="whatsapp-placeholder"></div>
+
+  <script src="js/main.js"></script>
+  <script>
+    (() => {
+      const initFarmPage = () => {
+        const page = document.querySelector(".al-farm-page");
+        if (!page) return;
+
+        const faqItems = page.querySelectorAll(".al-farm-faq-item");
+
+        faqItems.forEach((item) => {
+          const button = item.querySelector(".al-farm-faq-question");
+          if (!button) return;
+
+          button.setAttribute(
+            "aria-expanded",
+            String(item.classList.contains("is-open"))
+          );
+
+          button.addEventListener("click", () => {
+            const isOpen = item.classList.contains("is-open");
+
+            faqItems.forEach((faqItem) => {
+              faqItem.classList.remove("is-open");
+              faqItem
+                .querySelector(".al-farm-faq-question")
+                ?.setAttribute("aria-expanded", "false");
+            });
+
+            if (!isOpen) {
+              item.classList.add("is-open");
+              button.setAttribute("aria-expanded", "true");
+            }
+          });
+        });
+
+        const prefersReducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        if (prefersReducedMotion || typeof gsap === "undefined") {
+          page.querySelectorAll(".al-farm-reveal").forEach((element) => {
+            element.style.opacity = "1";
+            element.style.transform = "none";
+          });
+        } else {
+          if (typeof ScrollTrigger !== "undefined") {
+            gsap.registerPlugin(ScrollTrigger);
+          }
+
+          const heroTimeline = gsap.timeline({
+            defaults: {
+              ease: "power3.out",
+              clearProps: "transform,opacity"
+            }
+          });
+
+          heroTimeline
+            .from(page.querySelector(".al-farm-hero-bg"), {
+              scale: 1.18,
+              duration: 1.8,
+              ease: "power2.out"
+            })
+            .from(
+              page.querySelector(".al-farm-hero .al-farm-eyebrow"),
+              {
+                y: 25,
+                opacity: 0,
+                duration: 0.7
+              },
+              "-=1.1"
+            )
+            .from(
+              page.querySelector(".al-farm-hero h1"),
+              {
+                y: 55,
+                opacity: 0,
+                duration: 1
+              },
+              "-=0.45"
+            )
+            .from(
+              page.querySelector(".al-farm-hero-content > p"),
+              {
+                y: 25,
+                opacity: 0,
+                duration: 0.7
+              },
+              "-=0.5"
+            )
+            .from(
+              page.querySelectorAll(".al-farm-hero-actions > *"),
+              {
+                y: 20,
+                opacity: 0,
+                stagger: 0.15,
+                duration: 0.65
+              },
+              "-=0.35"
+            )
+            .from(
+              page.querySelector(".al-farm-hero-caption"),
+              {
+                opacity: 0,
+                y: 12,
+                duration: 0.6
+              },
+              "-=0.2"
+            );
+
+          if (typeof ScrollTrigger !== "undefined") {
+            const specificallyAnimated = [
+              ".al-farm-destination-card",
+              ".al-farm-lifestyle-card",
+              ".al-farm-service-card",
+              ".al-farm-investment-points",
+              ".al-farm-process-step",
+              ".al-farm-why-image",
+              ".al-farm-focus-box",
+              ".al-farm-cta-content"
+            ].join(",");
+
+            page.querySelectorAll(".al-farm-reveal").forEach((element) => {
+              if (
+                element.closest(".al-farm-hero") ||
+                element.matches(specificallyAnimated)
+              ) {
+                return;
+              }
+
+              gsap.fromTo(
+                element,
+                {
+                  y: 45,
+                  opacity: 0
+                },
+                {
+                  y: 0,
+                  opacity: 1,
+                  duration: 0.9,
+                  ease: "power3.out",
+                  clearProps: "transform,opacity",
+                  scrollTrigger: {
+                    trigger: element,
+                    start: "top 88%",
+                    once: true
+                  }
+                }
+              );
+            });
+
+            const animateGroup = (
+              selector,
+              triggerSelector,
+              from,
+              to,
+              start
+            ) => {
+              const targets = page.querySelectorAll(selector);
+              const trigger = page.querySelector(triggerSelector);
+
+              if (!targets.length || !trigger) return;
+
+              gsap.fromTo(targets, from, {
+                ...to,
+                clearProps: "transform,opacity",
+                scrollTrigger: {
+                  trigger,
+                  start,
+                  once: true
+                }
+              });
+            };
+
+            animateGroup(
+              ".al-farm-destination-card",
+              ".al-farm-destination-grid",
+              { y: 55, opacity: 0, rotateX: 4 },
+              {
+                y: 0,
+                opacity: 1,
+                rotateX: 0,
+                duration: 0.85,
+                stagger: 0.13,
+                ease: "power3.out"
+              },
+              "top 82%"
+            );
+
+            animateGroup(
+              ".al-farm-lifestyle-card",
+              ".al-farm-lifestyle-grid",
+              { y: 45, opacity: 0 },
+              {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.14,
+                ease: "power3.out"
+              },
+              "top 82%"
+            );
+
+            animateGroup(
+              ".al-farm-service-card",
+              ".al-farm-services-grid",
+              { y: 50, opacity: 0 },
+              {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.12,
+                ease: "power3.out"
+              },
+              "top 82%"
+            );
+
+            animateGroup(
+              ".al-farm-investment-point",
+              ".al-farm-investment-points",
+              { x: 30, opacity: 0 },
+              {
+                x: 0,
+                opacity: 1,
+                duration: 0.75,
+                stagger: 0.15,
+                ease: "power3.out"
+              },
+              "top 82%"
+            );
+
+            animateGroup(
+              ".al-farm-process-step",
+              ".al-farm-process",
+              { x: -35, opacity: 0 },
+              {
+                x: 0,
+                opacity: 1,
+                duration: 0.75,
+                stagger: 0.18,
+                ease: "power3.out"
+              },
+              "top 80%"
+            );
+
+            animateGroup(
+              ".al-farm-why-image",
+              ".al-farm-why",
+              { clipPath: "inset(0 0 100% 0)" },
+              {
+                clipPath: "inset(0 0 0% 0)",
+                duration: 1.2,
+                ease: "power3.inOut"
+              },
+              "top 75%"
+            );
+
+            animateGroup(
+              ".al-farm-focus-box",
+              ".al-farm-focus",
+              { y: 35, opacity: 0, scale: 0.98 },
+              {
+                y: 0,
+                opacity: 1,
+                scale: 1,
+                duration: 0.9,
+                ease: "power3.out"
+              },
+              "top 82%"
+            );
+
+            animateGroup(
+              ".al-farm-cta-content > *",
+              ".al-farm-cta",
+              { y: 35, opacity: 0 },
+              {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power3.out"
+              },
+              "top 78%"
+            );
+          }
+        }
+
+        page.querySelectorAll('a[href^="#"]').forEach((link) => {
+          link.addEventListener("click", (event) => {
+            const targetId = link.getAttribute("href");
+            if (!targetId || targetId.length < 2) return;
+
+            const target = document.getElementById(targetId.slice(1));
+            if (!target) return;
+
+            event.preventDefault();
+            target.scrollIntoView({
+              behavior: prefersReducedMotion ? "auto" : "smooth",
+              block: "start"
+            });
+          });
+        });
+
+        const refreshScrollTrigger = () => {
+          if (typeof ScrollTrigger !== "undefined") {
+            ScrollTrigger.refresh();
+          }
+        };
+
+        if (document.readyState === "complete") {
+          refreshScrollTrigger();
+        } else {
+          window.addEventListener("load", refreshScrollTrigger, {
+            once: true
+          });
+        }
+      };
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initFarmPage, {
+          once: true
+        });
+      } else {
+        initFarmPage();
+      }
+    })();
+  </script>
+</body>
+</html>

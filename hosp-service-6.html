@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The AstraLuxe Advisory provides hospitality asset monetisation, performance advisory, management coordination and owner representation services for hotel and resort owners and investors.">
+    <title>Asset Monetisation, Management & Owner Representation | The AstraLuxe Advisory</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+     <style>
+        /* =========================================
+        ASTRA LUXE - ASSET MONETISATION & OWNER REPRESENTATION
+        Standalone page stylesheet
+        ========================================= */
+
+        .al-amor-page {
+            --amor-navy: #1e293b;
+            --amor-slate: #334155;
+            --amor-gold: #D4AF37;
+            --amor-gold-dark: #a9895d;
+            --amor-ivory: #f8f7f4;
+            --amor-white: #ffffff;
+            --amor-text: #263244;
+            --amor-muted: #687386;
+            --amor-border: rgba(30, 41, 59, 0.12);
+
+            margin: 0;
+            color: var(--amor-text);
+            background: var(--amor-white);
+            font-family: "Lora", serif;
+            overflow-x: hidden;
+        }
+
+        .al-amor-page *,
+        .al-amor-page *::before,
+        .al-amor-page *::after {
+            box-sizing: border-box;
+        }
+
+        .al-amor-page img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .al-amor-page a {
+            text-decoration: none;
+        }
+
+        .al-amor-container {
+            width: min(1180px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        .al-amor-section {
+            padding: 110px 0;
+        }
+
+        .al-amor-section-label,
+        .al-amor-eyebrow {
+            display: inline-block;
+            color: var(--amor-gold-dark);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            line-height: 1.7;
+            text-transform: uppercase;
+        }
+
+        .al-amor-section-heading {
+            max-width: 740px;
+            margin-bottom: 54px;
+        }
+
+        .al-amor-section-heading--center {
+            margin-right: auto;
+            margin-left: auto;
+            text-align: center;
+        }
+
+        .al-amor-section-heading h2,
+        .al-amor-overview h2,
+        .al-amor-approach h2,
+        .al-amor-why h2,
+        .al-amor-faq h2 {
+            margin: 14px 0 18px;
+            color: var(--amor-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(38px, 5vw, 58px);
+            font-weight: 500;
+            line-height: 1.05;
+        }
+
+        .al-amor-section-heading h2 span,
+        .al-amor-overview h2 span,
+        .al-amor-approach h2 span,
+        .al-amor-why h2 span,
+        .al-amor-faq h2 span {
+            color: var(--amor-gold-dark);
+        }
+
+        .al-amor-section-heading > p,
+        .al-amor-approach__intro > p,
+        .al-amor-faq__intro > p {
+            max-width: 620px;
+            margin: 0;
+            color: var(--amor-muted);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .al-amor-section-heading--center > p {
+            margin: 0 auto;
+        }
+
+        .al-amor-heading-line {
+            width: 66px;
+            height: 2px;
+            margin-top: 26px;
+            background: var(--amor-gold);
+        }
+
+        /* BUTTONS */
+
+        .al-amor-button {
+            display: inline-flex;
+            min-height: 54px;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            padding: 0 25px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .al-amor-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .al-amor-button--gold {
+            color: var(--amor-navy);
+            background: var(--amor-gold);
+        }
+
+        .al-amor-button--gold:hover {
+            background: #d6bc98;
+        }
+
+        .al-amor-button i,
+        .al-amor-text-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .al-amor-button:hover i,
+        .al-amor-text-link:hover i {
+            transform: translateX(5px);
+        }
+
+        .al-amor-text-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 25px;
+            color: var(--amor-gold-dark);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        /* HERO */
+
+        .al-amor-hero {
+            position: relative;
+            display: flex;
+            min-height: 690px;
+            align-items: center;
+            overflow: hidden;
+            color: var(--amor-white);
+            background: var(--amor-navy);
+        }
+
+        .al-amor-hero__image,
+        .al-amor-hero__overlay {
+            position: absolute;
+            inset: 0;
+        }
+
+        .al-amor-hero__image {
+            background-image: url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=90");
+            background-position: center 50%;
+            background-size: cover;
+            transform: scale(1.04);
+        }
+
+        .al-amor-hero__overlay {
+            background:
+                linear-gradient(90deg, rgba(13, 23, 38, 0.91) 0%, rgba(13, 23, 38, 0.7) 50%, rgba(13, 23, 38, 0.2) 100%),
+                linear-gradient(0deg, rgba(13, 23, 38, 0.45), transparent 45%);
+        }
+
+        .al-amor-hero__content {
+            position: relative;
+            z-index: 2;
+            padding-top: 55px;
+            padding-bottom: 80px;
+        }
+
+        .al-amor-hero .al-amor-eyebrow {
+            color: #e2c9a5;
+        }
+
+        .al-amor-hero h1 {
+            max-width: 850px;
+            margin: 24px 0;
+            color: var(--amor-white);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(55px, 7.7vw, 91px);
+            font-weight: 500;
+            line-height: 0.96;
+        }
+
+        .al-amor-hero h1 span {
+            display: block;
+            color: #dfc39b;
+            font-style: italic;
+        }
+
+        .al-amor-hero__description {
+            max-width: 560px;
+            margin: 0 0 32px;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .al-amor-hero__bottom {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 22px max(24px, calc((100vw - 1180px) / 2));
+            color: rgba(255, 255, 255, 0.75);
+            background: rgba(14, 25, 40, 0.48);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 1.8px;
+        }
+
+        .al-amor-hero__line {
+            width: 70px;
+            height: 1px;
+            background: var(--amor-gold);
+        }
+
+        /* BREADCRUMB */
+
+        .al-amor-breadcrumb {
+            padding: 18px 0;
+            border-bottom: 1px solid var(--amor-border);
+            background: #fff;
+        }
+
+        .al-amor-breadcrumb .al-amor-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            color: var(--amor-muted);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+        }
+
+        .al-amor-breadcrumb a {
+            color: var(--amor-slate);
+            transition: color 0.25s ease;
+        }
+
+        .al-amor-breadcrumb a:hover {
+            color: var(--amor-gold-dark);
+        }
+
+        .al-amor-breadcrumb i {
+            color: var(--amor-gold);
+            font-size: 8px;
+        }
+
+        .al-amor-breadcrumb span {
+            color: var(--amor-gold-dark);
+        }
+
+        /* OVERVIEW */
+
+        .al-amor-overview {
+            background: var(--amor-white);
+        }
+
+        .al-amor-overview__grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 100px;
+            align-items: start;
+        }
+
+        .al-amor-overview__heading {
+            position: sticky;
+            top: 110px;
+        }
+
+        .al-amor-overview h2 {
+            max-width: 480px;
+            font-size: clamp(42px, 5vw, 61px);
+        }
+
+        .al-amor-overview__content {
+            padding-top: 30px;
+        }
+
+        .al-amor-overview__content p {
+            margin: 0 0 20px;
+            color: var(--amor-muted);
+            font-size: 15px;
+            line-height: 2;
+        }
+
+        .al-amor-overview__content .al-amor-lead {
+            color: var(--amor-slate);
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        /* ADVISORY PILLARS */
+
+        .al-amor-pillars {
+            background: var(--amor-ivory);
+        }
+
+        .al-amor-pillars__grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .al-amor-pillar {
+            position: relative;
+            min-height: 300px;
+            padding: 32px 25px;
+            border: 1px solid rgba(30, 41, 59, 0.09);
+            background: #fff;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .al-amor-pillar:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 45px rgba(30, 41, 59, 0.08);
+        }
+
+        .al-amor-pillar__number {
+            position: absolute;
+            top: 22px;
+            right: 22px;
+            color: rgba(197, 168, 128, 0.7);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 24px;
+        }
+
+        .al-amor-pillar__icon,
+        .al-amor-scope-card__icon {
+            display: grid;
+            width: 54px;
+            height: 54px;
+            place-items: center;
+            color: var(--amor-gold-dark);
+            background: rgba(197, 168, 128, 0.13);
+            font-size: 20px;
+        }
+
+        .al-amor-pillar h3 {
+            margin: 28px 0 12px;
+            color: var(--amor-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .al-amor-pillar p {
+            margin: 0;
+            color: var(--amor-muted);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        /* SCOPE OF SERVICES */
+
+        .al-amor-scope {
+            background: #fff;
+        }
+
+        .al-amor-scope__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .al-amor-scope-card {
+            position: relative;
+            min-height: 285px;
+            padding: 34px 30px;
+            border: 1px solid var(--amor-border);
+            background: #fff;
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .al-amor-scope-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(197, 168, 128, 0.65);
+            box-shadow: 0 20px 50px rgba(30, 41, 59, 0.07);
+        }
+
+        .al-amor-scope-card__number {
+            position: absolute;
+            top: 25px;
+            right: 26px;
+            color: #c8cbd0;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 25px;
+        }
+
+        .al-amor-scope-card__icon {
+            width: 58px;
+            height: 58px;
+            font-size: 21px;
+        }
+
+        .al-amor-scope-card h3 {
+            max-width: 300px;
+            margin: 24px 0 12px;
+            color: var(--amor-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 25px;
+            font-weight: 600;
+            line-height: 1.15;
+        }
+
+        .al-amor-scope-card p {
+            margin: 0;
+            color: var(--amor-muted);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        /* ADVISORY APPROACH */
+
+        .al-amor-approach {
+            background: var(--amor-navy);
+        }
+
+        .al-amor-approach__intro {
+            max-width: 700px;
+            margin-bottom: 65px;
+        }
+
+        .al-amor-approach .al-amor-section-label {
+            color: #dfc39b;
+        }
+
+        .al-amor-approach h2 {
+            color: #fff;
+        }
+
+        .al-amor-approach__intro > p {
+            color: rgba(255, 255, 255, 0.68);
+        }
+
+        .al-amor-timeline {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+        }
+
+        .al-amor-timeline::before {
+            position: absolute;
+            top: 27px;
+            right: 10%;
+            left: 10%;
+            height: 1px;
+            background: rgba(197, 168, 128, 0.45);
+            content: "";
+        }
+
+        .al-amor-timeline__item {
+            position: relative;
+            padding: 0 18px;
+        }
+
+        .al-amor-timeline__marker {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            width: 55px;
+            height: 55px;
+            place-items: center;
+            border: 1px solid var(--amor-gold);
+            border-radius: 50%;
+            color: var(--amor-gold);
+            background: var(--amor-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 21px;
+        }
+
+        .al-amor-timeline__content {
+            padding-top: 28px;
+        }
+
+        .al-amor-timeline__content > span {
+            color: var(--amor-gold);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+        }
+
+        .al-amor-timeline__content h3 {
+            margin: 13px 0 10px;
+            color: #fff;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        .al-amor-timeline__content p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.63);
+            font-size: 11px;
+            line-height: 1.9;
+        }
+
+        /* WHY ASTRA LUXE */
+
+        .al-amor-why {
+            background: var(--amor-ivory);
+        }
+
+        .al-amor-why__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .al-amor-why__visual {
+            position: relative;
+            min-height: 550px;
+        }
+
+        .al-amor-why__visual img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+        }
+
+        .al-amor-why__visual-caption {
+            position: absolute;
+            right: -30px;
+            bottom: 30px;
+            width: min(310px, 85%);
+            padding: 24px 28px;
+            color: #fff;
+            background: var(--amor-navy);
+        }
+
+        .al-amor-why__visual-caption span {
+            color: var(--amor-gold);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+        }
+
+        .al-amor-why__visual-caption p {
+            margin: 9px 0 0;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 24px;
+        }
+
+        .al-amor-why__content > p {
+            margin: 20px 0 26px;
+            color: var(--amor-muted);
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .al-amor-check-list {
+            display: grid;
+            gap: 17px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .al-amor-check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+            color: var(--amor-slate);
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .al-amor-check-list i {
+            margin-top: 3px;
+            color: var(--amor-gold-dark);
+            font-size: 12px;
+        }
+
+        /* OUR FOCUS */
+
+        .al-amor-focus {
+            padding: 75px 0;
+            background: #fff;
+        }
+
+        .al-amor-focus__inner {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            padding: 48px 55px;
+            border-left: 3px solid var(--amor-gold);
+            background: var(--amor-ivory);
+        }
+
+        .al-amor-focus__icon {
+            display: grid;
+            width: 58px;
+            height: 58px;
+            flex: 0 0 58px;
+            place-items: center;
+            color: var(--amor-gold-dark);
+            background: #fff;
+            font-size: 23px;
+        }
+
+        .al-amor-focus__content h2 {
+            margin: 8px 0 12px;
+            color: var(--amor-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(30px, 4vw, 42px);
+            font-weight: 500;
+        }
+
+        .al-amor-focus__content h2 span {
+            color: var(--amor-gold-dark);
+        }
+
+        .al-amor-focus__content p {
+            max-width: 850px;
+            margin: 0;
+            color: var(--amor-muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        /* FAQ */
+
+        .al-amor-faq {
+            background: var(--amor-ivory);
+        }
+
+        .al-amor-faq__grid {
+            display: grid;
+            grid-template-columns: 0.75fr 1.25fr;
+            gap: 90px;
+            align-items: start;
+        }
+
+        .al-amor-faq__intro {
+            position: sticky;
+            top: 100px;
+        }
+
+        .al-amor-faq__list {
+            border-top: 1px solid var(--amor-border);
+        }
+
+        .al-amor-faq-item {
+            border-bottom: 1px solid var(--amor-border);
+        }
+
+        .al-amor-faq-item__question {
+            display: flex;
+            width: 100%;
+            min-height: 78px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px 0;
+            border: 0;
+            color: var(--amor-navy);
+            background: transparent;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .al-amor-faq-item__question span {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .al-amor-faq-item__question i {
+            color: var(--amor-gold-dark);
+            font-size: 13px;
+            transition: transform 0.3s ease;
+        }
+
+        .al-amor-faq-item.is-active .al-amor-faq-item__question i {
+            transform: rotate(45deg);
+        }
+
+        .al-amor-faq-item__answer {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.35s ease;
+        }
+
+        .al-amor-faq-item.is-active .al-amor-faq-item__answer {
+            grid-template-rows: 1fr;
+        }
+
+        .al-amor-faq-item__answer > div {
+            overflow: hidden;
+        }
+
+        .al-amor-faq-item__answer p {
+            margin: 0;
+            padding: 0 35px 24px 0;
+            color: var(--amor-muted);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        /* CTA */
+
+        .al-amor-cta {
+            position: relative;
+            padding: 105px 0;
+            overflow: hidden;
+            color: #fff;
+            background: var(--amor-navy);
+            text-align: center;
+        }
+
+        .al-amor-cta__background {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(rgba(20, 32, 48, 0.9), rgba(20, 32, 48, 0.93)),
+                url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85")
+                center / cover;
+        }
+
+        .al-amor-cta__content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .al-amor-cta .al-amor-section-label {
+            color: #dfc39b;
+        }
+
+        .al-amor-cta h2 {
+            max-width: 900px;
+            margin: 20px auto;
+            color: #fff;
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(40px, 6vw, 66px);
+            font-weight: 500;
+            line-height: 1.04;
+        }
+
+        .al-amor-cta h2 span {
+            display: block;
+            color: #dfc39b;
+            font-style: italic;
+        }
+
+        .al-amor-cta p {
+            max-width: 620px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        /* REVEAL FALLBACK */
+
+        .al-amor-reveal {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1050px) {
+            .al-amor-overview__grid {
+                gap: 55px;
+            }
+
+            .al-amor-pillars__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .al-amor-timeline {
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 45px;
+            }
+
+            .al-amor-timeline::before {
+                display: none;
+            }
+
+            .al-amor-why__grid {
+                gap: 55px;
+            }
+
+            .al-amor-faq__grid {
+                gap: 55px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .al-amor-container {
+                width: min(100% - 36px, 560px);
+            }
+
+            .al-amor-section {
+                padding: 78px 0;
+            }
+
+            .al-amor-hero {
+                min-height: 620px;
+            }
+
+            .al-amor-hero__overlay {
+                background: linear-gradient(
+                    90deg,
+                    rgba(13, 23, 38, 0.91),
+                    rgba(13, 23, 38, 0.65)
+                );
+            }
+
+            .al-amor-hero h1 {
+                font-size: clamp(50px, 11vw, 74px);
+            }
+
+            .al-amor-hero__description {
+                max-width: 460px;
+                font-size: 14px;
+            }
+
+            .al-amor-hero__bottom {
+                gap: 10px;
+                padding: 18px;
+                font-size: 8px;
+                letter-spacing: 1px;
+            }
+
+            .al-amor-hero__line {
+                width: 30px;
+            }
+
+            .al-amor-overview__grid,
+            .al-amor-why__grid,
+            .al-amor-faq__grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .al-amor-overview__heading,
+            .al-amor-faq__intro {
+                position: static;
+            }
+
+            .al-amor-overview__content {
+                padding-top: 0;
+            }
+
+            .al-amor-overview h2,
+            .al-amor-section-heading h2,
+            .al-amor-approach h2,
+            .al-amor-why h2,
+            .al-amor-faq h2 {
+                font-size: 45px;
+            }
+
+            .al-amor-section-heading {
+                margin-bottom: 35px;
+            }
+
+            .al-amor-pillars__grid,
+            .al-amor-scope__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .al-amor-pillar {
+                min-height: 245px;
+            }
+
+            .al-amor-scope-card {
+                min-height: 250px;
+            }
+
+            .al-amor-timeline {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .al-amor-timeline__item {
+                display: grid;
+                grid-template-columns: 55px 1fr;
+                gap: 20px;
+                padding: 0;
+            }
+
+            .al-amor-timeline__content {
+                padding-top: 3px;
+            }
+
+            .al-amor-timeline__content h3 {
+                margin-top: 8px;
+            }
+
+            .al-amor-why__visual,
+            .al-amor-why__visual img {
+                min-height: 390px;
+                height: 390px;
+            }
+
+            .al-amor-why__visual-caption {
+                right: 12px;
+                bottom: 12px;
+            }
+
+            .al-amor-focus {
+                padding: 55px 0;
+            }
+
+            .al-amor-focus__inner {
+                flex-direction: column;
+                gap: 20px;
+                padding: 30px 25px;
+            }
+
+            .al-amor-faq-item__question span {
+                font-size: 20px;
+            }
+
+            .al-amor-cta {
+                padding: 80px 0;
+            }
+
+            .al-amor-cta h2 {
+                font-size: 46px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .al-amor-container {
+                width: calc(100% - 30px);
+            }
+
+            .al-amor-hero {
+                min-height: 590px;
+            }
+
+            .al-amor-hero h1 {
+                font-size: 47px;
+            }
+
+            .al-amor-hero__bottom {
+                font-size: 7px;
+            }
+
+            .al-amor-breadcrumb .al-amor-container {
+                gap: 8px;
+                font-size: 9px;
+            }
+
+            .al-amor-overview h2,
+            .al-amor-section-heading h2,
+            .al-amor-approach h2,
+            .al-amor-why h2,
+            .al-amor-faq h2 {
+                font-size: 40px;
+            }
+
+            .al-amor-scope-card {
+                padding: 28px 23px;
+            }
+
+            .al-amor-faq-item__question span {
+                font-size: 18px;
+            }
+
+            .al-amor-cta h2 {
+                font-size: 39px;
+            }
+        }
+
+        /* ACCESSIBILITY */
+
+        @media (prefers-reduced-motion: reduce) {
+            .al-amor-page *,
+            .al-amor-page *::before,
+            .al-amor-page *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+     </style>
+</head>
+
+<body class="al-amor-page">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- HERO -->
+        <section class="al-amor-hero">
+            <div class="al-amor-hero__image"></div>
+            <div class="al-amor-hero__overlay"></div>
+
+            <div class="al-amor-container al-amor-hero__content">
+                <span class="al-amor-eyebrow al-amor-reveal">
+                    ASSET MONETISATION, MANAGEMENT & OWNER REPRESENTATION
+                </span>
+
+                <h1 class="al-amor-reveal">
+                    Protecting Value.
+                    <span>Unlocking Potential.</span>
+                </h1>
+
+                <p class="al-amor-hero__description al-amor-reveal">
+                    Strategic asset advisory and owner-side coordination
+                    to support performance, identify opportunities
+                    and strengthen long-term asset value.
+                </p>
+
+                <a href="../contact.html" class="al-amor-button al-amor-button--gold al-amor-reveal">
+                    Discuss Your Asset
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- OVERVIEW -->
+        <section class="al-amor-section al-amor-overview">
+            <div class="al-amor-container al-amor-overview__grid">
+                <div class="al-amor-overview__heading al-amor-reveal">
+                    <span class="al-amor-section-label">01 / OWNERSHIP PERSPECTIVE</span>
+
+                    <h2>
+                        Every Asset Has
+                        <span>Untapped Potential.</span>
+                    </h2>
+
+                    <div class="al-amor-heading-line"></div>
+                </div>
+
+                <div class="al-amor-overview__content al-amor-reveal">
+                    <p class="al-amor-lead">
+                        Hospitality assets require ongoing strategic
+                        attention to protect their value and identify
+                        opportunities for improvement.
+                    </p>
+
+                    <p>
+                        The AstraLuxe Advisory works with owners and
+                        investors to review asset performance, assess
+                        commercial opportunities and provide
+                        owner-side coordination.
+                    </p>
+
+                    <p>
+                        Our advisory is intended to support better-informed
+                        decisions around asset utilisation, performance
+                        enhancement and long-term value.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADVISORY PILLARS -->
+        <section class="al-amor-section al-amor-pillars">
+            <div class="al-amor-container">
+                <div class="al-amor-section-heading al-amor-section-heading--center al-amor-reveal">
+                    <span class="al-amor-section-label">02 / OUR ADVISORY PERSPECTIVE</span>
+                    <h2>Four Priorities for <span>Asset Value</span></h2>
+                    <p>
+                        A structured ownership perspective that connects
+                        asset performance with strategic opportunities
+                        and long-term objectives.
+                    </p>
+                </div>
+
+                <div class="al-amor-pillars__grid">
+                    <article class="al-amor-pillar al-amor-reveal">
+                        <span class="al-amor-pillar__number">01</span>
+                        <div class="al-amor-pillar__icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3>Performance Insight</h3>
+                        <p>
+                            Reviewing operating performance and relevant
+                            benchmarks to understand the asset's
+                            commercial position.
+                        </p>
+                    </article>
+
+                    <article class="al-amor-pillar al-amor-reveal">
+                        <span class="al-amor-pillar__number">02</span>
+                        <div class="al-amor-pillar__icon">
+                            <i class="fa-solid fa-coins"></i>
+                        </div>
+                        <h3>Revenue & Monetisation</h3>
+                        <p>
+                            Identifying revenue optimisation and asset
+                            utilisation opportunities through
+                            project-specific commercial assessment.
+                        </p>
+                    </article>
+
+                    <article class="al-amor-pillar al-amor-reveal">
+                        <span class="al-amor-pillar__number">03</span>
+                        <div class="al-amor-pillar__icon">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                        </div>
+                        <h3>Growth & Repositioning</h3>
+                        <p>
+                            Exploring strategic changes and growth
+                            directions that may strengthen the
+                            asset's market position.
+                        </p>
+                    </article>
+
+                    <article class="al-amor-pillar al-amor-reveal">
+                        <span class="al-amor-pillar__number">04</span>
+                        <div class="al-amor-pillar__icon">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <h3>Owner Representation</h3>
+                        <p>
+                            Supporting ownership through structured
+                            coordination with operators, consultants
+                            and other project stakeholders.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCOPE OF SERVICES -->
+        <section class="al-amor-section al-amor-scope">
+            <div class="al-amor-container">
+                <div class="al-amor-section-heading al-amor-section-heading--center al-amor-reveal">
+                    <span class="al-amor-section-label">03 / OUR SCOPE</span>
+                    <h2>Scope of <span>Services</span></h2>
+                    <p>
+                        Ownership-focused advisory across the key
+                        commercial, operational and strategic
+                        considerations of a hospitality asset.
+                    </p>
+                </div>
+
+                <div class="al-amor-scope__grid">
+
+                    <article class="al-amor-scope-card al-amor-reveal">
+                        <span class="al-amor-scope-card__number">01</span>
+                        <div class="al-amor-scope-card__icon">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+                        <h3>Asset Performance Review & Benchmarking</h3>
+                        <p>
+                            Reviewing hospitality asset performance
+                            against relevant benchmarks and available
+                            operating information to identify
+                            improvement areas.
+                        </p>
+                    </article>
+
+                    <article class="al-amor-scope-card al-amor-reveal">
+                        <span class="al-amor-scope-card__number">02</span>
+                        <div class="al-amor-scope-card__icon">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                        </div>
+                        <h3>Revenue Optimisation & Business Planning</h3>
+                        <p>
+                            Providing strategic inputs on revenue
+                            opportunities, commercial priorities
+                            and business planning.
+                        </p>
+                    </article>
+
+                    <article class="al-amor-scope-card al-amor-reveal">
+                        <span class="al-amor-scope-card__number">03</span>
+                        <div class="al-amor-scope-card__icon">
+                            <i class="fa-solid fa-building-circle-check"></i>
+                        </div>
+                        <h3>Asset Utilisation & Monetisation Assessment</h3>
+                        <p>
+                            Assessing how an asset and its facilities
+                            are being utilised and exploring potential
+                            monetisation opportunities.
+                        </p>
+                    </article>
+
+                    <article class="al-amor-scope-card al-amor-reveal">
+                        <span class="al-amor-scope-card__number">04</span>
+                        <div class="al-amor-scope-card__icon">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3>Growth & Repositioning Strategy</h3>
+                        <p>
+                            Exploring strategic growth directions,
+                            positioning opportunities and potential
+                            changes to the asset's commercial approach.
+                        </p>
+                    </article>
+
+                    <article class="al-amor-scope-card al-amor-reveal">
+                        <span class="al-amor-scope-card__number">05</span>
+                        <div class="al-amor-scope-card__icon">
+                            <i class="fa-solid fa-gauge-high"></i>
+                        </div>
+                        <h3>Performance Monitoring & Periodic Review</h3>
+                        <p>
+                            Supporting periodic performance reviews
+                            and monitoring against agreed ownership
+                            objectives and priorities.
+                        </p>
+                    </article>
+
+                    <article class="al-amor-scope-card al-amor-reveal">
+                        <span class="al-amor-scope-card__number">06</span>
+                        <div class="al-amor-scope-card__icon">
+                            <i class="fa-solid fa-people-arrows-left-right"></i>
+                        </div>
+                        <h3>Owner Representation & Stakeholder Coordination</h3>
+                        <p>
+                            Coordinating with operators, consultants
+                            and relevant stakeholders to help connect
+                            ownership objectives with operating priorities.
+                        </p>
+                    </article>
+
+                    <article class="al-amor-scope-card al-amor-reveal">
+                        <span class="al-amor-scope-card__number">07</span>
+                        <div class="al-amor-scope-card__icon">
+                            <i class="fa-solid fa-chess"></i>
+                        </div>
+                        <h3>Long-Term Asset Value Enhancement</h3>
+                        <p>
+                            Developing strategic recommendations
+                            aimed at supporting asset value,
+                            long-term positioning and ownership goals.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ADVISORY PROCESS -->
+        <section class="al-amor-section al-amor-approach">
+            <div class="al-amor-container">
+                <div class="al-amor-approach__intro al-amor-reveal">
+                    <span class="al-amor-section-label">04 / OUR APPROACH</span>
+                    <h2>From Asset Review to <span>Strategic Action.</span></h2>
+                    <p>
+                        A considered advisory process designed to
+                        understand the asset, identify opportunities
+                        and connect ownership priorities with
+                        practical recommendations.
+                    </p>
+                </div>
+
+                <div class="al-amor-timeline">
+
+                    <article class="al-amor-timeline__item al-amor-reveal">
+                        <div class="al-amor-timeline__marker">01</div>
+                        <div class="al-amor-timeline__content">
+                            <span>STEP ONE</span>
+                            <h3>Understand the Asset</h3>
+                            <p>
+                                Review the asset profile, ownership
+                                objectives, operating context and
+                                available performance information.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="al-amor-timeline__item al-amor-reveal">
+                        <div class="al-amor-timeline__marker">02</div>
+                        <div class="al-amor-timeline__content">
+                            <span>STEP TWO</span>
+                            <h3>Review Performance</h3>
+                            <p>
+                                Assess relevant operating and
+                                commercial indicators, benchmarks
+                                and current asset utilisation.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="al-amor-timeline__item al-amor-reveal">
+                        <div class="al-amor-timeline__marker">03</div>
+                        <div class="al-amor-timeline__content">
+                            <span>STEP THREE</span>
+                            <h3>Identify Opportunities</h3>
+                            <p>
+                                Evaluate potential areas for revenue
+                                improvement, monetisation, growth
+                                and repositioning.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="al-amor-timeline__item al-amor-reveal">
+                        <div class="al-amor-timeline__marker">04</div>
+                        <div class="al-amor-timeline__content">
+                            <span>STEP FOUR</span>
+                            <h3>Coordinate & Recommend</h3>
+                            <p>
+                                Connect ownership objectives with
+                                operators, consultants and relevant
+                                stakeholders through strategic
+                                recommendations and coordination.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="al-amor-timeline__item al-amor-reveal">
+                        <div class="al-amor-timeline__marker">05</div>
+                        <div class="al-amor-timeline__content">
+                            <span>STEP FIVE</span>
+                            <h3>Monitor & Review</h3>
+                            <p>
+                                Support periodic reviews to assess
+                                progress against agreed priorities
+                                and evolving asset requirements.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY ASTRA LUXE -->
+        <section class="al-amor-section al-amor-why">
+            <div class="al-amor-container al-amor-why__grid">
+                <div class="al-amor-why__visual al-amor-reveal">
+                    <img
+                        src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1100&q=85"
+                        alt="Luxury hospitality asset with resort pool and landscaped grounds"
+                        loading="lazy"
+                    >
+
+                    <div class="al-amor-why__visual-caption">
+                        <span>THE ASTRALUXE ADVISORY</span>
+                        <p>Ownership Perspective. Strategic Direction.</p>
+                    </div>
+                </div>
+
+                <div class="al-amor-why__content al-amor-reveal">
+                    <span class="al-amor-section-label">05 / WHY ASTRA LUXE</span>
+
+                    <h2>
+                        An Independent
+                        <span>Ownership Perspective.</span>
+                    </h2>
+
+                    <p>
+                        Hospitality asset decisions involve commercial,
+                        operational and long-term ownership considerations.
+                        Our advisory approach is intended to help owners
+                        bring these perspectives together and maintain
+                        focus on their strategic objectives.
+                    </p>
+
+                    <ul class="al-amor-check-list">
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Ownership-focused strategic perspective
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Review of asset performance and benchmarks
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Commercial and monetisation opportunity assessment
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Coordination with operators and consultants
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Long-term asset value considerations
+                        </li>
+                    </ul>
+
+                    <a href="../contact.html" class="al-amor-text-link">
+                        Explore an Advisory Engagement
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR FOCUS -->
+        <section class="al-amor-focus">
+            <div class="al-amor-container al-amor-focus__inner al-amor-reveal">
+                <div class="al-amor-focus__icon">
+                    <i class="fa-solid fa-landmark"></i>
+                </div>
+
+                <div class="al-amor-focus__content">
+                    <span class="al-amor-section-label">OUR FOCUS</span>
+                    <h2>
+                        Ownership Objectives.
+                        <span>Strategic Alignment.</span>
+                    </h2>
+                    <p>
+                        We act as an advisory and coordination resource
+                        for ownership, helping connect strategic
+                        objectives with operating and development
+                        priorities. Any monetisation plan is subject
+                        to asset-specific feasibility and commercial
+                        evaluation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CTA -->
+        <section class="al-amor-cta">
+            <div class="al-amor-cta__background"></div>
+
+            <div class="al-amor-container al-amor-cta__content al-amor-reveal">
+                <span class="al-amor-section-label">A STRATEGIC PARTNER FOR OWNERSHIP</span>
+
+                <h2>
+                    Your Asset. Your Vision.
+                    <span>A More Considered Way Forward.</span>
+                </h2>
+
+                <p>
+                    Connect with The AstraLuxe Advisory to explore
+                    performance, monetisation and owner-side
+                    advisory opportunities for your hospitality asset.
+                </p>
+
+                <a href="../contact.html" class="al-amor-button al-amor-button--gold">
+                    Start a Conversation
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <div id="whatsapp-placeholder"></div>
+
+    <script src="../js/main.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const faqItems = document.querySelectorAll(".al-amor-faq-item");
+
+            faqItems.forEach((item) => {
+                const question = item.querySelector(
+                    ".al-amor-faq-item__question"
+                );
+
+                if (!question) return;
+
+                question.addEventListener("click", () => {
+                    const isActive = item.classList.contains("is-active");
+
+                    faqItems.forEach((faqItem) => {
+                        faqItem.classList.remove("is-active");
+
+                        const button = faqItem.querySelector(
+                            ".al-amor-faq-item__question"
+                        );
+
+                        if (button) {
+                            button.setAttribute("aria-expanded", "false");
+                        }
+                    });
+
+                    if (!isActive) {
+                        item.classList.add("is-active");
+                        question.setAttribute("aria-expanded", "true");
+                    }
+                });
+            });
+
+            if (
+                typeof gsap === "undefined" ||
+                typeof ScrollTrigger === "undefined"
+            ) {
+                return;
+            }
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            const reduceMotion = window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches;
+
+            if (reduceMotion) return;
+
+            const heroTimeline = gsap.timeline({
+                defaults: {
+                    ease: "power3.out"
+                }
+            });
+
+            heroTimeline
+                .from(".al-amor-hero__image", {
+                    scale: 1.15,
+                    duration: 1.8
+                })
+                .from(
+                    ".al-amor-hero .al-amor-eyebrow",
+                    {
+                        y: 25,
+                        opacity: 0,
+                        duration: 0.7
+                    },
+                    "-=1.1"
+                )
+                .from(
+                    ".al-amor-hero h1",
+                    {
+                        y: 55,
+                        opacity: 0,
+                        duration: 1
+                    },
+                    "-=0.45"
+                )
+                .from(
+                    ".al-amor-hero__description",
+                    {
+                        y: 25,
+                        opacity: 0,
+                        duration: 0.7
+                    },
+                    "-=0.55"
+                )
+                .from(
+                    ".al-amor-hero .al-amor-button",
+                    {
+                        y: 20,
+                        opacity: 0,
+                        duration: 0.65
+                    },
+                    "-=0.4"
+                );
+
+            const specificallyAnimated = [
+                ".al-amor-pillar",
+                ".al-amor-scope-card",
+                ".al-amor-timeline__item",
+                ".al-amor-why__visual",
+                ".al-amor-focus__inner",
+                ".al-amor-cta__content"
+            ].join(", ");
+
+            gsap.utils.toArray(".al-amor-reveal").forEach((element) => {
+                if (
+                    element.closest(".al-amor-hero") ||
+                    element.matches(specificallyAnimated)
+                ) {
+                    return;
+                }
+
+                gsap.fromTo(
+                    element,
+                    {
+                        y: 38,
+                        opacity: 0
+                    },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.85,
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: element,
+                            start: "top 88%",
+                            once: true
+                        }
+                    }
+                );
+            });
+
+            gsap.from(".al-amor-pillar", {
+                y: 55,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.14,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-amor-pillars__grid",
+                    start: "top 82%",
+                    once: true
+                }
+            });
+
+            gsap.from(".al-amor-scope-card", {
+                y: 60,
+                opacity: 0,
+                scale: 0.97,
+                duration: 0.75,
+                stagger: 0.12,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-amor-scope__grid",
+                    start: "top 82%",
+                    once: true
+                }
+            });
+
+            gsap.from(".al-amor-timeline__item", {
+                y: 45,
+                opacity: 0,
+                duration: 0.75,
+                stagger: 0.16,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-amor-timeline",
+                    start: "top 82%",
+                    once: true
+                }
+            });
+
+            gsap.from(".al-amor-why__visual img", {
+                scale: 1.12,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".al-amor-why",
+                    start: "top 78%",
+                    once: true
+                }
+            });
+
+            gsap.from(".al-amor-focus__inner", {
+                x: -55,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-amor-focus",
+                    start: "top 85%",
+                    once: true
+                }
+            });
+
+            gsap.from(".al-amor-cta__content > *", {
+                y: 35,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".al-amor-cta",
+                    start: "top 80%",
+                    once: true
+                }
+            });
+
+            window.addEventListener("load", () => {
+                ScrollTrigger.refresh();
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore managed farm houses with The AstraLuxe Advisory. Combine countryside ownership, professional property management and hospitality-led rental opportunities.">
+  <title>Managed Farm Houses | The AstraLuxe Advisory</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* =========================================================
+   THE ASTRALUXE ADVISORY
+   MANAGED FARM HOUSES — STANDALONE PAGE STYLES
+   All styles scoped to .al-mfh-page / .al-mfh-*
+========================================================= */
+
+.al-mfh-page {
+  --mfh-navy: #1e293b;
+  --mfh-slate: #334155;
+  --mfh-gold: #D4AF37;
+  --mfh-gold-dark: #a98a60;
+  --mfh-ivory: #f8f7f3;
+  --mfh-white: #ffffff;
+  --mfh-text: #253044;
+  --mfh-muted: #697586;
+  --mfh-border: rgba(30, 41, 59, 0.12);
+  color: var(--mfh-text);
+  font-family: "Lora", Georgia, serif;
+  overflow: hidden;
+}
+
+.al-mfh-page *,
+.al-mfh-page *::before,
+.al-mfh-page *::after {
+  box-sizing: border-box;
+}
+
+.al-mfh-page img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.al-mfh-page a {
+  text-decoration: none;
+}
+
+.al-mfh-container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.al-mfh-section {
+  padding: 112px 0;
+}
+
+.al-mfh-kicker,
+.al-mfh-eyebrow {
+  display: inline-block;
+  color: var(--mfh-gold-dark);
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.8px;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.al-mfh-page h1,
+.al-mfh-page h2,
+.al-mfh-page h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+}
+
+.al-mfh-page h2 {
+  margin: 18px 0 22px;
+  color: var(--mfh-navy);
+  font-size: clamp(42px, 5vw, 65px);
+  line-height: 0.99;
+}
+
+.al-mfh-page h2 em {
+  color: var(--mfh-gold-dark);
+  font-weight: 500;
+}
+
+.al-mfh-page p {
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+.al-mfh-btn {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 0 25px;
+  border: 1px solid transparent;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.al-mfh-btn:hover {
+  transform: translateY(-3px);
+}
+
+.al-mfh-btn-gold {
+  background: var(--mfh-gold);
+  color: var(--mfh-navy);
+}
+
+.al-mfh-btn-gold:hover {
+  background: #ddc5a3;
+  color: var(--mfh-navy);
+}
+
+.al-mfh-btn-dark {
+  background: var(--mfh-navy);
+  color: var(--mfh-white);
+}
+
+.al-mfh-btn-dark:hover {
+  background: var(--mfh-gold);
+  color: var(--mfh-navy);
+}
+
+.al-mfh-inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  color: var(--mfh-navy);
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+
+.al-mfh-inline-link i {
+  color: var(--mfh-gold-dark);
+  transition: transform 0.3s ease;
+}
+
+.al-mfh-inline-link:hover i {
+  transform: translate(4px, -3px);
+}
+
+/* HERO */
+
+.al-mfh-hero {
+  position: relative;
+  display: flex;
+  min-height: 690px;
+  align-items: center;
+  overflow: hidden;
+  background: var(--mfh-navy);
+}
+
+.al-mfh-hero-image,
+.al-mfh-hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.al-mfh-hero-image {
+  background-image: url("https://theastraluxe.com/wp-content/uploads/2025/09/@bigchanels.jpeg");
+  background-position: center 55%;
+  background-size: cover;
+  transform: scale(1.06);
+}
+
+.al-mfh-hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(12, 22, 34, 0.88) 0%, rgba(12, 22, 34, 0.67) 47%, rgba(12, 22, 34, 0.2) 100%),
+    linear-gradient(0deg, rgba(12, 22, 34, 0.32), transparent 55%);
+}
+
+.al-mfh-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 120px 0 110px;
+  color: var(--mfh-white);
+}
+
+.al-mfh-hero .al-mfh-eyebrow {
+  color: #e0c8a5;
+}
+
+.al-mfh-hero h1 {
+  max-width: 850px;
+  margin: 22px 0 0;
+  color: var(--mfh-white);
+  font-size: clamp(58px, 8vw, 105px);
+  line-height: 0.9;
+}
+
+.al-mfh-hero-subtitle {
+  margin: 16px 0 0;
+  color: #dfc29b;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(28px, 3.6vw, 43px);
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.al-mfh-hero-description {
+  max-width: 560px;
+  margin: 24px 0 30px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.al-mfh-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 27px;
+}
+
+.al-mfh-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--mfh-white);
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.al-mfh-text-link i {
+  color: var(--mfh-gold);
+}
+
+.al-mfh-hero-caption {
+  position: absolute;
+  right: 30px;
+  bottom: 32px;
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  writing-mode: vertical-rl;
+}
+
+/* BREADCRUMB */
+
+.al-mfh-breadcrumb {
+  padding: 17px 0;
+  border-bottom: 1px solid var(--mfh-border);
+  background: #fff;
+}
+
+.al-mfh-breadcrumb .al-mfh-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+}
+
+.al-mfh-breadcrumb a {
+  color: var(--mfh-muted);
+}
+
+.al-mfh-breadcrumb a:hover,
+.al-mfh-breadcrumb span {
+  color: var(--mfh-gold-dark);
+}
+
+.al-mfh-breadcrumb i {
+  color: #aab1ba;
+  font-size: 8px;
+}
+
+/* OVERVIEW */
+
+.al-mfh-overview {
+  background: var(--mfh-ivory);
+}
+
+.al-mfh-overview-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.al-mfh-overview-heading {
+  position: sticky;
+  top: 100px;
+}
+
+.al-mfh-heading-line {
+  width: 68px;
+  height: 2px;
+  margin: 30px 0 20px;
+  background: var(--mfh-gold);
+}
+
+.al-mfh-side-note {
+  max-width: 280px;
+  color: var(--mfh-muted);
+  font-size: 13px;
+  font-style: italic;
+}
+
+.al-mfh-overview-copy {
+  padding-top: 12px;
+}
+
+.al-mfh-overview-copy p {
+  margin: 0 0 21px;
+  color: var(--mfh-muted);
+}
+
+.al-mfh-overview-copy .al-mfh-lead {
+  color: var(--mfh-navy);
+  font-size: 19px;
+  line-height: 1.75;
+}
+
+/* IMAGE STORY */
+
+.al-mfh-image-story {
+  padding: 0;
+  background: var(--mfh-navy);
+}
+
+.al-mfh-image-story-grid {
+  display: grid;
+  min-height: 590px;
+  grid-template-columns: 1.15fr 0.85fr;
+}
+
+.al-mfh-image-panel {
+  position: relative;
+  min-height: 590px;
+  overflow: hidden;
+}
+
+.al-mfh-image-panel::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(12, 22, 34, 0.8), transparent 65%);
+  content: "";
+}
+
+.al-mfh-image-panel img {
+  height: 100%;
+  min-height: 590px;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.al-mfh-image-panel:hover img {
+  transform: scale(1.055);
+}
+
+.al-mfh-image-caption {
+  position: absolute;
+  right: 9%;
+  bottom: 55px;
+  left: 9%;
+  z-index: 2;
+  color: #fff;
+}
+
+.al-mfh-image-caption span {
+  color: #e2c69e;
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.al-mfh-image-caption h3 {
+  margin: 14px 0 0;
+  color: #fff;
+  font-size: clamp(32px, 4vw, 49px);
+  line-height: 1.03;
+}
+
+/* SECTION HEADINGS */
+
+.al-mfh-centered {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.al-mfh-section-heading > p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: var(--mfh-muted);
+}
+
+.al-mfh-section-heading {
+  margin-bottom: 58px;
+}
+
+/* BENEFITS */
+
+.al-mfh-benefits {
+  background: #fff;
+}
+
+.al-mfh-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.al-mfh-benefit-card {
+  position: relative;
+  min-height: 300px;
+  padding: 34px 30px;
+  border: 1px solid var(--mfh-border);
+  background: #fff;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.al-mfh-benefit-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(197, 168, 128, 0.65);
+  box-shadow: 0 18px 45px rgba(30, 41, 59, 0.08);
+}
+
+.al-mfh-card-number {
+  position: absolute;
+  top: 26px;
+  right: 28px;
+  color: #c6cbd2;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.al-mfh-card-icon {
+  display: grid;
+  width: 53px;
+  height: 53px;
+  place-items: center;
+  margin-bottom: 26px;
+  border: 1px solid rgba(197, 168, 128, 0.55);
+  border-radius: 50%;
+  color: var(--mfh-gold-dark);
+  font-size: 19px;
+}
+
+.al-mfh-benefit-card h3,
+.al-mfh-advisory-card h3 {
+  margin: 0 0 12px;
+  color: var(--mfh-navy);
+  font-size: 26px;
+  line-height: 1.1;
+}
+
+.al-mfh-benefit-card p,
+.al-mfh-advisory-card p {
+  margin: 0;
+  color: var(--mfh-muted);
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+/* REVENUE MODEL */
+
+.al-mfh-model {
+  background: var(--mfh-ivory);
+}
+
+.al-mfh-model-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 85px;
+  align-items: center;
+}
+
+.al-mfh-model-content p {
+  max-width: 550px;
+  margin: 0 0 18px;
+  color: var(--mfh-muted);
+}
+
+.al-mfh-model-content .al-mfh-btn {
+  margin-top: 18px;
+}
+
+.al-mfh-model-visual {
+  position: relative;
+  padding: 0 30px 30px 0;
+}
+
+.al-mfh-model-image {
+  height: 530px;
+  overflow: hidden;
+  background: #e5e1d9;
+}
+
+.al-mfh-model-image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.al-mfh-model-visual::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  width: 75%;
+  height: 75%;
+  border: 1px solid var(--mfh-gold);
+  content: "";
+}
+
+.al-mfh-model-image {
+  position: relative;
+  z-index: 1;
+}
+
+.al-mfh-model-stamp {
+  position: absolute;
+  right: -15px;
+  bottom: 60px;
+  z-index: 2;
+  display: flex;
+  width: 140px;
+  height: 140px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background: var(--mfh-gold);
+  color: var(--mfh-navy);
+  text-align: center;
+  transform: rotate(8deg);
+}
+
+.al-mfh-model-stamp span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 8px;
+  letter-spacing: 1.6px;
+}
+
+.al-mfh-model-stamp strong {
+  margin: 4px 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 22px;
+}
+
+/* EXPERIENCES */
+
+.al-mfh-experience {
+  background: #fff;
+}
+
+.al-mfh-experience-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--mfh-border);
+  border-bottom: 1px solid var(--mfh-border);
+}
+
+.al-mfh-experience-item {
+  min-height: 230px;
+  padding: 38px 25px;
+  border-right: 1px solid var(--mfh-border);
+  transition: background 0.3s ease;
+}
+
+.al-mfh-experience-item:last-child {
+  border-right: 0;
+}
+
+.al-mfh-experience-item:hover {
+  background: var(--mfh-ivory);
+}
+
+.al-mfh-experience-item > i {
+  margin-bottom: 24px;
+  color: var(--mfh-gold-dark);
+  font-size: 24px;
+}
+
+.al-mfh-experience-item h3 {
+  margin: 0 0 10px;
+  color: var(--mfh-navy);
+  font-size: 24px;
+  line-height: 1.05;
+}
+
+.al-mfh-experience-item p {
+  margin: 0;
+  color: var(--mfh-muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+/* ADVISORY */
+
+.al-mfh-advisory {
+  background: var(--mfh-ivory);
+}
+
+.al-mfh-advisory .al-mfh-section-heading {
+  max-width: 760px;
+}
+
+.al-mfh-advisory .al-mfh-section-heading > p {
+  margin: 0;
+  color: var(--mfh-muted);
+}
+
+.al-mfh-advisory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.al-mfh-advisory-card {
+  min-height: 245px;
+  padding: 30px;
+  border: 1px solid var(--mfh-border);
+  background: #fff;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.al-mfh-advisory-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(30, 41, 59, 0.07);
+}
+
+.al-mfh-advisory-card > span {
+  display: inline-block;
+  margin-bottom: 28px;
+  color: var(--mfh-gold-dark);
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* PROCESS */
+
+.al-mfh-process {
+  background: var(--mfh-navy);
+}
+
+.al-mfh-process .al-mfh-section-heading h2 {
+  color: #fff;
+}
+
+.al-mfh-process .al-mfh-section-heading > p {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.al-mfh-process-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.al-mfh-process-step {
+  display: grid;
+  grid-template-columns: 75px 1fr;
+  gap: 28px;
+  align-items: start;
+  padding: 27px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.al-mfh-process-step:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.al-mfh-process-number {
+  display: grid;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  border: 1px solid rgba(197, 168, 128, 0.65);
+  border-radius: 50%;
+  color: var(--mfh-gold);
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.al-mfh-process-step h3 {
+  margin: 3px 0 8px;
+  color: #fff;
+  font-size: 29px;
+}
+
+.al-mfh-process-step p {
+  max-width: 650px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 12px;
+}
+
+/* CONSIDERATIONS */
+
+.al-mfh-considerations {
+  background: #fff;
+}
+
+.al-mfh-considerations-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 90px;
+}
+
+.al-mfh-considerations-copy > p {
+  margin-top: 0;
+  color: var(--mfh-muted);
+}
+
+.al-mfh-considerations-copy ul {
+  display: grid;
+  gap: 15px;
+  margin: 28px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.al-mfh-considerations-copy li {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  color: var(--mfh-text);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.al-mfh-considerations-copy li i {
+  margin-top: 4px;
+  color: var(--mfh-gold-dark);
+  font-size: 11px;
+}
+
+.al-mfh-considerations-copy .al-mfh-disclaimer {
+  margin-top: 30px;
+  padding: 20px 22px;
+  border-left: 3px solid var(--mfh-gold);
+  background: var(--mfh-ivory);
+  color: #6b7280;
+  font-size: 11px;
+  line-height: 1.85;
+}
+
+/* FAQ */
+
+.al-mfh-faq {
+  background: var(--mfh-ivory);
+}
+
+.al-mfh-faq-grid {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 85px;
+  align-items: start;
+}
+
+.al-mfh-faq-intro {
+  position: sticky;
+  top: 100px;
+}
+
+.al-mfh-faq-intro > p {
+  max-width: 330px;
+  color: var(--mfh-muted);
+}
+
+.al-mfh-faq-list {
+  border-top: 1px solid var(--mfh-border);
+}
+
+.al-mfh-faq-item {
+  border-bottom: 1px solid var(--mfh-border);
+}
+
+.al-mfh-faq-question {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 0;
+  border: 0;
+  background: transparent;
+  color: var(--mfh-navy);
+  cursor: pointer;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.al-mfh-faq-question i {
+  flex: 0 0 auto;
+  color: var(--mfh-gold-dark);
+  font-size: 13px;
+  transition: transform 0.3s ease;
+}
+
+.al-mfh-faq-item.active .al-mfh-faq-question i {
+  transform: rotate(45deg);
+}
+
+.al-mfh-faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.al-mfh-faq-answer p {
+  overflow: hidden;
+  margin: 0;
+  color: var(--mfh-muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.al-mfh-faq-item.active .al-mfh-faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.al-mfh-faq-item.active .al-mfh-faq-answer p {
+  padding: 0 35px 24px 0;
+}
+
+/* CTA */
+
+.al-mfh-cta {
+  position: relative;
+  padding: 115px 0;
+  overflow: hidden;
+  background: url("https://theastraluxe.com/wp-content/uploads/2025/09/@bigchanels.jpeg") center 55% / cover no-repeat;
+  text-align: center;
+}
+
+.al-mfh-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(19, 31, 44, 0.86);
+}
+
+.al-mfh-cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  color: #fff;
+}
+
+.al-mfh-cta .al-mfh-kicker {
+  color: #dfc29b;
+}
+
+.al-mfh-cta h2 {
+  color: #fff;
+}
+
+.al-mfh-cta h2 em {
+  color: #dfc29b;
+}
+
+.al-mfh-cta p {
+  max-width: 620px;
+  margin: 0 auto 30px;
+  color: rgba(255, 255, 255, 0.77);
+}
+
+/* ANIMATION INITIAL STATES */
+
+.al-mfh-page .al-mfh-reveal {
+  will-change: transform, opacity;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1050px) {
+  .al-mfh-overview-grid,
+  .al-mfh-model-grid,
+  .al-mfh-considerations-grid,
+  .al-mfh-faq-grid {
+    gap: 55px;
+  }
+
+  .al-mfh-benefit-grid,
+  .al-mfh-advisory-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .al-mfh-experience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .al-mfh-experience-item:nth-child(2) {
+    border-right: 0;
+  }
+
+  .al-mfh-experience-item:nth-child(-n+2) {
+    border-bottom: 1px solid var(--mfh-border);
+  }
+}
+
+@media (max-width: 760px) {
+  .al-mfh-container,
+  .al-mfh-hero-content {
+    width: min(100% - 38px, 600px);
+  }
+
+  .al-mfh-section {
+    padding: 78px 0;
+  }
+
+  .al-mfh-hero {
+    min-height: 650px;
+  }
+
+  .al-mfh-hero-content {
+    padding: 105px 0 95px;
+  }
+
+  .al-mfh-hero h1 {
+    font-size: clamp(55px, 13vw, 78px);
+  }
+
+  .al-mfh-hero-overlay {
+    background: linear-gradient(90deg, rgba(12, 22, 34, 0.87), rgba(12, 22, 34, 0.5));
+  }
+
+  .al-mfh-hero-caption {
+    right: 17px;
+    bottom: 22px;
+    font-size: 7px;
+  }
+
+  .al-mfh-overview-grid,
+  .al-mfh-model-grid,
+  .al-mfh-considerations-grid,
+  .al-mfh-faq-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .al-mfh-overview-heading,
+  .al-mfh-faq-intro {
+    position: static;
+  }
+
+  .al-mfh-overview-copy {
+    padding-top: 0;
+  }
+
+  .al-mfh-image-story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .al-mfh-image-panel,
+  .al-mfh-image-panel img {
+    min-height: 430px;
+  }
+
+  .al-mfh-image-caption {
+    bottom: 35px;
+  }
+
+  .al-mfh-section-heading {
+    margin-bottom: 40px;
+  }
+
+  .al-mfh-benefit-grid,
+  .al-mfh-advisory-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .al-mfh-benefit-card {
+    min-height: auto;
+  }
+
+  .al-mfh-model-visual {
+    max-width: 520px;
+  }
+
+  .al-mfh-model-image {
+    height: 430px;
+  }
+
+  .al-mfh-experience-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .al-mfh-experience-item {
+    min-height: 210px;
+    padding: 28px 20px;
+  }
+
+  .al-mfh-experience-item:nth-child(2) {
+    border-right: 0;
+  }
+
+  .al-mfh-experience-item:nth-child(odd) {
+    border-right: 1px solid var(--mfh-border);
+  }
+
+  .al-mfh-experience-item:nth-child(-n+2) {
+    border-bottom: 1px solid var(--mfh-border);
+  }
+
+  .al-mfh-process-step {
+    grid-template-columns: 55px 1fr;
+    gap: 18px;
+  }
+
+  .al-mfh-process-number {
+    width: 46px;
+    height: 46px;
+  }
+
+  .al-mfh-process-step h3 {
+    font-size: 25px;
+  }
+
+  .al-mfh-faq-question {
+    font-size: 23px;
+  }
+
+  .al-mfh-cta {
+    padding: 85px 0;
+  }
+}
+
+@media (max-width: 460px) {
+  .al-mfh-container,
+  .al-mfh-hero-content {
+    width: calc(100% - 32px);
+  }
+
+  .al-mfh-section {
+    padding: 65px 0;
+  }
+
+  .al-mfh-page h2 {
+    font-size: 43px;
+  }
+
+  .al-mfh-hero {
+    min-height: 610px;
+  }
+
+  .al-mfh-hero h1 {
+    font-size: 54px;
+  }
+
+  .al-mfh-hero-subtitle {
+    font-size: 30px;
+  }
+
+  .al-mfh-hero-description {
+    font-size: 12px;
+  }
+
+  .al-mfh-hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .al-mfh-btn {
+    min-height: 49px;
+    padding: 0 18px;
+    font-size: 9px;
+  }
+
+  .al-mfh-breadcrumb .al-mfh-container {
+    gap: 8px;
+    font-size: 8px;
+  }
+
+  .al-mfh-image-panel,
+  .al-mfh-image-panel img {
+    min-height: 350px;
+  }
+
+  .al-mfh-experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .al-mfh-experience-item,
+  .al-mfh-experience-item:nth-child(odd),
+  .al-mfh-experience-item:nth-child(2) {
+    min-height: auto;
+    padding: 27px 22px;
+    border-right: 0;
+    border-bottom: 1px solid var(--mfh-border);
+  }
+
+  .al-mfh-experience-item:last-child {
+    border-bottom: 0;
+  }
+
+  .al-mfh-model-visual {
+    padding: 0 16px 18px 0;
+  }
+
+  .al-mfh-model-image {
+    height: 340px;
+  }
+
+  .al-mfh-model-stamp {
+    right: -5px;
+    bottom: 40px;
+    width: 112px;
+    height: 112px;
+  }
+
+  .al-mfh-model-stamp strong {
+    font-size: 18px;
+  }
+
+  .al-mfh-process-step {
+    grid-template-columns: 42px 1fr;
+    gap: 14px;
+    padding: 23px 0;
+  }
+
+  .al-mfh-process-number {
+    width: 38px;
+    height: 38px;
+    font-size: 10px;
+  }
+
+  .al-mfh-process-step h3 {
+    font-size: 23px;
+  }
+
+  .al-mfh-faq-question {
+    gap: 12px;
+    font-size: 21px;
+  }
+
+  .al-mfh-cta {
+    padding: 72px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .al-mfh-page *,
+  .al-mfh-page *::before,
+  .al-mfh-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+
+  <main class="al-mfh-page">
+
+    <!-- HERO -->
+    <section class="al-mfh-hero">
+      <div class="al-mfh-hero-image"></div>
+      <div class="al-mfh-hero-overlay"></div>
+
+      <div class="al-mfh-hero-content">
+        <span class="al-mfh-eyebrow">THE ASTRALUXE ADVISORY · REAL ESTATE</span>
+        <h1>Managed Farm Houses</h1>
+        <p class="al-mfh-hero-subtitle">Invest. Earn. Enjoy.</p>
+        <p class="al-mfh-hero-description">
+          A considered approach to countryside ownership, combining lifestyle,
+          professional management and hospitality-led revenue opportunities.
+        </p>
+
+        <div class="al-mfh-hero-actions">
+          <a href="contact.html" class="al-mfh-btn al-mfh-btn-gold">
+            Explore Opportunities <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#mfh-overview" class="al-mfh-text-link">
+            Discover the concept <i class="fa-solid fa-arrow-down"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="al-mfh-hero-caption">
+        <span>COUNTRYSIDE LIVING, PROFESSIONALLY MANAGED</span>
+      </div>
+    </section>
+
+
+
+    <!-- OVERVIEW -->
+    <section class="al-mfh-overview al-mfh-section" id="mfh-overview">
+      <div class="al-mfh-container al-mfh-overview-grid">
+        <div class="al-mfh-overview-heading al-mfh-reveal">
+          <span class="al-mfh-kicker">A NEW WAY TO OWN</span>
+          <h2>More Than a<br><em>Farm House.</em></h2>
+          <div class="al-mfh-heading-line"></div>
+          <p class="al-mfh-side-note">
+            A countryside retreat supported by a hospitality-led management model.
+          </p>
+        </div>
+
+        <div class="al-mfh-overview-copy al-mfh-reveal">
+          <p class="al-mfh-lead">
+            For those seeking hassle-free ownership with the potential for
+            income generation, managed farm houses bring together rural
+            living, professional property care and hospitality services.
+          </p>
+
+          <p>
+            The concept extends beyond land ownership. A professionally
+            managed farmhouse can be positioned for short-term guest stays,
+            farm-stay tourism and curated experiences, while owners retain
+            the opportunity to enjoy the property as a personal retreat,
+            subject to the applicable ownership and usage arrangements.
+          </p>
+
+          <p>
+            On-ground teams may coordinate property upkeep, bookings,
+            guest experiences and routine operations. Depending on the
+            project model, owners may also receive periodic asset updates
+            and financial reporting.
+          </p>
+
+          <p>
+            The result is a considered blend of lifestyle and managed
+            ownership—where the countryside experience is complemented
+            by structured operations and a clearly defined commercial model.
+          </p>
+
+          <a href="contact.html" class="al-mfh-inline-link">
+            Discuss a managed farmhouse opportunity
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE IMAGE STRIP -->
+    <section class="al-mfh-image-story">
+      <div class="al-mfh-image-story-grid">
+        <div class="al-mfh-image-panel al-mfh-image-panel-large">
+          <img
+            src="https://theastraluxe.com/wp-content/uploads/2025/09/@bigchanels.jpeg"
+            alt="Countryside farmhouse setting"
+            loading="lazy">
+          <div class="al-mfh-image-caption">
+            <span>01 / THE LIFESTYLE</span>
+            <h3>Space to slow down.<br>Room to reconnect.</h3>
+          </div>
+        </div>
+
+        <div class="al-mfh-image-panel al-mfh-image-panel-small">
+          <img
+            src="https://theastraluxe.com/wp-content/uploads/2025/09/managed-farm-h.jpg"
+            alt="Managed farmhouse property"
+            loading="lazy">
+          <div class="al-mfh-image-caption">
+            <span>02 / THE EXPERIENCE</span>
+            <h3>Hospitality-led<br>property ownership.</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="al-mfh-benefits al-mfh-section">
+      <div class="al-mfh-container">
+        <div class="al-mfh-section-heading al-mfh-centered al-mfh-reveal">
+          <span class="al-mfh-kicker">THE MANAGED ADVANTAGE</span>
+          <h2>Discover the Benefits of<br><em>Managed Farm Houses</em></h2>
+          <p>
+            A thoughtfully structured model designed to bring together
+            personal enjoyment, property care and hospitality-led
+            commercial possibilities.
+          </p>
+        </div>
+
+        <div class="al-mfh-benefit-grid">
+          <article class="al-mfh-benefit-card al-mfh-reveal">
+            <span class="al-mfh-card-number">01</span>
+            <div class="al-mfh-card-icon"><i class="fa-solid fa-key"></i></div>
+            <h3>Hassle-Free Ownership</h3>
+            <p>
+              Professional on-ground coordination can help manage routine
+              upkeep, property readiness and day-to-day requirements,
+              reducing the operational burden on owners.
+            </p>
+          </article>
+
+          <article class="al-mfh-benefit-card al-mfh-reveal">
+            <span class="al-mfh-card-number">02</span>
+            <div class="al-mfh-card-icon"><i class="fa-solid fa-hotel"></i></div>
+            <h3>Rental Income Potential</h3>
+            <p>
+              Subject to location, demand, operating costs and the agreed
+              commercial structure, short-term guest stays may create
+              an additional income opportunity.
+            </p>
+          </article>
+
+          <article class="al-mfh-benefit-card al-mfh-reveal">
+            <span class="al-mfh-card-number">03</span>
+            <div class="al-mfh-card-icon"><i class="fa-solid fa-seedling"></i></div>
+            <h3>A Countryside Retreat</h3>
+            <p>
+              Enjoy green surroundings, open spaces and experiences such
+              as fresh local produce, wellness activities and time away
+              from the pace of city life.
+            </p>
+          </article>
+
+          <article class="al-mfh-benefit-card al-mfh-reveal">
+            <span class="al-mfh-card-number">04</span>
+            <div class="al-mfh-card-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <h3>Personal Staycations</h3>
+            <p>
+              Depending on project policy and availability, owners may
+              be able to plan periodic personal stays and enjoy their
+              farmhouse as a private getaway.
+            </p>
+          </article>
+
+          <article class="al-mfh-benefit-card al-mfh-reveal">
+            <span class="al-mfh-card-number">05</span>
+            <div class="al-mfh-card-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>Asset Visibility</h3>
+            <p>
+              Structured reporting and regular updates, where included
+              in the management arrangement, can help owners stay
+              informed about property operations and performance.
+            </p>
+          </article>
+
+          <article class="al-mfh-benefit-card al-mfh-reveal">
+            <span class="al-mfh-card-number">06</span>
+            <div class="al-mfh-card-icon"><i class="fa-solid fa-people-group"></i></div>
+            <h3>Curated Experiences</h3>
+            <p>
+              Suitable properties may support events, yoga retreats,
+              corporate programmes and other hosted experiences,
+              subject to permissions and operating suitability.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVENUE MODEL -->
+    <section class="al-mfh-model al-mfh-section">
+      <div class="al-mfh-container al-mfh-model-grid">
+        <div class="al-mfh-model-content al-mfh-reveal">
+          <span class="al-mfh-kicker">A HOSPITALITY-LED APPROACH</span>
+          <h2>Ownership with a<br><em>Purposeful Revenue Model.</em></h2>
+          <p>
+            Managed farm houses can be structured to serve more than one
+            purpose: a personal countryside escape and, where commercially
+            viable, a hospitality asset that welcomes paying guests.
+          </p>
+          <p>
+            Short-term rental operations may include booking coordination,
+            guest communication, housekeeping, property maintenance and
+            experience planning. The exact responsibilities, revenue
+            distribution and owner-use provisions depend on the project's
+            operating agreement.
+          </p>
+          <a href="contact.html" class="al-mfh-btn al-mfh-btn-dark">
+            Understand the Model <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="al-mfh-model-visual al-mfh-reveal">
+          <div class="al-mfh-model-image">
+            <img
+              src="https://theastraluxe.com/wp-content/uploads/2025/09/managed-farm-h.jpg"
+              alt="Farmhouse hospitality and guest experience"
+              loading="lazy">
+          </div>
+          <div class="al-mfh-model-stamp">
+            <span>THE</span>
+            <strong>MANAGED</strong>
+            <span>OWNERSHIP MODEL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="al-mfh-experience al-mfh-section">
+      <div class="al-mfh-container">
+        <div class="al-mfh-section-heading al-mfh-centered al-mfh-reveal">
+          <span class="al-mfh-kicker">BEYOND PROPERTY OWNERSHIP</span>
+          <h2>A Place to Stay.<br><em>An Experience to Share.</em></h2>
+          <p>
+            A well-planned farmhouse can become a setting for restorative
+            escapes, meaningful gatherings and carefully curated guest
+            experiences.
+          </p>
+        </div>
+
+        <div class="al-mfh-experience-grid">
+          <div class="al-mfh-experience-item al-mfh-reveal">
+            <i class="fa-solid fa-spa"></i>
+            <h3>Wellness & Yoga Retreats</h3>
+            <p>Spaces for mindful breaks, wellness-led stays and small-group retreats.</p>
+          </div>
+
+          <div class="al-mfh-experience-item al-mfh-reveal">
+            <i class="fa-solid fa-leaf"></i>
+            <h3>Organic Farm Experiences</h3>
+            <p>Opportunities to connect with nature, gardens and locally sourced produce.</p>
+          </div>
+
+          <div class="al-mfh-experience-item al-mfh-reveal">
+            <i class="fa-solid fa-champagne-glasses"></i>
+            <h3>Private Gatherings</h3>
+            <p>Potential venues for intimate celebrations and curated social occasions.</p>
+          </div>
+
+          <div class="al-mfh-experience-item al-mfh-reveal">
+            <i class="fa-solid fa-briefcase"></i>
+            <h3>Corporate Programmes</h3>
+            <p>Settings for team retreats, offsites and selected corporate experiences.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AST RALUXE ROLE -->
+    <section class="al-mfh-advisory al-mfh-section">
+      <div class="al-mfh-container">
+        <div class="al-mfh-section-heading al-mfh-reveal">
+          <span class="al-mfh-kicker">THE ASTRALUXE APPROACH</span>
+          <h2>From Property Selection to<br><em>Managed Ownership.</em></h2>
+          <p>
+            We help clients evaluate managed farmhouse opportunities
+            through a structured, project-specific advisory approach.
+          </p>
+        </div>
+
+        <div class="al-mfh-advisory-grid">
+          <article class="al-mfh-advisory-card al-mfh-reveal">
+            <span>01</span>
+            <h3>Opportunity Assessment</h3>
+            <p>
+              Review the location, property concept, surrounding demand
+              drivers and suitability for a managed farmhouse model.
+            </p>
+          </article>
+
+          <article class="al-mfh-advisory-card al-mfh-reveal">
+            <span>02</span>
+            <h3>Ownership & Due Diligence Coordination</h3>
+            <p>
+              Coordinate the review of title, land use, access, approvals
+              and relevant documentation with qualified legal and
+              technical professionals.
+            </p>
+          </article>
+
+          <article class="al-mfh-advisory-card al-mfh-reveal">
+            <span>03</span>
+            <h3>Management Model Evaluation</h3>
+            <p>
+              Understand the proposed operator, management responsibilities,
+              owner-use conditions, commercial terms and reporting framework.
+            </p>
+          </article>
+
+          <article class="al-mfh-advisory-card al-mfh-reveal">
+            <span>04</span>
+            <h3>Hospitality & Experience Planning</h3>
+            <p>
+              Assess guest positioning, experience opportunities and
+              operational requirements relevant to the property's concept.
+            </p>
+          </article>
+
+          <article class="al-mfh-advisory-card al-mfh-reveal">
+            <span>05</span>
+            <h3>Performance & Asset Review</h3>
+            <p>
+              Support periodic review of operating information, asset
+              utilisation and potential improvement opportunities,
+              as agreed in the engagement.
+            </p>
+          </article>
+
+          <article class="al-mfh-advisory-card al-mfh-reveal">
+            <span>06</span>
+            <h3>Owner & Stakeholder Coordination</h3>
+            <p>
+              Facilitate communication between owners, project teams,
+              operators and relevant professional advisers.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="al-mfh-process al-mfh-section">
+      <div class="al-mfh-container">
+        <div class="al-mfh-section-heading al-mfh-centered al-mfh-reveal">
+          <span class="al-mfh-kicker">A STRUCTURED JOURNEY</span>
+          <h2>Your Managed Farm House<br><em>Journey.</em></h2>
+        </div>
+
+        <div class="al-mfh-process-list">
+          <div class="al-mfh-process-step al-mfh-reveal">
+            <div class="al-mfh-process-number">01</div>
+            <div>
+              <h3>Understand Your Objectives</h3>
+              <p>Define your preferred location, ownership goals, intended use and investment considerations.</p>
+            </div>
+          </div>
+
+          <div class="al-mfh-process-step al-mfh-reveal">
+            <div class="al-mfh-process-number">02</div>
+            <div>
+              <h3>Evaluate the Opportunity</h3>
+              <p>Review the property concept, project details, location context and available documentation.</p>
+            </div>
+          </div>
+
+          <div class="al-mfh-process-step al-mfh-reveal">
+            <div class="al-mfh-process-number">03</div>
+            <div>
+              <h3>Review the Management Structure</h3>
+              <p>Understand the operator, service scope, owner-use terms, costs and proposed revenue arrangements.</p>
+            </div>
+          </div>
+
+          <div class="al-mfh-process-step al-mfh-reveal">
+            <div class="al-mfh-process-number">04</div>
+            <div>
+              <h3>Coordinate the Ownership Process</h3>
+              <p>Work with the relevant legal, financial and technical professionals through the agreed transaction process.</p>
+            </div>
+          </div>
+
+          <div class="al-mfh-process-step al-mfh-reveal">
+            <div class="al-mfh-process-number">05</div>
+            <div>
+              <h3>Enjoy a Managed Experience</h3>
+              <p>Where the project provides it, access management support, guest operations and owner reporting under the agreed arrangement.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPORTANT CONSIDERATIONS -->
+    <section class="al-mfh-considerations al-mfh-section">
+      <div class="al-mfh-container al-mfh-considerations-grid">
+        <div class="al-mfh-considerations-heading al-mfh-reveal">
+          <span class="al-mfh-kicker">MAKE AN INFORMED DECISION</span>
+          <h2>Clarity Behind<br><em>Every Ownership Decision.</em></h2>
+        </div>
+
+        <div class="al-mfh-considerations-copy al-mfh-reveal">
+          <p>
+            Managed farmhouse projects differ in their ownership structure,
+            land classification, permitted use, operating model and
+            commercial arrangements. Before proceeding, clients should
+            understand the specific terms applicable to the property.
+          </p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Verify title, land use, approvals and transaction documentation.</li>
+            <li><i class="fa-solid fa-check"></i> Review management fees, operating costs and revenue-sharing terms.</li>
+            <li><i class="fa-solid fa-check"></i> Understand owner-use restrictions, booking policies and availability.</li>
+            <li><i class="fa-solid fa-check"></i> Evaluate realistic occupancy assumptions, demand and operating risks.</li>
+            <li><i class="fa-solid fa-check"></i> Confirm the responsibilities and track record of the property operator.</li>
+          </ul>
+          <p class="al-mfh-disclaimer">
+            Rental income, occupancy, capital appreciation and investment
+            outcomes are not guaranteed. They depend on the property,
+            market conditions, operating performance, costs, permissions
+            and contractual arrangements. Legal, tax and technical matters
+            should be independently reviewed by qualified professionals.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="al-mfh-cta">
+      <div class="al-mfh-cta-overlay"></div>
+      <div class="al-mfh-container al-mfh-cta-content al-mfh-reveal">
+        <span class="al-mfh-kicker">THE NEXT CHAPTER OF COUNTRYSIDE OWNERSHIP</span>
+        <h2>Own the Experience.<br><em>Explore the Possibilities.</em></h2>
+        <p>
+          Discover managed farmhouse opportunities that bring together
+          personal retreats, professional property care and hospitality-led
+          commercial potential.
+        </p>
+        <a href="contact.html" class="al-mfh-btn al-mfh-btn-gold">
+          Connect with AstraLuxe <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <div id="whatsapp-placeholder"></div>
+
+  <script src="js/main.js"></script>
+  <script>
+    (() => {
+      const initManagedFarmPage = () => {
+        const page = document.querySelector(".al-mfh-page");
+        if (!page) return;
+
+        const faqItems = page.querySelectorAll(".al-mfh-faq-item");
+
+        faqItems.forEach((item) => {
+          const button = item.querySelector(".al-mfh-faq-question");
+          if (!button) return;
+
+          button.setAttribute(
+            "aria-expanded",
+            String(item.classList.contains("active"))
+          );
+
+          button.addEventListener("click", () => {
+            const isActive = item.classList.contains("active");
+
+            faqItems.forEach((faqItem) => {
+              faqItem.classList.remove("active");
+              faqItem
+                .querySelector(".al-mfh-faq-question")
+                ?.setAttribute("aria-expanded", "false");
+            });
+
+            if (!isActive) {
+              item.classList.add("active");
+              button.setAttribute("aria-expanded", "true");
+            }
+          });
+        });
+
+        const prefersReducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        page.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", (event) => {
+            const targetId = anchor.getAttribute("href");
+            if (!targetId || targetId === "#") return;
+
+            const target = page.querySelector(targetId);
+            if (!target) return;
+
+            event.preventDefault();
+            target.scrollIntoView({
+              behavior: prefersReducedMotion ? "auto" : "smooth",
+              block: "start"
+            });
+          });
+        });
+
+        if (typeof gsap !== "undefined") {
+          if (typeof ScrollTrigger !== "undefined") {
+            gsap.registerPlugin(ScrollTrigger);
+          }
+
+          if (!prefersReducedMotion) {
+            const heroTimeline = gsap.timeline({
+              defaults: {
+                ease: "power3.out",
+                clearProps: "transform,opacity"
+              }
+            });
+
+            heroTimeline
+              .from(page.querySelector(".al-mfh-hero-image"), {
+                scale: 1.18,
+                duration: 1.8,
+                ease: "power2.out"
+              })
+              .from(
+                page.querySelector(".al-mfh-hero .al-mfh-eyebrow"),
+                {
+                  y: 25,
+                  opacity: 0,
+                  duration: 0.7
+                },
+                "-=1.15"
+              )
+              .from(
+                page.querySelector(".al-mfh-hero h1"),
+                {
+                  y: 55,
+                  opacity: 0,
+                  duration: 1
+                },
+                "-=0.45"
+              )
+              .from(
+                page.querySelectorAll(
+                  ".al-mfh-hero-subtitle, .al-mfh-hero-description"
+                ),
+                {
+                  y: 25,
+                  opacity: 0,
+                  duration: 0.8,
+                  stagger: 0.15
+                },
+                "-=0.55"
+              )
+              .from(
+                page.querySelector(".al-mfh-hero-actions"),
+                {
+                  y: 20,
+                  opacity: 0,
+                  duration: 0.7
+                },
+                "-=0.35"
+              );
+
+            if (typeof ScrollTrigger !== "undefined") {
+              const specificallyAnimated = [
+                ".al-mfh-benefit-card",
+                ".al-mfh-advisory-card",
+                ".al-mfh-experience-item",
+                ".al-mfh-process-step",
+                ".al-mfh-model-visual",
+                ".al-mfh-cta-content"
+              ].join(",");
+
+              page.querySelectorAll(".al-mfh-reveal").forEach((element) => {
+                if (
+                  element.closest(".al-mfh-hero") ||
+                  element.matches(specificallyAnimated)
+                ) {
+                  return;
+                }
+
+                gsap.from(element, {
+                  y: 38,
+                  opacity: 0,
+                  duration: 0.9,
+                  ease: "power3.out",
+                  clearProps: "transform,opacity",
+                  scrollTrigger: {
+                    trigger: element,
+                    start: "top 88%",
+                    once: true
+                  }
+                });
+              });
+
+              const animateGroup = (
+                selector,
+                triggerSelector,
+                animation,
+                start
+              ) => {
+                const targets = page.querySelectorAll(selector);
+                const trigger = page.querySelector(triggerSelector);
+
+                if (!targets.length || !trigger) return;
+
+                gsap.from(targets, {
+                  ...animation,
+                  clearProps: "transform,opacity",
+                  scrollTrigger: {
+                    trigger,
+                    start,
+                    once: true
+                  }
+                });
+              };
+
+              animateGroup(
+                ".al-mfh-benefit-card",
+                ".al-mfh-benefit-grid",
+                {
+                  y: 55,
+                  opacity: 0,
+                  duration: 0.8,
+                  stagger: 0.13,
+                  ease: "power3.out"
+                },
+                "top 82%"
+              );
+
+              animateGroup(
+                ".al-mfh-advisory-card",
+                ".al-mfh-advisory-grid",
+                {
+                  y: 45,
+                  opacity: 0,
+                  duration: 0.75,
+                  stagger: 0.12,
+                  ease: "power3.out"
+                },
+                "top 82%"
+              );
+
+              animateGroup(
+                ".al-mfh-experience-item",
+                ".al-mfh-experience-grid",
+                {
+                  y: 35,
+                  opacity: 0,
+                  duration: 0.7,
+                  stagger: 0.12,
+                  ease: "power2.out"
+                },
+                "top 85%"
+              );
+
+              animateGroup(
+                ".al-mfh-process-step",
+                ".al-mfh-process-list",
+                {
+                  x: -35,
+                  opacity: 0,
+                  duration: 0.75,
+                  stagger: 0.17,
+                  ease: "power3.out"
+                },
+                "top 82%"
+              );
+
+              page.querySelectorAll(".al-mfh-image-panel img").forEach((image) => {
+                const panel = image.closest(".al-mfh-image-panel");
+                if (!panel) return;
+
+                gsap.fromTo(
+                  image,
+                  { scale: 1.12 },
+                  {
+                    scale: 1,
+                    ease: "none",
+                    scrollTrigger: {
+                      trigger: panel,
+                      start: "top bottom",
+                      end: "bottom top",
+                      scrub: 1
+                    }
+                  }
+                );
+              });
+
+              animateGroup(
+                ".al-mfh-model-image",
+                ".al-mfh-model-visual",
+                {
+                  clipPath: "inset(0 0 100% 0)",
+                  duration: 1.3,
+                  ease: "power3.inOut"
+                },
+                "top 78%"
+              );
+
+              animateGroup(
+                ".al-mfh-cta-content > *",
+                ".al-mfh-cta",
+                {
+                  y: 30,
+                  opacity: 0,
+                  duration: 0.8,
+                  stagger: 0.14,
+                  ease: "power3.out"
+                },
+                "top 78%"
+              );
+
+              const refreshScrollTrigger = () => ScrollTrigger.refresh();
+
+              if (document.readyState === "complete") {
+                refreshScrollTrigger();
+              } else {
+                window.addEventListener("load", refreshScrollTrigger, {
+                  once: true
+                });
+              }
+            }
+          }
+        }
+      };
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initManagedFarmPage, {
+          once: true
+        });
+      } else {
+        initManagedFarmPage();
+      }
+    })();
+  </script>
+</body>
+</html>

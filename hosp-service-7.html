@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The AstraLuxe Advisory helps hospitality owners and developers identify and coordinate architects, civil consultants, landscape designers and interior designers.">
+    <title>Architect, Civil, Landscape & Interior Designer Identification | The AstraLuxe Advisory</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+    <style>
+        /* =========================================
+        ASTRA LUXE - DESIGN PROFESSIONAL IDENTIFICATION
+        Standalone page stylesheet
+        ========================================= */
+
+        .al-did-page {
+            --did-navy: #1e293b;
+            --did-slate: #334155;
+            --did-gold: #D4AF37;
+            --did-gold-dark: #a9895d;
+            --did-ivory: #f8f7f4;
+            --did-white: #ffffff;
+            --did-text: #263244;
+            --did-muted: #687386;
+            --did-border: rgba(30, 41, 59, 0.12);
+
+            margin: 0;
+            color: var(--did-text);
+            background: var(--did-white);
+            font-family: "Lora", serif;
+            overflow-x: hidden;
+        }
+
+        .al-did-page *,
+        .al-did-page *::before,
+        .al-did-page *::after {
+            box-sizing: border-box;
+        }
+
+        .al-did-page img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .al-did-page a {
+            text-decoration: none;
+        }
+
+        .al-did-container {
+            width: min(1180px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        .al-did-section {
+            padding: 110px 0;
+        }
+
+        .al-did-section-label,
+        .al-did-eyebrow {
+            display: inline-block;
+            color: var(--did-gold-dark);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            line-height: 1.7;
+            text-transform: uppercase;
+        }
+
+        .al-did-section-heading {
+            max-width: 740px;
+            margin-bottom: 54px;
+        }
+
+        .al-did-section-heading--center {
+            margin-right: auto;
+            margin-left: auto;
+            text-align: center;
+        }
+
+        .al-did-section-heading h2,
+        .al-did-overview h2,
+        .al-did-approach h2,
+        .al-did-why h2,
+        .al-did-faq h2 {
+            margin: 14px 0 18px;
+            color: var(--did-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(38px, 5vw, 58px);
+            font-weight: 500;
+            line-height: 1.05;
+        }
+
+        .al-did-section-heading h2 span,
+        .al-did-overview h2 span,
+        .al-did-approach h2 span,
+        .al-did-why h2 span,
+        .al-did-faq h2 span {
+            color: var(--did-gold-dark);
+        }
+
+        .al-did-section-heading > p,
+        .al-did-approach__intro > p,
+        .al-did-faq__intro > p {
+            max-width: 620px;
+            margin: 0;
+            color: var(--did-muted);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .al-did-section-heading--center > p {
+            margin: 0 auto;
+        }
+
+        .al-did-heading-line {
+            width: 66px;
+            height: 2px;
+            margin-top: 26px;
+            background: var(--did-gold);
+        }
+
+        /* BUTTONS */
+
+        .al-did-button {
+            display: inline-flex;
+            min-height: 54px;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            padding: 0 25px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .al-did-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .al-did-button--gold {
+            color: var(--did-navy);
+            background: var(--did-gold);
+        }
+
+        .al-did-button--gold:hover {
+            background: #d6bc98;
+        }
+
+        .al-did-button i,
+        .al-did-text-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .al-did-button:hover i,
+        .al-did-text-link:hover i {
+            transform: translateX(5px);
+        }
+
+        .al-did-text-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 25px;
+            color: var(--did-gold-dark);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        /* HERO */
+
+        .al-did-hero {
+            position: relative;
+            display: flex;
+            min-height: 690px;
+            align-items: center;
+            overflow: hidden;
+            color: var(--did-white);
+            background: var(--did-navy);
+        }
+
+        .al-did-hero__image,
+        .al-did-hero__overlay {
+            position: absolute;
+            inset: 0;
+        }
+
+        .al-did-hero__image {
+            background-image: url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=90");
+            background-position: center 50%;
+            background-size: cover;
+            transform: scale(1.04);
+        }
+
+        .al-did-hero__overlay {
+            background:
+                linear-gradient(90deg, rgba(13, 23, 38, 0.91) 0%, rgba(13, 23, 38, 0.7) 50%, rgba(13, 23, 38, 0.2) 100%),
+                linear-gradient(0deg, rgba(13, 23, 38, 0.45), transparent 45%);
+        }
+
+        .al-did-hero__content {
+            position: relative;
+            z-index: 2;
+            padding-top: 55px;
+            padding-bottom: 80px;
+        }
+
+        .al-did-hero .al-did-eyebrow {
+            color: #e2c9a5;
+        }
+
+        .al-did-hero h1 {
+            max-width: 850px;
+            margin: 24px 0;
+            color: var(--did-white);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(55px, 7.7vw, 91px);
+            font-weight: 500;
+            line-height: 0.96;
+        }
+
+        .al-did-hero h1 span {
+            display: block;
+            color: #dfc39b;
+            font-style: italic;
+        }
+
+        .al-did-hero__description {
+            max-width: 560px;
+            margin: 0 0 32px;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .al-did-hero__bottom {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 22px max(24px, calc((100vw - 1180px) / 2));
+            color: rgba(255, 255, 255, 0.75);
+            background: rgba(14, 25, 40, 0.48);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 1.8px;
+        }
+
+        .al-did-hero__line {
+            width: 70px;
+            height: 1px;
+            background: var(--did-gold);
+        }
+
+        /* BREADCRUMB */
+
+        .al-did-breadcrumb {
+            padding: 18px 0;
+            border-bottom: 1px solid var(--did-border);
+            background: #fff;
+        }
+
+        .al-did-breadcrumb .al-did-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            color: var(--did-muted);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+        }
+
+        .al-did-breadcrumb a {
+            color: var(--did-slate);
+            transition: color 0.25s ease;
+        }
+
+        .al-did-breadcrumb a:hover {
+            color: var(--did-gold-dark);
+        }
+
+        .al-did-breadcrumb i {
+            color: var(--did-gold);
+            font-size: 8px;
+        }
+
+        .al-did-breadcrumb span {
+            color: var(--did-gold-dark);
+        }
+
+        /* OVERVIEW */
+
+        .al-did-overview {
+            background: var(--did-white);
+        }
+
+        .al-did-overview__grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 100px;
+            align-items: start;
+        }
+
+        .al-did-overview__heading {
+            position: sticky;
+            top: 110px;
+        }
+
+        .al-did-overview h2 {
+            max-width: 480px;
+            font-size: clamp(42px, 5vw, 61px);
+        }
+
+        .al-did-overview__content {
+            padding-top: 30px;
+        }
+
+        .al-did-overview__content p {
+            margin: 0 0 20px;
+            color: var(--did-muted);
+            font-size: 15px;
+            line-height: 2;
+        }
+
+        .al-did-overview__content .al-did-lead {
+            color: var(--did-slate);
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        /* DESIGN DISCIPLINES */
+
+        .al-did-disciplines {
+            background: var(--did-ivory);
+        }
+
+        .al-did-disciplines__grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .al-did-discipline {
+            position: relative;
+            min-height: 300px;
+            padding: 32px 25px;
+            border: 1px solid rgba(30, 41, 59, 0.09);
+            background: #fff;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .al-did-discipline:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 45px rgba(30, 41, 59, 0.08);
+        }
+
+        .al-did-discipline__number {
+            position: absolute;
+            top: 22px;
+            right: 22px;
+            color: rgba(197, 168, 128, 0.7);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 24px;
+        }
+
+        .al-did-discipline__icon,
+        .al-did-scope-card__icon {
+            display: grid;
+            width: 54px;
+            height: 54px;
+            place-items: center;
+            color: var(--did-gold-dark);
+            background: rgba(197, 168, 128, 0.13);
+            font-size: 20px;
+        }
+
+        .al-did-discipline h3 {
+            margin: 28px 0 12px;
+            color: var(--did-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .al-did-discipline p {
+            margin: 0;
+            color: var(--did-muted);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        /* SCOPE OF SERVICES */
+
+        .al-did-scope {
+            background: #fff;
+        }
+
+        .al-did-scope__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .al-did-scope-card {
+            position: relative;
+            min-height: 285px;
+            padding: 34px 30px;
+            border: 1px solid var(--did-border);
+            background: #fff;
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .al-did-scope-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(197, 168, 128, 0.65);
+            box-shadow: 0 20px 50px rgba(30, 41, 59, 0.07);
+        }
+
+        .al-did-scope-card__number {
+            position: absolute;
+            top: 25px;
+            right: 26px;
+            color: #c8cbd0;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 25px;
+        }
+
+        .al-did-scope-card__icon {
+            width: 58px;
+            height: 58px;
+            font-size: 21px;
+        }
+
+        .al-did-scope-card h3 {
+            max-width: 300px;
+            margin: 24px 0 12px;
+            color: var(--did-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 25px;
+            font-weight: 600;
+            line-height: 1.15;
+        }
+
+        .al-did-scope-card p {
+            margin: 0;
+            color: var(--did-muted);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        /* APPROACH */
+
+        .al-did-approach {
+            background: var(--did-navy);
+        }
+
+        .al-did-approach__intro {
+            max-width: 700px;
+            margin-bottom: 65px;
+        }
+
+        .al-did-approach .al-did-section-label {
+            color: #dfc39b;
+        }
+
+        .al-did-approach h2 {
+            color: #fff;
+        }
+
+        .al-did-approach__intro > p {
+            color: rgba(255, 255, 255, 0.68);
+        }
+
+        .al-did-timeline {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+        }
+
+        .al-did-timeline::before {
+            position: absolute;
+            top: 27px;
+            right: 10%;
+            left: 10%;
+            height: 1px;
+            background: rgba(197, 168, 128, 0.45);
+            content: "";
+        }
+
+        .al-did-timeline__item {
+            position: relative;
+            padding: 0 18px;
+        }
+
+        .al-did-timeline__marker {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            width: 55px;
+            height: 55px;
+            place-items: center;
+            border: 1px solid var(--did-gold);
+            border-radius: 50%;
+            color: var(--did-gold);
+            background: var(--did-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 21px;
+        }
+
+        .al-did-timeline__content {
+            padding-top: 28px;
+        }
+
+        .al-did-timeline__content > span {
+            color: var(--did-gold);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+        }
+
+        .al-did-timeline__content h3 {
+            margin: 13px 0 10px;
+            color: #fff;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        .al-did-timeline__content p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.63);
+            font-size: 11px;
+            line-height: 1.9;
+        }
+
+        /* WHY ASTRA LUXE */
+
+        .al-did-why {
+            background: var(--did-ivory);
+        }
+
+        .al-did-why__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .al-did-why__visual {
+            position: relative;
+            min-height: 550px;
+        }
+
+        .al-did-why__visual img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+        }
+
+        .al-did-why__visual-caption {
+            position: absolute;
+            right: -30px;
+            bottom: 30px;
+            width: min(310px, 85%);
+            padding: 24px 28px;
+            color: #fff;
+            background: var(--did-navy);
+        }
+
+        .al-did-why__visual-caption span {
+            color: var(--did-gold);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+        }
+
+        .al-did-why__visual-caption p {
+            margin: 9px 0 0;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 24px;
+        }
+
+        .al-did-why__content > p {
+            margin: 20px 0 26px;
+            color: var(--did-muted);
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .al-did-check-list {
+            display: grid;
+            gap: 17px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .al-did-check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+            color: var(--did-slate);
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .al-did-check-list i {
+            margin-top: 3px;
+            color: var(--did-gold-dark);
+            font-size: 12px;
+        }
+
+        /* OUR FOCUS */
+
+        .al-did-focus {
+            padding: 75px 0;
+            background: #fff;
+        }
+
+        .al-did-focus__inner {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            padding: 48px 55px;
+            border-left: 3px solid var(--did-gold);
+            background: var(--did-ivory);
+        }
+
+        .al-did-focus__icon {
+            display: grid;
+            width: 58px;
+            height: 58px;
+            flex: 0 0 58px;
+            place-items: center;
+            color: var(--did-gold-dark);
+            background: #fff;
+            font-size: 23px;
+        }
+
+        .al-did-focus__content h2 {
+            margin: 8px 0 12px;
+            color: var(--did-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(30px, 4vw, 42px);
+            font-weight: 500;
+        }
+
+        .al-did-focus__content h2 span {
+            color: var(--did-gold-dark);
+        }
+
+        .al-did-focus__content p {
+            max-width: 850px;
+            margin: 0;
+            color: var(--did-muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        /* FAQ */
+
+        .al-did-faq {
+            background: var(--did-ivory);
+        }
+
+        .al-did-faq__grid {
+            display: grid;
+            grid-template-columns: 0.75fr 1.25fr;
+            gap: 90px;
+            align-items: start;
+        }
+
+        .al-did-faq__intro {
+            position: sticky;
+            top: 100px;
+        }
+
+        .al-did-faq__list {
+            border-top: 1px solid var(--did-border);
+        }
+
+        .al-did-faq-item {
+            border-bottom: 1px solid var(--did-border);
+        }
+
+        .al-did-faq-item__question {
+            display: flex;
+            width: 100%;
+            min-height: 78px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px 0;
+            border: 0;
+            color: var(--did-navy);
+            background: transparent;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .al-did-faq-item__question span {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .al-did-faq-item__question i {
+            color: var(--did-gold-dark);
+            font-size: 13px;
+            transition: transform 0.3s ease;
+        }
+
+        .al-did-faq-item.is-active .al-did-faq-item__question i {
+            transform: rotate(45deg);
+        }
+
+        .al-did-faq-item__answer {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.35s ease;
+        }
+
+        .al-did-faq-item.is-active .al-did-faq-item__answer {
+            grid-template-rows: 1fr;
+        }
+
+        .al-did-faq-item__answer > div {
+            overflow: hidden;
+        }
+
+        .al-did-faq-item__answer p {
+            margin: 0;
+            padding: 0 35px 24px 0;
+            color: var(--did-muted);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        /* CTA */
+
+        .al-did-cta {
+            position: relative;
+            padding: 105px 0;
+            overflow: hidden;
+            color: #fff;
+            background: var(--did-navy);
+            text-align: center;
+        }
+
+        .al-did-cta__background {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(rgba(20, 32, 48, 0.9), rgba(20, 32, 48, 0.93)),
+                url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85")
+                center / cover;
+        }
+
+        .al-did-cta__content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .al-did-cta .al-did-section-label {
+            color: #dfc39b;
+        }
+
+        .al-did-cta h2 {
+            max-width: 900px;
+            margin: 20px auto;
+            color: #fff;
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(40px, 6vw, 66px);
+            font-weight: 500;
+            line-height: 1.04;
+        }
+
+        .al-did-cta h2 span {
+            display: block;
+            color: #dfc39b;
+            font-style: italic;
+        }
+
+        .al-did-cta p {
+            max-width: 620px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        /* REVEAL FALLBACK */
+
+        .al-did-reveal {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1050px) {
+            .al-did-overview__grid {
+                gap: 55px;
+            }
+
+            .al-did-disciplines__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .al-did-timeline {
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 45px;
+            }
+
+            .al-did-timeline::before {
+                display: none;
+            }
+
+            .al-did-why__grid {
+                gap: 55px;
+            }
+
+            .al-did-faq__grid {
+                gap: 55px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .al-did-container {
+                width: min(100% - 36px, 560px);
+            }
+
+            .al-did-section {
+                padding: 78px 0;
+            }
+
+            .al-did-hero {
+                min-height: 620px;
+            }
+
+            .al-did-hero__overlay {
+                background: linear-gradient(
+                    90deg,
+                    rgba(13, 23, 38, 0.91),
+                    rgba(13, 23, 38, 0.65)
+                );
+            }
+
+            .al-did-hero h1 {
+                font-size: clamp(50px, 11vw, 74px);
+            }
+
+            .al-did-hero__description {
+                max-width: 460px;
+                font-size: 14px;
+            }
+
+            .al-did-hero__bottom {
+                gap: 10px;
+                padding: 18px;
+                font-size: 8px;
+                letter-spacing: 1px;
+            }
+
+            .al-did-hero__line {
+                width: 30px;
+            }
+
+            .al-did-overview__grid,
+            .al-did-why__grid,
+            .al-did-faq__grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .al-did-overview__heading,
+            .al-did-faq__intro {
+                position: static;
+            }
+
+            .al-did-overview__content {
+                padding-top: 0;
+            }
+
+            .al-did-overview h2,
+            .al-did-section-heading h2,
+            .al-did-approach h2,
+            .al-did-why h2,
+            .al-did-faq h2 {
+                font-size: 45px;
+            }
+
+            .al-did-section-heading {
+                margin-bottom: 35px;
+            }
+
+            .al-did-disciplines__grid,
+            .al-did-scope__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .al-did-discipline {
+                min-height: 245px;
+            }
+
+            .al-did-scope-card {
+                min-height: 250px;
+            }
+
+            .al-did-timeline {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .al-did-timeline__item {
+                display: grid;
+                grid-template-columns: 55px 1fr;
+                gap: 20px;
+                padding: 0;
+            }
+
+            .al-did-timeline__content {
+                padding-top: 3px;
+            }
+
+            .al-did-timeline__content h3 {
+                margin-top: 8px;
+            }
+
+            .al-did-why__visual,
+            .al-did-why__visual img {
+                min-height: 390px;
+                height: 390px;
+            }
+
+            .al-did-why__visual-caption {
+                right: 12px;
+                bottom: 12px;
+            }
+
+            .al-did-focus {
+                padding: 55px 0;
+            }
+
+            .al-did-focus__inner {
+                flex-direction: column;
+                gap: 20px;
+                padding: 30px 25px;
+            }
+
+            .al-did-faq-item__question span {
+                font-size: 20px;
+            }
+
+            .al-did-cta {
+                padding: 80px 0;
+            }
+
+            .al-did-cta h2 {
+                font-size: 46px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .al-did-container {
+                width: calc(100% - 30px);
+            }
+
+            .al-did-hero {
+                min-height: 590px;
+            }
+
+            .al-did-hero h1 {
+                font-size: 47px;
+            }
+
+            .al-did-hero__bottom {
+                font-size: 7px;
+            }
+
+            .al-did-breadcrumb .al-did-container {
+                gap: 8px;
+                font-size: 9px;
+            }
+
+            .al-did-overview h2,
+            .al-did-section-heading h2,
+            .al-did-approach h2,
+            .al-did-why h2,
+            .al-did-faq h2 {
+                font-size: 40px;
+            }
+
+            .al-did-scope-card {
+                padding: 28px 23px;
+            }
+
+            .al-did-faq-item__question span {
+                font-size: 18px;
+            }
+
+            .al-did-cta h2 {
+                font-size: 39px;
+            }
+        }
+
+        /* ACCESSIBILITY */
+
+        @media (prefers-reduced-motion: reduce) {
+            .al-did-page *,
+            .al-did-page *::before,
+            .al-did-page *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="al-did-page">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- HERO -->
+        <section class="al-did-hero">
+            <div class="al-did-hero__image"></div>
+            <div class="al-did-hero__overlay"></div>
+
+            <div class="al-did-container al-did-hero__content">
+                <span class="al-did-eyebrow al-did-reveal">
+                    DESIGN PROFESSIONAL IDENTIFICATION & COORDINATION
+                </span>
+
+                <h1 class="al-did-reveal">
+                    The Right Minds.
+                    <span>Exceptional Design.</span>
+                </h1>
+
+                <p class="al-did-hero__description al-did-reveal">
+                    Connecting hospitality projects with suitable
+                    architects, technical consultants and design
+                    professionals who understand the vision.
+                </p>
+
+                <a href="../contact.html" class="al-did-button al-did-button--gold al-did-reveal">
+                    Discuss Your Project
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- OVERVIEW -->
+        <section class="al-did-section al-did-overview">
+            <div class="al-did-container al-did-overview__grid">
+                <div class="al-did-overview__heading al-did-reveal">
+                    <span class="al-did-section-label">01 / THE DESIGN FOUNDATION</span>
+
+                    <h2>
+                        Great Spaces Begin
+                        <span>With the Right Team.</span>
+                    </h2>
+
+                    <div class="al-did-heading-line"></div>
+                </div>
+
+                <div class="al-did-overview__content al-did-reveal">
+                    <p class="al-did-lead">
+                        The design and technical team has a significant
+                        influence on a hospitality project's functionality,
+                        guest experience, construction quality and
+                        overall identity.
+                    </p>
+
+                    <p>
+                        The AstraLuxe Advisory assists clients in
+                        identifying and coordinating suitable design
+                        professionals, including architects, civil
+                        consultants, landscape designers and interior
+                        designers.
+                    </p>
+
+                    <p>
+                        Our approach considers the project brief and
+                        development requirements to help connect
+                        ownership with professionals suited to
+                        the intended hospitality vision.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DESIGN DISCIPLINES -->
+        <section class="al-did-section al-did-disciplines">
+            <div class="al-did-container">
+                <div class="al-did-section-heading al-did-section-heading--center al-did-reveal">
+                    <span class="al-did-section-label">02 / DESIGN & TECHNICAL DISCIPLINES</span>
+                    <h2>The Expertise Behind <span>Every Detail</span></h2>
+                    <p>
+                        Identifying relevant professional disciplines
+                        to support the project's design intent,
+                        functionality and development requirements.
+                    </p>
+                </div>
+
+                <div class="al-did-disciplines__grid">
+                    <article class="al-did-discipline al-did-reveal">
+                        <span class="al-did-discipline__number">01</span>
+                        <div class="al-did-discipline__icon">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+                        <h3>Architects</h3>
+                        <p>
+                            Architectural vision, spatial planning,
+                            building design and coordination of
+                            the overall built environment.
+                        </p>
+                    </article>
+
+                    <article class="al-did-discipline al-did-reveal">
+                        <span class="al-did-discipline__number">02</span>
+                        <div class="al-did-discipline__icon">
+                            <i class="fa-solid fa-ruler-combined"></i>
+                        </div>
+                        <h3>Civil Consultants</h3>
+                        <p>
+                            Civil and structural considerations,
+                            construction-related inputs and
+                            coordination with the wider
+                            technical team.
+                        </p>
+                    </article>
+
+                    <article class="al-did-discipline al-did-reveal">
+                        <span class="al-did-discipline__number">03</span>
+                        <div class="al-did-discipline__icon">
+                            <i class="fa-solid fa-tree"></i>
+                        </div>
+                        <h3>Landscape Designers</h3>
+                        <p>
+                            Outdoor spaces, landscape character,
+                            circulation and the relationship
+                            between the built environment
+                            and its surroundings.
+                        </p>
+                    </article>
+
+                    <article class="al-did-discipline al-did-reveal">
+                        <span class="al-did-discipline__number">04</span>
+                        <div class="al-did-discipline__icon">
+                            <i class="fa-solid fa-couch"></i>
+                        </div>
+                        <h3>Interior Designers</h3>
+                        <p>
+                            Interior identity, spatial experience,
+                            material considerations and the
+                            atmosphere of guest-facing spaces.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCOPE OF SERVICES -->
+        <section class="al-did-section al-did-scope">
+            <div class="al-did-container">
+                <div class="al-did-section-heading al-did-section-heading--center al-did-reveal">
+                    <span class="al-did-section-label">03 / OUR SCOPE</span>
+                    <h2>Scope of <span>Services</span></h2>
+                    <p>
+                        A coordinated approach to identifying,
+                        evaluating and connecting the right
+                        design professionals with your project.
+                    </p>
+                </div>
+
+                <div class="al-did-scope__grid">
+
+                    <article class="al-did-scope-card al-did-reveal">
+                        <span class="al-did-scope-card__number">01</span>
+                        <div class="al-did-scope-card__icon">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                        </div>
+                        <h3>Project Brief & Design Requirement Understanding</h3>
+                        <p>
+                            Understanding the project brief, concept,
+                            intended hospitality offering and
+                            design requirements before identifying
+                            suitable professionals.
+                        </p>
+                    </article>
+
+                    <article class="al-did-scope-card al-did-reveal">
+                        <span class="al-did-scope-card__number">02</span>
+                        <div class="al-did-scope-card__icon">
+                            <i class="fa-solid fa-user-group"></i>
+                        </div>
+                        <h3>Professional Identification & Shortlisting</h3>
+                        <p>
+                            Identifying and shortlisting relevant
+                            architects, civil consultants, landscape
+                            designers and interior designers
+                            based on project needs.
+                        </p>
+                    </article>
+
+                    <article class="al-did-scope-card al-did-reveal">
+                        <span class="al-did-scope-card__number">03</span>
+                        <div class="al-did-scope-card__icon">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <h3>Introductions & Proposal Discussions</h3>
+                        <p>
+                            Coordinating professional introductions
+                            and facilitating initial discussions
+                            around proposals and potential
+                            engagement requirements.
+                        </p>
+                    </article>
+
+                    <article class="al-did-scope-card al-did-reveal">
+                        <span class="al-did-scope-card__number">04</span>
+                        <div class="al-did-scope-card__icon">
+                            <i class="fa-solid fa-hotel"></i>
+                        </div>
+                        <h3>Alignment with Hospitality Requirements</h3>
+                        <p>
+                            Helping align the proposed design scope
+                            with the functionality, service needs
+                            and guest experience expectations
+                            of the hospitality project.
+                        </p>
+                    </article>
+
+                    <article class="al-did-scope-card al-did-reveal">
+                        <span class="al-did-scope-card__number">05</span>
+                        <div class="al-did-scope-card__icon">
+                            <i class="fa-solid fa-people-arrows-left-right"></i>
+                        </div>
+                        <h3>Ownership & Stakeholder Coordination</h3>
+                        <p>
+                            Supporting coordination between ownership,
+                            design teams and other relevant project
+                            stakeholders.
+                        </p>
+                    </article>
+
+                    <article class="al-did-scope-card al-did-reveal">
+                        <span class="al-did-scope-card__number">06</span>
+                        <div class="al-did-scope-card__icon">
+                            <i class="fa-solid fa-puzzle-piece"></i>
+                        </div>
+                        <h3>Concept, Functionality & Experience Alignment</h3>
+                        <p>
+                            Supporting consistency between the
+                            original project concept, functional
+                            requirements and intended guest
+                            experience.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR APPROACH -->
+        <section class="al-did-section al-did-approach">
+            <div class="al-did-container">
+                <div class="al-did-approach__intro al-did-reveal">
+                    <span class="al-did-section-label">04 / OUR APPROACH</span>
+                    <h2>From Project Brief to <span>Professional Alignment.</span></h2>
+                    <p>
+                        A considered process that connects project
+                        requirements with relevant design expertise
+                        and coordinated discussions.
+                    </p>
+                </div>
+
+                <div class="al-did-timeline">
+
+                    <article class="al-did-timeline__item al-did-reveal">
+                        <div class="al-did-timeline__marker">01</div>
+                        <div class="al-did-timeline__content">
+                            <span>STEP ONE</span>
+                            <h3>Understand the Project</h3>
+                            <p>
+                                Review the project brief, concept,
+                                development stage and design
+                                requirements.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="al-did-timeline__item al-did-reveal">
+                        <div class="al-did-timeline__marker">02</div>
+                        <div class="al-did-timeline__content">
+                            <span>STEP TWO</span>
+                            <h3>Identify Relevant Expertise</h3>
+                            <p>
+                                Identify suitable design disciplines
+                                and professionals based on the
+                                project's scope and requirements.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="al-did-timeline__item al-did-reveal">
+                        <div class="al-did-timeline__marker">03</div>
+                        <div class="al-did-timeline__content">
+                            <span>STEP THREE</span>
+                            <h3>Shortlist & Introduce</h3>
+                            <p>
+                                Coordinate relevant introductions
+                                and facilitate initial proposal
+                                and engagement discussions.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="al-did-timeline__item al-did-reveal">
+                        <div class="al-did-timeline__marker">04</div>
+                        <div class="al-did-timeline__content">
+                            <span>STEP FOUR</span>
+                            <h3>Align Project Requirements</h3>
+                            <p>
+                                Support discussions between
+                                ownership and design professionals
+                                around hospitality needs and
+                                project priorities.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="al-did-timeline__item al-did-reveal">
+                        <div class="al-did-timeline__marker">05</div>
+                        <div class="al-did-timeline__content">
+                            <span>STEP FIVE</span>
+                            <h3>Coordinate Stakeholders</h3>
+                            <p>
+                                Help maintain communication and
+                                coordination between ownership,
+                                appointed design teams and
+                                other project stakeholders.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY ASTRA LUXE -->
+        <section class="al-did-section al-did-why">
+            <div class="al-did-container al-did-why__grid">
+                <div class="al-did-why__visual al-did-reveal">
+                    <img
+                        src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1100&q=85"
+                        alt="Refined luxury hospitality interior design"
+                        loading="lazy"
+                    >
+
+                    <div class="al-did-why__visual-caption">
+                        <span>THE ASTRALUXE ADVISORY</span>
+                        <p>Design Vision. Professional Expertise.</p>
+                    </div>
+                </div>
+
+                <div class="al-did-why__content al-did-reveal">
+                    <span class="al-did-section-label">05 / WHY ASTRA LUXE</span>
+
+                    <h2>
+                        Connecting Design
+                        <span>with Hospitality Thinking.</span>
+                    </h2>
+
+                    <p>
+                        Hospitality projects require design decisions
+                        that consider more than visual appeal.
+                        Functionality, guest experience, operational
+                        requirements and the overall project concept
+                        must also be considered.
+                    </p>
+
+                    <ul class="al-did-check-list">
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Project-specific professional identification
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Consideration of hospitality design requirements
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Coordination of professional introductions
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Ownership and stakeholder alignment
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Focus on concept, functionality and guest experience
+                        </li>
+                    </ul>
+
+                    <a href="../contact.html" class="al-did-text-link">
+                        Discuss Your Design Requirements
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR FOCUS -->
+        <section class="al-did-focus">
+            <div class="al-did-container al-did-focus__inner al-did-reveal">
+                <div class="al-did-focus__icon">
+                    <i class="fa-solid fa-compass-drafting"></i>
+                </div>
+
+                <div class="al-did-focus__content">
+                    <span class="al-did-section-label">OUR FOCUS</span>
+                    <h2>
+                        The Right Expertise.
+                        <span>A Coordinated Design Direction.</span>
+                    </h2>
+                    <p>
+                        Our involvement is advisory and coordination-led.
+                        Appointment of consultants, design approvals,
+                        statutory compliance and technical certifications
+                        remain with the client and the appropriately
+                        qualified professionals.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="al-did-cta">
+            <div class="al-did-cta__background"></div>
+
+            <div class="al-did-container al-did-cta__content al-did-reveal">
+                <span class="al-did-section-label">BUILD THE RIGHT TEAM</span>
+
+                <h2>
+                    A Distinctive Vision Deserves
+                    <span>the Right Expertise.</span>
+                </h2>
+
+                <p>
+                    Connect with The AstraLuxe Advisory to discuss
+                    the design and technical professionals
+                    your hospitality project requires.
+                </p>
+
+                <a href="../contact.html" class="al-did-button al-did-button--gold">
+                    Start a Conversation
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <div id="whatsapp-placeholder"></div>
+
+    <script src="js/main.js"></script>
+    <script>
+        (() => {
+            const initDesignPage = () => {
+                const page = document.querySelector(".al-did-page");
+                if (!page) return;
+
+                const faqItems = page.querySelectorAll(".al-did-faq-item");
+
+                faqItems.forEach((item) => {
+                    const question = item.querySelector(
+                        ".al-did-faq-item__question"
+                    );
+
+                    if (!question) return;
+
+                    question.addEventListener("click", () => {
+                        const isActive = item.classList.contains("is-active");
+
+                        faqItems.forEach((faqItem) => {
+                            faqItem.classList.remove("is-active");
+                            faqItem.querySelector(
+                                ".al-did-faq-item__question"
+                            )?.setAttribute("aria-expanded", "false");
+                        });
+
+                        if (!isActive) {
+                            item.classList.add("is-active");
+                            question.setAttribute("aria-expanded", "true");
+                        }
+                    });
+                });
+
+                if (
+                    typeof gsap === "undefined" ||
+                    typeof ScrollTrigger === "undefined"
+                ) {
+                    return;
+                }
+
+                gsap.registerPlugin(ScrollTrigger);
+
+                if (window.matchMedia(
+                    "(prefers-reduced-motion: reduce)"
+                ).matches) {
+                    return;
+                }
+
+                const animateGroup = (
+                    selector,
+                    triggerSelector,
+                    animation,
+                    start
+                ) => {
+                    const elements = page.querySelectorAll(selector);
+                    const trigger = page.querySelector(triggerSelector);
+
+                    if (!elements.length || !trigger) return;
+
+                    gsap.from(elements, {
+                        ...animation,
+                        scrollTrigger: {
+                            trigger,
+                            start,
+                            once: true
+                        }
+                    });
+                };
+
+                const heroTimeline = gsap.timeline({
+                    defaults: {
+                        ease: "power3.out"
+                    }
+                });
+
+                heroTimeline
+                    .from(page.querySelector(".al-did-hero__image"), {
+                        scale: 1.15,
+                        duration: 1.8
+                    })
+                    .from(
+                        page.querySelector(".al-did-hero .al-did-eyebrow"),
+                        {
+                            y: 25,
+                            opacity: 0,
+                            duration: 0.7
+                        },
+                        "-=1.1"
+                    )
+                    .from(
+                        page.querySelector(".al-did-hero h1"),
+                        {
+                            y: 55,
+                            opacity: 0,
+                            duration: 1
+                        },
+                        "-=0.45"
+                    )
+                    .from(
+                        page.querySelector(".al-did-hero__description"),
+                        {
+                            y: 25,
+                            opacity: 0,
+                            duration: 0.7
+                        },
+                        "-=0.55"
+                    )
+                    .from(
+                        page.querySelector(".al-did-hero .al-did-button"),
+                        {
+                            y: 20,
+                            opacity: 0,
+                            duration: 0.65
+                        },
+                        "-=0.4"
+                    );
+
+                const individuallyAnimated = [
+                    ".al-did-discipline",
+                    ".al-did-scope-card",
+                    ".al-did-timeline__item",
+                    ".al-did-focus__inner",
+                    ".al-did-cta__content"
+                ].join(",");
+
+                page.querySelectorAll(".al-did-reveal").forEach((element) => {
+                    if (
+                        element.closest(".al-did-hero") ||
+                        element.matches(individuallyAnimated)
+                    ) {
+                        return;
+                    }
+
+                    gsap.fromTo(
+                        element,
+                        {
+                            y: 38,
+                            opacity: 0
+                        },
+                        {
+                            y: 0,
+                            opacity: 1,
+                            duration: 0.85,
+                            ease: "power3.out",
+                            scrollTrigger: {
+                                trigger: element,
+                                start: "top 88%",
+                                once: true
+                            }
+                        }
+                    );
+                });
+
+                animateGroup(
+                    ".al-did-discipline",
+                    ".al-did-disciplines__grid",
+                    {
+                        y: 55,
+                        opacity: 0,
+                        duration: 0.8,
+                        stagger: 0.14,
+                        ease: "power3.out"
+                    },
+                    "top 82%"
+                );
+
+                animateGroup(
+                    ".al-did-scope-card",
+                    ".al-did-scope__grid",
+                    {
+                        y: 60,
+                        opacity: 0,
+                        scale: 0.97,
+                        duration: 0.75,
+                        stagger: 0.12,
+                        ease: "power3.out"
+                    },
+                    "top 82%"
+                );
+
+                animateGroup(
+                    ".al-did-timeline__item",
+                    ".al-did-timeline",
+                    {
+                        y: 45,
+                        opacity: 0,
+                        duration: 0.75,
+                        stagger: 0.16,
+                        ease: "power3.out"
+                    },
+                    "top 82%"
+                );
+
+                animateGroup(
+                    ".al-did-why__visual img",
+                    ".al-did-why",
+                    {
+                        scale: 1.12,
+                        opacity: 0,
+                        duration: 1.2,
+                        ease: "power2.out"
+                    },
+                    "top 78%"
+                );
+
+                animateGroup(
+                    ".al-did-focus__inner",
+                    ".al-did-focus",
+                    {
+                        x: -55,
+                        opacity: 0,
+                        duration: 1,
+                        ease: "power3.out"
+                    },
+                    "top 85%"
+                );
+
+                animateGroup(
+                    ".al-did-cta__content > *",
+                    ".al-did-cta",
+                    {
+                        y: 35,
+                        opacity: 0,
+                        duration: 0.8,
+                        stagger: 0.15,
+                        ease: "power3.out"
+                    },
+                    "top 80%"
+                );
+
+                const refreshScrollTrigger = () => ScrollTrigger.refresh();
+
+                if (document.readyState === "complete") {
+                    refreshScrollTrigger();
+                } else {
+                    window.addEventListener(
+                        "load",
+                        refreshScrollTrigger,
+                        { once: true }
+                    );
+                }
+            };
+
+            if (document.readyState === "loading") {
+                document.addEventListener(
+                    "DOMContentLoaded",
+                    initDesignPage,
+                    { once: true }
+                );
+            } else {
+                initDesignPage();
+            }
+        })();
+    </script>
+
+</body>
+</html>

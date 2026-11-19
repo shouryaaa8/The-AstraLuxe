@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="The AstraLuxe Advisory provides Back-of-House (BOH) consultancy for hotels and resorts, with planning inputs for kitchens, staff areas, stores, service circulation and operational workflows.">
+    <title>Back-of-House (BOH) Consultancy | The AstraLuxe Advisory</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+    <style>
+        /* =========================================================
+   ASTRA LUXE — BACK-OF-HOUSE CONSULTANCY
+   Fully standalone, scoped stylesheet
+========================================================= */
+
+        .al-boh-page {
+            --boh-navy: #1e293b;
+            --boh-slate: #334155;
+            --boh-gold: #D4AF37;
+            --boh-gold-dark: #a8895e;
+            --boh-ivory: #f8f6f2;
+            --boh-white: #ffffff;
+            --boh-text: #263244;
+            --boh-muted: #64748b;
+            --boh-border: rgba(30, 41, 59, 0.12);
+
+            color: var(--boh-text);
+            font-family: "Lora", serif;
+            overflow: hidden;
+        }
+
+        .al-boh-page *,
+        .al-boh-page *::before,
+        .al-boh-page *::after {
+            box-sizing: border-box;
+        }
+
+        .al-boh-page img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .al-boh-page a {
+            text-decoration: none;
+        }
+
+        .al-boh-container {
+            width: min(1180px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        .al-boh-section {
+            padding: 110px 0;
+        }
+
+        .al-boh-kicker,
+        .al-boh-eyebrow {
+            display: inline-block;
+            color: var(--boh-gold-dark);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.8px;
+            line-height: 1.8;
+            text-transform: uppercase;
+        }
+
+        .al-boh-page h1,
+        .al-boh-page h2,
+        .al-boh-page h3 {
+            margin: 0;
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 500;
+        }
+
+        .al-boh-page h2 {
+            color: var(--boh-navy);
+            font-size: clamp(38px, 4.5vw, 58px);
+            line-height: 1.08;
+        }
+
+        .al-boh-page h2 em,
+        .al-boh-page h1 em {
+            color: var(--boh-gold-dark);
+            font-weight: 500;
+        }
+
+        .al-boh-page p {
+            margin-top: 0;
+            color: var(--boh-muted);
+            font-size: 14px;
+            line-height: 1.95;
+        }
+
+        .al-boh-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            min-height: 52px;
+            padding: 0 25px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            transition: 0.3s ease;
+        }
+
+        .al-boh-btn i,
+        .al-boh-inline-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .al-boh-btn:hover i,
+        .al-boh-inline-link:hover i {
+            transform: translateX(5px);
+        }
+
+        .al-boh-btn-gold {
+            color: var(--boh-navy);
+            background: var(--boh-gold);
+            border: 1px solid var(--boh-gold);
+        }
+
+        .al-boh-btn-gold:hover {
+            color: var(--boh-white);
+            background: transparent;
+            border-color: var(--boh-gold);
+        }
+
+        .al-boh-inline-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 24px;
+            color: var(--boh-navy);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.1px;
+            text-transform: uppercase;
+        }
+
+        /* HERO */
+
+        .al-boh-hero {
+            position: relative;
+            display: flex;
+            align-items: center;
+            min-height: 690px;
+            padding: 120px 8%;
+            overflow: hidden;
+            background: var(--boh-navy);
+        }
+
+        .al-boh-hero-bg,
+        .al-boh-hero-overlay {
+            position: absolute;
+            inset: 0;
+        }
+
+        .al-boh-hero-bg {
+            background:
+                url("https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=2000&q=90") center 48% / cover no-repeat;
+            transform: scale(1.06);
+        }
+
+        .al-boh-hero-overlay {
+            background:
+                linear-gradient(90deg, rgba(15, 23, 42, 0.94) 0%, rgba(15, 23, 42, 0.78) 48%, rgba(15, 23, 42, 0.28) 100%),
+                linear-gradient(0deg, rgba(15, 23, 42, 0.35), transparent 45%);
+        }
+
+        .al-boh-hero-content {
+            position: relative;
+            z-index: 2;
+            width: min(780px, 100%);
+            color: var(--boh-white);
+        }
+
+        .al-boh-hero .al-boh-eyebrow {
+            color: #e1c9a5;
+            margin-bottom: 22px;
+        }
+
+        .al-boh-hero h1 {
+            max-width: 760px;
+            color: var(--boh-white);
+            font-size: clamp(54px, 7.5vw, 92px);
+            line-height: 0.98;
+        }
+
+        .al-boh-hero h1 em {
+            display: block;
+            margin-top: 10px;
+            color: #dfc39b;
+        }
+
+        .al-boh-hero-content>p {
+            max-width: 590px;
+            margin: 28px 0 32px;
+            color: rgba(255, 255, 255, 0.83);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .al-boh-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .al-boh-text-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--boh-white);
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        .al-boh-text-link i {
+            color: var(--boh-gold);
+        }
+
+        .al-boh-hero-caption {
+            position: absolute;
+            right: 8%;
+            bottom: 34px;
+            z-index: 2;
+            display: flex;
+            gap: 22px;
+            color: rgba(255, 255, 255, 0.7);
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            letter-spacing: 1.7px;
+        }
+
+        /* BREADCRUMB */
+
+        .al-boh-breadcrumb {
+            padding: 18px 0;
+            background: var(--boh-ivory);
+            border-bottom: 1px solid var(--boh-border);
+        }
+
+        .al-boh-breadcrumb .al-boh-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            letter-spacing: 0.5px;
+        }
+
+        .al-boh-breadcrumb a {
+            color: var(--boh-muted);
+        }
+
+        .al-boh-breadcrumb a:hover {
+            color: var(--boh-gold-dark);
+        }
+
+        .al-boh-breadcrumb i {
+            color: var(--boh-gold-dark);
+            font-size: 8px;
+        }
+
+        .al-boh-breadcrumb span {
+            color: var(--boh-navy);
+            font-weight: 600;
+        }
+
+        /* OVERVIEW */
+
+        .al-boh-overview {
+            background: var(--boh-white);
+        }
+
+        .al-boh-overview-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 100px;
+            align-items: start;
+        }
+
+        .al-boh-section-heading {
+            position: sticky;
+            top: 100px;
+        }
+
+        .al-boh-section-heading h2 {
+            margin-top: 20px;
+        }
+
+        .al-boh-heading-line {
+            width: 72px;
+            height: 2px;
+            margin-top: 30px;
+            background: var(--boh-gold);
+        }
+
+        .al-boh-overview-copy p {
+            margin-bottom: 18px;
+        }
+
+        .al-boh-overview-copy .al-boh-lead {
+            color: var(--boh-navy);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 27px;
+            line-height: 1.4;
+        }
+
+        /* CENTERED HEADINGS */
+
+        .al-boh-centered-heading {
+            max-width: 720px;
+            margin: 0 auto 58px;
+            text-align: center;
+        }
+
+        .al-boh-centered-heading h2 {
+            margin-top: 14px;
+        }
+
+        .al-boh-centered-heading p {
+            max-width: 590px;
+            margin: 18px auto 0;
+        }
+
+        /* PILLARS */
+
+        .al-boh-pillars {
+            background: var(--boh-ivory);
+        }
+
+        .al-boh-pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .al-boh-pillar-card {
+            position: relative;
+            min-height: 285px;
+            padding: 32px 25px;
+            background: var(--boh-white);
+            border: 1px solid rgba(30, 41, 59, 0.07);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .al-boh-pillar-card:hover {
+            transform: translateY(-9px);
+            box-shadow: 0 20px 45px rgba(30, 41, 59, 0.09);
+        }
+
+        .al-boh-pillar-icon,
+        .al-boh-scope-icon {
+            display: grid;
+            place-items: center;
+            width: 52px;
+            height: 52px;
+            color: var(--boh-gold-dark);
+            background: rgba(197, 168, 128, 0.14);
+            font-size: 19px;
+        }
+
+        .al-boh-card-number {
+            position: absolute;
+            top: 35px;
+            right: 25px;
+            color: rgba(30, 41, 59, 0.17);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 27px;
+        }
+
+        .al-boh-pillar-card h3,
+        .al-boh-scope-card h3 {
+            margin: 26px 0 12px;
+            color: var(--boh-navy);
+            font-size: 25px;
+            line-height: 1.1;
+        }
+
+        .al-boh-pillar-card p,
+        .al-boh-scope-card p {
+            margin-bottom: 0;
+            font-size: 12px;
+            line-height: 1.85;
+        }
+
+        /* SCOPE */
+
+        .al-boh-scope {
+            background: var(--boh-white);
+        }
+
+        .al-boh-scope-intro {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 50px;
+            margin-bottom: 48px;
+        }
+
+        .al-boh-scope-intro h2 {
+            max-width: 630px;
+            margin-top: 14px;
+        }
+
+        .al-boh-scope-intro>p {
+            max-width: 390px;
+            margin-bottom: 5px;
+        }
+
+        .al-boh-scope-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid var(--boh-border);
+            border-left: 1px solid var(--boh-border);
+        }
+
+        .al-boh-scope-card {
+            position: relative;
+            min-height: 275px;
+            padding: 35px 32px;
+            border-right: 1px solid var(--boh-border);
+            border-bottom: 1px solid var(--boh-border);
+            transition: background 0.3s ease;
+        }
+
+        .al-boh-scope-card:hover {
+            background: var(--boh-ivory);
+        }
+
+        .al-boh-scope-index {
+            position: absolute;
+            top: 35px;
+            right: 30px;
+            color: #b6a58e;
+            font-family: "Montserrat", sans-serif;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        .al-boh-scope-icon {
+            width: 48px;
+            height: 48px;
+        }
+
+        .al-boh-scope-card h3 {
+            margin-top: 24px;
+            font-size: 27px;
+        }
+
+        /* APPROACH */
+
+        .al-boh-approach {
+            color: var(--boh-white);
+            background: var(--boh-navy);
+        }
+
+        .al-boh-approach .al-boh-centered-heading h2 {
+            color: var(--boh-white);
+        }
+
+        .al-boh-approach .al-boh-centered-heading h2 em {
+            color: #dfc39b;
+        }
+
+        .al-boh-approach .al-boh-centered-heading p {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .al-boh-approach .al-boh-kicker {
+            color: #dfc39b;
+        }
+
+        .al-boh-process {
+            position: relative;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .al-boh-process-line {
+            position: absolute;
+            top: 25px;
+            bottom: 25px;
+            left: 27px;
+            width: 1px;
+            background: rgba(197, 168, 128, 0.4);
+        }
+
+        .al-boh-process-step {
+            position: relative;
+            display: grid;
+            grid-template-columns: 55px 1fr;
+            gap: 30px;
+            align-items: start;
+            padding: 0 0 38px;
+        }
+
+        .al-boh-process-step:last-child {
+            padding-bottom: 0;
+        }
+
+        .al-boh-process-number {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            place-items: center;
+            width: 55px;
+            height: 55px;
+            color: var(--boh-gold);
+            background: var(--boh-navy);
+            border: 1px solid var(--boh-gold);
+            border-radius: 50%;
+            font-family: "Montserrat", sans-serif;
+            font-size: 11px;
+        }
+
+        .al-boh-process-step h3 {
+            margin: 3px 0 8px;
+            color: var(--boh-white);
+            font-size: 29px;
+        }
+
+        .al-boh-process-step p {
+            max-width: 600px;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.64);
+            font-size: 13px;
+        }
+
+        /* WHY ASTRA LUXE */
+
+        .al-boh-why {
+            background: var(--boh-ivory);
+        }
+
+        .al-boh-why-grid {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: 85px;
+            align-items: center;
+        }
+
+        .al-boh-why-image {
+            position: relative;
+            min-height: 570px;
+            overflow: hidden;
+        }
+
+        .al-boh-why-image img {
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .al-boh-why-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .al-boh-image-note {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 28px;
+            color: var(--boh-white);
+            background: linear-gradient(0deg, rgba(15, 23, 42, 0.88), transparent);
+        }
+
+        .al-boh-image-note span {
+            color: #e0c39c;
+            font-family: "Montserrat", sans-serif;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .al-boh-image-note strong {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 30px;
+            font-weight: 500;
+        }
+
+        .al-boh-why-content h2 {
+            margin: 15px 0 22px;
+        }
+
+        .al-boh-check-list {
+            display: grid;
+            gap: 15px;
+            margin: 26px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .al-boh-check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+            color: var(--boh-slate);
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .al-boh-check-list i {
+            margin-top: 3px;
+            color: var(--boh-gold-dark);
+        }
+
+        /* FOCUS */
+
+        .al-boh-focus {
+            padding-top: 0;
+            background: var(--boh-ivory);
+        }
+
+        .al-boh-focus-box {
+            display: grid;
+            grid-template-columns: 75px 1fr;
+            gap: 30px;
+            align-items: start;
+            padding: 48px 55px;
+            background: var(--boh-white);
+            border-left: 3px solid var(--boh-gold);
+            box-shadow: 0 15px 45px rgba(30, 41, 59, 0.05);
+        }
+
+        .al-boh-focus-icon {
+            display: grid;
+            place-items: center;
+            width: 65px;
+            height: 65px;
+            color: var(--boh-gold-dark);
+            background: rgba(197, 168, 128, 0.15);
+            font-size: 24px;
+        }
+
+        .al-boh-focus-box h2 {
+            margin: 10px 0 15px;
+            font-size: clamp(32px, 4vw, 45px);
+        }
+
+        .al-boh-focus-box p {
+            max-width: 850px;
+            margin-bottom: 0;
+        }
+
+        /* FAQ */
+
+        .al-boh-faq {
+            background: var(--boh-white);
+        }
+
+        .al-boh-faq-grid {
+            display: grid;
+            grid-template-columns: 0.75fr 1.25fr;
+            gap: 90px;
+            align-items: start;
+        }
+
+        .al-boh-faq-heading h2 {
+            margin: 15px 0 20px;
+        }
+
+        .al-boh-faq-list {
+            border-top: 1px solid var(--boh-border);
+        }
+
+        .al-boh-faq-item {
+            border-bottom: 1px solid var(--boh-border);
+        }
+
+        .al-boh-faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+            width: 100%;
+            padding: 24px 0;
+            color: var(--boh-navy);
+            background: transparent;
+            border: 0;
+            text-align: left;
+            cursor: pointer;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .al-boh-faq-question i {
+            flex-shrink: 0;
+            color: var(--boh-gold-dark);
+            font-size: 13px;
+            transition: transform 0.3s ease;
+        }
+
+        .al-boh-faq-item.is-open .al-boh-faq-question i {
+            transform: rotate(45deg);
+        }
+
+        .al-boh-faq-answer {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.35s ease;
+        }
+
+        .al-boh-faq-item.is-open .al-boh-faq-answer {
+            grid-template-rows: 1fr;
+        }
+
+        .al-boh-faq-answer p {
+            overflow: hidden;
+            margin: 0;
+            padding: 0 35px 0 0;
+            font-size: 12px;
+            line-height: 1.9;
+            transition: padding 0.35s ease;
+        }
+
+        .al-boh-faq-item.is-open .al-boh-faq-answer p {
+            padding-bottom: 23px;
+        }
+
+        /* CTA */
+
+        .al-boh-cta {
+            position: relative;
+            padding: 115px 24px;
+            overflow: hidden;
+            text-align: center;
+            background: var(--boh-navy);
+        }
+
+        .al-boh-cta-bg,
+        .al-boh-cta-overlay {
+            position: absolute;
+            inset: 0;
+        }
+
+        .al-boh-cta-bg {
+            background:
+                url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85") center / cover no-repeat;
+        }
+
+        .al-boh-cta-overlay {
+            background: rgba(15, 23, 42, 0.88);
+        }
+
+        .al-boh-cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .al-boh-cta .al-boh-kicker {
+            color: #dfc39b;
+        }
+
+        .al-boh-cta h2 {
+            margin: 16px 0 18px;
+            color: var(--boh-white);
+        }
+
+        .al-boh-cta h2 em {
+            color: #dfc39b;
+        }
+
+        .al-boh-cta p {
+            max-width: 590px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        /* ANIMATION INITIAL STATES */
+
+        .al-boh-page .al-boh-reveal {
+            will-change: transform, opacity;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1050px) {
+
+            .al-boh-overview-grid,
+            .al-boh-why-grid {
+                gap: 50px;
+            }
+
+            .al-boh-pillar-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .al-boh-faq-grid {
+                gap: 50px;
+            }
+
+            .al-boh-why-image {
+                min-height: 500px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .al-boh-section {
+                padding: 78px 0;
+            }
+
+            .al-boh-container {
+                width: min(100% - 36px, 560px);
+            }
+
+            .al-boh-hero {
+                min-height: 650px;
+                padding: 110px 24px 100px;
+            }
+
+            .al-boh-hero-overlay {
+                background: linear-gradient(90deg, rgba(15, 23, 42, 0.94), rgba(15, 23, 42, 0.65));
+            }
+
+            .al-boh-hero h1 {
+                font-size: clamp(49px, 12vw, 70px);
+            }
+
+            .al-boh-hero-content>p {
+                font-size: 13px;
+            }
+
+            .al-boh-hero-caption {
+                right: 24px;
+                left: 24px;
+                flex-wrap: wrap;
+                gap: 8px 16px;
+                font-size: 8px;
+            }
+
+            .al-boh-overview-grid,
+            .al-boh-why-grid,
+            .al-boh-faq-grid {
+                grid-template-columns: 1fr;
+                gap: 38px;
+            }
+
+            .al-boh-section-heading {
+                position: static;
+            }
+
+            .al-boh-overview-copy .al-boh-lead {
+                font-size: 24px;
+            }
+
+            .al-boh-centered-heading {
+                margin-bottom: 38px;
+            }
+
+            .al-boh-pillar-grid {
+                gap: 12px;
+            }
+
+            .al-boh-pillar-card {
+                min-height: 255px;
+                padding: 25px 20px;
+            }
+
+            .al-boh-pillar-card h3 {
+                font-size: 23px;
+            }
+
+            .al-boh-scope-intro {
+                display: block;
+            }
+
+            .al-boh-scope-intro>p {
+                margin-top: 18px;
+            }
+
+            .al-boh-scope-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .al-boh-scope-card {
+                min-height: 260px;
+                padding: 26px 20px;
+            }
+
+            .al-boh-scope-card h3 {
+                font-size: 23px;
+            }
+
+            .al-boh-process-step {
+                gap: 20px;
+            }
+
+            .al-boh-why-image {
+                min-height: 420px;
+            }
+
+            .al-boh-focus-box {
+                grid-template-columns: 1fr;
+                gap: 22px;
+                padding: 35px 28px;
+            }
+
+            .al-boh-faq-question {
+                font-size: 23px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .al-boh-container {
+                width: calc(100% - 32px);
+            }
+
+            .al-boh-section {
+                padding: 65px 0;
+            }
+
+            .al-boh-hero {
+                min-height: 620px;
+                padding-right: 18px;
+                padding-left: 18px;
+            }
+
+            .al-boh-hero h1 {
+                font-size: 48px;
+            }
+
+            .al-boh-hero-actions {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .al-boh-btn {
+                min-height: 49px;
+                padding: 0 18px;
+                font-size: 9px;
+            }
+
+            .al-boh-page h2 {
+                font-size: 39px;
+            }
+
+            .al-boh-pillar-grid,
+            .al-boh-scope-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .al-boh-pillar-card {
+                min-height: auto;
+                padding: 28px 24px;
+            }
+
+            .al-boh-scope-card {
+                min-height: auto;
+                padding: 30px 24px;
+            }
+
+            .al-boh-process-line {
+                left: 22px;
+            }
+
+            .al-boh-process-step {
+                grid-template-columns: 45px 1fr;
+                gap: 18px;
+                padding-bottom: 32px;
+            }
+
+            .al-boh-process-number {
+                width: 45px;
+                height: 45px;
+                font-size: 10px;
+            }
+
+            .al-boh-process-step h3 {
+                font-size: 25px;
+            }
+
+            .al-boh-why-image {
+                min-height: 350px;
+            }
+
+            .al-boh-focus-box {
+                padding: 30px 22px;
+            }
+
+            .al-boh-faq-question {
+                gap: 15px;
+                font-size: 21px;
+            }
+
+            .al-boh-faq-answer p {
+                padding-right: 10px;
+            }
+
+            .al-boh-cta {
+                padding: 85px 18px;
+            }
+
+            .al-boh-breadcrumb .al-boh-container {
+                gap: 8px;
+                font-size: 8px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .al-boh-page *,
+            .al-boh-page *::before,
+            .al-boh-page *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="al-boh-page">
+
+        <!-- HERO -->
+        <section class="al-boh-hero">
+            <div class="al-boh-hero-bg"></div>
+            <div class="al-boh-hero-overlay"></div>
+
+            <div class="al-boh-hero-content">
+                <span class="al-boh-eyebrow">HOSPITALITY DEVELOPMENT & OPERATIONAL ADVISORY</span>
+                <h1>Back of House <em>(BOH) Consultancy</em></h1>
+                <p>
+                    Planning the operational backbone of exceptional hospitality
+                    experiences through thoughtful workflows, functional spaces
+                    and efficient service infrastructure.
+                </p>
+
+                <div class="al-boh-hero-actions">
+                    <a href="../contact.html" class="al-boh-btn al-boh-btn-gold">
+                        Discuss Your Project <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#al-boh-overview" class="al-boh-text-link">
+                        Explore Our Approach <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="al-boh-hero-caption">
+                <span>BEHIND THE EXPERIENCE</span>
+                <span>PLANNING WHAT MAKES IT WORK</span>
+            </div>
+        </section>
+
+
+        <!-- OVERVIEW -->
+        <section class="al-boh-section al-boh-overview" id="al-boh-overview">
+            <div class="al-boh-container al-boh-overview-grid">
+                <div class="al-boh-section-heading al-boh-reveal">
+                    <span class="al-boh-kicker">THE OPERATIONAL FOUNDATION</span>
+                    <h2>Where seamless <em>hospitality begins.</em></h2>
+                    <div class="al-boh-heading-line"></div>
+                </div>
+
+                <div class="al-boh-overview-copy al-boh-reveal">
+                    <p class="al-boh-lead">
+                        Exceptional guest experiences depend on more than what guests
+                        see. Behind every well-run hotel or resort is a carefully
+                        considered operational infrastructure.
+                    </p>
+                    <p>
+                        Efficient back-of-house planning is essential to the smooth
+                        functioning of a hotel or resort. BOH areas support the teams
+                        and processes that guests may not see but that directly
+                        influence service speed, hygiene, safety and operating efficiency.
+                    </p>
+                    <p>
+                        The AstraLuxe Advisory provides planning inputs to help ensure
+                        that these functional areas are considered alongside the
+                        guest-facing spaces during project development or operational review.
+                    </p>
+                    <p>
+                        Our approach considers how spaces, people and service routes
+                        work together, helping project teams think through the practical
+                        demands of day-to-day hotel operations.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOUR OPERATIONAL PILLARS -->
+        <section class="al-boh-section al-boh-pillars">
+            <div class="al-boh-container">
+                <div class="al-boh-centered-heading al-boh-reveal">
+                    <span class="al-boh-kicker">THE BOH FRAMEWORK</span>
+                    <h2>Designed around <em>operational flow.</em></h2>
+                    <p>
+                        A coordinated view of the spaces and processes that keep
+                        hospitality operations moving.
+                    </p>
+                </div>
+
+                <div class="al-boh-pillar-grid">
+                    <article class="al-boh-pillar-card al-boh-reveal">
+                        <div class="al-boh-pillar-icon"><i class="fa-solid fa-route"></i></div>
+                        <span class="al-boh-card-number">01</span>
+                        <h3>Service Circulation</h3>
+                        <p>
+                            Considering service routes and movement patterns to support
+                            efficient coordination between operational areas.
+                        </p>
+                    </article>
+
+                    <article class="al-boh-pillar-card al-boh-reveal">
+                        <div class="al-boh-pillar-icon"><i class="fa-solid fa-people-group"></i></div>
+                        <span class="al-boh-card-number">02</span>
+                        <h3>Team Infrastructure</h3>
+                        <p>
+                            Giving due consideration to staff areas and the support
+                            facilities required by hotel operating teams.
+                        </p>
+                    </article>
+
+                    <article class="al-boh-pillar-card al-boh-reveal">
+                        <div class="al-boh-pillar-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        <span class="al-boh-card-number">03</span>
+                        <h3>Functional Planning</h3>
+                        <p>
+                            Reviewing spatial relationships, functional adjacencies
+                            and the practical utilisation of BOH spaces.
+                        </p>
+                    </article>
+
+                    <article class="al-boh-pillar-card al-boh-reveal">
+                        <div class="al-boh-pillar-icon"><i class="fa-solid fa-gears"></i></div>
+                        <span class="al-boh-card-number">04</span>
+                        <h3>Operational Coordination</h3>
+                        <p>
+                            Connecting operational requirements with architects,
+                            kitchen consultants and the wider project team.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCOPE OF SERVICES -->
+        <section class="al-boh-section al-boh-scope">
+            <div class="al-boh-container">
+                <div class="al-boh-scope-intro al-boh-reveal">
+                    <div>
+                        <span class="al-boh-kicker">OUR SCOPE OF SERVICES</span>
+                        <h2>Planning the spaces <em>behind the experience.</em></h2>
+                    </div>
+                    <p>
+                        We provide operational planning inputs across the key support
+                        functions of a hotel or resort, aligned with its concept,
+                        scale and development requirements.
+                    </p>
+                </div>
+
+                <div class="al-boh-scope-grid">
+                    <article class="al-boh-scope-card al-boh-reveal">
+                        <span class="al-boh-scope-index">01</span>
+                        <div class="al-boh-scope-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                        <h3>BOH Requirement Review</h3>
+                        <p>
+                            Review of back-of-house requirements in relation to the
+                            proposed hotel concept and operational needs.
+                        </p>
+                    </article>
+
+                    <article class="al-boh-scope-card al-boh-reveal">
+                        <span class="al-boh-scope-index">02</span>
+                        <div class="al-boh-scope-icon"><i class="fa-solid fa-kitchen-set"></i></div>
+                        <h3>Functional Space Planning</h3>
+                        <p>
+                            Planning inputs for kitchens, stores, staff areas and
+                            other essential operational spaces.
+                        </p>
+                    </article>
+
+                    <article class="al-boh-scope-card al-boh-reveal">
+                        <span class="al-boh-scope-index">03</span>
+                        <div class="al-boh-scope-icon"><i class="fa-solid fa-arrows-turn-to-dots"></i></div>
+                        <h3>Workflow & Service Routes</h3>
+                        <p>
+                            Coordination inputs for operational workflows and service
+                            circulation across relevant departments.
+                        </p>
+                    </article>
+
+                    <article class="al-boh-scope-card al-boh-reveal">
+                        <span class="al-boh-scope-index">04</span>
+                        <div class="al-boh-scope-icon"><i class="fa-solid fa-object-group"></i></div>
+                        <h3>Functional Adjacencies</h3>
+                        <p>
+                            Review of relationships between operational areas,
+                            functional adjacencies and space utilisation.
+                        </p>
+                    </article>
+
+                    <article class="al-boh-scope-card al-boh-reveal">
+                        <span class="al-boh-scope-index">05</span>
+                        <div class="al-boh-scope-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                        <h3>Support Function Inputs</h3>
+                        <p>
+                            Inputs on housekeeping, receiving, waste management
+                            and other essential support functions.
+                        </p>
+                    </article>
+
+                    <article class="al-boh-scope-card al-boh-reveal">
+                        <span class="al-boh-scope-index">06</span>
+                        <div class="al-boh-scope-icon"><i class="fa-solid fa-people-arrows-left-right"></i></div>
+                        <h3>Design Team Coordination</h3>
+                        <p>
+                            Coordination with architects, kitchen consultants
+                            and project teams to align operational requirements
+                            with design development.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- APPROACH -->
+        <section class="al-boh-section al-boh-approach">
+            <div class="al-boh-container">
+                <div class="al-boh-centered-heading al-boh-reveal">
+                    <span class="al-boh-kicker">OUR APPROACH</span>
+                    <h2>From operational needs <em>to coordinated planning.</em></h2>
+                    <p>
+                        A collaborative process that brings operational thinking
+                        into the project planning conversation.
+                    </p>
+                </div>
+
+                <div class="al-boh-process">
+                    <div class="al-boh-process-line"></div>
+
+                    <article class="al-boh-process-step al-boh-reveal">
+                        <div class="al-boh-process-number">01</div>
+                        <div>
+                            <h3>Understand the Concept</h3>
+                            <p>
+                                Review the proposed hotel concept, scale and broad
+                                operational requirements.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="al-boh-process-step al-boh-reveal">
+                        <div class="al-boh-process-number">02</div>
+                        <div>
+                            <h3>Review BOH Requirements</h3>
+                            <p>
+                                Consider the support spaces, functional relationships
+                                and service requirements relevant to the project.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="al-boh-process-step al-boh-reveal">
+                        <div class="al-boh-process-number">03</div>
+                        <div>
+                            <h3>Develop Planning Inputs</h3>
+                            <p>
+                                Provide operational perspectives on space utilisation,
+                                workflow and service circulation.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="al-boh-process-step al-boh-reveal">
+                        <div class="al-boh-process-number">04</div>
+                        <div>
+                            <h3>Coordinate with Specialists</h3>
+                            <p>
+                                Work alongside the appointed architects, kitchen
+                                consultants and relevant project professionals.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="al-boh-process-step al-boh-reveal">
+                        <div class="al-boh-process-number">05</div>
+                        <div>
+                            <h3>Support Planning Alignment</h3>
+                            <p>
+                                Help maintain alignment between operational needs
+                                and the evolving project design.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY ASTRA LUXE -->
+        <section class="al-boh-section al-boh-why">
+            <div class="al-boh-container al-boh-why-grid">
+                <div class="al-boh-why-image al-boh-reveal">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1100&q=85"
+                        alt="Professional commercial kitchen workspace" loading="lazy">
+                    <div class="al-boh-image-note">
+                        <span>THE UNSEEN FOUNDATION</span>
+                        <strong>Operational excellence by design.</strong>
+                    </div>
+                </div>
+
+                <div class="al-boh-why-content al-boh-reveal">
+                    <span class="al-boh-kicker">THE ASTRALUXE PERSPECTIVE</span>
+                    <h2>Guest experience is shaped by <em>what happens behind the scenes.</em></h2>
+                    <p>
+                        BOH planning is most effective when it is considered as an
+                        integral part of the overall hospitality concept—not as an
+                        afterthought once guest-facing spaces have been designed.
+                    </p>
+                    <p>
+                        The AstraLuxe Advisory brings an operational perspective
+                        into project discussions, helping owners and project teams
+                        consider how support spaces, staff movement and service
+                        processes contribute to the property's day-to-day functioning.
+                    </p>
+
+                    <ul class="al-boh-check-list">
+                        <li><i class="fa-solid fa-check"></i> Operational requirements considered early</li>
+                        <li><i class="fa-solid fa-check"></i> Greater attention to functional relationships</li>
+                        <li><i class="fa-solid fa-check"></i> Coordination between operations and design teams</li>
+                        <li><i class="fa-solid fa-check"></i> Planning aligned with the hospitality concept</li>
+                    </ul>
+
+                    <a href="../contact.html" class="al-boh-inline-link">
+                        Connect with our advisory team <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR FOCUS -->
+        <section class="al-boh-section al-boh-focus">
+            <div class="al-boh-container">
+                <div class="al-boh-focus-box al-boh-reveal">
+                    <div class="al-boh-focus-icon">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                    </div>
+                    <div>
+                        <span class="al-boh-kicker">OUR FOCUS</span>
+                        <h2>Practical infrastructure. <em>Smoother operations.</em></h2>
+                        <p>
+                            The objective is to support practical, efficient service
+                            infrastructure that enables smooth day-to-day operations.
+                            Detailed engineering, food-safety and statutory design
+                            requirements should be validated by the relevant specialists.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="al-boh-section al-boh-faq">
+            <div class="al-boh-container al-boh-faq-grid">
+                <div class="al-boh-faq-heading al-boh-reveal">
+                    <span class="al-boh-kicker">COMMON QUESTIONS</span>
+                    <h2>Understanding <em>BOH consultancy.</em></h2>
+                    <p>
+                        A few things owners and project teams commonly want to know
+                        about back-of-house planning.
+                    </p>
+                    <a href="../contact.html" class="al-boh-inline-link">
+                        Have another question? Talk to us <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="al-boh-faq-list al-boh-reveal">
+
+                    <article class="al-boh-faq-item is-open">
+                        <button class="al-boh-faq-question" aria-expanded="true">
+                            <span>What does Back-of-House (BOH) consultancy cover?</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <div class="al-boh-faq-answer">
+                            <p>
+                                BOH consultancy considers the operational support spaces
+                                and workflows required to run a hotel or resort. This may
+                                include kitchens, stores, staff areas, housekeeping,
+                                receiving, waste functions and service circulation.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="al-boh-faq-item">
+                        <button class="al-boh-faq-question" aria-expanded="false">
+                            <span>Why should BOH planning be considered early?</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <div class="al-boh-faq-answer">
+                            <p>
+                                Considering BOH requirements during project development
+                                helps the team account for operational spaces, functional
+                                relationships and service movement alongside guest-facing
+                                areas, rather than addressing them only at a later stage.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="al-boh-faq-item">
+                        <button class="al-boh-faq-question" aria-expanded="false">
+                            <span>Does AstraLuxe prepare detailed kitchen or engineering designs?</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <div class="al-boh-faq-answer">
+                            <p>
+                                AstraLuxe provides operational planning inputs and
+                                coordination support. Detailed kitchen layouts,
+                                engineering designs, technical specifications and
+                                statutory requirements should be developed or validated
+                                by the relevant appointed specialists.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="al-boh-faq-item">
+                        <button class="al-boh-faq-question" aria-expanded="false">
+                            <span>Can BOH consultancy be undertaken for an existing hotel?</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <div class="al-boh-faq-answer">
+                            <p>
+                                Yes. BOH requirements can also be reviewed as part of an
+                                operational assessment, subject to the agreed scope and
+                                availability of relevant project or operational information.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="al-boh-faq-item">
+                        <button class="al-boh-faq-question" aria-expanded="false">
+                            <span>Who does AstraLuxe coordinate with?</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <div class="al-boh-faq-answer">
+                            <p>
+                                Depending on the project, coordination may involve the
+                                owner, architects, kitchen consultants, operational
+                                representatives and other appointed project professionals.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="al-boh-cta">
+            <div class="al-boh-cta-bg"></div>
+            <div class="al-boh-cta-overlay"></div>
+
+            <div class="al-boh-container al-boh-cta-content al-boh-reveal">
+                <span class="al-boh-kicker">LET'S PLAN WITH PURPOSE</span>
+                <h2>Build the operational foundation of <em>exceptional hospitality.</em></h2>
+                <p>
+                    Bring operational thinking into your next hotel or resort
+                    development with The AstraLuxe Advisory.
+                </p>
+                <a href="../contact.html" class="al-boh-btn al-boh-btn-gold">
+                    Start a Conversation <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <div id="whatsapp-placeholder"></div>
+
+    <script src="js/main.js"></script>
+    <script>
+      (() => {
+        const initBohPage = () => {
+          const page = document.querySelector(".al-boh-page");
+          if (!page) return;
+
+          const faqItems = page.querySelectorAll(".al-boh-faq-item");
+
+          faqItems.forEach((item) => {
+            const button = item.querySelector(".al-boh-faq-question");
+            if (!button) return;
+
+            button.setAttribute(
+              "aria-expanded",
+              String(item.classList.contains("is-open"))
+            );
+
+            button.addEventListener("click", () => {
+              const isOpen = item.classList.contains("is-open");
+
+              faqItems.forEach((faqItem) => {
+                faqItem.classList.remove("is-open");
+                faqItem
+                  .querySelector(".al-boh-faq-question")
+                  ?.setAttribute("aria-expanded", "false");
+              });
+
+              if (!isOpen) {
+                item.classList.add("is-open");
+                button.setAttribute("aria-expanded", "true");
+              }
+            });
+          });
+
+          const prefersReducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+          ).matches;
+
+          if (prefersReducedMotion || typeof gsap === "undefined") {
+            page.querySelectorAll(".al-boh-reveal").forEach((element) => {
+              element.style.opacity = "1";
+              element.style.transform = "none";
+            });
+          } else {
+            if (typeof ScrollTrigger !== "undefined") {
+              gsap.registerPlugin(ScrollTrigger);
+            }
+
+            const heroTimeline = gsap.timeline({
+              defaults: {
+                ease: "power3.out",
+                clearProps: "transform,opacity"
+              }
+            });
+
+            heroTimeline
+              .from(page.querySelector(".al-boh-hero-bg"), {
+                scale: 1.18,
+                duration: 1.8,
+                ease: "power2.out"
+              })
+              .from(
+                page.querySelector(".al-boh-hero .al-boh-eyebrow"),
+                {
+                  y: 25,
+                  opacity: 0,
+                  duration: 0.7
+                },
+                "-=1.1"
+              )
+              .from(
+                page.querySelector(".al-boh-hero h1"),
+                {
+                  y: 55,
+                  opacity: 0,
+                  duration: 1
+                },
+                "-=0.45"
+              )
+              .from(
+                page.querySelector(".al-boh-hero-content > p"),
+                {
+                  y: 25,
+                  opacity: 0,
+                  duration: 0.7
+                },
+                "-=0.5"
+              )
+              .from(
+                page.querySelectorAll(".al-boh-hero-actions > *"),
+                {
+                  y: 20,
+                  opacity: 0,
+                  stagger: 0.15,
+                  duration: 0.65
+                },
+                "-=0.35"
+              )
+              .from(
+                page.querySelector(".al-boh-hero-caption"),
+                {
+                  opacity: 0,
+                  y: 12,
+                  duration: 0.6
+                },
+                "-=0.2"
+              );
+
+            if (typeof ScrollTrigger !== "undefined") {
+              const specificallyAnimated = [
+                ".al-boh-pillar-card",
+                ".al-boh-scope-card",
+                ".al-boh-process-step",
+                ".al-boh-why-image",
+                ".al-boh-focus-box",
+                ".al-boh-cta-content"
+              ].join(",");
+
+              page.querySelectorAll(".al-boh-reveal").forEach((element) => {
+                if (
+                  element.closest(".al-boh-hero") ||
+                  element.matches(specificallyAnimated)
+                ) {
+                  return;
+                }
+
+                gsap.fromTo(
+                  element,
+                  {
+                    y: 45,
+                    opacity: 0
+                  },
+                  {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.9,
+                    ease: "power3.out",
+                    clearProps: "transform,opacity",
+                    scrollTrigger: {
+                      trigger: element,
+                      start: "top 88%",
+                      once: true
+                    }
+                  }
+                );
+              });
+
+              const animateGroup = (
+                selector,
+                triggerSelector,
+                from,
+                to,
+                start
+              ) => {
+                const targets = page.querySelectorAll(selector);
+                const trigger = page.querySelector(triggerSelector);
+
+                if (!targets.length || !trigger) return;
+
+                gsap.fromTo(targets, from, {
+                  ...to,
+                  clearProps: "transform,opacity",
+                  scrollTrigger: {
+                    trigger,
+                    start,
+                    once: true
+                  }
+                });
+              };
+
+              animateGroup(
+                ".al-boh-pillar-card",
+                ".al-boh-pillar-grid",
+                { y: 55, opacity: 0, rotateX: 5 },
+                {
+                  y: 0,
+                  opacity: 1,
+                  rotateX: 0,
+                  duration: 0.8,
+                  stagger: 0.14,
+                  ease: "power3.out"
+                },
+                "top 82%"
+              );
+
+              animateGroup(
+                ".al-boh-scope-card",
+                ".al-boh-scope-grid",
+                { y: 45, opacity: 0 },
+                {
+                  y: 0,
+                  opacity: 1,
+                  duration: 0.75,
+                  stagger: 0.12,
+                  ease: "power3.out"
+                },
+                "top 82%"
+              );
+
+              animateGroup(
+                ".al-boh-process-step",
+                ".al-boh-process",
+                { x: -35, opacity: 0 },
+                {
+                  x: 0,
+                  opacity: 1,
+                  duration: 0.75,
+                  stagger: 0.18,
+                  ease: "power3.out"
+                },
+                "top 80%"
+              );
+
+              animateGroup(
+                ".al-boh-why-image",
+                ".al-boh-why",
+                { clipPath: "inset(0 0 100% 0)" },
+                {
+                  clipPath: "inset(0 0 0% 0)",
+                  duration: 1.2,
+                  ease: "power3.inOut"
+                },
+                "top 75%"
+              );
+
+              animateGroup(
+                ".al-boh-focus-box",
+                ".al-boh-focus",
+                { y: 35, opacity: 0, scale: 0.98 },
+                {
+                  y: 0,
+                  opacity: 1,
+                  scale: 1,
+                  duration: 0.9,
+                  ease: "power3.out"
+                },
+                "top 82%"
+              );
+
+              animateGroup(
+                ".al-boh-cta-content > *",
+                ".al-boh-cta",
+                { y: 35, opacity: 0 },
+                {
+                  y: 0,
+                  opacity: 1,
+                  duration: 0.8,
+                  stagger: 0.15,
+                  ease: "power3.out"
+                },
+                "top 78%"
+              );
+            }
+          }
+
+          page.querySelectorAll('a[href^="#"]').forEach((link) => {
+            link.addEventListener("click", (event) => {
+              const targetId = link.getAttribute("href");
+              if (!targetId || targetId.length < 2) return;
+
+              const target = document.getElementById(targetId.slice(1));
+              if (!target) return;
+
+              event.preventDefault();
+              target.scrollIntoView({
+                behavior: prefersReducedMotion ? "auto" : "smooth",
+                block: "start"
+              });
+            });
+          });
+
+          const refreshScrollTrigger = () => {
+            if (typeof ScrollTrigger !== "undefined") {
+              ScrollTrigger.refresh();
+            }
+          };
+
+          if (document.readyState === "complete") {
+            refreshScrollTrigger();
+          } else {
+            window.addEventListener("load", refreshScrollTrigger, {
+              once: true
+            });
+          }
+        };
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", initBohPage, {
+            once: true
+          });
+        } else {
+          initBohPage();
+        }
+      })();
+    </script>
+</body>
+
+</html>

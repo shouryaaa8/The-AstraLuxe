@@ -1,0 +1,1936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/logo.png" />
+    <title> Luxury Hotel & Resort Brand Operator Search & Associations</title>
+        <!-- PREMIUM TYPOGRAPHY -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <style>
+        /* =====================================================
+   THE ASTRALUXE ADVISORY
+   SHARED HOSPITALITY SERVICE PAGE STYLES
+
+   Used across all hospitality service detail pages.
+   Prefix: al-hs-
+===================================================== */
+
+:root {
+  --hs-navy: #1E293B;
+  --hs-slate: #334155;
+  --hs-gold: #C5A880;
+  --hs-gold-dark: #A98C5C;
+  --hs-yellow: #D4AF37;
+  --hs-ivory: #F8FAFC;
+  --hs-text: #475569;
+  --hs-muted: #64748B;
+  --hs-line: rgba(51, 65, 85, 0.14);
+
+  --hs-head: 'Cormorant Garamond', Georgia, serif;
+  --hs-body: 'Lora', Georgia, serif;
+  --hs-ui: 'Montserrat', Arial, sans-serif;
+}
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+.al-hospitality-page {
+  margin: 0;
+  background: var(--hs-ivory);
+  color: var(--hs-navy);
+}
+
+.al-hospitality-page * {
+  box-sizing: border-box;
+}
+
+.al-hospitality-page img {
+  display: block;
+  width: 100%;
+}
+
+.al-hs-container {
+  width: min(1240px, calc(100% - 64px));
+  margin: auto;
+}
+
+.al-hs-section {
+  position: relative;
+  padding: 115px 0;
+  overflow: clip;
+}
+
+.al-hs-kicker {
+  color: var(--hs-gold-dark);
+  font: 600 10px/1.5 var(--hs-ui);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.al-hs-section h2,
+.al-hs-copy h2,
+.al-hs-faq h2 {
+  margin: 5rem 0 0;
+  font: 500 clamp(43px, 5vw, 69px)/0.98 var(--hs-head);
+  letter-spacing: -0.025em;
+}
+
+.al-hs-section h2 em,
+.al-hs-copy h2 em,
+.al-hs-faq h2 em {
+  color: var(--hs-gold-dark);
+  font-weight: 400;
+}
+
+.al-hs-section p,
+.al-hs-copy p,
+.al-hs-faq p {
+  color: var(--hs-text);
+  font: 400 14px/1.95 var(--hs-body);
+}
+
+.al-hs-container.al-hs-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(50px, 8vw, 110px);
+}
+
+
+/* =====================================================
+   BUTTONS AND LINKS
+===================================================== */
+
+.al-hs-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+
+  min-height: 54px;
+  padding: 0 24px;
+
+  background: var(--hs-yellow);
+  color: #172033;
+
+  text-decoration: none;
+
+  font: 600 10px var(--hs-ui);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+
+  transition: 0.3s ease;
+}
+
+.al-hs-button-2 {
+  position: relative;
+  background: var(--hs-yellow);
+  gap: 25px;
+
+  min-height: 54px;
+  padding: 24px 24px;
+
+  text-decoration: none;
+
+  font: 600 12px var(--hs-ui);
+  letter-spacing: 0.13em;
+}
+
+.al-hs-button-2:hover {
+  background: #dfc79e;
+  transform: translateY(-3px);
+}
+
+.al-hs-button:hover {
+  background: #dfc79e;
+  transform: translateY(-3px);
+}
+
+.al-hs-button span {
+  font-size: 17px;
+}
+
+.al-hs-underlink {
+  display: inline-flex;
+  gap: 12px;
+
+  margin-top: 16px;
+  padding-bottom: 8px;
+
+  border-bottom: 1px solid var(--hs-gold);
+
+  color: var(--hs-navy);
+  font: 600 10px var(--hs-ui);
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.al-hs-underlink span {
+  color: var(--hs-gold-dark);
+  font-size: 16px;
+}
+
+
+/* =====================================================
+   01. HERO SECTION
+===================================================== */
+
+.al-hs-hero {
+  position: relative;
+
+  min-height: min(850px, 90svh);
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background: #101b2b;
+  color: #fff;
+}
+
+.al-hs-hero__image,
+.al-hs-hero__shade {
+  position: absolute;
+  inset: 0;
+}
+
+.al-hs-hero__image {
+  background:
+    url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2400&q=90')
+    center 48% / cover no-repeat;
+
+  transform: scale(1.06);
+}
+
+.al-hs-hero__shade {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 19, 32, 0.86),
+      rgba(10, 19, 32, 0.57) 48%,
+      rgba(10, 19, 32, 0.1)
+    ),
+    linear-gradient(
+      0deg,
+      rgba(10, 19, 32, 0.45),
+      transparent 40%
+    );
+}
+
+.al-hs-hero__content {
+  position: relative;
+  z-index: 1;
+  padding-block: 100px;
+}
+
+.al-hs-eyebrow {
+  color: #e0c99f;
+
+  font: 600 10px var(--hs-ui);
+  letter-spacing: 0.19em;
+}
+
+.al-hs-eyebrow span {
+  display: inline-block;
+
+  width: 34px;
+  height: 1px;
+
+  margin-right: 8px;
+
+  background: var(--hs-gold);
+  vertical-align: middle;
+}
+
+.al-hs-eyebrow b {
+  padding: 0 8px;
+  opacity: 0.55;
+}
+
+.al-hs-hero h1 {
+  max-width: 900px;
+
+  margin: 32px 0 22px;
+
+  font: 500 clamp(60px, 8.5vw, 112px)/0.83 var(--hs-head);
+  letter-spacing: -0.035em;
+}
+
+.al-hs-hero h1 em {
+  color: #ddc49a;
+  font-weight: 400;
+}
+
+.al-hs-hero__content > p {
+  max-width: 570px;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font: 400 16px/1.9 var(--hs-body);
+}
+
+.al-hs-actions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+
+  margin-top: 35px;
+}
+
+.al-hs-scroll {
+  color: white;
+  text-decoration: none;
+
+  font: 600 10px var(--hs-ui);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.al-hs-scroll span {
+  color: var(--hs-gold);
+  font-size: 17px;
+  margin-left: 8px;
+}
+
+.al-hs-hero__foot {
+  position: absolute;
+
+  bottom: 25px;
+  left: 32px;
+  right: 32px;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: #ffffffa8;
+
+  font: 500 9px var(--hs-ui);
+  letter-spacing: 0.17em;
+}
+
+
+/* =====================================================
+   BREADCRUMB
+===================================================== */
+
+.al-hs-breadcrumb {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  padding-block: 17px;
+
+  color: #87909d;
+
+  font: 500 9px var(--hs-ui);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.al-hs-breadcrumb a {
+  color: var(--hs-slate);
+  text-decoration: none;
+}
+
+.al-hs-breadcrumb a:hover {
+  color: var(--hs-gold-dark);
+}
+
+
+/* =====================================================
+   02. SERVICE OVERVIEW
+===================================================== */
+
+.al-hs-overview {
+  background: var(--hs-ivory);
+}
+
+.al-hs-photo {
+  position: relative;
+  min-height: 590px;
+}
+
+.al-hs-photo img {
+  position: absolute;
+  inset: 0;
+
+  height: 100%;
+  object-fit: cover;
+}
+
+.al-hs-photo::after {
+  content: '';
+
+  position: absolute;
+  inset: 13px -13px -13px 13px;
+
+  /* border: 1px solid var(--hs-gold); */
+
+  pointer-events: none;
+}
+
+.al-hs-photo-caption {
+  position: absolute;
+  z-index: 1;
+
+  bottom: 0;
+  left: 0;
+
+  padding: 22px;
+
+  color: white;
+
+  background: linear-gradient(
+    0deg,
+    #0f172acc,
+    transparent
+  );
+
+  font: 600 9px var(--hs-ui);
+  letter-spacing: 0.15em;
+}
+
+.al-hs-copy .al-hs-lead {
+  font-size: 14px;
+  color: var(--hs-slate);
+}
+
+.al-hs-copy p {
+  margin: 17px 0;
+}
+
+.al-hs-rule {
+  width: 65px;
+  height: 1px;
+
+  margin: 27px 0;
+
+  background: var(--hs-gold);
+}
+
+
+/* =====================================================
+   03. SCOPE OF SERVICES
+===================================================== */
+
+.al-hs-scope {
+  background: #f0f2f4;
+}
+
+.al-hs-section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 40px;
+
+  margin-bottom: 55px;
+}
+
+.al-hs-section-head > p {
+  max-width: 340px;
+  margin: 0 0 6px;
+
+  color: var(--hs-muted);
+}
+
+.al-hs-scope-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid var(--hs-line);
+  border-left: 1px solid var(--hs-line);
+}
+
+.al-hs-scope-grid article {
+  position: relative;
+
+  min-height: 285px;
+  padding: 34px 30px;
+
+  border-right: 1px solid var(--hs-line);
+  border-bottom: 1px solid var(--hs-line);
+
+  transition:
+    background 0.35s ease,
+    transform 0.35s ease;
+}
+
+.al-hs-scope-grid article:hover {
+  background: white;
+  transform: translateY(-4px);
+}
+
+.al-hs-scope-grid article > span {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+
+  color: var(--hs-gold-dark);
+
+  font: 500 11px var(--hs-ui);
+}
+
+.al-hs-scope-grid article > i {
+  display: grid;
+  place-items: center;
+
+  width: 45px;
+  height: 45px;
+
+  margin-bottom: 28px;
+
+  border: 1px solid var(--hs-yellow);
+  border-radius: 50%;
+
+  color: var(--hs-yellow);
+}
+
+.al-hs-scope-grid h3 {
+  max-width: 270px;
+
+  margin: 0 0 12px;
+
+  font: 600 25px/1.08 var(--hs-head);
+}
+
+.al-hs-scope-grid p {
+  margin: 0;
+
+  color: var(--hs-muted);
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   04. OUR APPROACH
+===================================================== */
+
+.al-hs-approach {
+  background: var(--hs-navy);
+  color: white;
+}
+
+.al-hs-approach-bg,
+.al-hs-approach-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.al-hs-approach-bg {
+  background:
+    url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=85')
+    center / cover;
+
+  opacity: 0.24;
+}
+
+.al-hs-approach-shade {
+  background: linear-gradient(
+    90deg,
+    #0f172af5,
+    #0f172ad9 60%,
+    #0f172aa8
+  );
+}
+
+.al-hs-approach-grid {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 95px;
+}
+
+.al-hs-approach h2,
+.al-hs-cta h2 {
+  color: white;
+}
+
+.al-hs-approach h2 em,
+.al-hs-cta h2 em {
+  color: #dfc79e;
+}
+
+.al-hs-approach-intro {
+  max-width: 360px;
+  margin-top: 25px;
+
+  color: #ffffffb8 !important;
+}
+
+.al-hs-steps {
+  position: relative;
+  padding-left: 45px;
+}
+
+.al-hs-progress {
+  position: absolute;
+
+  left: 12px;
+  top: 10px;
+  bottom: 10px;
+
+  width: 1px;
+
+  background: #ffffff38;
+}
+
+.al-hs-progress span {
+  display: block;
+
+  width: 100%;
+  height: 0;
+
+  background: var(--hs-gold);
+}
+
+.al-hs-steps article {
+  position: relative;
+
+  display: grid;
+  gap: 9px;
+
+  padding: 0 0 34px;
+
+  opacity: 0.48;
+
+  transition: opacity 0.35s ease;
+}
+
+.al-hs-steps article.active {
+  opacity: 1;
+}
+
+.al-hs-steps article::before {
+  content: '';
+
+  position: absolute;
+
+  left: -39px;
+  top: 4px;
+
+  width: 13px;
+  height: 13px;
+
+  border: 1px solid var(--hs-gold);
+  border-radius: 50%;
+
+  background: var(--hs-navy);
+}
+
+.al-hs-steps article > b {
+  color: var(--hs-gold);
+  font: 500 10px var(--hs-ui);
+}
+
+.al-hs-steps h3 {
+  margin: 4px 0 8px;
+
+  color: white;
+
+  font: 500 28px var(--hs-head);
+}
+
+.al-hs-steps p {
+  max-width: 500px;
+
+  margin: 0;
+
+  color: #ffffffb5;
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   05. WHY ASTRALUXE
+===================================================== */
+
+.al-hs-difference {
+  background: var(--hs-ivory);
+}
+
+.al-hs-difference-grid {
+  margin-top: 55px;
+}
+
+.al-hs-difference-list {
+  border-top: 1px solid var(--hs-line);
+  margin-top: 4rem;
+}
+
+.al-hs-difference-list article {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 20px;
+
+  padding: 25px 0;
+
+  border-bottom: 1px solid var(--hs-line);
+}
+
+.al-hs-difference-list b {
+  color: var(--hs-gold-dark);
+  font: 500 10px var(--hs-ui);
+}
+
+.al-hs-difference-list h3 {
+  margin: 0 0 8px;
+
+  font: 600 27px var(--hs-head);
+}
+
+.al-hs-difference-list p {
+  margin: 0;
+
+  color: var(--hs-muted);
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   06. FAQ
+===================================================== */
+
+.al-hs-faq {
+  background: #f0f2f4;
+}
+
+.al-hs-faq-grid {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 95px;
+}
+
+.al-hs-faq-grid > div:first-child > p {
+  max-width: 320px;
+  margin-top: 25px;
+}
+
+.al-hs-accordion {
+  border-top: 1px solid var(--hs-line);
+}
+
+.al-hs-accordion details {
+  border-bottom: 1px solid var(--hs-line);
+}
+
+.al-hs-accordion summary {
+  display: grid;
+  grid-template-columns: 34px 1fr 18px;
+  align-items: center;
+  gap: 12px;
+
+  padding: 23px 0;
+
+  cursor: pointer;
+  list-style: none;
+
+  font: 600 21px/1.2 var(--hs-head);
+}
+
+.al-hs-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.al-hs-accordion summary span {
+  color: var(--hs-gold-dark);
+  font: 500 9px var(--hs-ui);
+}
+
+.al-hs-accordion summary i {
+  color: var(--hs-gold-dark);
+  font-size: 11px;
+
+  transition: transform 0.25s ease;
+}
+
+.al-hs-accordion details[open] summary i {
+  transform: rotate(45deg);
+}
+
+.al-hs-accordion details > p {
+  margin: 0;
+  padding: 0 30px 22px 46px;
+
+  color: var(--hs-muted);
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   07. FINAL CTA
+===================================================== */
+
+.al-hs-cta {
+  position: relative;
+
+  min-height: 560px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background: var(--hs-navy);
+}
+
+.al-hs-cta-bg,
+.al-hs-cta-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.al-hs-cta-bg {
+  background:
+    url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2200&q=88')
+    center / cover;
+}
+
+.al-hs-cta-shade {
+  background: linear-gradient(
+    90deg,
+    #0f172af0,
+    #0f172aa8 65%,
+    #0f172a55
+  );
+}
+
+.al-hs-cta-content {
+  position: relative;
+  padding-block: 100px;
+}
+
+.al-hs-cta h2 {
+  max-width: 900px;
+
+  margin: 22px 0;
+
+  font: 500 clamp(46px, 6vw, 78px)/0.94 var(--hs-head);
+}
+
+.al-hs-cta-content > p {
+  max-width: 560px;
+
+  color: #ffffffc4;
+
+  font: 400 14px/1.9 var(--hs-body);
+
+  margin: 0 0 30px;
+}
+
+
+/* =====================================================
+   GSAP INITIAL STATES
+===================================================== */
+
+.al-hs-reveal {
+  clip-path: inset(0 0 100% 0);
+}
+
+
+/* =====================================================
+   TABLET RESPONSIVENESS
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .al-hs-section {
+    padding: 90px 0;
+  }
+
+  .al-hs-approach-grid,
+  .al-hs-faq-grid {
+    gap: 50px;
+  }
+
+  .al-hs-photo {
+    min-height: 510px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVENESS
+===================================================== */
+
+@media (max-width: 720px) {
+
+  .al-hs-container {
+    width: calc(100% - 40px);
+  }
+
+  .al-hs-section {
+    padding: 72px 0;
+  }
+
+  .al-hs-hero {
+    min-height: 86svh;
+    align-items: end;
+  }
+
+  .al-hs-hero__image {
+    background-position: 58% center;
+  }
+
+  .al-hs-hero__shade {
+    background: linear-gradient(
+      0deg,
+      #0a1320ed,
+      #0a132080 72%,
+      #0a132040
+    );
+  }
+
+  .al-hs-hero__content {
+    padding-block: 130px 105px;
+  }
+
+  .al-hs-hero h1 {
+    font-size: clamp(55px, 14vw, 80px);
+  }
+
+  .al-hs-hero__content > p {
+    font-size: 14px;
+  }
+
+  .al-hs-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .al-hs-hero__foot {
+    left: 20px;
+    right: 20px;
+  }
+
+  .al-hs-breadcrumb {
+    font-size: 8px;
+    gap: 8px;
+  }
+
+  .al-hs-two-col,
+  .al-hs-approach-grid,
+  .al-hs-faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .al-hs-two-col {
+    gap: 50px;
+  }
+
+  .al-hs-photo {
+    min-height: 420px;
+    margin-right: 12px;
+  }
+
+  .al-hs-section-head {
+    display: block;
+  }
+
+  .al-hs-section-head > p {
+    margin-top: 22px;
+  }
+
+  .al-hs-scope-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .al-hs-scope-grid article {
+    min-height: 0;
+    padding: 28px 24px 32px;
+  }
+
+  .al-hs-approach-grid {
+    gap: 45px;
+  }
+
+  .al-hs-steps {
+    padding-left: 38px;
+  }
+
+  .al-hs-steps article::before {
+    left: -31px;
+  }
+
+  .al-hs-difference-grid {
+    gap: 45px;
+  }
+
+  .al-hs-faq-grid {
+    gap: 40px;
+  }
+
+  .al-hs-accordion summary {
+    font-size: 19px;
+    grid-template-columns: 28px 1fr 16px;
+  }
+
+  .al-hs-accordion details > p {
+    padding-left: 40px;
+  }
+
+  .al-hs-cta {
+    min-height: 540px;
+  }
+
+  .al-hs-cta-content {
+    padding-block: 80px;
+  }
+
+  .al-hs-cta h2 {
+    font-size: clamp(45px, 11vw, 65px);
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION ACCESSIBILITY
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .al-hospitality-page * {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
+}
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+
+    <!-- =========================================
+         01. HERO SECTION
+    ========================================== -->
+
+    <section class="al-hs-hero">
+
+      <div
+        class="al-hs-hero__image"
+        role="img"
+        aria-label="Luxury resort with infinity pool and tropical landscape">
+      </div>
+
+      <div class="al-hs-hero__shade"></div>
+
+      <div class="al-hs-container al-hs-hero__content">
+
+        <div class="al-hs-eyebrow">
+          <span></span>
+          Luxury Hotel 
+          <b>/</b>
+          Resort Brand Operator Search & Associations
+        </div>
+
+        <h1>
+          The Right Brand.<br>
+          <em>The Right Vision.</em><br>
+          A Lasting Legacy.
+        </h1>
+
+        <p>
+          Strategic hotel and resort brand identification, operator
+          evaluation and partnership coordination shaped around
+          your project's ambition.
+        </p>
+
+        <div class="al-hs-actions">
+
+          <a class="al-hs-button" href="../contact.html">
+            Discuss Your Project
+            <span>↗</span>
+          </a>
+
+          <!-- <a class="al-hs-scroll" href="#approach">
+            Discover our approach
+            <span>↓</span>
+          </a> -->
+
+        </div>
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         02. SERVICE OVERVIEW
+    ========================================== -->
+
+    <section class="al-hs-section al-hs-overview" id="overview">
+
+      <div class="al-hs-service-overview al-hs-container">
+
+        <div class="al-hs-photo al-hs-reveal">
+
+          <!-- IMAGE: Luxury hotel lobby -->
+          <img
+            src="https://images.unsplash.com/photo-1601600576337-c1d8a0d1373c?auto=format&fit=crop&w=1400&q=88"
+            alt="Elegant luxury hotel lobby and architectural detailing"
+            loading="lazy"
+            style="border-radius: 2rem;"
+          >
+
+
+        </div>
+
+
+        <div class="al-hs-copy">
+
+          <!-- <span class="al-hs-kicker">
+            THE VALUE OF THE RIGHT ASSOCIATION
+          </span> -->
+
+          <h2>
+            Building the right<br>
+            <em>hospitality association.</em>
+          </h2>
+
+          <div class="al-hs-rule"></div>
+
+          <p class="al-hs-lead">
+            The choice of a hospitality brand extends far beyond its
+            name. It influences a property's identity, guest experience,
+            operational philosophy, market positioning and long-term
+            commercial direction.
+          </p>
+
+          <p>
+            The AstraLuxe Advisory works alongside hotel owners,
+            landowners and developers to identify suitable domestic
+            and international hotel brands and operating partners.
+            Our evaluation considers the project's location,
+            development scale, investment outlook, intended guest
+            profile and long-term vision.
+          </p>
+
+          <p>
+            From initial brand identification and compatibility
+            assessment to partner shortlisting and commercial
+            discussions, we facilitate a structured process that
+            helps clients make informed partnership decisions.
+          </p>
+
+          <a class="al-hs-underlink" href="../contact.html">
+            Speak with our advisory team
+            <span>↗</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         03. SCOPE OF SERVICES
+    ========================================== -->
+
+    <section class="al-hs-section al-hs-scope">
+
+      <div class="al-hs-container">
+
+        <div class="al-hs-section-head">
+
+          <div>
+            <span class="al-hs-kicker">OUR EXPERTISE</span>
+
+            <h2>
+              A considered process.<br>
+              <em>End-to-end support.</em>
+            </h2>
+          </div>
+
+          <p>
+            We bring structure and informed perspective to each
+            stage of the brand association journey.
+          </p>
+
+        </div>
+
+
+        <div class="al-hs-scope-grid">
+
+          <article>
+            <span>01</span>
+            <i class="fa-solid fa-hotel"></i>
+
+            <h3>Brand & Operator Identification</h3>
+
+            <p>
+              Identifying potential domestic and international
+              hospitality brands and operators in line with the
+              project's profile, location, scale and positioning.
+            </p>
+          </article>
+
+
+          <article>
+            <span>02</span>
+            <i class="fa-solid fa-compass-drafting"></i>
+
+            <h3>Brand Compatibility Assessment</h3>
+
+            <p>
+              Assessing alignment between the proposed concept,
+              intended guest profile, market opportunity, brand
+              standards and operating expectations.
+            </p>
+          </article>
+
+
+          <article>
+            <span>03</span>
+            <i class="fa-solid fa-list-check"></i>
+
+            <h3>Partner Shortlisting & Evaluation</h3>
+
+            <p>
+              Creating a considered shortlist and evaluating
+              prospective partners against project-specific
+              priorities and commercial considerations.
+            </p>
+          </article>
+
+
+          <article>
+            <span>04</span>
+            <i class="fa-solid fa-handshake"></i>
+
+            <h3>Initiating Brand Discussions</h3>
+
+            <p>
+              Supporting introductions and coordinating initial
+              conversations between project stakeholders and
+              prospective hospitality partners.
+            </p>
+          </article>
+
+
+          <article>
+            <span>05</span>
+            <i class="fa-solid fa-file-contract"></i>
+
+            <h3>Commercial Discussion Advisory</h3>
+
+            <p>
+              Providing advisory input during discussions around
+              commercial structures, responsibilities, deliverables
+              and key partnership considerations.
+            </p>
+          </article>
+
+
+          <article>
+            <span>06</span>
+            <i class="fa-solid fa-route"></i>
+
+            <h3>Association Process Coordination</h3>
+
+            <p>
+              Coordinating the process as the client evaluates
+              prospective partners and progresses discussions
+              towards a suitable brand association.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         04. OUR APPROACH
+    ========================================== -->
+
+    <section class="al-hs-section al-hs-approach" id="approach">
+
+      <div class="al-hs-approach-bg"></div>
+      <div class="al-hs-approach-shade"></div>
+
+      <div class="al-hs-container al-hs-approach-grid">
+
+        <div>
+
+          <span class="al-hs-kicker">OUR APPROACH</span>
+
+          <h2>
+            From project vision<br>
+            to the <em>right association.</em>
+          </h2>
+
+          <p class="al-hs-approach-intro">
+            Every project is different. Our process is designed
+            to bring clarity to the decisions that shape its
+            hospitality identity.
+          </p>
+
+        </div>
+
+
+        <div class="al-hs-steps">
+
+          <div class="al-hs-progress">
+            <span></span>
+          </div>
+
+
+          <article>
+            <b>01</b>
+
+            <div>
+              <h3>Understand the Project</h3>
+
+              <p>
+                Review the location, development concept, scale,
+                target audience, investment outlook and objectives.
+              </p>
+            </div>
+          </article>
+
+
+          <article>
+            <b>02</b>
+
+            <div>
+              <h3>Identify Potential Brands</h3>
+
+              <p>
+                Explore domestic and international brands and
+                operators that may align with the proposed project.
+              </p>
+            </div>
+          </article>
+
+
+          <article>
+            <b>03</b>
+
+            <div>
+              <h3>Evaluate Compatibility</h3>
+
+              <p>
+                Consider brand positioning, operating models,
+                project requirements and potential partnership
+                opportunities.
+              </p>
+            </div>
+          </article>
+
+
+          <article>
+            <b>04</b>
+
+            <div>
+              <h3>Coordinate Discussions</h3>
+
+              <p>
+                Facilitate introductions and support discussions
+                around commercial and operational considerations.
+              </p>
+            </div>
+          </article>
+
+
+          <article>
+            <b>05</b>
+
+            <div>
+              <h3>Support the Association Process</h3>
+
+              <p>
+                Assist coordination as the client evaluates options
+                and progresses with a suitable hospitality partner.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         05. WHY ASTRALUXE
+    ========================================== -->
+
+    <section class="al-hs-section al-hs-difference">
+
+      <div class="al-hs-container">
+
+        <div class="al-hs-section-head">
+
+          <div>
+            <span class="al-hs-kicker">
+              THE ASTRALUXE PERSPECTIVE
+            </span>
+
+            <h2>
+              Beyond brand selection.<br>
+              <em>Towards strategic alignment.</em>
+            </h2>
+          </div>
+
+          <!-- <p>
+            The right association should make sense for the project—not
+            simply for the brand name. Our advisory approach keeps the
+            owner's vision and long-term direction at the centre.
+          </p> -->
+
+        </div>
+
+
+        <div class="al-hs-two-col al-hs-difference-grid">
+
+          <div class="al-hs-photo al-hs-reveal">
+
+            <!-- IMAGE: Premium hospitality interior -->
+            <img
+              src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=88"
+              alt="Refined hospitality interior designed around guest experience"
+              loading="lazy"
+            >
+
+            <span class="al-hs-photo-caption">
+              A VISION ALIGNED WITH THE PROJECT
+            </span>
+
+          </div>
+
+
+          <div class="al-hs-difference-list">
+
+            <article>
+              <b>01</b>
+
+              <div>
+                <h3>Project-led evaluation</h3>
+
+                <p>
+                  Recommendations are shaped around the location,
+                  scale, concept, investment outlook and intended
+                  guest profile.
+                </p>
+              </div>
+            </article>
+
+
+            <article>
+              <b>02</b>
+
+              <div>
+                <h3>Hospitality perspective</h3>
+
+                <p>
+                  We consider brand positioning alongside operating
+                  expectations, guest experience and development
+                  requirements.
+                </p>
+              </div>
+            </article>
+
+
+            <article>
+              <b>03</b>
+
+              <div>
+                <h3>Structured coordination</h3>
+
+                <p>
+                  We help bring clarity and continuity to partner
+                  identification, evaluation and discussions.
+                </p>
+              </div>
+            </article>
+
+
+            <article>
+              <b>04</b>
+
+              <div>
+                <h3>Long-term orientation</h3>
+
+                <p>
+                  Our focus is on an association that supports the
+                  project's intended identity and long-term direction.
+                </p>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+
+    <!-- =========================================
+         07. FINAL CTA
+    ========================================== -->
+
+    <section class="al-hs-cta">
+
+      <div class="al-hs-cta-bg"></div>
+      <div class="al-hs-cta-shade"></div>
+
+      <div class="al-hs-container al-hs-cta-content">
+
+        <!-- <span class="al-hs-kicker">
+          LET'S BUILD SOMETHING ICONIC
+        </span> -->
+
+        <h2>
+          Every iconic destination<br>
+          begins with the <em>right partnership.</em>
+        </h2>
+
+        <p>
+          Tell us about your hospitality project. Let's explore
+          the brand association opportunities that may align
+          with your vision.
+        </p>
+
+        <a class="al-hs-button-2" href="../contact.html">
+            Discuss Your Project
+            <span>↗</span>
+          </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+    
+    <div id="footer-placeholder"></div>
+    <div id="whatsapp-placeholder"></div>
+
+    <script src="js/main.js"></script>
+
+    <script>
+      /* =====================================================
+      THE ASTRALUXE ADVISORY
+      SHARED HOSPITALITY SERVICE PAGE ANIMATIONS
+
+      GSAP + ScrollTrigger
+    ===================================================== */
+
+    (() => {
+
+
+      /* =====================================================
+        01. ACCESSIBILITY CHECK
+      ===================================================== */
+
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      const hasGSAP = typeof gsap !== "undefined";
+
+
+      /* =====================================================
+        02. FAQ ACCORDION
+        Keep only one FAQ open at a time.
+      ===================================================== */
+
+      const faqItems = [
+        ...document.querySelectorAll(".al-hs-accordion details")
+      ];
+
+      faqItems.forEach((item) => {
+
+        item.addEventListener("toggle", () => {
+
+          if (!item.open) return;
+
+          faqItems.forEach((otherItem) => {
+
+            if (otherItem !== item) {
+              otherItem.open = false;
+            }
+
+          });
+
+        });
+
+      });
+
+
+      /* =====================================================
+        03. FALLBACK WHEN GSAP IS UNAVAILABLE
+      ===================================================== */
+
+      if (reducedMotion || !hasGSAP) {
+
+        document
+          .querySelectorAll(".al-hs-reveal")
+          .forEach((element) => {
+
+            element.style.opacity = "1";
+            element.style.clipPath = "none";
+            element.style.transform = "none";
+
+          });
+
+        return;
+      }
+
+
+      /* =====================================================
+        04. REGISTER SCROLLTRIGGER
+      ===================================================== */
+
+      if (typeof ScrollTrigger !== "undefined") {
+        gsap.registerPlugin(ScrollTrigger);
+      }
+
+
+      /* =====================================================
+        05. HERO IMAGE ANIMATION
+        Slow cinematic image reveal.
+      ===================================================== */
+
+      const heroImage = document.querySelector(
+        ".al-hs-hero__image"
+      );
+
+      if (heroImage) {
+
+        gsap.to(heroImage, {
+
+          scale: 1,
+
+          duration: 2,
+
+          ease: "power2.out"
+
+        });
+
+      }
+
+
+      /* =====================================================
+        06. HERO CONTENT ANIMATION
+        Staggered heading and text entrance.
+      ===================================================== */
+
+      const heroContent = document.querySelector(
+        ".al-hs-hero__content"
+      );
+
+      if (heroContent) {
+
+        gsap.from(heroContent.children, {
+
+          y: 32,
+
+          opacity: 0,
+
+          duration: 1,
+
+          stagger: 0.14,
+
+          ease: "power3.out",
+
+          delay: 0.15
+
+        });
+
+      }
+
+
+      /* =====================================================
+        07. GENERAL SCROLL REVEALS
+      ===================================================== */
+
+      document.querySelectorAll(
+        [
+          ".al-hs-kicker",
+          ".al-hs-copy h2",
+          ".al-hs-copy p",
+          ".al-hs-underlink",
+          ".al-hs-section-head",
+          ".al-hs-faq-grid > div:first-child"
+        ].join(",")
+      ).forEach((element) => {
+
+        gsap.from(element, {
+
+          y: 26,
+
+          opacity: 0,
+
+          duration: 0.85,
+
+          ease: "power3.out",
+
+          scrollTrigger: {
+
+            trigger: element,
+
+            start: "top 88%",
+
+            once: true
+
+          }
+
+        });
+
+      });
+
+
+      /* =====================================================
+        08. IMAGE CLIP-PATH REVEAL
+      ===================================================== */
+
+      document
+        .querySelectorAll(".al-hs-reveal")
+        .forEach((element) => {
+
+          gsap.to(element, {
+
+            clipPath: "inset(0 0 0% 0)",
+
+            duration: 1.15,
+
+            ease: "power3.inOut",
+
+            scrollTrigger: {
+
+              trigger: element,
+
+              start: "top 82%",
+
+              once: true
+
+            }
+
+          });
+
+        });
+
+
+      /* =====================================================
+        09. SCOPE OF SERVICES CARD ANIMATION
+        Six cards enter with a staggered reveal.
+      ===================================================== */
+
+      const scopeCards = gsap.utils.toArray(
+        ".al-hs-scope-grid article"
+      );
+
+      if (scopeCards.length) {
+
+        gsap.from(scopeCards, {
+
+          y: 36,
+
+          opacity: 0,
+
+          duration: 0.8,
+
+          stagger: 0.1,
+
+          ease: "power3.out",
+
+          scrollTrigger: {
+
+            trigger: ".al-hs-scope-grid",
+
+            start: "top 82%",
+
+            once: true
+
+          }
+
+        });
+
+      }
+
+
+      /* =====================================================
+        10. APPROACH TIMELINE ANIMATION
+        Progress line fills as the user scrolls.
+      ===================================================== */
+
+      const timelineSteps = gsap.utils.toArray(
+        ".al-hs-steps article"
+      );
+
+      const progressLine = document.querySelector(
+        ".al-hs-progress span"
+      );
+
+
+      if (progressLine && timelineSteps.length) {
+
+        // Animate vertical progress line.
+        gsap.to(progressLine, {
+
+          height: "100%",
+
+          ease: "none",
+
+          scrollTrigger: {
+
+            trigger: ".al-hs-steps",
+
+            start: "top 72%",
+
+            end: "bottom 65%",
+
+            scrub: 0.5
+
+          }
+
+        });
+
+
+        // Highlight the active timeline stage.
+        timelineSteps.forEach((step) => {
+
+          ScrollTrigger.create({
+
+            trigger: step,
+
+            start: "top 72%",
+
+            end: "bottom 55%",
+
+            onEnter: () => {
+              step.classList.add("active");
+            },
+
+            onEnterBack: () => {
+              step.classList.add("active");
+            },
+
+            onLeave: () => {
+              step.classList.remove("active");
+            },
+
+            onLeaveBack: () => {
+              step.classList.remove("active");
+            }
+
+          });
+
+        });
+
+      }
+
+
+      /* =====================================================
+        11. WHY ASTRALUXE SECTION
+        Staggered horizontal reveal.
+      ===================================================== */
+
+      const differencePoints = gsap.utils.toArray(
+        ".al-hs-difference-list article"
+      );
+
+      if (differencePoints.length) {
+
+        gsap.from(differencePoints, {
+
+          x: 30,
+
+          opacity: 0,
+
+          duration: 0.75,
+
+          stagger: 0.12,
+
+          ease: "power3.out",
+
+          scrollTrigger: {
+
+            trigger: ".al-hs-difference-list",
+
+            start: "top 82%",
+
+            once: true
+
+          }
+
+        });
+
+      }
+
+
+      /* =====================================================
+        12. FINAL CTA ANIMATION
+      ===================================================== */
+
+      const ctaContent = document.querySelector(
+        ".al-hs-cta-content"
+      );
+
+      if (ctaContent) {
+
+        gsap.from(ctaContent.children, {
+
+          y: 28,
+
+          opacity: 0,
+
+          duration: 0.9,
+
+          stagger: 0.12,
+
+          ease: "power3.out",
+
+          scrollTrigger: {
+
+            trigger: ctaContent,
+
+            start: "top 82%",
+
+            once: true
+
+          }
+
+        });
+
+      }
+
+
+    })();
+    </script>
+</body>
+</html>

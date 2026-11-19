@@ -1,0 +1,2141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore studio and service apartment investment opportunities with The AstraLuxe Advisory. Buying assistance, investment guidance, development support and documentation coordination.">
+  <title>Studio &amp; Service Apartments | The AstraLuxe Advisory</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* =========================================================
+   THE ASTRALUXE ADVISORY
+   STUDIO & SERVICE APARTMENTS
+   Standalone page stylesheet
+   All styles scoped to .al-ssa-page / .al-ssa-*
+========================================================= */
+
+.al-ssa-page {
+  --ssa-navy: #1e293b;
+  --ssa-slate: #334155;
+  --ssa-gold: #D4AF37;
+  --ssa-gold-dark: #a98a60;
+  --ssa-ivory: #f8f7f3;
+  --ssa-white: #ffffff;
+  --ssa-text: #253044;
+  --ssa-muted: #697586;
+  --ssa-border: rgba(30, 41, 59, 0.12);
+
+  color: var(--ssa-text);
+  font-family: "Lora", Georgia, serif;
+  overflow: hidden;
+}
+
+.al-ssa-page *,
+.al-ssa-page *::before,
+.al-ssa-page *::after {
+  box-sizing: border-box;
+}
+
+.al-ssa-page img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.al-ssa-page a {
+  text-decoration: none;
+}
+
+.al-ssa-container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.al-ssa-section {
+  padding: 112px 0;
+}
+
+.al-ssa-kicker,
+.al-ssa-eyebrow {
+  display: inline-block;
+  color: var(--ssa-gold-dark);
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.7px;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.al-ssa-page h1,
+.al-ssa-page h2,
+.al-ssa-page h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+}
+
+.al-ssa-page h2 {
+  margin: 18px 0 22px;
+  color: var(--ssa-navy);
+  font-size: clamp(42px, 5vw, 65px);
+  line-height: 0.99;
+}
+
+.al-ssa-page h2 em {
+  color: var(--ssa-gold-dark);
+  font-weight: 500;
+}
+
+.al-ssa-page p {
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+.al-ssa-btn {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 0 25px;
+  border: 1px solid transparent;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.al-ssa-btn:hover {
+  transform: translateY(-3px);
+}
+
+.al-ssa-btn-gold {
+  background: var(--ssa-gold);
+  color: var(--ssa-navy);
+}
+
+.al-ssa-btn-gold:hover {
+  background: #ddc5a3;
+  color: var(--ssa-navy);
+}
+
+.al-ssa-btn-dark {
+  background: var(--ssa-navy);
+  color: var(--ssa-white);
+}
+
+.al-ssa-btn-dark:hover {
+  background: var(--ssa-gold);
+  color: var(--ssa-navy);
+}
+
+.al-ssa-inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  color: var(--ssa-navy);
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+
+.al-ssa-inline-link i {
+  color: var(--ssa-gold-dark);
+  transition: transform 0.3s ease;
+}
+
+.al-ssa-inline-link:hover i {
+  transform: translate(4px, -3px);
+}
+
+/* HERO */
+
+.al-ssa-hero {
+  position: relative;
+  display: flex;
+  min-height: 690px;
+  align-items: center;
+  overflow: hidden;
+  background: var(--ssa-navy);
+}
+
+.al-ssa-hero-image,
+.al-ssa-hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.al-ssa-hero-image {
+  background-image: url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=90");
+  background-position: center;
+  background-size: cover;
+  transform: scale(1.06);
+}
+
+.al-ssa-hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(12, 22, 34, 0.9) 0%, rgba(12, 22, 34, 0.7) 48%, rgba(12, 22, 34, 0.18) 100%),
+    linear-gradient(0deg, rgba(12, 22, 34, 0.28), transparent 55%);
+}
+
+.al-ssa-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 120px 0 110px;
+  color: var(--ssa-white);
+}
+
+.al-ssa-hero .al-ssa-eyebrow {
+  color: #e0c8a5;
+}
+
+.al-ssa-hero h1 {
+  max-width: 850px;
+  margin: 22px 0 0;
+  color: var(--ssa-white);
+  font-size: clamp(58px, 8vw, 102px);
+  line-height: 0.88;
+}
+
+.al-ssa-hero-subtitle {
+  margin: 20px 0 0;
+  color: #dfc29b;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(27px, 3.4vw, 42px);
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.al-ssa-hero-description {
+  max-width: 560px;
+  margin: 24px 0 30px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.al-ssa-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 27px;
+}
+
+.al-ssa-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ssa-white);
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.al-ssa-text-link i {
+  color: var(--ssa-gold);
+}
+
+.al-ssa-hero-caption {
+  position: absolute;
+  right: 30px;
+  bottom: 32px;
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  writing-mode: vertical-rl;
+}
+
+/* BREADCRUMB */
+
+.al-ssa-breadcrumb {
+  padding: 17px 0;
+  border-bottom: 1px solid var(--ssa-border);
+  background: #fff;
+}
+
+.al-ssa-breadcrumb .al-ssa-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+}
+
+.al-ssa-breadcrumb a {
+  color: var(--ssa-muted);
+}
+
+.al-ssa-breadcrumb a:hover,
+.al-ssa-breadcrumb span {
+  color: var(--ssa-gold-dark);
+}
+
+.al-ssa-breadcrumb i {
+  color: #aab1ba;
+  font-size: 8px;
+}
+
+/* OVERVIEW */
+
+.al-ssa-overview {
+  background: var(--ssa-ivory);
+}
+
+.al-ssa-overview-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.al-ssa-overview-heading {
+  position: sticky;
+  top: 100px;
+}
+
+.al-ssa-heading-line {
+  width: 68px;
+  height: 2px;
+  margin: 30px 0 20px;
+  background: var(--ssa-gold);
+}
+
+.al-ssa-side-note {
+  max-width: 300px;
+  color: var(--ssa-muted);
+  font-size: 12px;
+  font-style: italic;
+}
+
+.al-ssa-overview-copy {
+  padding-top: 12px;
+}
+
+.al-ssa-overview-copy p {
+  margin: 0 0 20px;
+  color: var(--ssa-muted);
+}
+
+.al-ssa-overview-copy .al-ssa-lead {
+  color: var(--ssa-navy);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+/* SECTION HEADINGS */
+
+.al-ssa-centered {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.al-ssa-section-heading {
+  margin-bottom: 58px;
+}
+
+.al-ssa-section-heading > p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--ssa-muted);
+}
+
+/* PROPERTY TYPES */
+
+.al-ssa-types {
+  background: #fff;
+}
+
+.al-ssa-type-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.al-ssa-type-card {
+  border: 1px solid var(--ssa-border);
+  background: #fff;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.al-ssa-type-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(30, 41, 59, 0.09);
+}
+
+.al-ssa-type-image {
+  position: relative;
+  height: 340px;
+  overflow: hidden;
+  background: #e8e6e0;
+}
+
+.al-ssa-type-image img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.al-ssa-type-card:hover .al-ssa-type-image img {
+  transform: scale(1.06);
+}
+
+.al-ssa-type-index {
+  position: absolute;
+  right: 20px;
+  bottom: 18px;
+  color: #fff;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 48px;
+  line-height: 1;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.al-ssa-type-content {
+  padding: 32px 34px 36px;
+}
+
+.al-ssa-card-label {
+  color: var(--ssa-gold-dark);
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.al-ssa-type-content h3 {
+  margin: 12px 0;
+  color: var(--ssa-navy);
+  font-size: 36px;
+}
+
+.al-ssa-type-content p {
+  margin: 0;
+  color: var(--ssa-muted);
+  font-size: 12px;
+}
+
+.al-ssa-type-content ul {
+  display: grid;
+  gap: 11px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.al-ssa-type-content li {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--ssa-text);
+  font-size: 11px;
+}
+
+.al-ssa-type-content li i {
+  color: var(--ssa-gold-dark);
+  font-size: 10px;
+}
+
+/* WHY INVEST */
+
+.al-ssa-why {
+  background: var(--ssa-ivory);
+}
+
+.al-ssa-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.al-ssa-why-card {
+  min-height: 260px;
+  padding: 32px 28px;
+  border: 1px solid var(--ssa-border);
+  background: #fff;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.al-ssa-why-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(197, 168, 128, 0.65);
+  box-shadow: 0 18px 40px rgba(30, 41, 59, 0.07);
+}
+
+.al-ssa-why-icon {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  margin-bottom: 24px;
+  border: 1px solid rgba(197, 168, 128, 0.55);
+  border-radius: 50%;
+  color: var(--ssa-gold-dark);
+  font-size: 18px;
+}
+
+.al-ssa-why-card h3 {
+  margin: 0 0 11px;
+  color: var(--ssa-navy);
+  font-size: 26px;
+  line-height: 1.1;
+}
+
+.al-ssa-why-card p {
+  margin: 0;
+  color: var(--ssa-muted);
+  font-size: 11px;
+  line-height: 1.85;
+}
+
+/* SERVICES */
+
+.al-ssa-services {
+  background: #fff;
+}
+
+.al-ssa-services-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 50px;
+}
+
+.al-ssa-services-heading h2 {
+  margin-bottom: 0;
+}
+
+.al-ssa-services-heading > p {
+  max-width: 390px;
+  margin: 0 0 7px;
+  color: var(--ssa-muted);
+}
+
+.al-ssa-service-list {
+  border-top: 1px solid var(--ssa-border);
+}
+
+.al-ssa-service-item {
+  display: grid;
+  grid-template-columns: 55px 65px 1fr 30px;
+  gap: 25px;
+  align-items: center;
+  padding: 36px 15px;
+  border-bottom: 1px solid var(--ssa-border);
+  transition: background 0.3s ease, padding 0.3s ease;
+}
+
+.al-ssa-service-item:hover {
+  padding-right: 25px;
+  padding-left: 25px;
+  background: var(--ssa-ivory);
+}
+
+.al-ssa-service-number {
+  color: var(--ssa-gold-dark);
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.al-ssa-service-icon {
+  display: grid;
+  width: 55px;
+  height: 55px;
+  place-items: center;
+  border: 1px solid rgba(197, 168, 128, 0.55);
+  border-radius: 50%;
+  color: var(--ssa-gold-dark);
+  font-size: 18px;
+}
+
+.al-ssa-service-content h3 {
+  margin: 0 0 8px;
+  color: var(--ssa-navy);
+  font-size: 30px;
+}
+
+.al-ssa-service-content p {
+  max-width: 720px;
+  margin: 0;
+  color: var(--ssa-muted);
+  font-size: 11px;
+  line-height: 1.85;
+}
+
+.al-ssa-service-item > a {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  color: var(--ssa-gold-dark);
+  transition: transform 0.3s ease;
+}
+
+.al-ssa-service-item:hover > a {
+  transform: translate(3px, -3px);
+}
+
+/* CHECKLIST */
+
+.al-ssa-checklist {
+  background: var(--ssa-ivory);
+}
+
+.al-ssa-checklist-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 85px;
+  align-items: center;
+}
+
+.al-ssa-checklist-visual {
+  position: relative;
+  min-height: 590px;
+}
+
+.al-ssa-checklist-visual > img {
+  height: 590px;
+  object-fit: cover;
+}
+
+.al-ssa-visual-label {
+  position: absolute;
+  right: -25px;
+  bottom: 35px;
+  width: min(300px, 80%);
+  padding: 27px 30px;
+  background: var(--ssa-navy);
+  color: #fff;
+}
+
+.al-ssa-visual-label span {
+  color: var(--ssa-gold);
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.al-ssa-visual-label strong {
+  display: block;
+  margin-top: 10px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 31px;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.al-ssa-checklist-content > p {
+  color: var(--ssa-muted);
+}
+
+.al-ssa-checklist-items {
+  display: grid;
+  gap: 0;
+  margin-top: 30px;
+  border-top: 1px solid var(--ssa-border);
+}
+
+.al-ssa-checklist-items > div {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 14px;
+  padding: 17px 0;
+  border-bottom: 1px solid var(--ssa-border);
+}
+
+.al-ssa-checklist-items > div > span {
+  color: var(--ssa-gold-dark);
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.al-ssa-checklist-items p {
+  margin: 0;
+  color: var(--ssa-muted);
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+.al-ssa-checklist-items strong {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--ssa-navy);
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.3px;
+}
+
+/* PROCESS */
+
+.al-ssa-process {
+  background: var(--ssa-navy);
+}
+
+.al-ssa-process .al-ssa-section-heading h2 {
+  color: #fff;
+}
+
+.al-ssa-process .al-ssa-section-heading > p {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.al-ssa-process-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid rgba(255, 255, 255, 0.17);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.17);
+}
+
+.al-ssa-process-card {
+  position: relative;
+  min-height: 255px;
+  padding: 30px 21px;
+  border-right: 1px solid rgba(255, 255, 255, 0.17);
+  transition: background 0.3s ease;
+}
+
+.al-ssa-process-card:last-child {
+  border-right: 0;
+}
+
+.al-ssa-process-card:hover {
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.al-ssa-process-card > span {
+  display: block;
+  margin-bottom: 26px;
+  color: var(--ssa-gold);
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.al-ssa-process-card > i {
+  margin-bottom: 21px;
+  color: var(--ssa-gold);
+  font-size: 22px;
+}
+
+.al-ssa-process-card h3 {
+  margin: 0 0 9px;
+  color: #fff;
+  font-size: 25px;
+}
+
+.al-ssa-process-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+/* WHY ASTRA LUXE */
+
+.al-ssa-why-us {
+  background: #fff;
+}
+
+.al-ssa-why-us-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 85px;
+  align-items: center;
+}
+
+.al-ssa-why-us-image {
+  height: 590px;
+  overflow: hidden;
+  background: #e7e3dc;
+}
+
+.al-ssa-why-us-image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.al-ssa-why-us-content > p {
+  color: var(--ssa-muted);
+}
+
+.al-ssa-why-us-points {
+  display: grid;
+  gap: 14px;
+  margin: 28px 0 30px;
+}
+
+.al-ssa-why-us-points > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  color: var(--ssa-text);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.al-ssa-why-us-points i {
+  margin-top: 3px;
+  color: var(--ssa-gold-dark);
+  font-size: 11px;
+}
+
+.al-ssa-why-us-content .al-ssa-btn {
+  margin-top: 5px;
+}
+
+/* FOCUS */
+
+.al-ssa-focus {
+  padding: 90px 0;
+  background: var(--ssa-ivory);
+  text-align: center;
+}
+
+.al-ssa-focus-inner {
+  max-width: 820px;
+}
+
+.al-ssa-focus h2 {
+  margin-top: 16px;
+}
+
+.al-ssa-focus p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--ssa-muted);
+}
+
+/* FAQ */
+
+.al-ssa-faq {
+  background: #fff;
+}
+
+.al-ssa-faq-grid {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 85px;
+  align-items: start;
+}
+
+.al-ssa-faq-intro {
+  position: sticky;
+  top: 100px;
+}
+
+.al-ssa-faq-intro > p {
+  max-width: 340px;
+  color: var(--ssa-muted);
+}
+
+.al-ssa-faq-list {
+  border-top: 1px solid var(--ssa-border);
+}
+
+.al-ssa-faq-item {
+  border-bottom: 1px solid var(--ssa-border);
+}
+
+.al-ssa-faq-question {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 0;
+  border: 0;
+  background: transparent;
+  color: var(--ssa-navy);
+  cursor: pointer;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.al-ssa-faq-question i {
+  flex: 0 0 auto;
+  color: var(--ssa-gold-dark);
+  font-size: 13px;
+  transition: transform 0.3s ease;
+}
+
+.al-ssa-faq-item.active .al-ssa-faq-question i {
+  transform: rotate(45deg);
+}
+
+.al-ssa-faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.al-ssa-faq-answer p {
+  overflow: hidden;
+  margin: 0;
+  color: var(--ssa-muted);
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+.al-ssa-faq-item.active .al-ssa-faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.al-ssa-faq-item.active .al-ssa-faq-answer p {
+  padding: 0 35px 24px 0;
+}
+
+/* CTA */
+
+.al-ssa-cta {
+  position: relative;
+  padding: 115px 0;
+  overflow: hidden;
+  background: url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85") center / cover no-repeat;
+  text-align: center;
+}
+
+.al-ssa-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(19, 31, 44, 0.87);
+}
+
+.al-ssa-cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  color: #fff;
+}
+
+.al-ssa-cta .al-ssa-kicker {
+  color: #dfc29b;
+}
+
+.al-ssa-cta h2 {
+  color: #fff;
+}
+
+.al-ssa-cta h2 em {
+  color: #dfc29b;
+}
+
+.al-ssa-cta p {
+  max-width: 620px;
+  margin: 0 auto 30px;
+  color: rgba(255, 255, 255, 0.77);
+}
+
+/* ANIMATION SUPPORT */
+
+.al-ssa-page .al-ssa-reveal {
+  will-change: transform, opacity;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1050px) {
+  .al-ssa-overview-grid,
+  .al-ssa-checklist-grid,
+  .al-ssa-why-us-grid,
+  .al-ssa-faq-grid {
+    gap: 55px;
+  }
+
+  .al-ssa-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .al-ssa-process-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .al-ssa-process-card:nth-child(3) {
+    border-right: 0;
+  }
+
+  .al-ssa-process-card:nth-child(-n+3) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.17);
+  }
+
+  .al-ssa-process-card:nth-child(4),
+  .al-ssa-process-card:nth-child(5) {
+    min-height: 225px;
+  }
+}
+
+@media (max-width: 760px) {
+  .al-ssa-container,
+  .al-ssa-hero-content {
+    width: min(100% - 38px, 600px);
+  }
+
+  .al-ssa-section {
+    padding: 78px 0;
+  }
+
+  .al-ssa-hero {
+    min-height: 650px;
+  }
+
+  .al-ssa-hero-content {
+    padding: 105px 0 95px;
+  }
+
+  .al-ssa-hero h1 {
+    font-size: clamp(54px, 12vw, 78px);
+  }
+
+  .al-ssa-hero-overlay {
+    background: linear-gradient(90deg, rgba(12, 22, 34, 0.9), rgba(12, 22, 34, 0.48));
+  }
+
+  .al-ssa-hero-caption {
+    right: 17px;
+    bottom: 22px;
+    font-size: 7px;
+  }
+
+  .al-ssa-overview-grid,
+  .al-ssa-checklist-grid,
+  .al-ssa-why-us-grid,
+  .al-ssa-faq-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .al-ssa-overview-heading,
+  .al-ssa-faq-intro {
+    position: static;
+  }
+
+  .al-ssa-overview-copy {
+    padding-top: 0;
+  }
+
+  .al-ssa-section-heading {
+    margin-bottom: 40px;
+  }
+
+  .al-ssa-type-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .al-ssa-type-image {
+    height: 300px;
+  }
+
+  .al-ssa-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .al-ssa-services-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .al-ssa-service-item {
+    grid-template-columns: 35px 52px 1fr 25px;
+    gap: 13px;
+    padding: 28px 5px;
+  }
+
+  .al-ssa-service-icon {
+    width: 47px;
+    height: 47px;
+    font-size: 16px;
+  }
+
+  .al-ssa-service-content h3 {
+    font-size: 25px;
+  }
+
+  .al-ssa-checklist-visual {
+    min-height: 450px;
+  }
+
+  .al-ssa-checklist-visual > img {
+    height: 450px;
+  }
+
+  .al-ssa-visual-label {
+    right: -5px;
+    bottom: 20px;
+  }
+
+  .al-ssa-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .al-ssa-process-card {
+    min-height: 230px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.17);
+  }
+
+  .al-ssa-process-card:nth-child(3) {
+    border-right: 1px solid rgba(255, 255, 255, 0.17);
+  }
+
+  .al-ssa-process-card:nth-child(even) {
+    border-right: 0;
+  }
+
+  .al-ssa-process-card:nth-child(5) {
+    grid-column: 1 / -1;
+    min-height: auto;
+    border-right: 0;
+    border-bottom: 0;
+  }
+
+  .al-ssa-why-us-image {
+    height: 450px;
+  }
+
+  .al-ssa-cta {
+    padding: 85px 0;
+  }
+}
+
+@media (max-width: 460px) {
+  .al-ssa-container,
+  .al-ssa-hero-content {
+    width: calc(100% - 32px);
+  }
+
+  .al-ssa-section {
+    padding: 65px 0;
+  }
+
+  .al-ssa-page h2 {
+    font-size: 43px;
+  }
+
+  .al-ssa-hero {
+    min-height: 610px;
+  }
+
+  .al-ssa-hero h1 {
+    font-size: 51px;
+  }
+
+  .al-ssa-hero-subtitle {
+    font-size: 28px;
+  }
+
+  .al-ssa-hero-description {
+    font-size: 12px;
+  }
+
+  .al-ssa-hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .al-ssa-btn {
+    min-height: 49px;
+    padding: 0 18px;
+    font-size: 9px;
+  }
+
+  .al-ssa-breadcrumb .al-ssa-container {
+    gap: 8px;
+    font-size: 8px;
+  }
+
+  .al-ssa-type-image {
+    height: 245px;
+  }
+
+  .al-ssa-type-content {
+    padding: 26px 22px 30px;
+  }
+
+  .al-ssa-type-content h3 {
+    font-size: 32px;
+  }
+
+  .al-ssa-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .al-ssa-why-card {
+    min-height: auto;
+  }
+
+  .al-ssa-service-item {
+    grid-template-columns: 27px 1fr 24px;
+    gap: 12px;
+  }
+
+  .al-ssa-service-number {
+    align-self: start;
+    padding-top: 5px;
+  }
+
+  .al-ssa-service-icon {
+    display: none;
+  }
+
+  .al-ssa-service-content h3 {
+    font-size: 24px;
+  }
+
+  .al-ssa-service-content p {
+    font-size: 10px;
+  }
+
+  .al-ssa-checklist-visual {
+    min-height: 370px;
+  }
+
+  .al-ssa-checklist-visual > img {
+    height: 370px;
+  }
+
+  .al-ssa-visual-label {
+    width: 250px;
+    padding: 22px;
+  }
+
+  .al-ssa-visual-label strong {
+    font-size: 27px;
+  }
+
+  .al-ssa-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .al-ssa-process-card,
+  .al-ssa-process-card:nth-child(3),
+  .al-ssa-process-card:nth-child(even),
+  .al-ssa-process-card:nth-child(5) {
+    min-height: auto;
+    grid-column: auto;
+    padding: 25px 20px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.17);
+  }
+
+  .al-ssa-process-card:last-child {
+    border-bottom: 0;
+  }
+
+  .al-ssa-why-us-image {
+    height: 360px;
+  }
+
+  .al-ssa-faq-question {
+    gap: 12px;
+    font-size: 21px;
+  }
+
+  .al-ssa-cta {
+    padding: 72px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .al-ssa-page *,
+  .al-ssa-page *::before,
+  .al-ssa-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+
+  <main class="al-ssa-page">
+
+    <!-- HERO -->
+    <section class="al-ssa-hero">
+      <div class="al-ssa-hero-image"></div>
+      <div class="al-ssa-hero-overlay"></div>
+
+      <div class="al-ssa-hero-content">
+        <span class="al-ssa-eyebrow">THE ASTRALUXE ADVISORY · REAL ESTATE</span>
+
+        <h1>Studio &amp; Service<br>Apartments</h1>
+
+        <p class="al-ssa-hero-subtitle">
+          Smart Spaces. Considered Investments.
+        </p>
+
+        <p class="al-ssa-hero-description">
+          Discover modern urban properties that bring together
+          convenient living, hospitality-led experiences and
+          investment opportunities.
+        </p>
+
+        <div class="al-ssa-hero-actions">
+          <a href="contact.html" class="al-ssa-btn al-ssa-btn-gold">
+            Explore Opportunities <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+          <a href="#ssa-overview" class="al-ssa-text-link">
+            Discover More <i class="fa-solid fa-arrow-down"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="al-ssa-hero-caption">
+        URBAN LIVING · FLEXIBLE OWNERSHIP · INVESTMENT
+      </div>
+    </section>
+
+    <!-- BREADCRUMB -->
+    <div class="al-ssa-breadcrumb">
+      <div class="al-ssa-container">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="business-verticals.html">Business Verticals</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Studio &amp; Service Apartments</span>
+      </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <section class="al-ssa-overview al-ssa-section" id="ssa-overview">
+      <div class="al-ssa-container al-ssa-overview-grid">
+
+        <div class="al-ssa-overview-heading al-ssa-reveal">
+          <span class="al-ssa-kicker">A MODERN PROPERTY CATEGORY</span>
+          <h2>Designed for<br><em>Urban Possibilities.</em></h2>
+          <div class="al-ssa-heading-line"></div>
+
+          <p class="al-ssa-side-note">
+            Compact, convenient spaces with the potential to serve
+            evolving urban and hospitality needs.
+          </p>
+        </div>
+
+        <div class="al-ssa-overview-copy al-ssa-reveal">
+          <p class="al-ssa-lead">
+            Welcome to our dedicated Studio &amp; Service Apartments
+            advisory, designed for discerning buyers and investors
+            exploring modern, well-positioned property opportunities.
+          </p>
+
+          <p>
+            Studio and service apartments offer a distinctive blend
+            of compact living, convenience and hospitality-oriented
+            services. Depending on their location and operating model,
+            they may appeal to urban professionals, business travellers,
+            corporate occupants and people seeking flexible accommodation.
+          </p>
+
+          <p>
+            For investors, these properties can offer an alternative
+            to conventional residential assets. Their suitability
+            depends on location, project quality, market demand,
+            operating arrangements and the terms of ownership.
+          </p>
+
+          <p>
+            At The AstraLuxe Advisory, we help clients evaluate
+            opportunities with a structured approach—from property
+            selection and market assessment to acquisition support
+            and future value considerations.
+          </p>
+
+          <a href="contact.html" class="al-ssa-inline-link">
+            Discuss Your Property Goals
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROPERTY TYPES -->
+    <section class="al-ssa-types al-ssa-section">
+      <div class="al-ssa-container">
+
+        <div class="al-ssa-section-heading al-ssa-centered al-ssa-reveal">
+          <span class="al-ssa-kicker">UNDERSTANDING THE CATEGORY</span>
+          <h2>Two Formats.<br><em>Distinct Possibilities.</em></h2>
+          <p>
+            Studio and service apartments serve different requirements.
+            Understanding the distinction helps buyers evaluate the
+            right property for their intended use.
+          </p>
+        </div>
+
+        <div class="al-ssa-type-grid">
+
+          <article class="al-ssa-type-card al-ssa-reveal">
+            <div class="al-ssa-type-image">
+              <img
+                src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1100&q=85"
+                alt="Contemporary studio apartment interior"
+                loading="lazy">
+              <span class="al-ssa-type-index">01</span>
+            </div>
+
+            <div class="al-ssa-type-content">
+              <span class="al-ssa-card-label">COMPACT URBAN LIVING</span>
+              <h3>Studio Apartments</h3>
+              <p>
+                Efficiently designed residential spaces that combine
+                essential living functions within a compact layout.
+                They may suit individuals, young professionals and
+                buyers seeking a practical urban property.
+              </p>
+              <ul>
+                <li><i class="fa-solid fa-check"></i> Space-efficient layouts</li>
+                <li><i class="fa-solid fa-check"></i> Convenient urban locations</li>
+                <li><i class="fa-solid fa-check"></i> Practical everyday living</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="al-ssa-type-card al-ssa-reveal">
+            <div class="al-ssa-type-image">
+              <img
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1100&q=85"
+                alt="Premium serviced apartment interior"
+                loading="lazy">
+              <span class="al-ssa-type-index">02</span>
+            </div>
+
+            <div class="al-ssa-type-content">
+              <span class="al-ssa-card-label">HOSPITALITY-LED ACCOMMODATION</span>
+              <h3>Service Apartments</h3>
+              <p>
+                Furnished accommodation designed to combine the
+                convenience of an apartment with selected hospitality
+                services. They may cater to business travellers,
+                corporate stays and longer-duration guests.
+              </p>
+              <ul>
+                <li><i class="fa-solid fa-check"></i> Furnished accommodation</li>
+                <li><i class="fa-solid fa-check"></i> Selected guest services</li>
+                <li><i class="fa-solid fa-check"></i> Flexible stay requirements</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY INVEST -->
+    <section class="al-ssa-why al-ssa-section">
+      <div class="al-ssa-container">
+
+        <div class="al-ssa-section-heading al-ssa-centered al-ssa-reveal">
+          <span class="al-ssa-kicker">THE INVESTMENT PERSPECTIVE</span>
+          <h2>Why Consider Studio &amp;<br><em>Service Apartments?</em></h2>
+          <p>
+            Changing urban lifestyles and evolving accommodation
+            requirements have created interest in flexible,
+            professionally planned property formats.
+          </p>
+        </div>
+
+        <div class="al-ssa-why-grid">
+
+          <article class="al-ssa-why-card al-ssa-reveal">
+            <div class="al-ssa-why-icon">
+              <i class="fa-solid fa-city"></i>
+            </div>
+            <h3>Urban Demand Drivers</h3>
+            <p>
+              Locations near business districts, commercial centres,
+              hospitals, educational institutions and transport
+              networks may benefit from relevant accommodation demand.
+            </p>
+          </article>
+
+          <article class="al-ssa-why-card al-ssa-reveal">
+            <div class="al-ssa-why-icon">
+              <i class="fa-solid fa-user-tie"></i>
+            </div>
+            <h3>Multiple Occupant Profiles</h3>
+            <p>
+              These properties may appeal to working professionals,
+              corporate guests, business travellers and individuals
+              seeking convenient accommodation.
+            </p>
+          </article>
+
+          <article class="al-ssa-why-card al-ssa-reveal">
+            <div class="al-ssa-why-icon">
+              <i class="fa-solid fa-hotel"></i>
+            </div>
+            <h3>Hospitality Integration</h3>
+            <p>
+              Selected service apartment projects incorporate
+              housekeeping, guest assistance and other operating
+              services as part of their accommodation proposition.
+            </p>
+          </article>
+
+          <article class="al-ssa-why-card al-ssa-reveal">
+            <div class="al-ssa-why-icon">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <h3>Investment Flexibility</h3>
+            <p>
+              Different ownership and operating structures may be
+              available. Their suitability should be assessed against
+              the buyer's objectives, costs and risk appetite.
+            </p>
+          </article>
+
+          <article class="al-ssa-why-card al-ssa-reveal">
+            <div class="al-ssa-why-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <h3>Location-Led Potential</h3>
+            <p>
+              Connectivity, employment centres, local infrastructure
+              and the surrounding business ecosystem can influence
+              a property's long-term appeal.
+            </p>
+          </article>
+
+          <article class="al-ssa-why-card al-ssa-reveal">
+            <div class="al-ssa-why-icon">
+              <i class="fa-solid fa-building-circle-check"></i>
+            </div>
+            <h3>Managed Asset Options</h3>
+            <p>
+              Some developments offer professional management or
+              rental programmes. Buyers should review the operator,
+              commercial terms and service scope before committing.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="al-ssa-services al-ssa-section">
+      <div class="al-ssa-container">
+
+        <div class="al-ssa-services-heading al-ssa-reveal">
+          <div>
+            <span class="al-ssa-kicker">HOW WE SUPPORT YOU</span>
+            <h2>Our Services.<br><em>Your Property Goals.</em></h2>
+          </div>
+
+          <p>
+            From identifying suitable properties to evaluating
+            investment and development opportunities, our advisory
+            approach is tailored to your requirements.
+          </p>
+        </div>
+
+        <div class="al-ssa-service-list">
+
+          <article class="al-ssa-service-item al-ssa-reveal">
+            <div class="al-ssa-service-number">01</div>
+            <div class="al-ssa-service-icon">
+              <i class="fa-solid fa-magnifying-glass-location"></i>
+            </div>
+            <div class="al-ssa-service-content">
+              <h3>Buying Assistance</h3>
+              <p>
+                We guide you through selecting studio and service
+                apartments that align with your budget, lifestyle
+                preferences and investment objectives. Our support
+                can include property shortlisting, location assessment,
+                market insights and comparative evaluation.
+              </p>
+            </div>
+            <!-- <a href="contact.html" aria-label="Enquire about buying assistance">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a> -->
+          </article>
+
+          <article class="al-ssa-service-item al-ssa-reveal">
+            <div class="al-ssa-service-number">02</div>
+            <div class="al-ssa-service-icon">
+              <i class="fa-solid fa-chart-pie"></i>
+            </div>
+            <div class="al-ssa-service-content">
+              <h3>Investment Guidance</h3>
+              <p>
+                We provide strategic guidance to help assess property
+                positioning, demand drivers, rental possibilities,
+                capital expenditure and long-term value considerations.
+                Our focus is on informed decision-making rather than
+                speculative return projections.
+              </p>
+            </div>
+            <!-- <a href="contact.html" aria-label="Enquire about investment guidance">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a> -->
+          </article>
+
+          <article class="al-ssa-service-item al-ssa-reveal">
+            <div class="al-ssa-service-number">03</div>
+            <div class="al-ssa-service-icon">
+              <i class="fa-solid fa-building"></i>
+            </div>
+            <div class="al-ssa-service-content">
+              <h3>Development Support</h3>
+              <p>
+                Whether you are evaluating a new development or
+                planning to develop an existing property, we can
+                support project assessment, concept considerations,
+                development strategy and coordination with relevant
+                technical and hospitality professionals.
+              </p>
+            </div>
+            <!-- <a href="contact.html" aria-label="Enquire about development support">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a> -->
+          </article>
+
+          <article class="al-ssa-service-item al-ssa-reveal">
+            <div class="al-ssa-service-number">04</div>
+            <div class="al-ssa-service-icon">
+              <i class="fa-solid fa-file-shield"></i>
+            </div>
+            <div class="al-ssa-service-content">
+              <h3>Legal &amp; Documentation Coordination</h3>
+              <p>
+                We help coordinate the documentation and verification
+                process with qualified legal professionals, including
+                ownership records, transaction documentation, relevant
+                approvals and applicable compliance requirements.
+              </p>
+            </div>
+            <!-- <a href="contact.html" aria-label="Enquire about legal and documentation coordination">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a> -->
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INVESTMENT CHECKLIST -->
+    <section class="al-ssa-checklist al-ssa-section">
+      <div class="al-ssa-container al-ssa-checklist-grid">
+
+        <div class="al-ssa-checklist-visual al-ssa-reveal">
+          <img
+            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1100&q=85"
+            alt="Modern apartment living space"
+            loading="lazy">
+
+          <div class="al-ssa-visual-label">
+            <span>THE RIGHT PROPERTY</span>
+            <strong>Begins with<br>the Right Evaluation.</strong>
+          </div>
+        </div>
+
+        <div class="al-ssa-checklist-content al-ssa-reveal">
+          <span class="al-ssa-kicker">BEFORE YOU INVEST</span>
+          <h2>What Should You<br><em>Evaluate?</em></h2>
+
+          <p>
+            A property should be assessed on more than its brochure
+            or projected returns. We encourage a closer look at the
+            factors that influence ownership, usability and
+            commercial performance.
+          </p>
+
+          <div class="al-ssa-checklist-items">
+            <div>
+              <span>01</span>
+              <p><strong>Location &amp; Connectivity</strong>Access to business hubs, transport and essential infrastructure.</p>
+            </div>
+
+            <div>
+              <span>02</span>
+              <p><strong>Project &amp; Developer Credentials</strong>Development track record, approvals and delivery history.</p>
+            </div>
+
+            <div>
+              <span>03</span>
+              <p><strong>Ownership &amp; Documentation</strong>Title, transaction structure, applicable permissions and compliance.</p>
+            </div>
+
+            <div>
+              <span>04</span>
+              <p><strong>Operating Arrangements</strong>Management responsibilities, fees, rental terms and service standards.</p>
+            </div>
+
+            <div>
+              <span>05</span>
+              <p><strong>Financial Viability</strong>Purchase costs, recurring expenses, realistic demand and investment risks.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section class="al-ssa-process al-ssa-section">
+      <div class="al-ssa-container">
+
+        <div class="al-ssa-section-heading al-ssa-centered al-ssa-reveal">
+          <span class="al-ssa-kicker">A CLEARER PATH FORWARD</span>
+          <h2>Our Approach to<br><em>Your Investment.</em></h2>
+          <p>
+            A structured process designed to help you move from
+            initial enquiry to a more informed property decision.
+          </p>
+        </div>
+
+        <div class="al-ssa-process-grid">
+
+          <div class="al-ssa-process-card al-ssa-reveal">
+            <span>01</span>
+            <i class="fa-solid fa-comments"></i>
+            <h3>Understand</h3>
+            <p>Discuss your budget, objectives, preferred locations and intended property use.</p>
+          </div>
+
+          <div class="al-ssa-process-card al-ssa-reveal">
+            <span>02</span>
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+            <h3>Evaluate</h3>
+            <p>Review suitable opportunities, market context, property features and project information.</p>
+          </div>
+
+          <div class="al-ssa-process-card al-ssa-reveal">
+            <span>03</span>
+            <i class="fa-solid fa-scale-balanced"></i>
+            <h3>Assess</h3>
+            <p>Consider financial, ownership, operational and documentation requirements.</p>
+          </div>
+
+          <div class="al-ssa-process-card al-ssa-reveal">
+            <span>04</span>
+            <i class="fa-solid fa-handshake"></i>
+            <h3>Coordinate</h3>
+            <p>Support discussions and coordination with the relevant developers and professionals.</p>
+          </div>
+
+          <div class="al-ssa-process-card al-ssa-reveal">
+            <span>05</span>
+            <i class="fa-solid fa-house-circle-check"></i>
+            <h3>Move Forward</h3>
+            <p>Proceed with the selected opportunity based on your independent review and agreed transaction terms.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY AST RALUXE -->
+    <section class="al-ssa-why-us al-ssa-section">
+      <div class="al-ssa-container al-ssa-why-us-grid">
+
+        <div class="al-ssa-why-us-image al-ssa-reveal">
+          <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1100&q=85"
+            alt="Premium contemporary apartment interior"
+            loading="lazy">
+        </div>
+
+        <div class="al-ssa-why-us-content al-ssa-reveal">
+          <span class="al-ssa-kicker">THE ASTRALUXE DIFFERENCE</span>
+          <h2>Experience-Led Advice.<br><em>Investment-Minded Thinking.</em></h2>
+
+          <p>
+            Our understanding of real estate and hospitality allows
+            us to look beyond the physical property and consider
+            the wider factors that shape its long-term relevance.
+          </p>
+
+          <p>
+            We work to bring clarity to the evaluation process,
+            helping clients understand the property, its intended
+            use, the commercial proposition and the professionals
+            involved in the transaction.
+          </p>
+
+          <div class="al-ssa-why-us-points">
+            <div>
+              <i class="fa-solid fa-check"></i>
+              <span>Personalised property and investment guidance</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-check"></i>
+              <span>Location and market-oriented assessment</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-check"></i>
+              <span>Hospitality and operating-model perspective</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-check"></i>
+              <span>Coordination with relevant professional advisers</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-check"></i>
+              <span>Transparent, objective-led engagement</span>
+            </div>
+          </div>
+
+          <a href="contact.html" class="al-ssa-btn al-ssa-btn-dark">
+            Connect with AstraLuxe <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOCUS -->
+    <section class="al-ssa-focus">
+      <div class="al-ssa-container al-ssa-focus-inner al-ssa-reveal">
+        <span class="al-ssa-kicker">OUR COMMITMENT</span>
+        <h2>Every Property Decision<br><em>Deserves a Closer Look.</em></h2>
+        <p>
+          From site selection and acquisition considerations to
+          documentation coordination and future value assessment,
+          we aim to make your property journey more informed,
+          structured and transparent.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="al-ssa-cta">
+      <div class="al-ssa-cta-overlay"></div>
+
+      <div class="al-ssa-container al-ssa-cta-content al-ssa-reveal">
+        <span class="al-ssa-kicker">YOUR NEXT PROPERTY OPPORTUNITY</span>
+        <h2>Find the Right Space.<br><em>Make an Informed Move.</em></h2>
+        <p>
+          Whether you are exploring a studio apartment for personal
+          use or evaluating a service apartment as an investment,
+          let us help you assess the possibilities.
+        </p>
+
+        <a href="contact.html" class="al-ssa-btn al-ssa-btn-gold">
+          Start a Conversation <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <div id="whatsapp-placeholder"></div>
+
+  <script src="js/main.js"></script>
+  <script>
+    (() => {
+      const initStudioApartmentsPage = () => {
+        const page = document.querySelector(".al-ssa-page");
+        if (!page) return;
+
+        const faqItems = page.querySelectorAll(".al-ssa-faq-item");
+
+        faqItems.forEach((item) => {
+          const button = item.querySelector(".al-ssa-faq-question");
+          if (!button) return;
+
+          button.setAttribute(
+            "aria-expanded",
+            String(item.classList.contains("active"))
+          );
+
+          button.addEventListener("click", () => {
+            const isActive = item.classList.contains("active");
+
+            faqItems.forEach((faqItem) => {
+              faqItem.classList.remove("active");
+              faqItem
+                .querySelector(".al-ssa-faq-question")
+                ?.setAttribute("aria-expanded", "false");
+            });
+
+            if (!isActive) {
+              item.classList.add("active");
+              button.setAttribute("aria-expanded", "true");
+            }
+          });
+        });
+
+        const prefersReducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        page.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", (event) => {
+            const targetId = anchor.getAttribute("href");
+            if (!targetId || targetId === "#") return;
+
+            const target = page.querySelector(targetId);
+            if (!target) return;
+
+            event.preventDefault();
+            target.scrollIntoView({
+              behavior: prefersReducedMotion ? "auto" : "smooth",
+              block: "start"
+            });
+          });
+        });
+
+        if (typeof gsap === "undefined" || prefersReducedMotion) return;
+
+        if (typeof ScrollTrigger !== "undefined") {
+          gsap.registerPlugin(ScrollTrigger);
+        }
+
+        const heroTimeline = gsap.timeline({
+          defaults: {
+            ease: "power3.out",
+            clearProps: "transform,opacity"
+          }
+        });
+
+        heroTimeline
+          .from(page.querySelector(".al-ssa-hero-image"), {
+            scale: 1.18,
+            duration: 1.8,
+            ease: "power2.out"
+          })
+          .from(
+            page.querySelector(".al-ssa-hero .al-ssa-eyebrow"),
+            {
+              y: 25,
+              opacity: 0,
+              duration: 0.7
+            },
+            "-=1.15"
+          )
+          .from(
+            page.querySelector(".al-ssa-hero h1"),
+            {
+              y: 55,
+              opacity: 0,
+              duration: 1
+            },
+            "-=0.45"
+          )
+          .from(
+            page.querySelectorAll(
+              ".al-ssa-hero-subtitle, .al-ssa-hero-description"
+            ),
+            {
+              y: 25,
+              opacity: 0,
+              duration: 0.8,
+              stagger: 0.15
+            },
+            "-=0.55"
+          )
+          .from(
+            page.querySelector(".al-ssa-hero-actions"),
+            {
+              y: 20,
+              opacity: 0,
+              duration: 0.7
+            },
+            "-=0.35"
+          );
+
+        if (typeof ScrollTrigger === "undefined") return;
+
+        const specificallyAnimated = [
+          ".al-ssa-type-card",
+          ".al-ssa-why-card",
+          ".al-ssa-service-item",
+          ".al-ssa-process-card",
+          ".al-ssa-checklist-visual",
+          ".al-ssa-why-us-image",
+          ".al-ssa-cta-content"
+        ].join(",");
+
+        page.querySelectorAll(".al-ssa-reveal").forEach((element) => {
+          if (
+            element.closest(".al-ssa-hero") ||
+            element.matches(specificallyAnimated)
+          ) {
+            return;
+          }
+
+          gsap.from(element, {
+            y: 38,
+            opacity: 0,
+            duration: 0.9,
+            ease: "power3.out",
+            clearProps: "transform,opacity",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 88%",
+              once: true
+            }
+          });
+        });
+
+        const animateGroup = (
+          selector,
+          triggerSelector,
+          animation,
+          start
+        ) => {
+          const targets = page.querySelectorAll(selector);
+          const trigger = page.querySelector(triggerSelector);
+
+          if (!targets.length || !trigger) return;
+
+          gsap.from(targets, {
+            ...animation,
+            clearProps: "transform,opacity",
+            scrollTrigger: {
+              trigger,
+              start,
+              once: true
+            }
+          });
+        };
+
+        animateGroup(
+          ".al-ssa-type-card",
+          ".al-ssa-type-grid",
+          {
+            y: 55,
+            opacity: 0,
+            duration: 0.85,
+            stagger: 0.18,
+            ease: "power3.out"
+          },
+          "top 82%"
+        );
+
+        animateGroup(
+          ".al-ssa-why-card",
+          ".al-ssa-why-grid",
+          {
+            y: 45,
+            opacity: 0,
+            duration: 0.75,
+            stagger: 0.12,
+            ease: "power3.out"
+          },
+          "top 82%"
+        );
+
+        animateGroup(
+          ".al-ssa-service-item",
+          ".al-ssa-service-list",
+          {
+            x: -35,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "power3.out"
+          },
+          "top 82%"
+        );
+
+        animateGroup(
+          ".al-ssa-process-card",
+          ".al-ssa-process-grid",
+          {
+            y: 45,
+            opacity: 0,
+            duration: 0.75,
+            stagger: 0.13,
+            ease: "power3.out"
+          },
+          "top 82%"
+        );
+
+        animateGroup(
+          ".al-ssa-checklist-visual img",
+          ".al-ssa-checklist-visual",
+          {
+            clipPath: "inset(0 0 100% 0)",
+            duration: 1.25,
+            ease: "power3.inOut"
+          },
+          "top 80%"
+        );
+
+        animateGroup(
+          ".al-ssa-why-us-image img",
+          ".al-ssa-why-us-image",
+          {
+            scale: 1.15,
+            opacity: 0.7,
+            duration: 1.3,
+            ease: "power2.out"
+          },
+          "top 80%"
+        );
+
+        animateGroup(
+          ".al-ssa-cta-content > *",
+          ".al-ssa-cta",
+          {
+            y: 30,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.14,
+            ease: "power3.out"
+          },
+          "top 78%"
+        );
+
+        const refreshScrollTrigger = () => ScrollTrigger.refresh();
+
+        if (document.readyState === "complete") {
+          refreshScrollTrigger();
+        } else {
+          window.addEventListener("load", refreshScrollTrigger, {
+            once: true
+          });
+        }
+      };
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initStudioApartmentsPage, {
+          once: true
+        });
+      } else {
+        initStudioApartmentsPage();
+      }
+    })();
+  </script>
+</body>
+</html>

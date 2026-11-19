@@ -1,0 +1,2484 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="The AstraLuxe Advisory provides third-party hotel and resort management support, operational oversight, revenue performance review and owner reporting.">
+
+    <title>Third-Party Hotel & Resort Management Services | The AstraLuxe Advisory</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+
+/* ==========================================================
+   THE ASTRALUXE ADVISORY
+   THIRD-PARTY HOTEL & RESORT MANAGEMENT SERVICES
+   COMPLETE STANDALONE STYLESHEET
+========================================================== */
+
+
+/* ==========================================================
+   01. GLOBAL RESET & VARIABLES
+========================================================== */
+
+:root {
+    --tpm-navy: #1E293B;
+    --tpm-slate: #334155;
+    --tpm-yellow: #D4AF37;
+    --tpm-gold: #C5A880;
+    --tpm-gold-dark: #A98B62;
+    --tpm-ivory: #F8FAFC;
+    --tpm-cream: #F4F2ED;
+    --tpm-white: #FFFFFF;
+    --tpm-text: #0F172A;
+    --tpm-muted: #64748B;
+    --tpm-border: #E8E5DF;
+
+    --tpm-heading: "Cormorant Garamond", serif;
+    --tpm-body: "Lora", serif;
+    --tpm-label: "Montserrat", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    background: var(--tpm-white);
+    color: var(--tpm-text);
+    font-family: var(--tpm-body);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    border: 0;
+    font: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.al-tpm-page {
+    width: 100%;
+    overflow: hidden;
+}
+
+.al-tpm-container {
+    width: min(1240px, calc(100% - 80px));
+    margin: 0 auto;
+}
+
+.al-tpm-section {
+    position: relative;
+    padding: 115px 0;
+}
+
+.al-tpm-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 85px;
+}
+
+
+/* ==========================================================
+   02. TYPOGRAPHY
+========================================================== */
+
+.al-tpm-eyebrow {
+    display: inline-block;
+    margin-bottom: 22px;
+    color: var(--tpm-gold-dark);
+    font-family: var(--tpm-label);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.al-tpm-section-heading {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.al-tpm-section-heading h2,
+.al-tpm-overview__content h2,
+.al-tpm-difference__content h2 {
+    color: var(--tpm-navy);
+    font-family: var(--tpm-heading);
+    font-size: clamp(38px, 4.5vw, 58px);
+    font-weight: 500;
+    line-height: 1.08;
+}
+
+.al-tpm-section-heading h2 em,
+.al-tpm-overview__content h2 em,
+.al-tpm-difference__content h2 em {
+    color: var(--tpm-gold-dark);
+    font-weight: 400;
+}
+
+.al-tpm-section-heading > p {
+    max-width: 650px;
+    margin: 22px auto 0;
+    color: var(--tpm-muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.al-tpm-overview__content > p,
+.al-tpm-difference__content > p {
+    margin-top: 20px;
+    color: var(--tpm-muted);
+    font-size: 14px;
+    line-height: 2;
+}
+
+
+/* ==========================================================
+   03. BUTTONS & LINKS
+========================================================== */
+
+.al-tpm-btn {
+    display: inline-flex;
+    min-height: 56px;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 0 30px;
+    background: var(--tpm-yellow);
+    color: var(--tpm-navy);
+    font-family: var(--tpm-label);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+}
+
+.al-tpm-btn:hover {
+    transform: translateY(-4px);
+    background: var(--tpm-white);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.al-tpm-btn i {
+    transition: transform 0.3s ease;
+}
+
+.al-tpm-btn:hover i {
+    transform: translateX(5px);
+}
+
+.al-tpm-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    color: var(--tpm-navy);
+    font-family: var(--tpm-label);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.al-tpm-text-link i {
+    color: var(--tpm-gold-dark);
+    transition: transform 0.3s ease;
+}
+
+.al-tpm-text-link:hover i {
+    transform: translateX(6px);
+}
+
+
+/* ==========================================================
+   04. HERO SECTION
+========================================================== */
+
+.al-tpm-hero {
+    position: relative;
+    display: flex;
+    min-height: 760px;
+    align-items: center;
+    padding: 150px 0 125px;
+    background-image: url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2400&q=90");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--tpm-white);
+}
+
+.al-tpm-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(10, 18, 29, 0.88) 0%,
+        rgba(10, 18, 29, 0.65) 52%,
+        rgba(10, 18, 29, 0.22) 100%
+    );
+}
+
+.al-tpm-hero__content {
+    position: relative;
+    z-index: 2;
+}
+
+.al-tpm-hero__content .al-tpm-eyebrow {
+    color: var(--tpm-gold);
+}
+
+.al-tpm-hero h1 {
+    max-width: 900px;
+    color: var(--tpm-white);
+    font-family: var(--tpm-heading);
+    font-size: clamp(52px, 7vw, 90px);
+    font-weight: 500;
+    line-height: 0.98;
+    letter-spacing: -1px;
+}
+
+.al-tpm-hero h1 em {
+    display: block;
+    margin-top: 8px;
+    color: var(--tpm-gold);
+    font-weight: 400;
+}
+
+.al-tpm-hero__description {
+    max-width: 600px;
+    margin-top: 30px;
+    color: rgba(255, 255, 255, 0.83);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.al-tpm-hero__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    margin-top: 42px;
+}
+
+.al-tpm-scroll-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    color: var(--tpm-white);
+    font-family: var(--tpm-label);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.al-tpm-scroll-link i {
+    color: var(--tpm-gold);
+    animation: tpmScrollDown 1.8s infinite;
+}
+
+@keyframes tpmScrollDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+.al-tpm-hero__bottom {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: 35px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    color: rgba(255, 255, 255, 0.75);
+    font-family: var(--tpm-label);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.al-tpm-hero__line {
+    width: 55px;
+    height: 1px;
+    background: var(--tpm-gold);
+}
+
+
+/* ==========================================================
+   05. BREADCRUMB
+========================================================== */
+
+.al-tpm-breadcrumb {
+    padding: 22px 0;
+    background: #F7F6F3;
+    border-bottom: 1px solid var(--tpm-border);
+}
+
+.al-tpm-breadcrumb .al-tpm-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.al-tpm-breadcrumb a,
+.al-tpm-breadcrumb span {
+    color: var(--tpm-muted);
+    font-family: var(--tpm-label);
+    font-size: 9px;
+    letter-spacing: 0.8px;
+}
+
+.al-tpm-breadcrumb a {
+    transition: color 0.3s ease;
+}
+
+.al-tpm-breadcrumb a:hover {
+    color: var(--tpm-gold-dark);
+}
+
+.al-tpm-breadcrumb i {
+    color: var(--tpm-gold);
+    font-size: 8px;
+}
+
+.al-tpm-breadcrumb span {
+    color: var(--tpm-navy);
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   06. OVERVIEW
+========================================================== */
+
+.al-tpm-overview {
+    background: var(--tpm-white);
+}
+
+.al-tpm-overview__image {
+    position: relative;
+    height: 570px;
+    overflow: hidden;
+}
+
+.al-tpm-overview__image::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(15, 23, 42, 0.55),
+        transparent 40%
+    );
+    content: "";
+    pointer-events: none;
+}
+
+.al-tpm-overview__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.al-tpm-overview__image:hover img {
+    transform: scale(1.06);
+}
+
+.al-tpm-image-caption {
+    position: absolute;
+    z-index: 2;
+    right: 25px;
+    bottom: 25px;
+    left: 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    color: var(--tpm-white);
+    font-family: var(--tpm-label);
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.al-tpm-overview__content {
+    padding: 20px 0;
+}
+
+.al-tpm-overview__content h2 {
+    margin-bottom: 24px;
+}
+
+
+/* ==========================================================
+   07. MANAGEMENT PILLARS
+========================================================== */
+
+.al-tpm-pillars {
+    background: var(--tpm-cream);
+}
+
+.al-tpm-pillars__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 55px;
+}
+
+.al-tpm-pillar-card {
+    position: relative;
+    min-height: 350px;
+    padding: 32px 25px;
+    overflow: hidden;
+    background: var(--tpm-white);
+    border: 1px solid rgba(197, 168, 128, 0.25);
+    transition: all 0.45s ease;
+}
+
+.al-tpm-pillar-card::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: var(--tpm-gold);
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s ease;
+}
+
+.al-tpm-pillar-card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 22px 45px rgba(15, 23, 42, 0.08);
+}
+
+.al-tpm-pillar-card:hover::after {
+    transform: scaleX(1);
+}
+
+.al-tpm-pillar-card__number {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    color: rgba(197, 168, 128, 0.5);
+    font-family: var(--tpm-heading);
+    font-size: 32px;
+}
+
+.al-tpm-pillar-card__icon {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    background: #F4F0E9;
+    color: var(--tpm-gold-dark);
+    font-size: 23px;
+}
+
+.al-tpm-pillar-card h3 {
+    margin-bottom: 14px;
+    color: var(--tpm-navy);
+    font-family: var(--tpm-heading);
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+.al-tpm-pillar-card p {
+    color: var(--tpm-muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.al-tpm-pillar-card > span {
+    display: inline-block;
+    margin-top: 25px;
+    color: var(--tpm-gold-dark);
+    font-family: var(--tpm-label);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+
+/* ==========================================================
+   08. SCOPE OF SERVICES
+========================================================== */
+
+.al-tpm-scope {
+    background: var(--tpm-white);
+}
+
+.al-tpm-scope__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 55px;
+}
+
+.al-tpm-scope-card {
+    position: relative;
+    min-height: 290px;
+    padding: 35px 30px;
+    overflow: hidden;
+    background: var(--tpm-white);
+    border: 1px solid var(--tpm-border);
+    transition: all 0.4s ease;
+}
+
+.al-tpm-scope-card:hover {
+    transform: translateY(-8px);
+    background: #FAF8F4;
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.07);
+}
+
+.al-tpm-scope-card__number {
+    position: absolute;
+    top: 23px;
+    right: 25px;
+    color: rgba(197, 168, 128, 0.65);
+    font-family: var(--tpm-heading);
+    font-size: 25px;
+}
+
+.al-tpm-scope-card__icon {
+    display: flex;
+    width: 54px;
+    height: 54px;
+    align-items: center;
+    justify-content: center;
+    margin: 25px 0 20px;
+    background: #F4F0E9;
+    color: var(--tpm-gold-dark);
+    font-size: 21px;
+}
+
+.al-tpm-scope-card h3 {
+    margin-bottom: 12px;
+    color: var(--tpm-navy);
+    font-family: var(--tpm-heading);
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.al-tpm-scope-card p {
+    color: var(--tpm-muted);
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+
+/* ==========================================================
+   09. MANAGEMENT PROCESS
+========================================================== */
+
+.al-tpm-process {
+    position: relative;
+    overflow: hidden;
+    background: var(--tpm-navy);
+}
+
+.al-tpm-process__background {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(
+            rgba(30, 41, 59, 0.92),
+            rgba(30, 41, 59, 0.96)
+        ),
+        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=85");
+    background-position: center;
+    background-size: cover;
+}
+
+.al-tpm-process .al-tpm-container {
+    position: relative;
+    z-index: 2;
+}
+
+.al-tpm-section-heading--light h2 {
+    color: var(--tpm-white);
+}
+
+.al-tpm-section-heading--light h2 em {
+    color: var(--tpm-gold);
+}
+
+.al-tpm-section-heading--light > p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.al-tpm-section-heading--light .al-tpm-eyebrow {
+    color: var(--tpm-gold);
+}
+
+.al-tpm-timeline {
+    position: relative;
+    margin-top: 100px;
+}
+
+.al-tpm-timeline__line {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    left: 0;
+    height: 2px;
+    background: rgba(197, 168, 128, 0.22);
+}
+
+.al-tpm-timeline__line span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--tpm-gold);
+    transform-origin: left;
+}
+
+.al-tpm-timeline__steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+}
+
+.al-tpm-timeline-step {
+    position: relative;
+    padding-top: 65px;
+}
+
+.al-tpm-timeline-step__dot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--tpm-gold);
+    border-radius: 50%;
+    background: var(--tpm-navy);
+    color: var(--tpm-gold);
+    font-family: var(--tpm-label);
+    font-size: 10px;
+    font-weight: 700;
+    transition: all 0.4s ease;
+}
+
+.al-tpm-timeline-step:hover .al-tpm-timeline-step__dot,
+.al-tpm-timeline-step.is-active .al-tpm-timeline-step__dot {
+    background: var(--tpm-gold);
+    color: var(--tpm-navy);
+    box-shadow: 0 0 0 8px rgba(197, 168, 128, 0.13);
+}
+
+.al-tpm-timeline-step h3 {
+    margin-bottom: 14px;
+    color: var(--tpm-white);
+    font-family: var(--tpm-heading);
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.al-tpm-timeline-step p {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+
+/* ==========================================================
+   10. WHY ASTRALUXE
+========================================================== */
+
+.al-tpm-difference {
+    background: #F8F7F4;
+}
+
+.al-tpm-difference__content h2 {
+    margin-bottom: 20px;
+}
+
+.al-tpm-difference__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 35px;
+}
+
+.al-tpm-difference-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+}
+
+.al-tpm-difference-item > i {
+    display: flex;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+    border-radius: 50%;
+    background: #EDE5D8;
+    color: var(--tpm-gold-dark);
+    font-size: 11px;
+}
+
+.al-tpm-difference-item h3 {
+    margin-bottom: 6px;
+    color: var(--tpm-navy);
+    font-family: var(--tpm-heading);
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.al-tpm-difference-item p {
+    color: var(--tpm-muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.al-tpm-difference__image {
+    position: relative;
+    min-height: 560px;
+    overflow: hidden;
+}
+
+.al-tpm-difference__image img {
+    width: 100%;
+    height: 100%;
+    min-height: 560px;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.al-tpm-difference__image:hover img {
+    transform: scale(1.05);
+}
+
+.al-tpm-difference__image-note {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    left: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px;
+    background: rgba(30, 41, 59, 0.91);
+    color: var(--tpm-white);
+}
+
+.al-tpm-difference__image-note span {
+    color: var(--tpm-gold);
+    font-family: var(--tpm-label);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.al-tpm-difference__image-note strong {
+    font-family: var(--tpm-heading);
+    font-size: 28px;
+    font-weight: 500;
+}
+
+
+/* ==========================================================
+   11. OUR FOCUS
+========================================================== */
+
+.al-tpm-focus {
+    padding-top: 25px;
+    background: #F8F7F4;
+}
+
+.al-tpm-focus__inner {
+    display: grid;
+    grid-template-columns: 85px 1fr;
+    align-items: start;
+    gap: 35px;
+    padding: 48px;
+    border: 1px solid rgba(197, 168, 128, 0.4);
+    background: var(--tpm-white);
+}
+
+.al-tpm-focus__icon {
+    display: flex;
+    width: 70px;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    background: #F4F0E9;
+    color: var(--tpm-gold-dark);
+    font-size: 27px;
+}
+
+.al-tpm-focus__content h2 {
+    margin: 10px 0 18px;
+    color: var(--tpm-navy);
+    font-family: var(--tpm-heading);
+    font-size: clamp(30px, 3.5vw, 42px);
+    font-weight: 600;
+    line-height: 1.12;
+}
+
+.al-tpm-focus__content h2 em {
+    color: var(--tpm-gold-dark);
+    font-weight: 400;
+}
+
+.al-tpm-focus__content p {
+    max-width: 900px;
+    color: var(--tpm-muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* ==========================================================
+   12. FAQ
+========================================================== */
+
+.al-tpm-faq {
+    background: var(--tpm-white);
+}
+
+.al-tpm-faq__layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: start;
+    gap: 90px;
+}
+
+.al-tpm-faq__intro h2 {
+    color: var(--tpm-navy);
+    font-family: var(--tpm-heading);
+    font-size: clamp(40px, 4vw, 55px);
+    font-weight: 500;
+    line-height: 1.08;
+}
+
+.al-tpm-faq__intro h2 em {
+    display: block;
+    color: var(--tpm-gold-dark);
+    font-weight: 400;
+}
+
+.al-tpm-faq__intro > p {
+    margin-top: 22px;
+    color: var(--tpm-muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.al-tpm-faq__items {
+    border-top: 1px solid var(--tpm-border);
+}
+
+.al-tpm-faq-item {
+    border-bottom: 1px solid var(--tpm-border);
+}
+
+.al-tpm-faq-question {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 25px 0;
+    background: transparent;
+    color: var(--tpm-navy);
+    text-align: left;
+    cursor: pointer;
+}
+
+.al-tpm-faq-question span {
+    font-family: var(--tpm-heading);
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.al-tpm-faq-question i {
+    display: flex;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--tpm-gold);
+    border-radius: 50%;
+    color: var(--tpm-gold-dark);
+    font-size: 11px;
+    transition: transform 0.35s ease, background 0.35s ease;
+}
+
+.al-tpm-faq-item.is-open .al-tpm-faq-question i {
+    transform: rotate(45deg);
+    background: var(--tpm-gold);
+    color: var(--tpm-navy);
+}
+
+.al-tpm-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.al-tpm-faq-answer p {
+    padding: 0 40px 25px 0;
+    color: var(--tpm-muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+
+/* ==========================================================
+   13. FINAL CTA
+========================================================== */
+
+.al-tpm-cta {
+    position: relative;
+    display: flex;
+    min-height: 570px;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.al-tpm-cta__background {
+    position: absolute;
+    inset: 0;
+    background-image: url("https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=2400&q=90");
+    background-position: center;
+    background-size: cover;
+    transform: scale(1.02);
+}
+
+.al-tpm-cta__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 30, 44, 0.83);
+}
+
+.al-tpm-cta__content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+}
+
+.al-tpm-cta__content .al-tpm-eyebrow {
+    color: var(--tpm-gold);
+}
+
+.al-tpm-cta h2 {
+    margin-bottom: 25px;
+    color: var(--tpm-white);
+    font-family: var(--tpm-heading);
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+.al-tpm-cta h2 em {
+    display: block;
+    color: var(--tpm-gold);
+    font-weight: 400;
+}
+
+.al-tpm-cta p {
+    max-width: 650px;
+    margin: 0 auto 35px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* ==========================================================
+   14. ANIMATION SUPPORT
+========================================================== */
+
+.al-tpm-reveal {
+    will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* ==========================================================
+   15. TABLET RESPONSIVE
+========================================================== */
+
+@media (max-width: 1100px) {
+
+    .al-tpm-container {
+        width: min(100% - 60px, 1000px);
+    }
+
+    .al-tpm-two-col {
+        gap: 50px;
+    }
+
+    .al-tpm-section {
+        padding: 95px 0;
+    }
+
+    .al-tpm-pillars__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .al-tpm-scope__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .al-tpm-timeline__steps {
+        gap: 18px;
+    }
+
+    .al-tpm-timeline-step h3 {
+        font-size: 22px;
+    }
+
+    .al-tpm-faq__layout {
+        gap: 55px;
+    }
+
+}
+
+
+/* ==========================================================
+   16. MOBILE RESPONSIVE
+========================================================== */
+
+@media (max-width: 720px) {
+
+    html {
+        scroll-padding-top: 70px;
+    }
+
+    .al-tpm-container {
+        width: calc(100% - 40px);
+    }
+
+    .al-tpm-section {
+        padding: 75px 0;
+    }
+
+    .al-tpm-two-col {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+
+    /* Hero */
+
+    .al-tpm-hero {
+        min-height: 680px;
+        padding: 120px 0 110px;
+        background-position: center;
+    }
+
+    .al-tpm-hero__overlay {
+        background: linear-gradient(
+            90deg,
+            rgba(10, 18, 29, 0.9),
+            rgba(10, 18, 29, 0.6)
+        );
+    }
+
+    .al-tpm-hero h1 {
+        font-size: clamp(48px, 12vw, 66px);
+    }
+
+    .al-tpm-hero__description {
+        margin-top: 24px;
+        font-size: 13px;
+    }
+
+    .al-tpm-hero__actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 25px;
+        margin-top: 32px;
+    }
+
+    .al-tpm-hero__bottom {
+        gap: 12px;
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .al-tpm-hero__line {
+        width: 25px;
+    }
+
+
+    /* Breadcrumb */
+
+    .al-tpm-breadcrumb {
+        padding: 17px 0;
+    }
+
+    .al-tpm-breadcrumb .al-tpm-container {
+        gap: 8px;
+    }
+
+    .al-tpm-breadcrumb a,
+    .al-tpm-breadcrumb span {
+        font-size: 8px;
+    }
+
+
+    /* Headings */
+
+    .al-tpm-eyebrow {
+        margin-bottom: 16px;
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .al-tpm-section-heading h2,
+    .al-tpm-overview__content h2,
+    .al-tpm-difference__content h2 {
+        font-size: 42px;
+    }
+
+    .al-tpm-section-heading > p {
+        font-size: 12px;
+    }
+
+
+    /* Overview */
+
+    .al-tpm-overview__image {
+        height: 420px;
+    }
+
+    .al-tpm-image-caption {
+        right: 15px;
+        bottom: 18px;
+        left: 15px;
+        font-size: 7px;
+        letter-spacing: 0.8px;
+    }
+
+    .al-tpm-overview__content > p {
+        font-size: 13px;
+    }
+
+
+    /* Management pillars */
+
+    .al-tpm-pillars__grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 35px;
+    }
+
+    .al-tpm-pillar-card {
+        min-height: auto;
+        padding: 30px 25px;
+    }
+
+    .al-tpm-pillar-card__icon {
+        margin-bottom: 23px;
+    }
+
+
+    /* Scope */
+
+    .al-tpm-scope__grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 35px;
+    }
+
+    .al-tpm-scope-card {
+        min-height: auto;
+        padding: 28px 24px;
+    }
+
+    .al-tpm-scope-card__icon {
+        margin-top: 18px;
+    }
+
+
+    /* Timeline */
+
+    .al-tpm-timeline {
+        margin-top: 55px;
+        padding-left: 25px;
+    }
+
+    .al-tpm-timeline__line {
+        top: 0;
+        bottom: 0;
+        left: 20px;
+        width: 2px;
+        height: auto;
+    }
+
+    .al-tpm-timeline__line span {
+        width: 100%;
+        height: 100%;
+    }
+
+    .al-tpm-timeline__steps {
+        display: flex;
+        flex-direction: column;
+        gap: 38px;
+    }
+
+    .al-tpm-timeline-step {
+        min-height: 100px;
+        padding: 0 0 0 55px;
+    }
+
+    .al-tpm-timeline-step__dot {
+        top: 0;
+        left: -25px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .al-tpm-timeline-step h3 {
+        font-size: 25px;
+    }
+
+    .al-tpm-timeline-step p {
+        font-size: 12px;
+    }
+
+
+    /* Difference */
+
+    .al-tpm-difference__image,
+    .al-tpm-difference__image img {
+        min-height: 420px;
+    }
+
+    .al-tpm-difference__image-note {
+        right: 15px;
+        bottom: 15px;
+        left: 15px;
+        padding: 20px;
+    }
+
+    .al-tpm-difference__image-note strong {
+        font-size: 25px;
+    }
+
+
+    /* Focus */
+
+    .al-tpm-focus {
+        padding-top: 0;
+    }
+
+    .al-tpm-focus__inner {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 28px 23px;
+    }
+
+    .al-tpm-focus__icon {
+        width: 58px;
+        height: 58px;
+        font-size: 22px;
+    }
+
+    .al-tpm-focus__content h2 {
+        font-size: 32px;
+    }
+
+    .al-tpm-focus__content p {
+        font-size: 12px;
+    }
+
+
+    /* FAQ */
+
+    .al-tpm-faq__layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .al-tpm-faq__intro h2 {
+        font-size: 43px;
+    }
+
+    .al-tpm-faq-question {
+        padding: 20px 0;
+    }
+
+    .al-tpm-faq-question span {
+        font-size: 20px;
+    }
+
+    .al-tpm-faq-answer p {
+        padding-right: 10px;
+        font-size: 12px;
+    }
+
+
+    /* CTA */
+
+    .al-tpm-cta {
+        min-height: 520px;
+        padding: 80px 0;
+    }
+
+    .al-tpm-cta h2 {
+        font-size: 43px;
+    }
+
+    .al-tpm-cta p {
+        font-size: 12px;
+    }
+
+}
+
+
+/* ==========================================================
+   17. SMALL MOBILE
+========================================================== */
+
+@media (max-width: 420px) {
+
+    .al-tpm-container {
+        width: calc(100% - 32px);
+    }
+
+    .al-tpm-hero h1 {
+        font-size: 46px;
+    }
+
+    .al-tpm-section-heading h2,
+    .al-tpm-overview__content h2,
+    .al-tpm-difference__content h2 {
+        font-size: 37px;
+    }
+
+    .al-tpm-pillar-card h3 {
+        font-size: 25px;
+    }
+
+    .al-tpm-scope-card h3 {
+        font-size: 23px;
+    }
+
+    .al-tpm-faq-question span {
+        font-size: 18px;
+    }
+
+    .al-tpm-cta h2 {
+        font-size: 38px;
+    }
+
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Shared Header -->
+    <div id="header-placeholder"></div>
+
+    <main class="al-tpm-page">
+
+        <!-- HERO -->
+        <section class="al-tpm-hero">
+            <div class="al-tpm-hero__overlay"></div>
+
+            <div class="al-tpm-container al-tpm-hero__content">
+
+                <span class="al-tpm-eyebrow al-tpm-reveal">
+                    THIRD PARTY MANAGEMENT
+                </span>
+
+                <h1 class="al-tpm-reveal">
+                    Ownership with
+                    <em>Operational Excellence.</em>
+                </h1>
+
+                <p class="al-tpm-hero__description al-tpm-reveal">
+                    Professional third-party hotel and resort management
+                    focused on operational discipline, guest experience
+                    and sustainable business performance.
+                </p>
+
+                <div class="al-tpm-hero__actions al-tpm-reveal">
+
+                    <a href="../contact.html" class="al-tpm-btn">
+                        Discuss Your Property
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="#services" class="al-tpm-scroll-link">
+                        Explore Our Services
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="al-tpm-hero__bottom">
+                <span>PROFESSIONAL MANAGEMENT</span>
+                <span class="al-tpm-hero__line"></span>
+                <span>ASSET PERFORMANCE</span>
+            </div>
+        </section>
+
+
+
+        <!-- OVERVIEW -->
+        <section class="al-tpm-section al-tpm-overview" id="overview">
+
+            <div class="al-tpm-container al-tpm-two-col">
+
+                <div class="al-tpm-overview__image al-tpm-reveal">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=88"
+                        alt="Luxury resort with professionally maintained guest facilities"
+                        loading="lazy"
+                    >
+
+                    <div class="al-tpm-image-caption">
+                        <span>01 / ASSET MANAGEMENT</span>
+                        <span>THE ASTRALUXE ADVISORY</span>
+                    </div>
+
+                </div>
+
+                <div class="al-tpm-overview__content al-tpm-reveal">
+
+                    <span class="al-tpm-eyebrow">
+                        PROFESSIONAL THIRD-PARTY MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Your Asset.
+                        <em>Professionally Managed.</em>
+                    </h2>
+
+                    <p>
+                        For owners who wish to retain ownership while
+                        appointing an experienced team to oversee hotel
+                        or resort operations, The AstraLuxe Advisory
+                        offers third-party management support.
+                    </p>
+
+                    <p>
+                        The focus is on establishing operating discipline,
+                        improving service delivery, strengthening revenue
+                        performance and maintaining clear communication
+                        with ownership.
+                    </p>
+
+                    <p>
+                        Rather than following a one-size-fits-all approach,
+                        the scope of management support can be aligned
+                        to the asset's requirements, operational priorities
+                        and the agreed management arrangement.
+                    </p>
+
+                    <a href="../contact.html" class="al-tpm-text-link">
+                        Discuss Your Management Requirements
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- MANAGEMENT PILLARS -->
+        <section class="al-tpm-section al-tpm-pillars">
+
+            <div class="al-tpm-container">
+
+                <div class="al-tpm-section-heading al-tpm-reveal">
+
+                    <span class="al-tpm-eyebrow">
+                        THE MANAGEMENT FRAMEWORK
+                    </span>
+
+                    <h2>
+                        Four Pillars of
+                        <em>Effective Hotel Management.</em>
+                    </h2>
+
+                    <p>
+                        A coordinated management approach that connects
+                        daily operations, guest experience, commercial
+                        performance and ownership priorities.
+                    </p>
+
+                </div>
+
+
+                <div class="al-tpm-pillars__grid">
+
+                    <article class="al-tpm-pillar-card al-tpm-reveal">
+
+                        <div class="al-tpm-pillar-card__number">01</div>
+
+                        <div class="al-tpm-pillar-card__icon">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+
+                        <h3>Operational Discipline</h3>
+
+                        <p>
+                            Establishing operating procedures, management
+                            systems and accountability across key
+                            hotel and resort functions.
+                        </p>
+
+                        <span>OPERATIONAL CONTROL</span>
+
+                    </article>
+
+
+                    <article class="al-tpm-pillar-card al-tpm-reveal">
+
+                        <div class="al-tpm-pillar-card__number">02</div>
+
+                        <div class="al-tpm-pillar-card__icon">
+                            <i class="fa-solid fa-concierge-bell"></i>
+                        </div>
+
+                        <h3>Guest Experience</h3>
+
+                        <p>
+                            Strengthening service delivery and maintaining
+                            consistency across the guest journey and
+                            hospitality touchpoints.
+                        </p>
+
+                        <span>SERVICE EXCELLENCE</span>
+
+                    </article>
+
+
+                    <article class="al-tpm-pillar-card al-tpm-reveal">
+
+                        <div class="al-tpm-pillar-card__number">03</div>
+
+                        <div class="al-tpm-pillar-card__icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+
+                        <h3>Business Performance</h3>
+
+                        <p>
+                            Reviewing revenue, yield and business
+                            performance to support informed
+                            operational and commercial decisions.
+                        </p>
+
+                        <span>REVENUE PERFORMANCE</span>
+
+                    </article>
+
+
+                    <article class="al-tpm-pillar-card al-tpm-reveal">
+
+                        <div class="al-tpm-pillar-card__number">04</div>
+
+                        <div class="al-tpm-pillar-card__icon">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+
+                        <h3>Owner Coordination</h3>
+
+                        <p>
+                            Maintaining structured communication,
+                            performance reporting and alignment
+                            with ownership expectations.
+                        </p>
+
+                        <span>OWNER ALIGNMENT</span>
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- SCOPE OF SERVICES -->
+        <section class="al-tpm-section al-tpm-scope" id="services">
+
+            <div class="al-tpm-container">
+
+                <div class="al-tpm-section-heading al-tpm-reveal">
+
+                    <span class="al-tpm-eyebrow">
+                        OUR SCOPE OF SERVICES
+                    </span>
+
+                    <h2>
+                        Management That Covers
+                        <em>Every Operational Layer.</em>
+                    </h2>
+
+                    <p>
+                        Our third-party management scope can be structured
+                        around the property's requirements, operating
+                        priorities and agreed responsibilities.
+                    </p>
+
+                </div>
+
+
+                <div class="al-tpm-scope__grid">
+
+                    <article class="al-tpm-scope-card al-tpm-reveal">
+
+                        <span class="al-tpm-scope-card__number">01</span>
+
+                        <div class="al-tpm-scope-card__icon">
+                            <i class="fa-solid fa-hotel"></i>
+                        </div>
+
+                        <h3>Hotel & Resort Operations Management</h3>
+
+                        <p>
+                            Oversight and coordination of day-to-day
+                            hotel and resort operations across
+                            relevant departments and functions.
+                        </p>
+
+                    </article>
+
+
+                    <article class="al-tpm-scope-card al-tpm-reveal">
+
+                        <span class="al-tpm-scope-card__number">02</span>
+
+                        <div class="al-tpm-scope-card__icon">
+                            <i class="fa-solid fa-key"></i>
+                        </div>
+
+                        <h3>Pre-Opening & Transition Support</h3>
+
+                        <p>
+                            Support with pre-opening activities,
+                            operational transition and readiness
+                            before commencement of operations.
+                        </p>
+
+                    </article>
+
+
+                    <article class="al-tpm-scope-card al-tpm-reveal">
+
+                        <span class="al-tpm-scope-card__number">03</span>
+
+                        <div class="al-tpm-scope-card__icon">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+
+                        <h3>Revenue & Business Performance</h3>
+
+                        <p>
+                            Review of revenue, yield and overall
+                            business performance to identify
+                            relevant operational priorities.
+                        </p>
+
+                    </article>
+
+
+                    <article class="al-tpm-scope-card al-tpm-reveal">
+
+                        <span class="al-tpm-scope-card__number">04</span>
+
+                        <div class="al-tpm-scope-card__icon">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+
+                        <h3>Sales, Marketing & Distribution</h3>
+
+                        <p>
+                            Coordination of sales, marketing and
+                            distribution strategies to support
+                            the property's business objectives.
+                        </p>
+
+                    </article>
+
+
+                    <article class="al-tpm-scope-card al-tpm-reveal">
+
+                        <span class="al-tpm-scope-card__number">05</span>
+
+                        <div class="al-tpm-scope-card__icon">
+                            <i class="fa-solid fa-clipboard-check"></i>
+                        </div>
+
+                        <h3>SOP & Service Quality Oversight</h3>
+
+                        <p>
+                            Implementation of standard operating
+                            procedures and oversight of service
+                            quality across operational functions.
+                        </p>
+
+                    </article>
+
+
+                    <article class="al-tpm-scope-card al-tpm-reveal">
+
+                        <span class="al-tpm-scope-card__number">06</span>
+
+                        <div class="al-tpm-scope-card__icon">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                        </div>
+
+                        <h3>Financial & Operational Monitoring</h3>
+
+                        <p>
+                            Monitoring of financial and operational
+                            performance to support management
+                            review and informed decision-making.
+                        </p>
+
+                    </article>
+
+
+                    <article class="al-tpm-scope-card al-tpm-reveal">
+
+                        <span class="al-tpm-scope-card__number">07</span>
+
+                        <div class="al-tpm-scope-card__icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <h3>Owner Reporting & Coordination</h3>
+
+                        <p>
+                            Structured reporting and regular
+                            coordination with ownership on
+                            operating matters and business performance.
+                        </p>
+
+                    </article>
+
+                    <article class="al-tpm-scope-card al-tpm-reveal">
+
+                        <span class="al-tpm-scope-card__number">08</span>
+
+                        <div class="al-tpm-scope-card__icon">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+
+                        <h3>Chartered Accountant & Financial Advisory</h3>
+
+                        <p>
+                            Coordination with qualified chartered accountants
+                            for financial assistance, accounting oversight,
+                            financial reporting and taxation-related requirements.
+                        </p>
+
+                    </article>
+
+                    <article class="al-tpm-scope-card al-tpm-reveal">
+
+                        <span class="al-tpm-scope-card__number">09</span>
+
+                        <div class="al-tpm-scope-card__icon">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+
+                        <h3>Legal Advisory & Agreement Support</h3>
+
+                        <p>
+                            Coordination with qualified legal professionals
+                            for agreement-related matters, contractual documentation,
+                            legal review and other relevant legal requirements.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- MANAGEMENT PROCESS -->
+        <section class="al-tpm-section al-tpm-process">
+
+            <div class="al-tpm-process__background"></div>
+
+            <div class="al-tpm-container">
+
+                <div class="al-tpm-section-heading al-tpm-section-heading--light al-tpm-reveal">
+
+                    <span class="al-tpm-eyebrow">
+                        OUR MANAGEMENT APPROACH
+                    </span>
+
+                    <h2>
+                        From Operational Readiness
+                        <em>To Ongoing Performance.</em>
+                    </h2>
+
+                    <p>
+                        A structured approach to understanding the asset,
+                        establishing management priorities and maintaining
+                        operational oversight.
+                    </p>
+
+                </div>
+
+
+                <div class="al-tpm-timeline">
+
+                    <div class="al-tpm-timeline__line">
+                        <span></span>
+                    </div>
+
+                    <div class="al-tpm-timeline__steps">
+
+                        <article class="al-tpm-timeline-step is-active">
+
+                            <span class="al-tpm-timeline-step__dot">01</span>
+
+                            <h3>Asset Assessment</h3>
+
+                            <p>
+                                Understand the property's requirements,
+                                existing operations and ownership objectives.
+                            </p>
+
+                        </article>
+
+
+                        <article class="al-tpm-timeline-step">
+
+                            <span class="al-tpm-timeline-step__dot">02</span>
+
+                            <h3>Management Planning</h3>
+
+                            <p>
+                                Define the management scope, operational
+                                priorities and agreed responsibilities.
+                            </p>
+
+                        </article>
+
+
+                        <article class="al-tpm-timeline-step">
+
+                            <span class="al-tpm-timeline-step__dot">03</span>
+
+                            <h3>Operational Implementation</h3>
+
+                            <p>
+                                Coordinate operating systems, SOPs,
+                                service standards and relevant transitions.
+                            </p>
+
+                        </article>
+
+
+                        <article class="al-tpm-timeline-step">
+
+                            <span class="al-tpm-timeline-step__dot">04</span>
+
+                            <h3>Performance Monitoring</h3>
+
+                            <p>
+                                Review business performance, revenue,
+                                service delivery and operational priorities.
+                            </p>
+
+                        </article>
+
+
+                        <article class="al-tpm-timeline-step">
+
+                            <span class="al-tpm-timeline-step__dot">05</span>
+
+                            <h3>Owner Reporting</h3>
+
+                            <p>
+                                Maintain communication and reporting
+                                aligned with the agreed management arrangement.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- WHY ASTRALUXE -->
+        <section class="al-tpm-section al-tpm-difference">
+
+            <div class="al-tpm-container al-tpm-two-col">
+
+                <div class="al-tpm-difference__content al-tpm-reveal">
+
+                    <span class="al-tpm-eyebrow">
+                        THE ASTRALUXE ADVANTAGE
+                    </span>
+
+                    <h2>
+                        Professional Oversight.
+                        <em>Ownership Alignment.</em>
+                    </h2>
+
+                    <p>
+                        Effective hotel management requires more than
+                        overseeing daily activities. It calls for
+                        coordinated operations, consistent service
+                        delivery, performance awareness and clear
+                        communication with ownership.
+                    </p>
+
+
+                    <div class="al-tpm-difference__list">
+
+                        <div class="al-tpm-difference-item">
+
+                            <i class="fa-solid fa-check"></i>
+
+                            <div>
+                                <h3>Structured Operational Oversight</h3>
+
+                                <p>
+                                    A disciplined approach to managing
+                                    relevant hotel and resort functions.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="al-tpm-difference-item">
+
+                            <i class="fa-solid fa-check"></i>
+
+                            <div>
+                                <h3>Guest Experience Focus</h3>
+
+                                <p>
+                                    Attention to service standards
+                                    and consistency across guest touchpoints.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="al-tpm-difference-item">
+
+                            <i class="fa-solid fa-check"></i>
+
+                            <div>
+                                <h3>Performance-Oriented Management</h3>
+
+                                <p>
+                                    Regular attention to revenue,
+                                    yield and operating performance.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="al-tpm-difference-item">
+
+                            <i class="fa-solid fa-check"></i>
+
+                            <div>
+                                <h3>Clear Owner Communication</h3>
+
+                                <p>
+                                    Defined reporting and coordination
+                                    around ownership priorities.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="al-tpm-difference__image al-tpm-reveal">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=88"
+                        alt="Refined luxury hospitality interior"
+                        loading="lazy"
+                    >
+
+                    <div class="al-tpm-difference__image-note">
+
+                        <span>THE MANAGEMENT PHILOSOPHY</span>
+
+                        <strong>
+                            Better Operations. Stronger Experiences.
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- OUR FOCUS -->
+        <section class="al-tpm-section al-tpm-focus">
+
+            <div class="al-tpm-container">
+
+                <div class="al-tpm-focus__inner al-tpm-reveal">
+
+                    <div class="al-tpm-focus__icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+
+                    <div class="al-tpm-focus__content">
+
+                        <span class="al-tpm-eyebrow">
+                            OUR FOCUS
+                        </span>
+
+                        <h2>
+                            A Professionally Managed
+                            <em>Hospitality Asset.</em>
+                        </h2>
+
+                        <p>
+                            The intended outcome is a professionally
+                            managed hospitality asset with stronger
+                            operational control, a consistent guest
+                            experience and a clear focus on business
+                            performance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- FINAL CTA -->
+        <section class="al-tpm-cta">
+
+            <div class="al-tpm-cta__background"></div>
+            <div class="al-tpm-cta__overlay"></div>
+
+            <div class="al-tpm-container al-tpm-cta__content al-tpm-reveal">
+
+                <span class="al-tpm-eyebrow">
+                    LET'S DISCUSS YOUR PROPERTY
+                </span>
+
+                <h2>
+                    Your Vision.
+                    <em>Our Management Perspective.</em>
+                </h2>
+
+                <p>
+                    Explore a management arrangement aligned with
+                    your property's operational requirements,
+                    ownership priorities and business objectives.
+                </p>
+
+                <a href="../contact.html" class="al-tpm-btn">
+                    Start a Conversation
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Shared Footer -->
+    <div id="footer-placeholder"></div>
+    <div id="whatsapp-placeholder"></div>
+
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Shared Site Script -->
+    <script src="../js/main.js"></script>
+
+    <!-- Hospitality Service Script -->
+    <script>
+
+    (() => {
+
+        /* =====================================
+        FAQ ACCORDION
+        ===================================== */
+
+        const faqItems = document.querySelectorAll(".al-tpm-faq-item");
+
+        faqItems.forEach((item) => {
+
+            const button = item.querySelector(".al-tpm-faq-question");
+            const answer = item.querySelector(".al-tpm-faq-answer");
+
+            if (!button || !answer) return;
+
+            button.addEventListener("click", () => {
+
+                const isOpen = item.classList.contains("is-open");
+
+                faqItems.forEach((faq) => {
+
+                    faq.classList.remove("is-open");
+
+                    const faqButton = faq.querySelector(".al-tpm-faq-question");
+                    const faqAnswer = faq.querySelector(".al-tpm-faq-answer");
+
+                    if (faqButton) {
+                        faqButton.setAttribute("aria-expanded", "false");
+                    }
+
+                    if (faqAnswer) {
+                        faqAnswer.style.maxHeight = null;
+                    }
+
+                });
+
+                if (!isOpen) {
+
+                    item.classList.add("is-open");
+                    button.setAttribute("aria-expanded", "true");
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+
+                }
+
+            });
+
+            if (item.classList.contains("is-open")) {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+
+        });
+
+
+        /* =====================================
+        GSAP ANIMATIONS
+        ===================================== */
+
+        if (
+            typeof gsap === "undefined" ||
+            typeof ScrollTrigger === "undefined"
+        ) {
+
+            document.querySelectorAll(".al-tpm-reveal").forEach((element) => {
+                element.style.opacity = "1";
+                element.style.transform = "none";
+            });
+
+            return;
+        }
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const reduceMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        if (reduceMotion) {
+
+            gsap.set(".al-tpm-reveal", {
+                opacity: 1,
+                y: 0
+            });
+
+            return;
+        }
+
+
+        /* HERO ANIMATION */
+
+        const heroTimeline = gsap.timeline({
+            defaults: {
+                ease: "power3.out"
+            }
+        });
+
+        heroTimeline
+            .from(".al-tpm-hero__content .al-tpm-eyebrow", {
+                opacity: 0,
+                y: 30,
+                duration: 0.8
+            })
+            .from(".al-tpm-hero h1", {
+                opacity: 0,
+                y: 65,
+                duration: 1.1
+            }, "-=0.45")
+            .from(".al-tpm-hero__description", {
+                opacity: 0,
+                y: 35,
+                duration: 0.8
+            }, "-=0.65")
+            .from(".al-tpm-hero__actions", {
+                opacity: 0,
+                y: 25,
+                duration: 0.8
+            }, "-=0.5")
+            .from(".al-tpm-hero__bottom", {
+                opacity: 0,
+                duration: 1
+            }, "-=0.3");
+
+
+        /* GENERAL SECTION REVEALS */
+
+        gsap.utils.toArray(".al-tpm-reveal").forEach((element) => {
+
+            if (element.closest(".al-tpm-hero")) return;
+
+            gsap.fromTo(
+                element,
+                {
+                    opacity: 0,
+                    y: 55
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 88%",
+                        once: true
+                    }
+                }
+            );
+
+        });
+
+
+        /* MANAGEMENT PILLARS */
+
+        gsap.from(".al-tpm-pillar-card", {
+            opacity: 0,
+            y: 75,
+            rotateX: 8,
+            duration: 0.95,
+            stagger: 0.15,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".al-tpm-pillars__grid",
+                start: "top 82%",
+                once: true
+            }
+        });
+
+
+        /* SCOPE CARDS */
+
+        gsap.from(".al-tpm-scope-card", {
+            opacity: 0,
+            y: 65,
+            scale: 0.96,
+            duration: 0.85,
+            stagger: 0.12,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".al-tpm-scope__grid",
+                start: "top 82%",
+                once: true
+            }
+        });
+
+
+        /* TIMELINE LINE */
+
+        const timelineLine = document.querySelector(
+            ".al-tpm-timeline__line span"
+        );
+
+        if (timelineLine) {
+
+            const isMobile = window.matchMedia(
+                "(max-width: 720px)"
+            ).matches;
+
+            gsap.fromTo(
+                timelineLine,
+                {
+                    scaleY: isMobile ? 0 : 1,
+                    scaleX: isMobile ? 1 : 0
+                },
+                {
+                    scaleY: 1,
+                    scaleX: 1,
+                    transformOrigin: "top left",
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: ".al-tpm-timeline",
+                        start: "top 75%",
+                        end: "bottom 65%",
+                        scrub: 1
+                    }
+                }
+            );
+
+        }
+
+
+        /* TIMELINE STEPS */
+
+        gsap.from(".al-tpm-timeline-step", {
+            opacity: 0,
+            y: 40,
+            duration: 0.8,
+            stagger: 0.12,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".al-tpm-timeline__steps",
+                start: "top 82%",
+                once: true
+            }
+        });
+
+
+        /* DIFFERENCE LIST */
+
+        gsap.from(".al-tpm-difference-item", {
+            opacity: 0,
+            x: -45,
+            duration: 0.75,
+            stagger: 0.15,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".al-tpm-difference__list",
+                start: "top 82%",
+                once: true
+            }
+        });
+
+
+        /* FINAL FOCUS SECTION */
+
+        gsap.from(".al-tpm-focus__inner", {
+            opacity: 0,
+            y: 60,
+            scale: 0.98,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".al-tpm-focus",
+                start: "top 82%",
+                once: true
+            }
+        });
+
+
+        /* CTA ANIMATION */
+
+        gsap.from(".al-tpm-cta__content > *", {
+            opacity: 0,
+            y: 45,
+            duration: 0.9,
+            stagger: 0.15,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".al-tpm-cta",
+                start: "top 75%",
+                once: true
+            }
+        });
+
+
+        /* REFRESH AFTER IMAGES LOAD */
+
+        window.addEventListener("load", () => {
+            ScrollTrigger.refresh();
+        });
+
+    });
+
+    </script>
+
+</body>
+</html>
